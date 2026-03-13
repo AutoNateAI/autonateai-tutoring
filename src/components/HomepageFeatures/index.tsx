@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
@@ -6,37 +6,37 @@ import styles from './styles.module.css';
 type FeatureItem = {
   title: string;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: ReactNode;
+  description: React.ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'CS Journey Mapping',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Visualize your progress through a topological map of Computer Science. 
+        Track where you are and where you're going—beyond just a syllabus.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Daily Thought Experiments',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Apply your knowledge to real-world problems inspired by current research. 
+        Solve challenges and build a portfolio of high-signal code.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: '1:1 Expert Tutoring',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Accelerate your mastery with personalized guidance. From debugging 
+        fundamental concepts to architecting production-ready systems.
       </>
     ),
   },
@@ -56,7 +56,7 @@ function Feature({title, Svg, description}: FeatureItem) {
   );
 }
 
-export default function HomepageFeatures(): ReactNode {
+export default function HomepageFeatures(): React.JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">

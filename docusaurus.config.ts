@@ -91,6 +91,12 @@ const config: Config = {
         },
         {to: '/blog', label: 'Thought Experiments', position: 'left'},
         {
+          href: 'https://calendar.google.com/calendar/appointments/schedules/',
+          label: 'Book Tutoring 📅',
+          position: 'right',
+          className: 'button button--primary margin-left--md',
+        },
+        {
           href: 'https://github.com/AutoNateAI/autonateai-tutoring',
           label: 'GitHub',
           position: 'right',

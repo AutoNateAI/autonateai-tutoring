@@ -14,14 +14,21 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+          Master the Topology of Computer Science
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">
+          Bridging the gap between your college curriculum and professional mastery through daily research-driven thought experiments.
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/cs-journey/intro">
-            Start Your CS Journey 🗺️
+            View the CS Journey Map 🗺️
+          </Link>
+          <Link
+            className="button button--outline button--secondary button--lg margin-left--md"
+            to="/blog">
+            Solve Today's Thought Experiment 🧠
           </Link>
         </div>
       </div>
