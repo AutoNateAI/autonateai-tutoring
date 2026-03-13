@@ -11,23 +11,6 @@ export default function TopologicalWeb() {
           </linearGradient>
         </defs>
         
-        {/* Nodes */}
-        <circle cx="50" cy="60" r="5" fill="#3578e5">
-          <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="150" cy="30" r="5" fill="#3578e5">
-          <animate attributeName="r" values="4;6;4" dur="2.5s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="150" cy="90" r="5" fill="#3578e5">
-          <animate attributeName="r" values="4;6;4" dur="3s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="250" cy="60" r="5" fill="#25c2a0">
-          <animate attributeName="r" values="4;6;4" dur="2.2s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="350" cy="60" r="8" fill="#25c2a0">
-          <animate attributeName="r" values="7;10;7" dur="1.5s" repeatCount="indefinite" />
-        </circle>
-
         {/* Traceable paths */}
         <path d="M50 60 L150 30 L250 60 L350 60" fill="none" stroke="url(#webGrad)" strokeWidth="3" strokeDasharray="15,5">
           <animate attributeName="stroke-dashoffset" from="200" to="0" dur="10s" repeatCount="indefinite" />
@@ -36,13 +19,38 @@ export default function TopologicalWeb() {
           <animate attributeName="stroke-dashoffset" from="150" to="0" dur="8s" repeatCount="indefinite" />
         </path>
 
-        {/* Labels (Theme-aware via CSS) */}
-        <g style={{fontWeight: 'bold', fontFamily: 'system-ui'}}>
-          <text x="50" y="45" fontSize="10" fill="currentColor" textAnchor="middle">Foundations</text>
+        {/* Nodes with pulsing animations */}
+        <g>
+          {/* Foundations Node */}
+          <circle cx="50" cy="60" r="5" fill="#3578e5">
+            <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" />
+          </circle>
+          {/* Systems Node */}
+          <circle cx="150" cy="30" r="5" fill="#3578e5">
+            <animate attributeName="r" values="4;6;4" dur="2.5s" repeatCount="indefinite" />
+          </circle>
+          {/* Theory Node */}
+          <circle cx="150" cy="90" r="5" fill="#3578e5">
+            <animate attributeName="r" values="4;6;4" dur="3s" repeatCount="indefinite" />
+          </circle>
+          {/* Applied Node */}
+          <circle cx="250" cy="60" r="5" fill="#25c2a0">
+            <animate attributeName="r" values="4;6;4" dur="2.2s" repeatCount="indefinite" />
+          </circle>
+          {/* Mastery Node (The Goal) */}
+          <circle cx="350" cy="60" r="10" fill="#25c2a0">
+            <animate attributeName="r" values="8;12;8" dur="1.5s" repeatCount="indefinite" />
+            <animate attributeName="fill" values="#25c2a0;#3578e5;#25c2a0" dur="3s" repeatCount="indefinite" />
+          </circle>
+        </g>
+
+        {/* Labels linked to nodes */}
+        <g style={{fontWeight: '800', fontFamily: 'system-ui', textTransform: 'uppercase', letterSpacing: '1px'}}>
+          <text x="50" y="80" fontSize="10" fill="currentColor" textAnchor="middle">Foundations</text>
           <text x="150" y="20" fontSize="10" fill="currentColor" textAnchor="middle">Systems</text>
           <text x="150" y="110" fontSize="10" fill="currentColor" textAnchor="middle">Theory</text>
-          <text x="250" y="45" fontSize="10" fill="currentColor" textAnchor="middle">Applied</text>
-          <text x="350" y="40" fontSize="12" fill="var(--ifm-color-primary)" textAnchor="middle">MASTERY</text>
+          <text x="250" y="80" fontSize="10" fill="currentColor" textAnchor="middle">Applied</text>
+          <text x="350" y="40" fontSize="14" fill="var(--ifm-color-primary)" textAnchor="middle">MASTERY</text>
         </g>
       </svg>
     </div>
