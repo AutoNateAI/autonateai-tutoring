@@ -30,10 +30,32 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* Hero Section: Enforced White Branding for High Signal */
+.heroBanner {
+  background-color: var(--ifm-color-primary);
+}
+
+.hero__title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: #ffffff !important; /* Solid White */
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero__subtitle {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
 /* Hero Button Base Styling */
 .hero-button-filled {
   border: none !important;
-  font-weight: bold;
+  font-weight: 700;
   padding: 0.8rem 2rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: inline-flex;
@@ -41,63 +63,38 @@
   justify-content: center;
   text-decoration: none !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #ffffff !important; /* White text in both modes */
 }
 
-/* Primary Color Fill (Booking) */
 .hero-booking-button {
-  background-color: var(--ifm-color-primary) !important;
+  background-color: var(--autonate-teal) !important; /* Standout Teal for Primary CTA */
 }
 
-/* Secondary Color Fill (Experiments) */
 .hero-experiments-button {
-  background-color: #606770 !important; /* Professional Gray/Slate */
-}
-
-[data-theme='dark'] .hero-experiments-button {
-  background-color: #444950 !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
 .hero-button-filled:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  opacity: 0.95;
+  color: #ffffff !important;
+  opacity: 1;
 }
 
-/* Theme-aware Text Colors */
-[data-theme='light'] .hero-button-filled,
-[data-theme='light'] .nav-booking-button {
+/* Navbar overrides */
+.nav-booking-button {
+  background-color: var(--autonate-teal) !important;
+  border: none !important;
+  font-weight: bold;
   color: #ffffff !important;
 }
 
-[data-theme='dark'] .hero-button-filled,
-[data-theme='dark'] .nav-booking-button {
-  color: #000000 !important;
-}
-
-/* Navbar specific overrides */
-.nav-booking-button {
-  background-color: var(--ifm-color-primary) !important;
-  border: none !important;
-  font-weight: bold;
-}
-
-.hero__title {
-  font-size: 4rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--autonate-teal) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem;
-}
-
-/* Animated SVG Container */
-.topological-web-container {
+/* Cytoscape Container */
+#cy {
   width: 100%;
-  max-width: 800px;
-  margin: 1rem auto;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 350px;
+  margin: 0 auto;
   overflow: visible !important;
 }
