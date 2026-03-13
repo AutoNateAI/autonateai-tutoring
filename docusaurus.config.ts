@@ -11,8 +11,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://AutoNateAI.github.io',
-  baseUrl: '/autonateai-tutoring/',
+  url: 'https://autonateai.com',
+  baseUrl: '/',
 
   organizationName: 'AutoNateAI',
   projectName: 'autonateai-tutoring',
@@ -60,11 +60,11 @@ const config: Config = {
       {property: 'og:type', content: 'website'},
       {property: 'og:title', content: 'AutoNateAI | Engineering Mastery'},
       {property: 'og:description', content: 'Master the topology of Computer Science through research-driven thought experiments.'},
-      {property: 'og:image', content: 'https://AutoNateAI.github.io/autonateai-tutoring/img/social-card.png'},
+      {property: 'og:image', content: 'https://autonateai.com/img/social-card.png'},
       {name: 'twitter:card', content: 'summary_large_image'},
       {name: 'twitter:title', content: 'AutoNateAI | Engineering Mastery'},
       {name: 'twitter:description', content: 'Bridge the gap between academic theory and industrial excellence.'},
-      {name: 'twitter:image', content: 'https://AutoNateAI.github.io/autonateai-tutoring/img/social-card.png'},
+      {name: 'twitter:image', content: 'https://autonateai.com/img/social-card.png'},
     ],
     colorMode: {
       defaultMode: 'dark',
