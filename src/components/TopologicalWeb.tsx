@@ -1,13 +1,30 @@
 import React from 'react';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
 export default function TopologicalWeb() {
+  const isBrowser = useIsBrowser();
+  
+  // Responsive viewBox and scaling
+  const isMobile = isBrowser && window.innerWidth < 768;
+  const viewBox = isMobile ? "200 0 400 350" : "0 0 800 350";
+
   return (
     <div className="topological-web-container">
       <svg 
-        viewBox="0 0 800 350" 
+        viewBox={viewBox} 
         preserveAspectRatio="xMidYMid meet"
         style={{ width: '100%', height: '100%', overflow: 'visible' }}
       >
+        <defs>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
         {/* Traceable Connection Lines */}
         <g stroke="var(--topo-line)" strokeWidth="3" fill="none">
           <path d="M400 50 L250 150 L400 250 L400 310" strokeDasharray="15,8">
@@ -19,7 +36,7 @@ export default function TopologicalWeb() {
         </g>
 
         {/* Nodes and Labels */}
-        <g>
+        <g filter="url(#glow)">
           {/* Foundations Node */}
           <g>
             <circle cx="400" cy="50" r="8" fill="var(--topo-node-main)">
