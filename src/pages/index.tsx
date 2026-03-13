@@ -33,19 +33,19 @@ function HomepageHeader() {
         </div>
 
         <p className="hero__subtitle">
-          Bridging the gap between academic theory and industrial excellence through a topological approach to Computer Science.
+          We transform fundamental LeetCode patterns into high-stakes **Thought Experiments**. Bridge the gap between theoretical epiphanies and industrial-grade execution.
         </p>
         
         <div className={clsx('buttons', styles.buttons)}>
           <Link
             className="button button--secondary button--lg hero-button-filled hero-experiments-button"
             to="/thought-experiments/">
-            View Thought Experiments 🧠
+            Take a Quest 🧠
           </Link>
           <Link
-            className="button button--primary button--lg hero-button-filled hero-booking-button"
+            className="button button--primary button--lg margin-left--md hero-button-filled hero-booking-button"
             to="/booking">
-            Book Tutoring Session
+            Book 1:1 Strategy Session
           </Link>
         </div>
       </div>
@@ -54,7 +54,6 @@ function HomepageHeader() {
 }
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
       title="Topological Computer Science Mastery"

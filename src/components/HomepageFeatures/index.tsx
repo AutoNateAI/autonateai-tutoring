@@ -5,38 +5,38 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: string; // Changed to string for direct path
+  Svg: string;
   description: React.ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Topological Journey',
+    title: 'Algorithm Mastery',
     Svg: 'img/career.svg',
     description: (
       <>
-        Visualize Computer Science not as a list of courses, but as a dense graph of interconnected 
-        concepts. Navigate the shortest path to high-signal mastery.
+        We don't just solve LeetCode problems; we build the mental models for graph traversal, 
+        dynamic programming, and recursion patterns that senior engineers use daily.
       </>
     ),
   },
   {
-    title: 'Research-Driven Logic',
+    title: 'System Architecture',
     Svg: 'img/research.svg',
     description: (
       <>
-        Our Thought Experiments translate the latest CS research into actionable coding challenges. 
-        Solve today's industrial problems with academic precision.
+        Move from "coding" to "architecting." Learn to reason about distributed systems, 
+        scalability, and database trade-offs with the precision of a lead engineer.
       </>
     ),
   },
   {
-    title: 'Personalized Architecting',
+    title: 'AI Agent Orchestration',
     Svg: 'img/tutoring.svg',
     description: (
       <>
-        Scale your intuition through 1:1 sessions. We don't just review code; we architect 
-        the mental models required for senior-level engineering.
+        Master the future of engineering. Architect autonomous agent loops and resilient 
+        toolchains that turn brittle AI scripts into task-oriented agentic systems.
       </>
     ),
   },
