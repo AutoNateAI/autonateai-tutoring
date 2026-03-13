@@ -79,10 +79,9 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
+          to: '/thought-experiments/',
           label: 'Thought Experiments',
+          position: 'left',
         },
         {
           to: '/booking', 
