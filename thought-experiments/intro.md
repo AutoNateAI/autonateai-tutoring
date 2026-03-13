@@ -10,7 +10,7 @@ Welcome to the **AutoNateAI Thought Experiment Engine**. This is where we bridge
 Our experiments are categorized by core Computer Science domains. Each one is designed to test your architectural intuition and coding precision.
 
 ## 🌟 Featured Experiment
-### [The Topology of Success: DAG Mastery](/thought-experiments/Algorithms-Data-Structures/dag-mastery)
+### [The Topology of Success: DAG Mastery](/thought-experiments/Algorithms-Data-Structures/Expert/dag-mastery)
 Can you treat your career as a Directed Acyclic Graph (DAG) and find the optimal path to mastery?
 - **Domain:** Algorithms & Data Structures
 - **Concepts:** Graph Theory, Longest Path Algorithms, DAGs.
