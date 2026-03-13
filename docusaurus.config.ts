@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'AutoNateAI | Engineering Mastery',
   tagline: 'Bridging the gap between academic theory and industrial excellence through topological CS mastery.',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.svg',
 
   future: {
     v4: true,

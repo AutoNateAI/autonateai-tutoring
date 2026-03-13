@@ -22,6 +22,7 @@
   --topo-glow: rgba(37, 194, 160, 0.4);
   --topo-node-main: #ffffff;
   --topo-node-accent: #25c2a0;
+  --topo-text-color: #ffffff;
 }
 
 /* DARK MODE: Consistent Blue/Teal Accents */
@@ -35,11 +36,12 @@
   --ifm-color-primary-lightest: #72a1ee;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
-  /* Topological SVG Variables (Dark Mode - More Neon) */
+  /* Topological SVG Variables (Dark Mode) */
   --topo-line: rgba(37, 194, 160, 0.3);
   --topo-glow: rgba(37, 194, 160, 0.8);
   --topo-node-main: #ffffff;
-  --topo-node-accent: #00ffcc; /* Brighter neon for dark mode */
+  --topo-node-accent: #00ffcc;
+  --topo-text-color: #000000; /* Black text in dark mode */
 }
 
 /* Hero Section: Enforced White Branding for High Signal */
@@ -49,7 +51,7 @@
 }
 
 .hero__title {
-  font-size: 5rem !important; /* Larger Title */
+  font-size: 5rem !important;
   font-weight: 900;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
@@ -59,7 +61,7 @@
 }
 
 .hero__subtitle {
-  color: #ffffff !important; /* Force white */
+  color: #ffffff !important;
   font-size: 1.5rem !important;
   font-weight: 500;
   max-width: 900px;

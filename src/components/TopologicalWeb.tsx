@@ -35,7 +35,7 @@ export default function TopologicalWeb() {
             <circle cx="400" cy="50" r="8" fill="var(--topo-node-main)">
               <animate attributeName="r" values="7;10;7" dur="3s" repeatCount="indefinite" />
             </circle>
-            <text x="400" y="30" fill="#ffffff" fontSize="24" fontWeight="900" textAnchor="middle" style={{ textTransform: 'uppercase', letterSpacing: '1px' }}>Foundations</text>
+            <text x="400" y="30" fill="var(--topo-text-color)" fontSize="24" fontWeight="900" textAnchor="middle" style={{ textTransform: 'uppercase', letterSpacing: '1px' }}>Foundations</text>
           </g>
 
           {/* Systems Node */}
@@ -43,7 +43,7 @@ export default function TopologicalWeb() {
             <circle cx="250" cy="150" r="8" fill="var(--topo-node-accent)">
               <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
             </circle>
-            <text x="235" y="158" fill="#ffffff" fontSize="20" fontWeight="800" textAnchor="end">Systems</text>
+            <text x="235" y="158" fill="var(--topo-text-color)" fontSize="20" fontWeight="800" textAnchor="end">Systems</text>
           </g>
 
           {/* Theory Node */}
@@ -51,7 +51,7 @@ export default function TopologicalWeb() {
             <circle cx="550" cy="150" r="8" fill="var(--topo-node-accent)">
               <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite" />
             </circle>
-            <text x="565" y="158" fill="#ffffff" fontSize="20" fontWeight="800" textAnchor="start">Theory</text>
+            <text x="565" y="158" fill="var(--topo-text-color)" fontSize="20" fontWeight="800" textAnchor="start">Theory</text>
           </g>
 
           {/* Applied Node */}
@@ -59,7 +59,7 @@ export default function TopologicalWeb() {
             <circle cx="400" cy="250" r="8" fill="var(--topo-node-accent)">
               <animate attributeName="r" values="7;10;7" dur="4s" repeatCount="indefinite" />
             </circle>
-            <text x="420" y="258" fill="#ffffff" fontSize="20" fontWeight="800" textAnchor="start">Applied</text>
+            <text x="420" y="258" fill="var(--topo-text-color)" fontSize="20" fontWeight="800" textAnchor="start">Applied</text>
           </g>
 
           {/* Mastery Node */}
