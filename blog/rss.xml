@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>AutoNateAI | Engineering Mastery Blog</title>
-        <link>https://AutoNateAI.github.io/autonateai-tutoring/blog</link>
+        <link>https://autonateai.com/blog</link>
         <description>AutoNateAI | Engineering Mastery Blog</description>
         <lastBuildDate>Fri, 13 Mar 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,24 +10,24 @@
         <language>en</language>
         <item>
             <title><![CDATA[Thought Experiment #1: The Topology of Success]]></title>
-            <link>https://AutoNateAI.github.io/autonateai-tutoring/blog/thought-experiment-1-graph-mastery</link>
-            <guid>https://AutoNateAI.github.io/autonateai-tutoring/blog/thought-experiment-1-graph-mastery</guid>
+            <link>https://autonateai.com/blog/thought-experiment-1-graph-mastery</link>
+            <guid>https://autonateai.com/blog/thought-experiment-1-graph-mastery</guid>
             <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to the first AutoNateAI Thought Experiment. Today, we're diving into the relationship between Graph Theory and your Career Path.]]></description>
             <content:encoded><![CDATA[<p>Welcome to the first <strong>AutoNateAI Thought Experiment</strong>. Today, we're diving into the relationship between <strong>Graph Theory</strong> and your <strong>Career Path</strong>.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-problem">The Problem<a href="https://autonateai.github.io/autonateai-tutoring/blog/thought-experiment-1-graph-mastery#the-problem" class="hash-link" aria-label="Direct link to The Problem" title="Direct link to The Problem" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-problem">The Problem<a href="https://autonateai.com/blog/thought-experiment-1-graph-mastery#the-problem" class="hash-link" aria-label="Direct link to The Problem" title="Direct link to The Problem" translate="no">​</a></h2>
 <p>Imagine your career as a directed acyclic graph (DAG). Each node is a skill or a course. Each edge represents a prerequisite or a connection between concepts.</p>
 <p><strong>Your Goal:</strong> Find the longest path in this graph. What does it represent? Is it the "hardest" route, or the one with the most value?</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-challenge">The Challenge<a href="https://autonateai.github.io/autonateai-tutoring/blog/thought-experiment-1-graph-mastery#the-challenge" class="hash-link" aria-label="Direct link to The Challenge" title="Direct link to The Challenge" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-challenge">The Challenge<a href="https://autonateai.com/blog/thought-experiment-1-graph-mastery#the-challenge" class="hash-link" aria-label="Direct link to The Challenge" title="Direct link to The Challenge" translate="no">​</a></h3>
 <ol>
 <li class=""><strong>Clone the Starter Repo:</strong> <code>https://github.com/AutoNateAI/challenge-dag-mastery</code> (Placeholder)</li>
 <li class=""><strong>Analyze the UML/Mermaid Designs:</strong> Inside the <code>/docs</code> folder, you'll find the architecture for a "Career Path Optimizer."</li>
 <li class=""><strong>Submit Your Code:</strong> Implement the <code>findLongestPath</code> algorithm and submit a Pull Request.</li>
 </ol>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-matters">Why This Matters<a href="https://autonateai.github.io/autonateai-tutoring/blog/thought-experiment-1-graph-mastery#why-this-matters" class="hash-link" aria-label="Direct link to Why This Matters" title="Direct link to Why This Matters" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-matters">Why This Matters<a href="https://autonateai.com/blog/thought-experiment-1-graph-mastery#why-this-matters" class="hash-link" aria-label="Direct link to Why This Matters" title="Direct link to Why This Matters" translate="no">​</a></h2>
 <p>Companies aren't looking for people who can just code. They want engineers who understand the <strong>topology</strong> of their systems. If you can solve this, you're one step closer to mastering the "Software Engineer" node in your journey.</p>
 <hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="need-a-hint">Need a Hint?<a href="https://autonateai.github.io/autonateai-tutoring/blog/thought-experiment-1-graph-mastery#need-a-hint" class="hash-link" aria-label="Direct link to Need a Hint?" title="Direct link to Need a Hint?" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="need-a-hint">Need a Hint?<a href="https://autonateai.com/blog/thought-experiment-1-graph-mastery#need-a-hint" class="hash-link" aria-label="Direct link to Need a Hint?" title="Direct link to Need a Hint?" translate="no">​</a></h3>
 <p>Building the graph is the easy part. Managing the state of your learning journey is where the genius lies. If you're stuck, <a href="https://calendar.google.com/calendar/appointments/schedules/" target="_blank" rel="noopener noreferrer" class="">book a 1:1 session</a> and we'll map it out together.</p>]]></content:encoded>
             <category>algorithms</category>
             <category>graphs</category>
@@ -35,8 +35,8 @@
         </item>
         <item>
             <title><![CDATA[Welcome]]></title>
-            <link>https://AutoNateAI.github.io/autonateai-tutoring/blog/welcome</link>
-            <guid>https://AutoNateAI.github.io/autonateai-tutoring/blog/welcome</guid>
+            <link>https://autonateai.com/blog/welcome</link>
+            <guid>https://autonateai.com/blog/welcome</guid>
             <pubDate>Thu, 26 Aug 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></description>
             <content:encoded><![CDATA[<p><a href="https://docusaurus.io/docs/blog" target="_blank" rel="noopener noreferrer" class="">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog" target="_blank" rel="noopener noreferrer" class="">blog plugin</a>.</p>
@@ -49,7 +49,7 @@
 <li class=""><code>2019-05-30-welcome/index.md</code></li>
 </ul>
 <p>A blog post folder can be convenient to co-locate blog post images:</p>
-<p><img decoding="async" loading="lazy" alt="Docusaurus Plushie" src="https://autonateai.github.io/autonateai-tutoring/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Docusaurus Plushie" src="https://autonateai.com/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_ev3q"></p>
 <p>The blog supports tags as well!</p>
 <p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content:encoded>
             <category>Facebook</category>
@@ -58,8 +58,8 @@
         </item>
         <item>
             <title><![CDATA[MDX Blog Post]]></title>
-            <link>https://AutoNateAI.github.io/autonateai-tutoring/blog/mdx-blog-post</link>
-            <guid>https://AutoNateAI.github.io/autonateai-tutoring/blog/mdx-blog-post</guid>
+            <link>https://autonateai.com/blog/mdx-blog-post</link>
+            <guid>https://autonateai.com/blog/mdx-blog-post</guid>
             <pubDate>Sun, 01 Aug 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></description>
             <content:encoded><![CDATA[<p>Blog posts support <a href="https://docusaurus.io/docs/markdown-features" target="_blank" rel="noopener noreferrer" class="">Docusaurus Markdown features</a>, such as <a href="https://mdxjs.com/" target="_blank" rel="noopener noreferrer" class="">MDX</a>.</p>
@@ -72,8 +72,8 @@
         </item>
         <item>
             <title><![CDATA[Long Blog Post]]></title>
-            <link>https://AutoNateAI.github.io/autonateai-tutoring/blog/long-blog-post</link>
-            <guid>https://AutoNateAI.github.io/autonateai-tutoring/blog/long-blog-post</guid>
+            <link>https://autonateai.com/blog/long-blog-post</link>
+            <guid>https://autonateai.com/blog/long-blog-post</guid>
             <pubDate>Wed, 29 May 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[This is the summary of a very long blog post,]]></description>
             <content:encoded><![CDATA[<p>This is the summary of a very long blog post,</p>
@@ -99,8 +99,8 @@
         </item>
         <item>
             <title><![CDATA[First Blog Post]]></title>
-            <link>https://AutoNateAI.github.io/autonateai-tutoring/blog/first-blog-post</link>
-            <guid>https://AutoNateAI.github.io/autonateai-tutoring/blog/first-blog-post</guid>
+            <link>https://autonateai.com/blog/first-blog-post</link>
+            <guid>https://autonateai.com/blog/first-blog-post</guid>
             <pubDate>Tue, 28 May 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[Lorem ipsum dolor sit amet...]]></description>
             <content:encoded><![CDATA[<p>Lorem ipsum dolor sit amet...</p>
