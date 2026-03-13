@@ -25,16 +25,22 @@ Our security system is ignoring them as "authorized traffic," allowing them to p
 
 ## Act II: The Tech Tree
 
-To survive this mission, you must have synchronized the following nodes in your neural architecture:
+To survive this mission, you must have synchronized the following nodes in your neural architecture. Note the interconnected dependencies—failure in one node destabilizes the entire shield.
 
 ```mermaid
 graph TD
-    A[Linear Algebra] --> B[Gradient Descent]
-    B --> C[Neural Network Training]
-    C --> D[Loss Functions & Backprop]
-    D --> E[FGSM Attack Logic]
-    E --> F[Adversarial Defense]
-    F --> G[MASTERY: Laker Shield]
+    Math[Discrete Math & Stats] --> Logic[Boolean Logic]
+    Math --> Calculus[Multivariable Calculus]
+    Calc[Linear Algebra] --> Grad[Gradient Descent]
+    Calculus --> Grad
+    Grad --> NN[Neural Network Training]
+    Logic --> Data[Data Sanitization]
+    NN --> Loss[Loss Functions & Backprop]
+    Data --> Loss
+    Loss --> FGSM[FGSM Attack Logic]
+    Loss --> Distill[Defensive Distillation]
+    FGSM --> Shield[MASTERY: Laker Shield]
+    Distill --> Shield
 ```
 
 ---
