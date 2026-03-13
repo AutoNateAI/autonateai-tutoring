@@ -40,7 +40,7 @@ const sessions: BookingCardProps[] = [
     time: 'Mon - Fri | 4:00 PM - 6:00 PM',
     location: 'Virtual / Google Meet',
     topics: ['Data Structures', 'Algorithms', 'Discrete Math'],
-    description: 'Deep dive into the foundations. We'll solve complex problems from first principles.',
+    description: "Deep dive into the foundations. We'll solve complex problems from first principles.",
     link: 'https://calendar.google.com/calendar/appointments/schedules/',
   },
   {
