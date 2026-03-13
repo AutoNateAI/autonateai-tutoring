@@ -18,11 +18,10 @@
   --autonate-teal: #25c2a0;
   
   /* Topological SVG Variables (Light Mode) */
-  --topo-line: rgba(255, 255, 255, 0.2);
-  --topo-glow: rgba(37, 194, 160, 0.4);
+  --topo-line: rgba(255, 255, 255, 0.3);
   --topo-node-main: #ffffff;
   --topo-node-accent: #25c2a0;
-  --topo-text-color: #ffffff;
+  --topo-text-color: #ffffff; /* Contrast on primary blue hero */
 }
 
 /* DARK MODE: Consistent Blue/Teal Accents */
@@ -37,11 +36,10 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
   /* Topological SVG Variables (Dark Mode) */
-  --topo-line: rgba(37, 194, 160, 0.3);
-  --topo-glow: rgba(37, 194, 160, 0.8);
+  --topo-line: rgba(37, 194, 160, 0.4);
   --topo-node-main: #ffffff;
-  --topo-node-accent: #00ffcc;
-  --topo-text-color: #000000; /* Black text in dark mode */
+  --topo-node-accent: #25c2a0;
+  --topo-text-color: #cbd5e0; /* Subtle slate-white for dark mode elegance */
 }
 
 /* Hero Section: Enforced White Branding for High Signal */

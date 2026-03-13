@@ -8,16 +8,6 @@ export default function TopologicalWeb() {
         preserveAspectRatio="xMidYMid meet"
         style={{ width: '100%', height: '100%', overflow: 'visible' }}
       >
-        <defs>
-          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
-
         {/* Traceable Connection Lines */}
         <g stroke="var(--topo-line)" strokeWidth="3" fill="none">
           <path d="M400 50 L250 150 L400 250 L400 310" strokeDasharray="15,8">
@@ -29,7 +19,7 @@ export default function TopologicalWeb() {
         </g>
 
         {/* Nodes and Labels */}
-        <g filter="url(#glow)">
+        <g>
           {/* Foundations Node */}
           <g>
             <circle cx="400" cy="50" r="8" fill="var(--topo-node-main)">
