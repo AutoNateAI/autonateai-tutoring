@@ -18,9 +18,9 @@
   --autonate-teal: #25c2a0;
   
   /* Brand Specific Highlights */
-  --color-um-maize: #FFCB05;
-  --color-ms-blue: #00A4EF;
-  --color-high-signal-red: #ff4d4d;
+  --color-brand-maize: #FFCB05;
+  --color-job-blue: #00A4EF;
+  --color-focus-red: #ff4d4d;
   
   /* Topological SVG Variables (Light Mode) */
   --topo-line: rgba(255, 255, 255, 0.3);
@@ -48,9 +48,9 @@
 }
 
 /* Highlight Components */
-.highlight-um { color: var(--color-um-maize); font-weight: 800; }
-.highlight-brand { color: var(--color-ms-blue); font-weight: 800; }
-.highlight-title { color: var(--color-high-signal-red); font-weight: 800; }
+.highlight-brand { color: var(--color-brand-maize); font-weight: 800; }
+.highlight-job { color: var(--color-job-blue); font-weight: 800; }
+.highlight-focus { color: var(--color-focus-red); font-weight: 800; }
 .highlight-mastery { color: var(--autonate-teal); font-weight: 800; }
 
 /* Hero Section: Enforced White Branding */
