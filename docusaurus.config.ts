@@ -105,7 +105,7 @@ const config: Config = {
           items: [
             {
               label: 'CS Mastery Map',
-              to: '/docs/intro',
+              to: '/docs/cs-journey/intro',
             },
           ],
         },

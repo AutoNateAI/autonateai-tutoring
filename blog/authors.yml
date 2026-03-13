@@ -1,3 +1,13 @@
+nate:
+  name: Nate
+  title: Founder of AutoNateAI
+  url: https://github.com/AutoNateAI
+  image_url: https://github.com/AutoNateAI.png
+  page: true
+  socials:
+    x: autonateai
+    github: AutoNateAI
+
 yangshun:
   name: Yangshun Tay
   title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
