@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'AutoNateAI',
-  tagline: 'Engineering the future of Computer Science mastery.',
+  title: 'AutoNateAI | Engineering Mastery',
+  tagline: 'Bridging the gap between academic theory and industrial excellence.',
   favicon: 'img/favicon.ico',
 
   future: {
