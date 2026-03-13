@@ -10,7 +10,7 @@ export default function EpiphanyEngine() {
             <stop offset="100%" style={{ stopColor: '#25c2a0' }} />
           </linearGradient>
           
-          <filter id="glowSubtle" x="-20%" y="-20%" width="140%" height="140%">
+          <filter id="glowSubtleNode" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="2" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
           </filter>
@@ -31,8 +31,8 @@ export default function EpiphanyEngine() {
         </circle>
 
         {/* Mind Node (The Epiphany) */}
-        <g filter="url(#glowSubtle)">
-          <circle cx="50" cy="60" r="15" fill="#3578e5" opacity="0.2">
+        <g>
+          <circle cx="50" cy="60" r="15" fill="#3578e5" opacity="0.2" filter="url(#glowSubtleNode)">
             <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite" />
           </circle>
           <circle cx="50" cy="60" r="6" fill="#3578e5" />
@@ -40,7 +40,7 @@ export default function EpiphanyEngine() {
         </g>
 
         {/* Digital Node (The Computer) */}
-        <g filter="url(#glowSubtle)">
+        <g>
           <rect x="235" y="45" width="30" height="30" rx="4" fill="var(--ifm-color-emphasis-200)" opacity="0.1" />
           <path d="M240 50 L260 50 L260 70 L240 70 Z" fill="none" stroke="var(--autonate-teal)" strokeWidth="1" />
           <circle cx="250" cy="60" r="4" fill="var(--autonate-teal)">
@@ -49,11 +49,11 @@ export default function EpiphanyEngine() {
           <text x="250" y="95" fill="var(--topo-text-color)" fontSize="10" fontWeight="800" textAnchor="middle">COMPUTER</text>
         </g>
 
-        {/* Physical Node (Mastery) */}
-        <g filter="url(#glowSubtle)">
+        {/* Physical Node (Reality) */}
+        <g>
           <path d="M535 45 L565 60 L535 75 Z" fill="#25c2a0" />
-          <text x="550" y="95" fill="var(--topo-text-color)" fontSize="10" fontWeight="800" textAnchor="middle">MASTERY</text>
-          <circle cx="550" cy="60" r="20" fill="none" stroke="#25c2a0" strokeWidth="1" opacity="0.5">
+          <text x="550" y="95" fill="var(--topo-text-color)" fontSize="10" fontWeight="800" textAnchor="middle">REALITY</text>
+          <circle cx="550" cy="60" r="20" fill="none" stroke="#25c2a0" strokeWidth="1" opacity="0.5" filter="url(#glowSubtleNode)">
             <animate attributeName="r" values="10;30" dur="1.5s" repeatCount="indefinite" />
             <animate attributeName="opacity" values="0.5;0" dur="1.5s" repeatCount="indefinite" />
           </circle>
