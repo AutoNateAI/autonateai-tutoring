@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkautonateai_tutoring=globalThis.webpackChunkautonateai_tutoring||[]).push([[1903],{1912(t){t.exports=JSON.parse('{"blogBasePath":"/autonateai-tutoring/blog","blogTitle":"Blog","authorsListPath":"/autonateai-tutoring/blog/authors"}')}}]);
