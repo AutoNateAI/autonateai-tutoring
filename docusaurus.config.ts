@@ -42,26 +42,12 @@ const config: Config = {
       'classic',
       {
         docs: {
+          path: 'thought-experiments',
+          routeBasePath: 'thought-experiments',
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -71,11 +57,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
-    colorMode: {
-      respectPrefersColorScheme: true,
-    },
     navbar: {
       title: 'AutoNateAI Tutoring',
       logo: {
@@ -87,62 +68,34 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'CS Journey',
+          label: 'Thought Experiments',
         },
-        {to: '/blog', label: 'Thought Experiments', position: 'left'},
-        {
-          href: 'https://calendar.google.com/calendar/appointments/schedules/',
-          label: 'Book Tutoring 📅',
-          position: 'right',
-          className: 'button button--primary margin-left--md',
-        },
-        {
-          href: 'https://github.com/AutoNateAI/autonateai-tutoring',
-          label: 'GitHub',
-          position: 'right',
-        },
+        {to: '/booking', label: 'Book Tutoring 📅', position: 'right', className: 'button button--primary margin-left--md'},
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Journey',
-          items: [
-            {
-              label: 'CS Mastery Map',
-              to: '/docs/cs-journey/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/autonateai',
-            },
-          ],
-        },
-        {
-          title: 'More',
+          title: 'Explore',
           items: [
             {
               label: 'Thought Experiments',
-              to: '/blog',
+              to: '/thought-experiments/intro',
             },
+          ],
+        },
+        {
+          title: 'Tutoring',
+          items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/AutoNateAI/autonateai-tutoring',
+              label: 'Book a Session',
+              to: '/booking',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} AutoNateAI Tutoring. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} AutoNateAI Tutoring.`,
     },
     prism: {
       theme: prismThemes.github,

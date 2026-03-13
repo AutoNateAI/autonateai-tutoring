@@ -22,13 +22,13 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/cs-journey/intro">
-            View the CS Journey Map 🗺️
+            to="/thought-experiments/intro">
+            View Today's Thought Experiment 🧠
           </Link>
           <Link
             className="button button--outline button--secondary button--lg margin-left--md"
-            to="/blog">
-            Solve Today's Thought Experiment 🧠
+            to="/booking">
+            Book 1:1 Tutoring 📅
           </Link>
         </div>
       </div>
