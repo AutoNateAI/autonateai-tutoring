@@ -5,38 +5,38 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg: string; // Changed to string for direct path
   description: React.ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'CS Journey Mapping',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Topological Journey',
+    Svg: 'img/career.svg',
     description: (
       <>
-        Visualize your progress through a topological map of Computer Science. 
-        Track where you are and where you're going—beyond just a syllabus.
+        Visualize Computer Science not as a list of courses, but as a dense graph of interconnected 
+        concepts. Navigate the shortest path to high-signal mastery.
       </>
     ),
   },
   {
-    title: 'Daily Thought Experiments',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Research-Driven Logic',
+    Svg: 'img/research.svg',
     description: (
       <>
-        Apply your knowledge to real-world problems inspired by current research. 
-        Solve challenges and build a portfolio of high-signal code.
+        Our Thought Experiments translate the latest CS research into actionable coding challenges. 
+        Solve today's industrial problems with academic precision.
       </>
     ),
   },
   {
-    title: '1:1 Expert Tutoring',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Personalized Architecting',
+    Svg: 'img/tutoring.svg',
     description: (
       <>
-        Accelerate your mastery with personalized guidance. From debugging 
-        fundamental concepts to architecting production-ready systems.
+        Scale your intuition through 1:1 sessions. We don't just review code; we architect 
+        the mental models required for senior-level engineering.
       </>
     ),
   },
@@ -46,7 +46,7 @@ function Feature({title, Svg, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img src={Svg} className={styles.featureSvg} alt={title} />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
