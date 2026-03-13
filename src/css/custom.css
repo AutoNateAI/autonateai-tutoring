@@ -21,7 +21,7 @@
   --topo-line: rgba(255, 255, 255, 0.3);
   --topo-node-main: #ffffff;
   --topo-node-accent: #25c2a0;
-  --topo-text-color: #ffffff;
+  --topo-text-color: #ffffff; 
 }
 
 /* DARK MODE: Consistent Blue/Teal Accents */
@@ -52,7 +52,7 @@
 }
 
 .hero__title {
-  font-size: 2.8rem !important; /* Slightly smaller for tighter wrap on mobile */
+  font-size: 2.8rem !important;
   font-weight: 900;
   color: #ffffff !important;
   margin-bottom: 1rem;
@@ -88,30 +88,14 @@
 
 /* Animations */
 @keyframes wordSlam {
-  0% {
-    opacity: 0;
-    transform: scale(5);
-    filter: blur(10px);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-  }
+  0% { opacity: 0; transform: scale(5); filter: blur(10px); }
+  70% { transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0); }
 }
 
 @keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .slam-word {
@@ -120,7 +104,6 @@
   animation: wordSlam 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-/* SVG Scaling Animation */
 .hero-svg-wrapper {
   opacity: 0;
   transform: scale(0.5);
@@ -129,7 +112,6 @@
   width: 100%;
 }
 
-/* Hero Button Base Styling */
 .hero-button-filled {
   border: none !important;
   font-weight: 800;
@@ -159,15 +141,29 @@
   animation-delay: 2.6s;
 }
 
-.buttons {
-  flex-direction: column;
-  gap: 1rem;
+.hero-button-filled:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  color: #ffffff !important;
+  opacity: 1;
 }
 
-@media (min-width: 768px) {
-  .buttons {
-    flex-direction: row;
-  }
+/* Navbar Force Style: Fixes the color change on active/hover */
+.navbar .nav-booking-button,
+.navbar .nav-booking-button:hover,
+.navbar .nav-booking-button.navbar__link--active {
+  background-color: var(--autonate-teal) !important;
+  border: none !important;
+  font-weight: bold;
+  color: #ffffff !important;
+  border-radius: 4px;
+  text-decoration: none !important;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+}
+
+.navbar__title {
+  font-weight: 800;
 }
 
 /* Animated SVG Container Fixes */
@@ -180,12 +176,12 @@
   align-items: center;
   justify-content: center;
   overflow: visible !important;
-  transform: scale(1.15); /* Reduced scale to prevent side cutoff */
+  transform: scale(1.15);
 }
 
 @media (min-width: 768px) {
   .topological-web-container {
     height: 350px;
-    transform: scale(1); /* Reset scale for desktop */
+    transform: scale(1);
   }
 }

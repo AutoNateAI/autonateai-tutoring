@@ -9,7 +9,7 @@ interface BookingCardProps {
   price: string;
   topics: string[];
   link: string;
-  description: string;
+  description: string | React.ReactNode;
 }
 
 const BookingCard = ({ title, price, topics, link, description }: BookingCardProps) => (
@@ -21,7 +21,7 @@ const BookingCard = ({ title, price, topics, link, description }: BookingCardPro
       </div>
       <div className="card__body">
         <p><strong>💡 Focus:</strong> {topics.join(', ')}</p>
-        <p>{description}</p>
+        <div>{description}</div>
       </div>
       <div className="card__footer">
         <a href={link} target="_blank" rel="noopener noreferrer" className="button button--primary button--block">
@@ -34,31 +34,47 @@ const BookingCard = ({ title, price, topics, link, description }: BookingCardPro
 
 const sessions: BookingCardProps[] = [
   {
-    title: 'Algorithm & Interview Prep',
+    title: 'Graph Theory & Algorithm Prep',
     price: '$150 / hour',
-    topics: ['Graph Traversal', 'Dynamic Programming', 'Recursion Patterns'],
-    description: "Course rescue and interview readiness. We move beyond 'memorizing solutions' to building the mental models required to solve LeetCode Medium/Hard problems on the fly.",
+    topics: ['BFS/DFS', 'Shortest Path', 'Topological Sort', 'Cycle Detection'],
+    description: (
+      <p>
+        Course rescue and interview readiness focused on <b>Graph-based problems</b>. We move beyond "memorizing solutions" to building the mental models required to solve complex traversal and connectivity challenges on the fly.
+      </p>
+    ),
     link: 'https://calendar.google.com/calendar/appointments/schedules/',
   },
   {
     title: 'System Design & Architecture',
     price: '$200 / hour',
     topics: ['Distributed Systems', 'Scalability', 'Trade-off Analysis'],
-    description: 'Coaching for mid-to-senior transitions. Learn to reason about distributed databases, caching layers, and high-availability systems with the precision of a lead engineer.',
+    description: (
+      <p>
+        Coaching for mid-to-senior transitions. Learn to reason about <b>distributed databases, caching layers, and high-availability systems</b> with the precision of a lead engineer.
+      </p>
+    ),
     link: 'https://calendar.google.com/calendar/appointments/schedules/',
   },
   {
     title: 'AI Agent Workflow Consulting',
     price: '$250 / hour',
     topics: ['Agent Orchestration', 'Autonomous Toolchains', 'Prompt Architecture'],
-    description: 'For founders and builders. We debug and architect autonomous agent loops, moving from brittle AI scripts to resilient, task-oriented agentic systems.',
+    description: (
+      <p>
+        For founders and builders. We debug and architect <b>autonomous agent loops</b>, moving from brittle AI scripts to resilient, task-oriented agentic systems.
+      </p>
+    ),
     link: 'https://calendar.google.com/calendar/appointments/schedules/',
   },
   {
     title: 'Custom Technical Tutoring',
     price: 'Contact for Quote',
     topics: ['OS Kernels', 'Compilers', 'Applied Cryptography', 'Etc.'],
-    description: 'Deep-dive support for specialized CS topics outside our primary tracks. Tailored sessions for advanced research or unique industrial bottlenecks.',
+    description: (
+      <p>
+        Deep-dive support for <b>specialized CS topics</b> outside our primary tracks. Tailored sessions for advanced research or unique industrial bottlenecks.
+      </p>
+    ),
     link: 'https://calendar.google.com/calendar/appointments/schedules/',
   },
 ];
@@ -68,29 +84,36 @@ export default function BookingPage(): React.JSX.Element {
     <Layout title="Book Your 1:1 Strategy Session" description="Schedule a personalized 1:1 tutoring session with Nate to accelerate your journey to mastery.">
       <main className="container padding-vert--xl">
         
-        {/* Instructor Section */}
-        <section className="row margin-bottom--xl" style={{ alignItems: 'center', backgroundColor: 'var(--ifm-color-emphasis-100)', borderRadius: '12px', padding: '2rem' }}>
-          <div className="col col--3 text--center">
-            <img 
-              src="https://github.com/AutoNateAI.png" 
-              alt="Nate - AutoNateAI Instructor" 
-              style={{ borderRadius: '50%', width: '150px', border: '4px solid var(--ifm-color-primary)' }}
-            />
-          </div>
-          <div className="col col--9">
-            <Heading as="h2">Meet Your Instructor: Nate</Heading>
-            <p style={{ fontSize: '1.1rem' }}>
-              I am a former **Senior Software Consultant and Developer at Atomic Object**, where I specialized in building complex distributed systems and mentoring engineering teams.
-            </p>
-            <p>
-              My approach to tutoring is built on **topological clarity**. I don't just help you fix bugs; I help you map the conceptual dependencies of Computer Science. Whether we're traversing a graph or architecting an AI agent loop, my goal is to spark the epiphany that turns theory into industrial-grade mastery.
-            </p>
+        {/* Detailed Instructor Section */}
+        <section className="margin-bottom--xl" style={{ backgroundColor: 'var(--ifm-color-emphasis-100)', borderRadius: '12px', padding: '2.5rem' }}>
+          <div className="row" style={{ alignItems: 'center' }}>
+            <div className="col col--3 text--center">
+              <img 
+                src="/img/nate-instructor.jpg" 
+                alt="Nate - AutoNateAI Instructor" 
+                style={{ borderRadius: '50%', width: '180px', border: '4px solid var(--ifm-color-primary)', marginBottom: '1rem' }}
+              />
+              <Heading as="h3">Nate</Heading>
+              <p>Founder & Sr. Architect</p>
+            </div>
+            <div className="col col--9">
+              <Heading as="h2">The Mission Behind the Mastery</Heading>
+              <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+                I graduated from the <b>University of Michigan (2019)</b> with a focus on <b>Software Systems and Security</b>. My career has been a journey through the world's most sophisticated technical ecosystems, from <b>Microsoft's Threat Protection Team</b> to <b>Citibank's</b> global infrastructure.
+              </p>
+              <p style={{ lineHeight: '1.6' }}>
+                As a former <b>Senior Software Consultant at Atomic Object</b> and <b>AI Software Engineer at Veterans United</b>, I've spent years designing architectures that provide competitive advantages. I’ve led agentic AI projects, engineered advanced prompt-driven workflows, and mentored engineering teams at every level.
+              </p>
+              <p style={{ lineHeight: '1.6' }}>
+                I founded <b>AutoNateAI</b> with one mission: <b>to convert more humans into deep thinkers</b>. I don't just teach you how to pass a test; I teach you how to translate mental epiphanies into industrial reality.
+              </p>
+            </div>
           </div>
         </section>
 
         <div className="text--center margin-bottom--xl">
-          <Heading as="h1">1:1 Strategy Sessions</Heading>
-          <p className="hero__subtitle">Select a mission track below to begin your transformation.</p>
+          <Heading as="h1" style={{ fontSize: '3rem' }}>1:1 Strategy Sessions</Heading>
+          <p className="hero__subtitle">Select a mission track below to begin your transformation from thought to mastery.</p>
         </div>
 
         <div className="row">
