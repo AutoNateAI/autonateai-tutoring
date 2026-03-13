@@ -53,8 +53,15 @@
 .highlight-focus { color: var(--color-focus-red); font-weight: 800; }
 .highlight-mastery { color: var(--autonate-teal); font-weight: 800; }
 
-/* Booking Card Label & Button Fix: Enforced White */
-.card .badge--secondary,
+/* Booking Card Label & Button Fix: Enforced High Contrast */
+.card .badge--secondary {
+  background-color: var(--ifm-color-primary-darkest) !important; /* Dark Blue background */
+  color: #ffffff !important;
+  font-weight: 800;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .card .button--primary {
   color: #ffffff !important;
   font-weight: bold;
