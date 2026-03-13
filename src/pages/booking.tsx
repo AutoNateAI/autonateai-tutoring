@@ -84,14 +84,14 @@ export default function BookingPage(): React.JSX.Element {
     <Layout title="Book Your 1:1 Strategy Session" description="Schedule a personalized 1:1 tutoring session with Nate to accelerate your journey to mastery.">
       <main className="container padding-vert--xl">
         
-        {/* Responsive Instructor Section with Padding & Rounded Image */}
+        {/* Restored High-Impact Instructor Section */}
         <section className="margin-bottom--xl shadow--lw" style={{ backgroundColor: 'var(--ifm-color-emphasis-100)', borderRadius: '16px', overflow: 'hidden' }}>
-          <div className="row no-gutters" style={{ alignItems: 'center' }}>
-            <div className="col col--5 padding--lg">
+          <div className="row no-gutters" style={{ alignItems: 'stretch' }}>
+            <div className="col col--5">
               <img 
                 src="/img/nate-instructor.jpg" 
                 alt="Nate - AutoNateAI Instructor" 
-                style={{ width: '100%', height: 'auto', borderRadius: '12px', objectFit: 'cover', display: 'block' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '450px', objectPosition: 'center 20%' }}
               />
             </div>
             <div className="col col--7 padding--xl">
@@ -103,7 +103,7 @@ export default function BookingPage(): React.JSX.Element {
                 As a former <span className="highlight-job">Sr. Software Consultant</span> at <span className="highlight-brand">Atomic Object</span> and <span className="highlight-job">AI Software Engineer</span> at <span className="highlight-brand">Veterans United</span>, I've spent years designing architectures that provide competitive advantages. I’ve led agentic AI projects, engineered advanced prompt-driven workflows, and mentored engineering teams at every level.
               </p>
               <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '0' }}>
-                I founded <b>AutoNateAI</b> with one mission: <span className="highlight-mastery">to convert more humans into deep thinkers</span>. I don't just teach you how to pass a test; I teach you how to translate mental epiphanies into industrial reality.
+                I founded <span className="highlight-job">AutoNateAI</span> with one mission: <span className="highlight-mastery" style={{ textTransform: 'uppercase' }}>to convert more humans into deep thinkers</span>. I don't just teach you how to pass a test; I teach you how to translate mental epiphanies into industrial reality.
               </p>
             </div>
           </div>
