@@ -1,27 +1,50 @@
 ---
 sidebar_position: 1
+slug: /
 ---
 
-# Thought Experiments
+# Thought Experiment Engine
 
-Welcome to the **AutoNateAI Thought Experiment Engine**. These aren't just coding tutorials; they are research-driven deep dives designed to shift your perspective on software engineering.
+Welcome to the **AutoNateAI Thought Experiment Engine**. This is where we bridge the gap between academic theory and production-level mastery.
 
-Each experiment begins with a high-level conceptual problem, supported by UML/Mermaid designs, and culminates in a production-ready implementation challenge.
+Our experiments are categorized by core Computer Science domains. Each one is designed to test your architectural intuition and coding precision.
 
 ## 🌟 Featured Experiment
-### [The Topology of Success: Graph-Based Career Optimization](./archive/dag-mastery)
+### [The Topology of Success: DAG Mastery](./Algorithms-Data-Structures/dag-mastery)
 Can you treat your career as a Directed Acyclic Graph (DAG) and find the optimal path to mastery?
-- **Key Concepts:** Graph Theory, Longest Path Algorithms, DAGs.
-- **Goal:** Implement a career path optimizer based on prerequisite nodes.
+- **Domain:** Algorithms & Data Structures
+- **Concepts:** Graph Theory, Longest Path Algorithms, DAGs.
 
 ---
 
-## How it Works
-1. **Analyze:** Read the conceptual breakdown and architecture diagrams.
-2. **Implement:** Clone the starter repository and apply your solution.
-3. **Submit:** Open a Pull Request for feedback.
-4. **Master:** [Book a 1:1 session](/booking) to discuss your approach and deep-dive into the concepts.
+## Explore by Domain
+
+Select a domain below to view current and archived experiments:
+
+### 🧩 [Algorithms & Data Structures](./Algorithms-Data-Structures)
+Deep dives into complexity, recursion, and advanced data structures (Trees, Graphs, DP).
+
+### 🤖 [AI & Machine Learning](./AI-Machine-Learning)
+Research-driven experiments in AI Systems, MLOps, and Trustworthy AI.
+
+### 🏗️ [Software Engineering](./Software-Engineering)
+Mastering TDD, Design Patterns, SOLID principles, and CI/CD pipelines.
+
+### 💻 [Systems Programming](./Systems-Programming)
+The low-level world of C, Pointers, Memory Management, and Inter-process Communication.
+
+### 🏛️ [Computer Architecture](./Computer-Architecture)
+Understanding Logic Circuits, CPU Design, Pipelining, and Memory Hierarchies.
+
+### 🗄️ [Data & Databases](./Data-Databases)
+Advanced SQL, Relational Modeling, Normalization, and Indexing strategies.
+
+### 🌐 [Networking & Security](./Networking-Security)
+The backbone of the internet: OSI Layers, TCP/IP, Cryptography, and Network Security.
+
+### ⚖️ [Ethics & Professionalism](./Ethics-Professionalism)
+Navigating the social impact of computing, privacy, and career strategy.
 
 ---
 
-*Ready to prove your genius? Explore the [Experiment Archive](./archive/overview).*
+*Ready to accelerate your journey? [Book a 1:1 session](/booking) to deep-dive into any of these topics.*
