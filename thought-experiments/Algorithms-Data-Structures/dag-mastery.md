@@ -2,26 +2,32 @@
 sidebar_position: 1
 ---
 
-# Thought Experiments
+# The Topology of Success: DAG Mastery
 
-Welcome to the **AutoNateAI Thought Experiment Engine**. These aren't just coding tutorials; they are research-driven deep dives designed to shift your perspective on software engineering.
+Can you treat your career as a **Directed Acyclic Graph (DAG)**?
 
-Each experiment begins with a high-level conceptual problem, supported by UML/Mermaid designs, and culminates in a production-ready implementation challenge.
+## The Conceptual Problem
 
-## 🌟 Featured Experiment
-### [The Topology of Success: Graph-Based Career Optimization](./archive/dag-mastery)
-Can you treat your career as a Directed Acyclic Graph (DAG) and find the optimal path to mastery?
-- **Key Concepts:** Graph Theory, Longest Path Algorithms, DAGs.
-- **Goal:** Implement a career path optimizer based on prerequisite nodes.
+Most people see their career as a linear path. But a career is actually a graph of prerequisites and outcomes. To reach the node of "Senior Software Engineer," you must traverse through several prerequisite nodes like "Data Structures," "Operating Systems," and "Production-Level Projects."
+
+### The Challenge
+
+Your task is to implement an algorithm that identifies the longest path (most mastery-dense) in a given career DAG.
+
+1. **Clone the Repo:** `https://github.com/AutoNateAI/challenge-dag-mastery`
+2. **Analyze the Mermaid Design:**
+   ```mermaid
+   graph TD
+       A[Discrete Math] --> B[Data Structures]
+       B --> C[Algorithms]
+       C --> D[System Design]
+       D --> E[Senior Engineer]
+       B --> F[Backend Engineering]
+       F --> D
+   ```
+3. **Submit Your PR:** Your implementation must handle cycles (it should fail if not a DAG) and provide the optimal path of mastery.
 
 ---
 
-## How it Works
-1. **Analyze:** Read the conceptual breakdown and architecture diagrams.
-2. **Implement:** Clone the starter repository and apply your solution.
-3. **Submit:** Open a Pull Request for feedback.
-4. **Master:** [Book a 1:1 session](/booking) to discuss your approach and deep-dive into the concepts.
-
----
-
-*Ready to prove your genius? Explore the [Experiment Archive](./archive/overview).*
+### Need a Deep Dive?
+If you're stuck on the graph theory behind this experiment, [book a 1:1 session](/booking) and we'll break it down from first principles.

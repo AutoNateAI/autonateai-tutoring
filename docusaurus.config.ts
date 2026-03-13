@@ -81,7 +81,7 @@ const config: Config = {
           items: [
             {
               label: 'Thought Experiments',
-              to: '/thought-experiments/intro',
+              to: '/thought-experiments/',
             },
           ],
         },
