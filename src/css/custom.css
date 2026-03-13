@@ -20,7 +20,7 @@
   /* Brand Specific Highlights */
   --color-um-maize: #FFCB05;
   --color-ms-blue: #00A4EF;
-  --color-atomic-slate: #606770;
+  --color-high-signal-red: #ff4d4d;
   
   /* Topological SVG Variables (Light Mode) */
   --topo-line: rgba(255, 255, 255, 0.3);
@@ -49,8 +49,8 @@
 
 /* Highlight Components */
 .highlight-um { color: var(--color-um-maize); font-weight: 800; }
-.highlight-ms { color: var(--color-ms-blue); font-weight: 800; }
-.highlight-atomic { color: #ffffff; background-color: var(--color-atomic-slate); padding: 0 4px; border-radius: 4px; font-weight: 700; }
+.highlight-brand { color: var(--color-ms-blue); font-weight: 800; }
+.highlight-title { color: var(--color-high-signal-red); font-weight: 800; }
 .highlight-mastery { color: var(--autonate-teal); font-weight: 800; }
 
 /* Hero Section: Enforced White Branding */
