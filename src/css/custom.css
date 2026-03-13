@@ -6,13 +6,13 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #3578e5;
+  --ifm-color-primary-dark: #306cd6;
+  --ifm-color-primary-darker: #2d66ca;
+  --ifm-color-primary-darkest: #2554a6;
+  --ifm-color-primary-light: #4986e8;
+  --ifm-color-primary-lighter: #538de9;
+  --ifm-color-primary-lightest: #72a1ee;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
@@ -27,4 +27,63 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Booking Button Premium Styling */
+.nav-booking-button,
+.hero-booking-button {
+  border: none !important;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-booking-button:hover,
+.hero-booking-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+/* Light Mode: White font on Primary Background */
+[data-theme='light'] .nav-booking-button,
+[data-theme='light'] .hero-booking-button {
+  color: #ffffff !important;
+  background-color: var(--ifm-color-primary) !important;
+}
+
+/* Dark Mode: Black font on Primary Background */
+[data-theme='dark'] .nav-booking-button,
+[data-theme='dark'] .hero-booking-button {
+  color: #000000 !important;
+  background-color: var(--ifm-color-primary) !important;
+}
+
+.hero__title {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+[data-theme='dark'] .hero__title {
+  background: linear-gradient(135deg, #ffffff 0%, #718096 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated SVG Container */
+.topological-web-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

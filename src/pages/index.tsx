@@ -5,6 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
+import TopologicalWeb from '@site/src/components/TopologicalWeb';
 
 import styles from './index.module.css';
 
@@ -16,6 +17,9 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           Architecting Your Mastery
         </Heading>
+        
+        <TopologicalWeb />
+
         <p className="hero__subtitle">
           Bridging the gap between academic theory and industrial excellence through a topological approach to Computer Science.
         </p>
@@ -26,9 +30,9 @@ function HomepageHeader() {
             View Thought Experiments 🧠
           </Link>
           <Link
-            className="button button--outline button--secondary button--lg margin-left--md"
+            className="button button--primary button--lg margin-left--md hero-booking-button"
             to="/booking">
-            Book 1:1 Strategy Session 📅
+            Book Tutoring Session
           </Link>
         </div>
       </div>
