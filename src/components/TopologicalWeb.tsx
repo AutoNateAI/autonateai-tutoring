@@ -6,7 +6,7 @@ export default function TopologicalWeb() {
   
   // Responsive viewBox and scaling
   const isMobile = isBrowser && window.innerWidth < 768;
-  const viewBox = isMobile ? "200 0 400 350" : "0 0 800 350";
+  const viewBox = isMobile ? "150 0 500 350" : "0 0 800 350";
 
   return (
     <div className="topological-web-container">
