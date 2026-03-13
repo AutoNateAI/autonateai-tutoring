@@ -84,20 +84,20 @@ export default function BookingPage(): React.JSX.Element {
     <Layout title="Book Your 1:1 Strategy Session" description="Schedule a personalized 1:1 tutoring session with Nate to accelerate your journey to mastery.">
       <main className="container padding-vert--xl">
         
-        {/* Responsive Instructor Section with Updated Color Scheme */}
+        {/* Responsive Instructor Section with Padding & Rounded Image */}
         <section className="margin-bottom--xl shadow--lw" style={{ backgroundColor: 'var(--ifm-color-emphasis-100)', borderRadius: '16px', overflow: 'hidden' }}>
-          <div className="row no-gutters" style={{ alignItems: 'stretch' }}>
-            <div className="col col--5">
+          <div className="row no-gutters" style={{ alignItems: 'center' }}>
+            <div className="col col--5 padding--lg">
               <img 
                 src="/img/nate-instructor.jpg" 
                 alt="Nate - AutoNateAI Instructor" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '400px' }}
+                style={{ width: '100%', height: 'auto', borderRadius: '12px', objectFit: 'cover', display: 'block' }}
               />
             </div>
             <div className="col col--7 padding--xl">
               <Heading as="h2" style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>The Mission Behind the Mastery</Heading>
               <p style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
-                I graduated from the <span className="highlight-brand">University of Michigan (2019)</span> with a focus on <span className="highlight-focus">Software Systems and Security</span>. My career has been a journey through the world's most sophisticated technical ecosystems, from <span className="highlight-brand">Microsoft's</span> <span className="highlight-job">Threat Protection Team</span> to <span className="highlight-brand">Citibank's</span> global infrastructure.
+                I graduated from the <span className="highlight-brand">University of Michigan (2019)</span> with a focus on <span className="highlight-focus">Software Systems and Security</span>. My career has been a journey through the world's most sophisticated technical ecosystems, from <span className="highlight-brand">Microsoft's</span> <span className="highlight-job">Threat Protection Team</span> to <span className="highlight-brand">Citibank's</span> <span className="highlight-job">Global Infrastructure Architecture</span>.
               </p>
               <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
                 As a former <span className="highlight-job">Sr. Software Consultant</span> at <span className="highlight-brand">Atomic Object</span> and <span className="highlight-job">AI Software Engineer</span> at <span className="highlight-brand">Veterans United</span>, I've spent years designing architectures that provide competitive advantages. I’ve led agentic AI projects, engineered advanced prompt-driven workflows, and mentored engineering teams at every level.
