@@ -17,6 +17,11 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --autonate-teal: #25c2a0;
   
+  /* Brand Specific Highlights */
+  --color-um-maize: #FFCB05;
+  --color-ms-blue: #00A4EF;
+  --color-atomic-slate: #606770;
+  
   /* Topological SVG Variables (Light Mode) */
   --topo-line: rgba(255, 255, 255, 0.3);
   --topo-node-main: #ffffff;
@@ -41,6 +46,12 @@
   --topo-node-accent: #25c2a0;
   --topo-text-color: #cbd5e0;
 }
+
+/* Highlight Components */
+.highlight-um { color: var(--color-um-maize); font-weight: 800; }
+.highlight-ms { color: var(--color-ms-blue); font-weight: 800; }
+.highlight-atomic { color: #ffffff; background-color: var(--color-atomic-slate); padding: 0 4px; border-radius: 4px; font-weight: 700; }
+.highlight-mastery { color: var(--autonate-teal); font-weight: 800; }
 
 /* Hero Section: Enforced White Branding */
 .heroBanner {
@@ -148,7 +159,7 @@
   opacity: 1;
 }
 
-/* Navbar Force Style: Fixes the color change on active/hover */
+/* Navbar Force Style */
 .navbar .nav-booking-button,
 .navbar .nav-booking-button:hover,
 .navbar .nav-booking-button.navbar__link--active {

@@ -84,7 +84,7 @@ export default function BookingPage(): React.JSX.Element {
     <Layout title="Book Your 1:1 Strategy Session" description="Schedule a personalized 1:1 tutoring session with Nate to accelerate your journey to mastery.">
       <main className="container padding-vert--xl">
         
-        {/* Responsive Instructor Section */}
+        {/* Responsive Instructor Section with Highlights */}
         <section className="margin-bottom--xl shadow--lw" style={{ backgroundColor: 'var(--ifm-color-emphasis-100)', borderRadius: '16px', overflow: 'hidden' }}>
           <div className="row no-gutters" style={{ alignItems: 'stretch' }}>
             <div className="col col--5">
@@ -97,13 +97,13 @@ export default function BookingPage(): React.JSX.Element {
             <div className="col col--7 padding--xl">
               <Heading as="h2" style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>The Mission Behind the Mastery</Heading>
               <p style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
-                I graduated from the <b>University of Michigan (2019)</b> with a focus on <b>Software Systems and Security</b>. My career has been a journey through the world's most sophisticated technical ecosystems, from <b>Microsoft's Threat Protection Team</b> to <b>Citibank's</b> global infrastructure.
+                I graduated from the <span className="highlight-um">University of Michigan (2019)</span> with a focus on <b>Software Systems and Security</b>. My career has been a journey through the world's most sophisticated technical ecosystems, from <span className="highlight-ms">Microsoft's Threat Protection Team</span> to <b>Citibank's</b> global infrastructure.
               </p>
               <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-                As a former <b>Senior Software Consultant at Atomic Object</b> and <b>AI Software Engineer at Veterans United</b>, I've spent years designing architectures that provide competitive advantages. I’ve led agentic AI projects, engineered advanced prompt-driven workflows, and mentored engineering teams at every level.
+                As a former <span className="highlight-atomic">Senior Software Consultant</span> and <b>AI Software Engineer at Veterans United</b>, I've spent years designing architectures that provide competitive advantages. I’ve led agentic AI projects, engineered advanced prompt-driven workflows, and mentored engineering teams at every level.
               </p>
               <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '0' }}>
-                I founded <b>AutoNateAI</b> with one mission: <b>to convert more humans into deep thinkers</b>. I don't just teach you how to pass a test; I teach you how to translate mental epiphanies into industrial reality.
+                I founded <b>AutoNateAI</b> with one mission: <span className="highlight-mastery">to convert more humans into deep thinkers</span>. I don't just teach you how to pass a test; I teach you how to translate mental epiphanies into industrial reality.
               </p>
             </div>
           </div>
