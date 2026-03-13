@@ -1,108 +1,80 @@
-import React, { useEffect, useRef } from 'react';
-import cytoscape from 'cytoscape';
+import React from 'react';
 
 export default function TopologicalWeb() {
-  const cyRef = useRef(null);
+  return (
+    <div className="topological-web-container">
+      <svg 
+        viewBox="0 0 800 350" 
+        preserveAspectRatio="xMidYMid meet"
+        style={{ width: '100%', height: '100%', overflow: 'visible' }}
+      >
+        <defs>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
 
-  useEffect(() => {
-    if (!cyRef.current) return;
+        {/* Traceable Connection Lines */}
+        <g stroke="var(--topo-line)" strokeWidth="3" fill="none">
+          <path d="M400 50 L250 150 L400 250 L400 310" strokeDasharray="15,8">
+            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="4s" repeatCount="indefinite" />
+          </path>
+          <path d="M400 50 L550 150 L400 250" strokeDasharray="15,8">
+            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="4s" repeatCount="indefinite" />
+          </path>
+        </g>
 
-    const cy = cytoscape({
-      container: cyRef.current,
-      elements: [
-        // Nodes
-        { data: { id: 'foundations', label: 'Foundations' } },
-        { data: { id: 'systems', label: 'Systems' } },
-        { data: { id: 'theory', label: 'Theory' } },
-        { data: { id: 'applied', label: 'Applied' } },
-        { data: { id: 'mastery', label: 'MASTERY' } },
-        
-        // Edges (Vertical Flow)
-        { data: { source: 'foundations', target: 'systems' } },
-        { data: { source: 'foundations', target: 'theory' } },
-        { data: { source: 'systems', target: 'applied' } },
-        { data: { source: 'theory', target: 'applied' } },
-        { data: { source: 'applied', target: 'mastery' } },
-      ],
-      style: [
-        {
-          selector: 'node',
-          style: {
-            'background-color': '#25c2a0',
-            'label': 'data(label)',
-            'color': '#ffffff',
-            'font-size': '12px',
-            'font-weight': 'bold',
-            'text-valign': 'center',
-            'text-halign': 'center',
-            'width': '80px',
-            'height': '30px',
-            'shape': 'round-rectangle',
-            'opacity': 0, // Start hidden for animation
-          }
-        },
-        {
-          selector: '#mastery',
-          style: {
-            'background-color': '#ffffff',
-            'color': '#3578e5',
-            'width': '100px',
-            'height': '40px',
-          }
-        },
-        {
-          selector: 'edge',
-          style: {
-            'width': 3,
-            'line-color': 'rgba(255, 255, 255, 0.3)',
-            'curve-style': 'bezier',
-            'target-arrow-shape': 'triangle',
-            'target-arrow-color': 'rgba(255, 255, 255, 0.3)',
-            'opacity': 0,
-          }
-        }
-      ],
-      layout: {
-        name: 'preset', // We will manually position for perfect vertical tree
-      },
-      userZoomingEnabled: false,
-      userPanningEnabled: false,
-      autoungrabify: true,
-    });
+        {/* Nodes and Labels */}
+        <g filter="url(#glow)">
+          {/* Foundations Node */}
+          <g>
+            <circle cx="400" cy="50" r="8" fill="var(--topo-node-main)">
+              <animate attributeName="r" values="7;10;7" dur="3s" repeatCount="indefinite" />
+            </circle>
+            <text x="400" y="30" fill="#ffffff" fontSize="24" fontWeight="900" textAnchor="middle" style={{ textTransform: 'uppercase', letterSpacing: '1px' }}>Foundations</text>
+          </g>
 
-    // Vertical Hierarchy Positions
-    const positions = {
-      foundations: { x: 200, y: 50 },
-      systems: { x: 100, y: 150 },
-      theory: { x: 300, y: 150 },
-      applied: { x: 200, y: 250 },
-      mastery: { x: 200, y: 350 }
-    };
+          {/* Systems Node */}
+          <g>
+            <circle cx="250" cy="150" r="8" fill="var(--topo-node-accent)">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+            </circle>
+            <text x="235" y="158" fill="#ffffff" fontSize="20" fontWeight="800" textAnchor="end">Systems</text>
+          </g>
 
-    // Animation Sequence
-    const animateNode = (id, delay) => {
-      setTimeout(() => {
-        const node = cy.$(`#${id}`);
-        node.position(positions[id]);
-        node.animate({
-          style: { opacity: 1 },
-          duration: 800
-        });
-        node.connectedEdges().animate({
-          style: { opacity: 1 },
-          duration: 800
-        });
-      }, delay);
-    };
+          {/* Theory Node */}
+          <g>
+            <circle cx="550" cy="150" r="8" fill="var(--topo-node-accent)">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite" />
+            </circle>
+            <text x="565" y="158" fill="#ffffff" fontSize="20" fontWeight="800" textAnchor="start">Theory</text>
+          </g>
 
-    animateNode('foundations', 500);
-    animateNode('systems', 1200);
-    animateNode('theory', 1200);
-    animateNode('applied', 2000);
-    animateNode('mastery', 2800);
+          {/* Applied Node */}
+          <g>
+            <circle cx="400" cy="250" r="8" fill="var(--topo-node-accent)">
+              <animate attributeName="r" values="7;10;7" dur="4s" repeatCount="indefinite" />
+            </circle>
+            <text x="420" y="258" fill="#ffffff" fontSize="20" fontWeight="800" textAnchor="start">Applied</text>
+          </g>
 
-    return () => cy.destroy();
-  }, []);
-
-  return <div id="cy" ref={cyRef} />;
+          {/* Mastery Node */}
+          <g>
+            <rect x="330" y="300" width="140" height="50" rx="25" fill="#ffffff" />
+            <text x="400" y="333" fill="#3578e5" fontSize="26" fontWeight="900" textAnchor="middle" style={{ letterSpacing: '1px' }}>MASTERY</text>
+            
+            {/* Ripple Effect */}
+            <circle cx="400" cy="325" r="50" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.4">
+              <animate attributeName="r" values="30;80" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.4;0" dur="2s" repeatCount="indefinite" />
+            </circle>
+          </g>
+        </g>
+      </svg>
+    </div>
+  );
 }

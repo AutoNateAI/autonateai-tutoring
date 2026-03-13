@@ -16,6 +16,12 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --autonate-teal: #25c2a0;
+  
+  /* Topological SVG Variables (Light Mode) */
+  --topo-line: rgba(255, 255, 255, 0.2);
+  --topo-glow: rgba(37, 194, 160, 0.4);
+  --topo-node-main: #ffffff;
+  --topo-node-accent: #25c2a0;
 }
 
 /* DARK MODE: Consistent Blue/Teal Accents */
@@ -28,57 +34,68 @@
   --ifm-color-primary-lighter: #538de9;
   --ifm-color-primary-lightest: #72a1ee;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Topological SVG Variables (Dark Mode - More Neon) */
+  --topo-line: rgba(37, 194, 160, 0.3);
+  --topo-glow: rgba(37, 194, 160, 0.8);
+  --topo-node-main: #ffffff;
+  --topo-node-accent: #00ffcc; /* Brighter neon for dark mode */
 }
 
 /* Hero Section: Enforced White Branding for High Signal */
 .heroBanner {
   background-color: var(--ifm-color-primary);
+  padding: 5rem 0 !important;
 }
 
 .hero__title {
-  font-size: 4.5rem;
+  font-size: 5rem !important; /* Larger Title */
   font-weight: 900;
-  color: #ffffff !important; /* Solid White */
+  color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
   background: none !important;
   margin-bottom: 0.5rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hero__subtitle {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #ffffff !important; /* Force white */
+  font-size: 1.5rem !important;
   font-weight: 500;
-  max-width: 800px;
-  margin: 0 auto 2rem;
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  opacity: 0.95;
 }
 
 /* Hero Button Base Styling */
 .hero-button-filled {
   border: none !important;
-  font-weight: 700;
-  padding: 0.8rem 2rem;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: #ffffff !important; /* White text in both modes */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: #ffffff !important;
+  border-radius: 50px;
 }
 
 .hero-booking-button {
-  background-color: var(--autonate-teal) !important; /* Standout Teal for Primary CTA */
+  background-color: var(--autonate-teal) !important;
 }
 
 .hero-experiments-button {
   background-color: rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
 }
 
 .hero-button-filled:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   color: #ffffff !important;
   opacity: 1;
 }
@@ -89,12 +106,21 @@
   border: none !important;
   font-weight: bold;
   color: #ffffff !important;
+  border-radius: 4px;
 }
 
-/* Cytoscape Container */
-#cy {
+.navbar__title {
+  font-weight: 800;
+}
+
+/* Animated SVG Container Fixes */
+.topological-web-container {
   width: 100%;
+  max-width: 1000px;
+  margin: 1.5rem auto;
   height: 350px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: visible !important;
 }
