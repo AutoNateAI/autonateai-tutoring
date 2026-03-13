@@ -11,7 +11,7 @@ import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
-  const titleWords = "Architecting Your Mastery".split(" ");
+  const titleWords = "Forge Your Mastery".split(" ");
 
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -33,7 +33,7 @@ function HomepageHeader() {
         </div>
 
         <p className="hero__subtitle">
-          We transform fundamental LeetCode patterns into high-stakes **Thought Experiments**. Bridge the gap between theoretical epiphanies and industrial-grade execution.
+          We transform <span className="highlight-brand">Theoretical Epiphanies</span> into <span className="highlight-focus">Industrial Excellence</span>. Mastering the high-signal patterns required for the <span className="highlight-mastery">Next Generation of Software Engineering</span>.
         </p>
         
         <div className={clsx('buttons', styles.buttons)}>
