@@ -53,6 +53,18 @@
 .highlight-focus { color: var(--color-focus-red); font-weight: 800; }
 .highlight-mastery { color: var(--autonate-teal); font-weight: 800; }
 
+/* Booking Card Label & Button Fix: Enforced White */
+.card .badge--secondary,
+.card .button--primary {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+.card .button--primary:hover {
+  color: #ffffff !important;
+  opacity: 0.9;
+}
+
 /* Hero Section: Enforced White Branding */
 .heroBanner {
   background-color: var(--ifm-color-primary);
