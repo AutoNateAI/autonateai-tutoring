@@ -13,46 +13,44 @@ const PAGES = [
   {
     name: 'homepage',
     outputFile: 'og-homepage.png',
-    prompt: `A cinematic social media preview image for AutoNateAI. 
-    Theme: "Engineer Your Epiphany". 
-    Visuals: A high-tech laboratory where abstract blueprint ideas are being forged into glowing 3D mechanical components. 
-    A central glowing "A" logo. 
-    Deep space navy background (#0d1526). 
-    Accents: Cyber Cyan and Maize Gold. 
-    Text: "AutoNateAI: Theoretical Breakthroughs → Industrial Excellence".
-    Style: Professional, sharp, visionary. Like a high-end dev tool landing page.`
+    prompt: `A deep, captivating cinematic image. 
+    A Computer Science student sitting in a dark room illuminated by the glow of 10 monitors. 
+    The monitors show complex glowing 3D topological graphs and matrix code. 
+    The student has a look of intense "Epiphany" on their face. 
+    Meme-like quality: Hyper-dramatic lighting, high-stakes vibe. 
+    Deep space navy and cyber cyan color palette. 
+    Strictly NO words, NO text, NO letters.`
   },
   {
     name: 'thought-experiments',
     outputFile: 'og-thought-experiments.png',
-    prompt: `A cinematic social media preview image for the AutoNateAI Thought Experiment Engine. 
-    Theme: "Take a Quest with Your Mind & Computer". 
-    Visuals: A dark hacker terminal displaying complex graph networks and algorithm code. 
-    A digital "portal" effect where code transforms into a high-stakes adventure landscape. 
-    Witty Text overlay: "Stop Grindng. Start Questing. 180+ CS Missions Await."
-    Accents: High-signal red and Cyber Cyan. 
-    Style: Edutainment, intense, "genius-level" challenge vibes.`
+    prompt: `A cinematic adventure-themed image. 
+    A group of engineering students wearing high-tech tactical gear, standing in front of a giant digital portal. 
+    Inside the portal is a landscape made entirely of floating code blocks and data structures. 
+    The students are looking in with determination. 
+    Meme-like quality: Action-movie poster vibes, dramatic "LFG" energy. 
+    Accents of maize gold and high-signal red. 
+    Strictly NO words, NO text, NO letters.`
   },
   {
     name: 'booking',
     outputFile: 'og-booking.png',
-    prompt: `A cinematic social media preview image for AutoNateAI 1:1 Strategy Sessions. 
-    Theme: "Meet Your Sr. Architect". 
-    Visuals: A professional yet cool workspace with multiple monitors showing distributed system diagrams and AI agent loops. 
-    A silhouette of an expert engineer providing guidance. 
-    Witty Text overlay: "Under Heavy Fire? Radio for Backup. 1:1 Tactical Deep-Dives."
-    Accents: Maize Gold and Forest Teal. 
-    Style: Trusted, elite, industrial-grade mentorship.`
+    prompt: `A captivating cinematic image of a mentor-student interaction. 
+    A senior architect silhouette (Nate) pointing at a holographic distributed system diagram. 
+    An engineering student next to him has their mind literally "expanding" with glowing neural connections. 
+    Meme-like quality: Over-the-top "galaxy brain" aesthetic but professional and sharp. 
+    Deep navy and forest teal palette. 
+    Strictly NO words, NO text, NO letters.`
   }
 ];
 
 async function generateImage(page) {
-  console.log(`🚀 Generating image for ${page.name}...`);
+  console.log(`🚀 Generating meme-like image for ${page.name}...`);
   const requestBody = JSON.stringify({
     model: 'dall-e-3',
     prompt: page.prompt,
     n: 1,
-    size: '1024x1024', // DALL-E 3 standard
+    size: '1024x1024',
     quality: 'standard'
   });
 

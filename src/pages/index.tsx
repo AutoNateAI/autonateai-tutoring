@@ -58,7 +58,7 @@ export default function Home(): ReactNode {
     <Layout
       title="Topological Computer Science Mastery"
       description="Bridging the gap between academic theory and industrial excellence through a topological approach to Computer Science."
-      image="img/og-homepage.png">
+      image="/img/og-homepage.png">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
