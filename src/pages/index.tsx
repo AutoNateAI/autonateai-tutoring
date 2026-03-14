@@ -57,7 +57,8 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Topological Computer Science Mastery"
-      description="Bridging the gap between academic theory and industrial excellence through a topological approach to Computer Science.">
+      description="Bridging the gap between academic theory and industrial excellence through a topological approach to Computer Science."
+      image="img/og-homepage.png">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

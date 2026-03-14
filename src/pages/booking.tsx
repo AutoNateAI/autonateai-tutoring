@@ -81,7 +81,10 @@ const sessions: BookingCardProps[] = [
 
 export default function BookingPage(): React.JSX.Element {
   return (
-    <Layout title="Book Your 1:1 Strategy Session" description="Schedule a personalized 1:1 tutoring session with Nate to accelerate your journey to mastery.">
+    <Layout 
+      title="Book Your 1:1 Strategy Session" 
+      description="Schedule a personalized 1:1 tutoring session with Nate to accelerate your journey to mastery."
+      image="img/og-booking.png">
       <main className="container padding-vert--xl">
         
         {/* Restored High-Impact Instructor Section */}
