@@ -14,9 +14,14 @@ export default function CardSlam({ question, subtext }: CardSlamProps) {
     return () => clearTimeout(timer);
   }, []);
 
-  // Helper to convert string to Title Case
+  // Helper to convert string to Title Case with Acronym support
   const toTitleCase = (str: string) => {
     return str.toLowerCase().split(' ').map(word => {
+      // Handle specific acronyms like AI
+      if (word === 'ai') return 'AI';
+      if (word === 'cs') return 'CS';
+      if (word === 'swe') return 'SWE';
+      if (word === 'dag') return 'DAG';
       return word.charAt(0).toUpperCase() + word.slice(1);
     }).join(' ');
   };
