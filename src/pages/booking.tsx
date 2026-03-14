@@ -112,9 +112,9 @@ export default function BookingPage(): React.JSX.Element {
           </div>
         </section>
 
-        <div className="text--center margin-bottom--xl">
-          <Heading as="h1" style={{ fontSize: '3.5rem' }}>Strategy Sessions</Heading>
-          <p className="hero__subtitle">Select a mission track below to begin your transformation from thought to mastery.</p>
+        <div className="text--center margin-bottom--xl" style={{ width: '100%' }}>
+          <Heading as="h1" style={{ fontSize: '3.5rem', width: '100%' }}>Strategy Sessions</Heading>
+          <p className="hero__subtitle" style={{ maxWidth: 'none', margin: '1rem auto' }}>Select a mission track below to begin your transformation from thought to mastery.</p>
         </div>
 
         <div className="row booking-carousel-row">

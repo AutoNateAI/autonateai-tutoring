@@ -98,7 +98,7 @@
   }
 
   .booking-carousel-item {
-    flex: 0 0 85% !important; /* Shows part of the next card to signal scroll */
+    flex: 0 0 92% !important; /* Wider cards for better mobile visibility */
     scroll-snap-align: center;
     max-width: none !important;
   }
