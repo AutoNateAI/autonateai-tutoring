@@ -55,7 +55,12 @@
 /* Dedicated Hero Highlights */
 .hero-highlight-cyan { color: var(--hero-highlight-breakthrough); font-weight: 800; }
 .hero-highlight-gold { color: var(--hero-highlight-excellence); font-weight: 800; }
-.hero-highlight-white { color: var(--hero-highlight-mastery); font-weight: 900; text-decoration: underline decoration-color: var(--autonate-teal); }
+.hero-highlight-white { 
+  color: var(--hero-highlight-mastery); 
+  font-weight: 900; 
+  text-decoration: underline;
+  text-decoration-color: var(--autonate-teal); 
+}
 
 /* Booking Card Label & Button Fix: Enforced High Contrast */
 .card .badge--secondary {
