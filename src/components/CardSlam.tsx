@@ -14,22 +14,29 @@ export default function CardSlam({ question, subtext }: CardSlamProps) {
     return () => clearTimeout(timer);
   }, []);
 
+  // Helper to convert string to Title Case
+  const toTitleCase = (str: string) => {
+    return str.toLowerCase().split(' ').map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ');
+  };
+
   return (
     <div className="card-slam-container" style={{
-      minHeight: '400px',
+      minHeight: '350px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       perspective: '1000px',
-      margin: '2rem 0',
+      margin: '1.5rem 0',
       textAlign: 'center',
-      padding: '2rem'
+      padding: '1rem'
     }}>
       <style>{`
         @keyframes slamIn {
-          0% { transform: translateZ(500px) scale(3); opacity: 0; filter: blur(20px); }
-          70% { transform: translateZ(-50px) scale(0.95); opacity: 1; filter: blur(0); }
+          0% { transform: translateZ(500px) scale(2.5); opacity: 0; filter: blur(15px); }
+          70% { transform: translateZ(-30px) scale(0.98); opacity: 1; filter: blur(0); }
           100% { transform: translateZ(0) scale(1); opacity: 1; }
         }
         .slam-active {
@@ -38,40 +45,50 @@ export default function CardSlam({ question, subtext }: CardSlamProps) {
         .card-slam-inner {
           background: #0d1526;
           border: 2px solid var(--autonate-teal);
-          border-radius: 16px;
-          padding: 3rem;
-          box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-          max-width: 800px;
+          border-radius: 12px;
+          padding: 2rem;
+          box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+          max-width: 700px;
           opacity: 0;
+          width: 100%;
+        }
+        .slam-title {
+          color: #ffffff;
+          font-size: 1.8rem; /* Mobile font size */
+          font-weight: 900;
+          margin: 0;
+          line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+          .slam-title {
+            font-size: 2.5rem; /* Desktop font size */
+          }
+          .card-slam-inner {
+            padding: 3rem;
+          }
         }
       `}</style>
       
       <div className={clsx('card-slam-inner', slammed && 'slam-active')}>
-        <h1 style={{ 
-          color: '#ffffff', 
-          fontSize: '3rem', 
-          fontWeight: '900',
-          margin: 0,
-          lineHeight: '1.1'
-        }}>
-          {question}
+        <h1 className="slam-title">
+          {toTitleCase(question)}
         </h1>
         {subtext && (
           <p style={{ 
             color: 'var(--autonate-teal)', 
-            fontSize: '1.2rem', 
-            marginTop: '1.5rem',
+            fontSize: '1rem', 
+            marginTop: '1rem',
             fontWeight: '700',
             textTransform: 'uppercase',
-            letterSpacing: '2px'
+            letterSpacing: '1.5px'
           }}>
-            {subtext}
+            {toTitleCase(subtext)}
           </p>
         )}
       </div>
       
-      <div style={{ marginTop: '2rem', opacity: slammed ? 1 : 0, transition: 'opacity 1s ease 0.5s' }}>
-        <p style={{ color: 'var(--ifm-color-emphasis-500)', fontWeight: 'bold' }}>
+      <div style={{ marginTop: '1.5rem', opacity: slammed ? 1 : 0, transition: 'opacity 1s ease 0.5s' }}>
+        <p style={{ color: 'var(--ifm-color-emphasis-500)', fontWeight: 'bold', fontSize: '0.9rem' }}>
           SCROLL TO COMMENCE MISSION ↓
         </p>
       </div>
