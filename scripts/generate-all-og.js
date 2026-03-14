@@ -41,6 +41,17 @@ const PAGES = [
     Meme-like quality: Over-the-top "galaxy brain" aesthetic but professional and sharp. 
     Deep navy and forest teal palette. 
     Strictly NO words, NO text, NO letters.`
+  },
+  {
+    name: 'silicon-deadlock',
+    outputFile: 'og-silicon-deadlock.png',
+    prompt: `A cinematic wide shot of a futuristic automated shipping port. 
+    Gigantic stacks of glowing silicon chips are gridlocked. 
+    A massive red circular dependency loop is hovering over the port like a storm cloud. 
+    An engineering student is frantically typing at a glowing terminal in the foreground. 
+    Meme-like quality: Disaster-movie tension, epic high-stakes scale. 
+    Maize gold and cyber cyan highlights. 
+    Strictly NO words, NO text, NO letters.`
   }
 ];
 
@@ -101,14 +112,17 @@ async function run() {
   const outputDir = path.join(__dirname, '..', 'static', 'img');
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
+  // Only generate missing images or all if requested
   for (const page of PAGES) {
-    try {
-      const url = await generateImage(page);
-      const outputPath = path.join(outputDir, page.outputFile);
-      await downloadImage(url, outputPath);
-      console.log(`✅ Saved ${page.outputFile}`);
-    } catch (err) {
-      console.error(`❌ Failed ${page.name}: ${err.message}`);
+    const outputPath = path.join(outputDir, page.outputFile);
+    if (!fs.existsSync(outputPath) || page.name === 'silicon-deadlock') {
+      try {
+        const url = await generateImage(page);
+        await downloadImage(url, outputPath);
+        console.log(`✅ Saved ${page.outputFile}`);
+      } catch (err) {
+        console.error(`❌ Failed ${page.name}: ${err.message}`);
+      }
     }
   }
 }

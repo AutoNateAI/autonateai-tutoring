@@ -79,8 +79,23 @@
 
 @media (min-width: 768px) {
   .quest-image {
-    aspect-ratio: 16 / 9; /* Cinematic Rectangular on Desktop */
+    aspect-ratio: 16 / 9;
     max-height: 500px;
+  }
+}
+
+/* Mobile Code Block Scaling: Aggressive reduction for readability */
+@media (max-width: 767px) {
+  .markdown pre,
+  [class*='codeBlockContainer'] pre,
+  [class*='codeBlockLines'] {
+    font-size: 0.65rem !important;
+    padding: 0.4rem !important;
+    line-height: 1.2 !important;
+  }
+  .markdown code,
+  [class*='codeBlockLines'] code {
+    font-size: 0.65rem !important;
   }
 }
 
