@@ -22,11 +22,16 @@
   --color-job-blue: #00A4EF;
   --color-focus-red: #ff4d4d;
   
-  /* Topological SVG Variables (Light Mode) */
-  --topo-line: rgba(255, 255, 255, 0.3);
+  /* Premium Hero Highlights (Optimized for Deep Navy) */
+  --hero-highlight-breakthrough: #00f2ff; /* Cyber Cyan */
+  --hero-highlight-excellence: #FFCB05;    /* Vibrant Gold */
+  --hero-highlight-mastery: #ffffff;       /* Solid White Bold */
+
+  /* Topological SVG Variables */
+  --topo-line: rgba(255, 255, 255, 0.2);
   --topo-node-main: #ffffff;
   --topo-node-accent: #25c2a0;
-  --topo-text-color: #ffffff; 
+  --topo-text-color: #ffffff; /* Clean white for SVG text */
 }
 
 /* DARK MODE: Consistent Blue/Teal Accents */
@@ -39,12 +44,6 @@
   --ifm-color-primary-lighter: #538de9;
   --ifm-color-primary-lightest: #72a1ee;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-
-  /* Topological SVG Variables (Dark Mode) */
-  --topo-line: rgba(37, 194, 160, 0.4);
-  --topo-node-main: #ffffff;
-  --topo-node-accent: #25c2a0;
-  --topo-text-color: #cbd5e0;
 }
 
 /* Highlight Components */
@@ -52,6 +51,11 @@
 .highlight-job { color: var(--color-job-blue); font-weight: 800; }
 .highlight-focus { color: var(--color-focus-red); font-weight: 800; }
 .highlight-mastery { color: var(--autonate-teal); font-weight: 800; }
+
+/* Dedicated Hero Highlights */
+.hero-highlight-cyan { color: var(--hero-highlight-breakthrough); font-weight: 800; }
+.hero-highlight-gold { color: var(--hero-highlight-excellence); font-weight: 800; }
+.hero-highlight-white { color: var(--hero-highlight-mastery); font-weight: 900; text-decoration: underline decoration-color: var(--autonate-teal); }
 
 /* Booking Card Label & Button Fix: Enforced High Contrast */
 .card .badge--secondary {
@@ -74,7 +78,7 @@
 
 /* Hero Section: Deeper Background for High Signal */
 .heroBanner {
-  background-color: #0d1526 !important; /* Near-black navy for maximum contrast */
+  background-color: #0d1526 !important;
   padding: 4rem 1rem !important;
   min-height: 100vh;
   display: flex;
@@ -104,7 +108,7 @@
   font-size: 1.1rem !important;
   font-weight: 500;
   max-width: 900px;
-  margin: 3rem auto 2.5rem !important; /* Increased top margin to move away from SVG */
+  margin: 3.5rem auto 2.5rem !important; /* Slightly more space */
   opacity: 0;
   animation: scaleIn 0.8s ease-out forwards;
   animation-delay: 2.5s;
