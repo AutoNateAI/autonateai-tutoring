@@ -7,7 +7,7 @@ export default function EpiphanyEngine() {
         <defs>
           <linearGradient id="epiphanyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" style={{ stopColor: '#3578e5' }} />
-            <stop offset="100%" style={{ stopColor: '#25c2a0' }} />
+            <stop offset="100%" style={{ stopColor: '#ff4d4d' }} />
           </linearGradient>
           
           <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
@@ -15,9 +15,14 @@ export default function EpiphanyEngine() {
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
           </filter>
 
-          <filter id="realityGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="5" result="blur" />
-            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          <filter id="realityGlowRed" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
+            <feFlood floodColor="#ff4d4d" floodOpacity="0.6" result="color" />
+            <feComposite in="color" in2="blur" operator="in" result="glow" />
+            <feMerge>
+              <feMergeNode in="glow" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
           </filter>
         </defs>
 
@@ -31,11 +36,11 @@ export default function EpiphanyEngine() {
           </path>
         </g>
         
-        {/* Moving Insight Particles (Extended to Reality) */}
+        {/* Moving Insight Particles (Flowing to Red Reality) */}
         <circle r="3" fill="#3578e5">
           <animateMotion dur="4s" repeatCount="indefinite" path="M100 75 L250 40 L400 75 L550 75" />
         </circle>
-        <circle r="3" fill="#25c2a0">
+        <circle r="3" fill="#ff4d4d">
           <animateMotion dur="5s" repeatCount="indefinite" path="M100 75 L250 110 L400 75 L550 75" />
         </circle>
 
@@ -56,19 +61,19 @@ export default function EpiphanyEngine() {
           <text x="250" y="130" fill="var(--ifm-font-color-base)" fontSize="10" fontWeight="700" textAnchor="middle">Workflow</text>
 
           {/* Computer Node */}
-          <circle cx="400" cy="75" r="8" fill="#25c2a0" filter="url(#nodeGlow)">
+          <circle cx="400" cy="75" r="8" fill="var(--autonate-teal)" filter="url(#nodeGlow)">
             <animate attributeName="r" values="7;10;7" dur="2.5s" repeatCount="indefinite" />
           </circle>
           <text x="400" y="105" fill="var(--ifm-font-color-base)" fontSize="12" fontWeight="900" textAnchor="middle" style={{ textTransform: 'uppercase' }}>Computer</text>
 
-          {/* Reality Node (Dope Glow & Animation) */}
-          <g filter="url(#realityGlow)">
-            <rect x="535" y="60" width="30" height="30" rx="4" fill="#ffffff" stroke="#25c2a0" strokeWidth="2">
+          {/* Reality Node (Dope RED Glow & Animation) */}
+          <g filter="url(#realityGlowRed)">
+            <rect x="535" y="60" width="30" height="30" rx="4" fill="#ffffff" stroke="#ff4d4d" strokeWidth="2">
               <animate attributeName="stroke-width" values="2;5;2" dur="2s" repeatCount="indefinite" />
-              <animate attributeName="fill" values="#ffffff;#e6fffa;#ffffff" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="fill" values="#ffffff;#fff5f5;#ffffff" dur="2s" repeatCount="indefinite" />
             </rect>
-            {/* Pulsing Ripple */}
-            <circle cx="550" cy="75" r="20" fill="none" stroke="#25c2a0" strokeWidth="1" opacity="0.5">
+            {/* Pulsing Ripple Red */}
+            <circle cx="550" cy="75" r="20" fill="none" stroke="#ff4d4d" strokeWidth="1" opacity="0.5">
               <animate attributeName="r" values="15;35" dur="1.5s" repeatCount="indefinite" />
               <animate attributeName="opacity" values="0.5;0" dur="1.5s" repeatCount="indefinite" />
             </circle>
