@@ -34,16 +34,26 @@ export default function TopologicalWeb() {
             <animate attributeName="stroke-dashoffset" from="100" to="0" dur="4s" repeatCount="indefinite" />
           </path>
           
-          {/* 3 Links from Applied to Mastery */}
-          <path d="M400 250 L360 310" strokeDasharray="15,8">
-            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite" />
+          {/* Main Highway to Mastery: Multiple Flowing Particles */}
+          <path id="mastery-path" d="M400 250 L400 310" strokeDasharray="10,5" strokeWidth="4">
+            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="2s" repeatCount="indefinite" />
           </path>
-          <path d="M400 250 L400 310" strokeDasharray="15,8">
-            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite" />
-          </path>
-          <path d="M400 250 L440 310" strokeDasharray="15,8">
-            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite" />
-          </path>
+        </g>
+
+        {/* Data Particles flowing into Mastery */}
+        <g fill="#ffffff">
+          <circle r="3">
+            <animateMotion dur="1.5s" repeatCount="indefinite" path="M400 250 L400 310" />
+          </circle>
+          <circle r="3">
+            <animateMotion dur="1.5s" begin="0.4s" repeatCount="indefinite" path="M400 250 L400 310" />
+          </circle>
+          <circle r="3">
+            <animateMotion dur="1.5s" begin="0.8s" repeatCount="indefinite" path="M400 250 L400 310" />
+          </circle>
+          <circle r="3">
+            <animateMotion dur="1.5s" begin="1.2s" repeatCount="indefinite" path="M400 250 L400 310" />
+          </circle>
         </g>
 
         {/* Nodes and Labels - Clean Solid White for Readability */}

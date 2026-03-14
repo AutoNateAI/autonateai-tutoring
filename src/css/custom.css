@@ -50,7 +50,7 @@
 .highlight-brand { color: var(--color-brand-maize); font-weight: 800; }
 .highlight-job { color: var(--color-job-blue); font-weight: 800; }
 .highlight-focus { color: var(--color-focus-red); font-weight: 800; }
-.highlight-mastery { color: var(--autonate-teal); font-weight: 800; }
+.highlight-mastery { color: #1a8870; font-weight: 800; }
 
 /* Dedicated Hero Highlights */
 .hero-highlight-cyan { color: var(--hero-highlight-breakthrough); font-weight: 800; }
