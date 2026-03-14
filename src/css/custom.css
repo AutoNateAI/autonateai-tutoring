@@ -44,6 +44,12 @@
   --ifm-color-primary-lighter: #538de9;
   --ifm-color-primary-lightest: #72a1ee;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Topological SVG Variables (Dark Mode) */
+  --topo-line: rgba(37, 194, 160, 0.4);
+  --topo-node-main: #ffffff;
+  --topo-node-accent: #25c2a0;
+  --topo-text-color: #cbd5e0;
 }
 
 /* Highlight Components */
@@ -62,7 +68,23 @@
   text-decoration-color: var(--autonate-teal); 
 }
 
-/* Booking Card & Carousel Fixes */
+/* Quest Content Styling: Cinematic Images */
+.quest-image {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  margin: 2rem 0;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .quest-image {
+    aspect-ratio: 16 / 9; /* Cinematic Rectangular on Desktop */
+    max-height: 500px;
+  }
+}
+
+/* Booking Card Label & Button Fix: Enforced High Contrast */
 .card .badge--secondary {
   background-color: var(--ifm-color-primary-darkest) !important;
   color: #ffffff !important;
@@ -74,6 +96,11 @@
 .card .button--primary {
   color: #ffffff !important;
   font-weight: bold;
+}
+
+.card .button--primary:hover {
+  color: #ffffff !important;
+  opacity: 0.9;
 }
 
 /* Mobile Carousel Styles */
@@ -88,23 +115,23 @@
     -webkit-overflow-scrolling: touch;
     padding-bottom: 2rem;
     gap: 1rem;
-    margin: 0 -1rem; /* Full width bleed */
+    margin: 0 -1rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
   .booking-carousel-row::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for cleaner app look */
+    display: none;
   }
 
   .booking-carousel-item {
-    flex: 0 0 92% !important; /* Wider cards for better mobile visibility */
+    flex: 0 0 92% !important;
     scroll-snap-align: center;
     max-width: none !important;
   }
 }
 
-/* Hero Section Styling */
+/* Hero Section: Deeper Background for High Signal */
 .heroBanner {
   background-color: #0d1526 !important;
   padding: 4rem 1rem !important;
@@ -212,6 +239,13 @@
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
   animation-delay: 2.6s;
+}
+
+.hero-button-filled:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  color: #ffffff !important;
+  opacity: 1;
 }
 
 .buttons {

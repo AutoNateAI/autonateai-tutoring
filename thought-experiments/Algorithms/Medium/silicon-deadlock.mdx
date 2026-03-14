@@ -19,7 +19,7 @@ import CardSlam from "@site/src/components/CardSlam";
 
 Laker Operatives, listen up. The global GPU shortage has just entered a catastrophic phase. We've tracked a series of anomalous "Supply Chain Loops" that are deadlocking the delivery of H100 chips to data centers across the Midwest. 
 
-![Mission Visual 1](/img/quests/silicon-deadlock/quest-img-1.png)
+<img className="quest-image" src="/img/quests/silicon-deadlock/quest-img-1.png" alt="Mission Visual 1" />
 
 A rogue consortium from **Davenport University** has deployed a fleet of autonomous procurement agents that have entered a cyclic dependency. Agent A won't release the HBM memory until it gets the logic boards from Agent B, but Agent B is holding the boards until Agent A provides the routing firmware. 
 
@@ -30,12 +30,12 @@ The entire Laker Line AI network is about to go dark.
 *   **Leo (22):** Rogue Data Hacker. He operates at the packet level, sniffing out cycles in real-time.
 *   **Dr. Aris (38):** Silicon Logistics Expert. He knows the physical reality of every fab in Taiwan.
 
-![Mission Visual 2](/img/quests/silicon-deadlock/quest-img-2.png)
+<img className="quest-image" src="/img/quests/silicon-deadlock/quest-img-2.png" alt="Mission Visual 2" />
 
 **The Intel:** 
 This is a classic **Course Schedule II** problem (LeetCode #210). To resolve the deadlock, we must find a valid linear ordering of agent activations. If a cycle exists, the system is fundamentally broken and we must identify the source of the loop.
 
-![Mission Visual 3](/img/quests/silicon-deadlock/quest-img-3.png)
+<img className="quest-image" src="/img/quests/silicon-deadlock/quest-img-3.png" alt="Mission Visual 3" />
 
 ---
 
@@ -61,7 +61,7 @@ graph TD
 
 Our mission relies on **Kahn’s Algorithm**. We track the "In-Degree" (number of incoming dependencies) for every supply agent. Any agent with zero dependencies is ready to fire.
 
-![Mission Visual 4](/img/quests/silicon-deadlock/quest-img-4.png)
+<img className="quest-image" src="/img/quests/silicon-deadlock/quest-img-4.png" alt="Mission Visual 4" />
 
 ### The Data Flow
 ```mermaid
@@ -92,7 +92,7 @@ Initialize the `AgentOrchestrator` with the total number of agents and their dep
 ### Task 2: The First Activation
 Implement the logic to find all agents with an in-degree of 0 and add them to your `ready_queue`.
 
-![Mission Visual 5](/img/quests/silicon-deadlock/quest-img-5.png)
+<img className="quest-image" src="/img/quests/silicon-deadlock/quest-img-5.png" alt="Mission Visual 5" />
 
 **Expected Scan:**
 ```text
@@ -106,17 +106,17 @@ Complete the `resolve_deadlock` function. Process the queue, decrementing the in
 ### Task 4: The Davenport Twist
 A new set of "Phantom Dependencies" has appeared. These aren't just nodes—they are **Self-Referential Loops**. 
 
-![Mission Visual 6](/img/quests/silicon-deadlock/quest-img-6.png)
+<img className="quest-image" src="/img/quests/silicon-deadlock/quest-img-6.png" alt="Mission Visual 6" />
 
 ### Task 5: High-Frequency Activation (Async)
 In the `SupplyChainNetwork` class, implement a logic that simulates the agents firing in parallel based on your resolved order. 
 
-![Mission Visual 7](/img/quests/silicon-deadlock/quest-img-7.png)
+<img className="quest-image" src="/img/quests/silicon-deadlock/quest-img-7.png" alt="Mission Visual 7" />
 
 ### Task 6: Final Verification
 Run the mission against the `world_supply_chain.json` dataset.
 
-![Mission Visual 8](/img/quests/silicon-deadlock/quest-img-8.png)
+<img className="quest-image" src="/img/quests/silicon-deadlock/quest-img-8.png" alt="Mission Visual 8" />
 
 **Expected Scan:**
 ```text
@@ -135,7 +135,7 @@ The **Beltline Collective** from Davenport is already plotting their next move. 
 
 The extraction coordinates (instructor's solution) are currently encrypted. They will be transmitted to this terminal in **48 hours**. 
 
-![Mission Visual 9](/img/quests/silicon-deadlock/quest-img-9.png)
+<img className="quest-image" src="/img/quests/silicon-deadlock/quest-img-9.png" alt="Mission Visual 9" />
 
 ### 📻 Radio for Backup
 Under heavy fire? If Kahn's Algorithm is giving you trouble or the "Phantom Loops" are crashing your rig, radio Nate for a **1:1 Tactical Deep-Dive**. 
