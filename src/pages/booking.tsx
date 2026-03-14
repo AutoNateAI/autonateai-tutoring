@@ -42,7 +42,7 @@ const sessions: BookingCardProps[] = [
         Course rescue and interview readiness focused on <b>Graph-based problems</b>. We move beyond "memorizing solutions" to building the mental models required to solve complex traversal and connectivity challenges on the fly.
       </p>
     ),
-    link: 'https://calendar.google.com/calendar/appointments/schedules/',
+    link: 'https://calendar.app.google/Z34RvXUL5epXJk1K8',
   },
   {
     title: 'System Design & Architecture',
