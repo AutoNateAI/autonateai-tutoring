@@ -27,11 +27,22 @@ export default function TopologicalWeb() {
 
         {/* Traceable Connection Lines */}
         <g stroke="var(--topo-line)" strokeWidth="3" fill="none">
-          <path d="M400 50 L250 150 L400 250 L400 310" strokeDasharray="15,8">
+          <path d="M400 50 L250 150 L400 250" strokeDasharray="15,8">
             <animate attributeName="stroke-dashoffset" from="100" to="0" dur="4s" repeatCount="indefinite" />
           </path>
           <path d="M400 50 L550 150 L400 250" strokeDasharray="15,8">
             <animate attributeName="stroke-dashoffset" from="100" to="0" dur="4s" repeatCount="indefinite" />
+          </path>
+          
+          {/* 3 Links from Applied to Mastery */}
+          <path d="M400 250 L360 310" strokeDasharray="15,8">
+            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite" />
+          </path>
+          <path d="M400 250 L400 310" strokeDasharray="15,8">
+            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite" />
+          </path>
+          <path d="M400 250 L440 310" strokeDasharray="15,8">
+            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite" />
           </path>
         </g>
 

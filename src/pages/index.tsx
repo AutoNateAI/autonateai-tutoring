@@ -33,7 +33,7 @@ function HomepageHeader() {
         </div>
 
         <p className="hero__subtitle">
-          We transform <span className="hero-highlight-cyan">Theoretical Breakthroughs</span> into <span className="hero-highlight-gold">Industrial Excellence</span>. Mastering the high-signal patterns required for the <span className="hero-highlight-white">Next Generation of Software Engineering</span>.
+          We transform <span className="hero-highlight-cyan">Theoretical Breakthroughs</span> into <span className="hero-highlight-gold">Industrial Excellence</span>. Mastering the high-signal patterns required for the <span className="highlight-mastery">Next Generation of Software Engineering</span>.
         </p>
         
         <div className={clsx('buttons', styles.buttons)}>
