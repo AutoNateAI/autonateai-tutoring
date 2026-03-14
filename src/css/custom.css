@@ -62,7 +62,7 @@
   text-decoration-color: var(--autonate-teal); 
 }
 
-/* Booking Card Label & Button Fix: Enforced High Contrast */
+/* Booking Card & Carousel Fixes */
 .card .badge--secondary {
   background-color: var(--ifm-color-primary-darkest) !important;
   color: #ffffff !important;
@@ -76,12 +76,35 @@
   font-weight: bold;
 }
 
-.card .button--primary:hover {
-  color: #ffffff !important;
-  opacity: 0.9;
+/* Mobile Carousel Styles */
+@media (max-width: 767px) {
+  .booking-carousel-row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2rem;
+    gap: 1rem;
+    margin: 0 -1rem; /* Full width bleed */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .booking-carousel-row::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for cleaner app look */
+  }
+
+  .booking-carousel-item {
+    flex: 0 0 85% !important; /* Shows part of the next card to signal scroll */
+    scroll-snap-align: center;
+    max-width: none !important;
+  }
 }
 
-/* Hero Section: Deeper Background for High Signal */
+/* Hero Section Styling */
 .heroBanner {
   background-color: #0d1526 !important;
   padding: 4rem 1rem !important;
@@ -166,7 +189,7 @@
   border-radius: 50px;
   opacity: 0;
   animation: scaleIn 0.8s ease-out forwards;
-  width: 100%; /* Default to full width for stacking */
+  width: 100%;
   margin-left: 0 !important;
   margin-bottom: 1rem;
 }
@@ -189,13 +212,6 @@
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
   animation-delay: 2.6s;
-}
-
-.hero-button-filled:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  color: #ffffff !important;
-  opacity: 1;
 }
 
 .buttons {

@@ -13,7 +13,7 @@ interface BookingCardProps {
 }
 
 const BookingCard = ({ title, price, topics, link, description }: BookingCardProps) => (
-  <div className="col col--6 margin-bottom--lg">
+  <div className="col col--6 margin-bottom--lg booking-carousel-item">
     <div className="card shadow--md" style={{ height: '100%' }}>
       <div className="card__header">
         <Heading as="h3">{title}</Heading>
@@ -113,11 +113,11 @@ export default function BookingPage(): React.JSX.Element {
         </section>
 
         <div className="text--center margin-bottom--xl">
-          <Heading as="h1" style={{ fontSize: '3.5rem' }}>1:1 Strategy Sessions</Heading>
+          <Heading as="h1" style={{ fontSize: '3.5rem' }}>Strategy Sessions</Heading>
           <p className="hero__subtitle">Select a mission track below to begin your transformation from thought to mastery.</p>
         </div>
 
-        <div className="row">
+        <div className="row booking-carousel-row">
           {sessions.map((session, idx) => (
             <BookingCard key={idx} {...session} />
           ))}
