@@ -36,7 +36,7 @@ async function generateSequentialImages() {
 
   let previousImageUrl = null;
 
-  for (const img of IMAGES) {
+  for (const img of IMAGES.filter(i => [5, 8].includes(i.id))) {
     try {
       console.log(`🚀 Generating cinematic image ${img.id} (16:9 Sequential)...`);
       
