@@ -31,7 +31,7 @@
   --topo-line: rgba(255, 255, 255, 0.2);
   --topo-node-main: #ffffff;
   --topo-node-accent: #25c2a0;
-  --topo-text-color: #ffffff; /* Clean white for SVG text */
+  --topo-text-color: #ffffff; 
 }
 
 /* DARK MODE: Consistent Blue/Teal Accents */
@@ -113,7 +113,7 @@
   font-size: 1.1rem !important;
   font-weight: 500;
   max-width: 900px;
-  margin: 3.5rem auto 2.5rem !important; /* Slightly more space */
+  margin: 3.5rem auto 2.5rem !important;
   opacity: 0;
   animation: scaleIn 0.8s ease-out forwards;
   animation-delay: 2.5s;
@@ -166,6 +166,17 @@
   border-radius: 50px;
   opacity: 0;
   animation: scaleIn 0.8s ease-out forwards;
+  width: 100%; /* Default to full width for stacking */
+  margin-left: 0 !important;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-button-filled {
+    width: auto;
+    margin-left: 1rem !important;
+    margin-bottom: 0;
+  }
 }
 
 .hero-booking-button {
@@ -185,6 +196,23 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   color: #ffffff !important;
   opacity: 1;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .buttons {
+    flex-direction: row;
+    justify-content: center;
+    max-width: none;
+  }
 }
 
 /* Navbar Force Style */
