@@ -74,7 +74,7 @@
 
 /* Hero Section: Deeper Background for High Signal */
 .heroBanner {
-  background-color: #1a2b4b !important; /* Significantly darker blue for better contrast */
+  background-color: #0d1526 !important; /* Near-black navy for maximum contrast */
   padding: 4rem 1rem !important;
   min-height: 100vh;
   display: flex;
