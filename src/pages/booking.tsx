@@ -53,7 +53,7 @@ const sessions: BookingCardProps[] = [
         Coaching for mid-to-senior transitions. Learn to reason about <b>distributed databases, caching layers, and high-availability systems</b> with the precision of a lead engineer.
       </p>
     ),
-    link: 'https://calendar.google.com/calendar/appointments/schedules/',
+    link: 'https://calendar.app.google/Y1cPMxpCfj6qU3jR8',
   },
   {
     title: 'AI Agent Workflow Consulting',
@@ -64,7 +64,7 @@ const sessions: BookingCardProps[] = [
         For founders and builders. We debug and architect <b>autonomous agent loops</b>, moving from brittle AI scripts to resilient, task-oriented agentic systems.
       </p>
     ),
-    link: 'https://calendar.google.com/calendar/appointments/schedules/',
+    link: 'https://calendar.app.google/n4QvyqYxGaeGc3kY7',
   },
   {
     title: 'Custom Technical Tutoring',
@@ -75,7 +75,7 @@ const sessions: BookingCardProps[] = [
         Deep-dive support for <b>specialized CS topics</b> outside our primary tracks. Tailored sessions for advanced research or unique industrial bottlenecks.
       </p>
     ),
-    link: 'https://calendar.google.com/calendar/appointments/schedules/',
+    link: 'https://calendar.app.google/fTQpDxdnJXaYE8neA',
   },
 ];
 
