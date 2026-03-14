@@ -87,25 +87,25 @@ export default function BookingPage(): React.JSX.Element {
       image="https://autonateai.com/img/og-booking.png">
       <main className="container padding-vert--xl">
         
-        {/* Restored High-Impact Instructor Section */}
+        {/* Restored High-Impact Instructor Section - Now Scaled for Better UX */}
         <section className="margin-bottom--xl shadow--lw" style={{ backgroundColor: 'var(--ifm-color-emphasis-100)', borderRadius: '16px', overflow: 'hidden' }}>
           <div className="row no-gutters" style={{ alignItems: 'stretch' }}>
             <div className="col col--5">
               <img 
                 src="/img/nate-instructor.jpg" 
                 alt="Nate - AutoNateAI Instructor" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '450px', objectPosition: 'center 20%' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '350px', objectPosition: 'center 20%' }}
               />
             </div>
-            <div className="col col--7 padding--xl">
-              <Heading as="h2" style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>The Mission Behind the Mastery</Heading>
-              <p style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
+            <div className="col col--7 padding--lg" style={{ padding: '1.5rem' }}>
+              <Heading as="h2" style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>The Mission Behind the Mastery</Heading>
+              <p style={{ fontSize: '0.95rem', lineHeight: '1.5', marginBottom: '1rem' }}>
                 I graduated from the <span className="highlight-brand">University of Michigan (2019)</span> with a focus on <span className="highlight-focus">Software Systems and Security</span>. My career has been a journey through the world's most sophisticated technical ecosystems, from <span className="highlight-brand">Microsoft's</span> <span className="highlight-job">Threat Protection Team</span> to <span className="highlight-brand">Citibank's</span> <span className="highlight-job">Global Infrastructure Architecture</span>.
               </p>
-              <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+              <p style={{ fontSize: '0.9rem', lineHeight: '1.5', marginBottom: '1rem' }}>
                 As a former <span className="highlight-job">Sr. Software Consultant</span> at <span className="highlight-brand">Atomic Object</span> and <span className="highlight-job">AI Software Engineer</span> at <span className="highlight-brand">Veterans United</span>, I've spent years designing architectures that provide competitive advantages. I’ve led agentic AI projects, engineered advanced prompt-driven workflows, and mentored engineering teams at every level.
               </p>
-              <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '0' }}>
+              <p style={{ fontSize: '0.9rem', lineHeight: '1.5', marginBottom: '0' }}>
                 I founded <span className="highlight-job">AutoNateAI</span> with one mission: <span className="highlight-mastery" style={{ textTransform: 'uppercase' }}>to convert more humans into deep thinkers</span>. I don't just teach you how to pass a test; I teach you how to translate mental epiphanies into industrial reality.
               </p>
             </div>
@@ -113,8 +113,8 @@ export default function BookingPage(): React.JSX.Element {
         </section>
 
         <div className="text--center margin-bottom--xl" style={{ width: '100%' }}>
-          <Heading as="h1" style={{ fontSize: '3.5rem', width: '100%' }}>Strategy Sessions</Heading>
-          <p className="hero__subtitle" style={{ maxWidth: 'none', margin: '1rem auto' }}>Select a mission track below to begin your transformation from thought to mastery.</p>
+          <Heading as="h1" style={{ fontSize: '2.5rem', width: '100%' }}>Strategy Sessions</Heading>
+          <p className="hero__subtitle" style={{ maxWidth: 'none', margin: '0.5rem auto', fontSize: '1.1rem' }}>Select a mission track below to begin your transformation from thought to mastery.</p>
         </div>
 
         <div className="row booking-carousel-row">
