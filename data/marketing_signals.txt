@@ -1,0 +1,22 @@
+### Top 10 GVSU Discovery Keywords
+1. GVSU CIS 163 Recursion Help
+2. Grand Valley Algorithms Exam Prep
+3. CLRS Dynamic Programming Explained
+4. GVSU Mackinac Hall Tutoring
+5. CIS 241 Pointers GPS Vibe
+6. GVSU CS Vibe Learning
+7. How to solve GVSU CIS 263 Labs
+8. Big O Complexity GVSU Computer Science
+9. Pew Campus Applied CS Tutoring
+10. GVSU Software Engineering Architecture Help
+
+### YouTube Description Template
+Title: [Concept Name] - GVSU CIS [Course #] Vibe Learning
+Description:
+Struggling with [Concept] in Week [X]? In this video, we unlock the mental model behind [Concept] using the [Vibe Name] approach.
+
+🚀 Need a hand? Book a Recursion Rescue or Algorithm Masterclass here: [YOUR_CALENDAR_LINK]
+
+📍 Find me in Mackinac Hall or Pew Campus this week! Check the schedule in the LinkedIn Group: [LINKEDIN_GROUP_LINK]
+
+#GVSU #ComputerScience #VibeLearning #Programming #Tutoring

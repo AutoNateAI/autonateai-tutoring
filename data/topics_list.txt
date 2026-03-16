@@ -1,0 +1,178 @@
+Advanced Software Systems
+Advanced SQL (Joins/Subqueries/Triggers)
+Adversarial ML & Defenses
+Agile Methodologies (Scrum/Kanban)
+AI Algorithms & Tools
+AI Ethics & Algorithmic Fairness
+AI Systems
+AI Systems & MLOps
+Application Layer (DNS/HTTP/SMTP)
+Applied Cryptography (Grad)
+Architectural Patterns (MVC/Microservices)
+Architectural Styles (Layered/P2P)
+Architecture & UI Design
+Arrays (Single/Multi-dimensional)
+Assembly Language (MIPS/RISC-V)
+Association Rule Mining
+Asymptotic Analysis (Big O)
+Asymptotic Analysis (Rigorous)
+Balanced Trees (AVL, B-Trees)
+Bayesian Learning
+Biomedical Text Mining
+Black-Box & White-Box Testing
+CI/CD & Build Automation
+CI/CD & Deployment
+Combinational Logic & Circuits
+Complexity Theory (P vs NP)
+Conditional Logic (if/else, switch)
+Construction & DevOps
+Containerization (Docker)
+Containerization & Orchestration
+Container Orchestration (Kubernetes)
+Creational & Structural Patterns
+Cybersecurity & AI
+Cybersecurity & Cryptography
+Cybersecurity Ethics
+Cyber Threat Detection with Data Science
+Data & Algorithms
+Data Engineering
+Data Engineering & Pipelines
+Datapath & ALU Design
+Data Science & Machine Learning
+Data Types & Pointers
+Deep Learning & GANs
+Defect Tracking & Reporting
+Defining Classes and Methods
+Design & Architecture
+Design for Quality (Scalability/Security)
+Design Patterns (I & II)
+Design Patterns (Singleton/Factory/Observer)
+Design Principles (SOLID/DRY)
+Diffusion Models (DALL-E/Stable Diffusion)
+Digital Artifact Analysis
+Digital Forensics
+Divide and Conquer & Master Theorem
+Domain Modeling & UML
+Dynamic Programming
+Edge & Cloud AI
+Elicitation & Analysis Techniques
+ER Modeling & Relational Mapping
+Exception Handling
+Exception Handling & File I/O
+Experiment Tracking (MLflow/W&B)
+Explainability & Ethics (XAI)
+File Systems & Mass Storage
+Formal vs Informal Specification
+Front-end & React Arch
+Full-Stack & Cloud Development
+Functional Programming (Scheme/Haskell)
+Genetic Algorithms
+Git Workflows & Branching
+Graph Traversals (BFS/DFS)
+Hashing & Hash Tables
+Heaps & Priority Queues
+Heuristic Search & Logic
+Hidden Markov Models (HMMs)
+High-Performance Computing
+Human-Centered AI
+Indexing & Storage (B-Trees)
+Infrastructure as Code (Terraform/Ansible)
+Inheritance & Polymorphism
+Intellectual Property & Copyright
+Inter-process Communication (IPC)
+Introduction to Computing & Problem Solving
+Introduction to C: Syntax and gcc
+Iteration and Loops (while, for)
+JUnit Testing & TDD
+Large Language Models (LLMs)
+Layered Network Models (OSI/TCP-IP)
+Layered Protocols (OSI/TCP-IP)
+Lexical Analysis & Parsing
+Linear & Logistic Regression
+Linked Lists (Singly/Doubly)
+Logic Programming (Prolog)
+Makefiles & Git
+Memory Hierarchy (Cache/VM)
+Memory Management & ArrayLists
+Memory Management (Paging/VM)
+Microservices & Cloud Deployment
+Model Deployment (Canary/Blue-Green)
+Model Monitoring & Drift Detection
+Multimodal Models (CLIP)
+Names, Bindings, and Scopes
+Network Layer (IP/CIDR/Routing)
+Network Security (SSL/TLS)
+Network Security & VPNs
+Neural Networks (Backpropagation)
+Neural Networks & Deep Learning
+Normalization (1NF-BCNF)
+OS Security & Protection
+OS Structures & System Calls
+PAC Learning & Decision Trees
+Phylogenetic Trees
+Physical & Data Link Layers
+Pipelining & Hazards
+Pointers and Memory Management
+Privacy & Surveillance
+Processes and Signals
+Process Improvement (CMMI/TMMi)
+Process & Thread Management
+Product & Process Quality
+Product vs Process Metrics
+Professional Ethics (ACM/IEEE Codes)
+Programming & Software Engineering
+Recursion
+Regression & Non-functional Testing
+Reinforcement Learning (Q-Learning)
+Relational Algebra
+Requirements & Architecture
+Requirements Engineering & Git
+Resume & Interview Preparation
+Reviews, Walkthroughs, and Audits
+Risk Management in SQA
+Risk Management & Security Policy
+Root Cause Analysis (RCA)
+ROWS
+SAS Environment & Macros
+SDLC & Process Modeling (DFDs)
+SE Process & UML Modeling
+Sequence Alignment (Smith-Waterman/BLAST)
+Sequential Logic (Latches/Flip-flops)
+Shortest Path & MST
+Single-Cycle CPU & Control Unit
+Social Impact of Computing
+Software Architecture (MVC)
+Software Engineering
+Software Process Models (Agile/Waterfall)
+Software Quality & Assurance
+Software Quality & Testing
+Software Testing (Unit/Integration)
+Sorting Algorithms
+SQA Metrics & Maturity Models
+SQA Standards (ISO 9001/IEEE)
+SQL Basics (DDL/DML)
+SRE & DevOps Culture
+Stacks & Queues
+Structures and Linked Lists in C
+Subprograms & Stack Management
+Synchronization & Deadlocks
+Syntax & Semantics (BNF/EBNF)
+Systems Programming
+Technical Debt & Refactoring
+Test Automation & Tools
+Test Coverage & Metrics
+Test Levels (Unit/Integration/System)
+Topics!A2:B200
+Transactions (ACID) & Concurrency
+Transformers & Attention Mechanisms
+Transformers & LLM Prompting
+Transport Layer (TCP/UDP)
+Trustworthy AI
+UML Modeling (Sequence/State)
+Unix/Linux & Shell Scripting (Bash)
+Unsupervised Learning (K-Means/PCA)
+Using Objects and Classes (String, Scanner)
+VAEs & GANs Foundations
+Variables, Data Types, and Expressions
+Wireless & Multimedia Networks
+Workplace Culture & Professionalism

@@ -1,0 +1,726 @@
+{
+  "majorDimension": "ROWS",
+  "range": "Topics!A2:B200",
+  "values": [
+    [
+      "AI-BS-GVSU",
+      "AI Systems"
+    ],
+    [
+      "AI-BS-GVSU",
+      "Cybersecurity & AI"
+    ],
+    [
+      "AI-BS-GVSU",
+      "Edge & Cloud AI"
+    ],
+    [
+      "CS-BS-GVSU",
+      "Software Engineering"
+    ],
+    [
+      "CS-BS-GVSU",
+      "Systems Programming"
+    ],
+    [
+      "SE-BS-GVSU",
+      "Software Quality & Testing"
+    ],
+    [
+      "SE-BS-GVSU",
+      "Design & Architecture"
+    ],
+    [
+      "SE-BS-GVSU",
+      "Construction & DevOps"
+    ],
+    [
+      "CS-BS-MS-GVSU",
+      "Advanced Software Systems"
+    ],
+    [
+      "CS-BS-MS-GVSU",
+      "High-Performance Computing"
+    ],
+    [
+      "CS-BS-CYBER-MS-GVSU",
+      "Cybersecurity & Cryptography"
+    ],
+    [
+      "CS-BS-CYBER-MS-GVSU",
+      "Digital Forensics"
+    ],
+    [
+      "CS-BS-DSA-MS-GVSU",
+      "Data Science & Machine Learning"
+    ],
+    [
+      "CS-BS-DSA-MS-GVSU",
+      "Data Engineering"
+    ],
+    [
+      "AI-MS-GVSU",
+      "Human-Centered AI"
+    ],
+    [
+      "AI-MS-GVSU",
+      "Edge & Cloud AI"
+    ],
+    [
+      "AI-MS-GVSU",
+      "AI Systems & MLOps"
+    ],
+    [
+      "SE-MS-GVSU",
+      "Requirements & Architecture"
+    ],
+    [
+      "SE-MS-GVSU",
+      "Full-Stack & Cloud Development"
+    ],
+    [
+      "SE-MS-GVSU",
+      "Software Quality & Assurance"
+    ],
+    [
+      "AI-FOUND-CERT-GVSU",
+      "AI Algorithms & Tools"
+    ],
+    [
+      "AI-FOUND-CERT-GVSU",
+      "Trustworthy AI"
+    ],
+    [
+      "CS-MINOR-GVSU",
+      "Programming & Software Engineering"
+    ],
+    [
+      "CS-MINOR-GVSU",
+      "Data & Algorithms"
+    ],
+    [
+      "CIS163",
+      "JUnit Testing & TDD"
+    ],
+    [
+      "CIS163",
+      "Memory Management & ArrayLists"
+    ],
+    [
+      "CIS163",
+      "Inheritance & Polymorphism"
+    ],
+    [
+      "CIS163",
+      "Exception Handling"
+    ],
+    [
+      "CIS163",
+      "Recursion"
+    ],
+    [
+      "CIS163",
+      "Asymptotic Analysis (Big O)"
+    ],
+    [
+      "CIS163",
+      "Linked Lists (Singly/Doubly)"
+    ],
+    [
+      "CIS163",
+      "Stacks & Queues"
+    ],
+    [
+      "CIS163",
+      "Sorting Algorithms"
+    ],
+    [
+      "CIS263",
+      "Asymptotic Analysis (Rigorous)"
+    ],
+    [
+      "CIS263",
+      "Balanced Trees (AVL, B-Trees)"
+    ],
+    [
+      "CIS263",
+      "Hashing & Hash Tables"
+    ],
+    [
+      "CIS263",
+      "Heaps & Priority Queues"
+    ],
+    [
+      "CIS263",
+      "Graph Traversals (BFS/DFS)"
+    ],
+    [
+      "CIS263",
+      "Shortest Path & MST"
+    ],
+    [
+      "CIS263",
+      "Divide and Conquer & Master Theorem"
+    ],
+    [
+      "CIS263",
+      "Dynamic Programming"
+    ],
+    [
+      "CIS263",
+      "Complexity Theory (P vs NP)"
+    ],
+    [
+      "CIS162",
+      "Introduction to Computing & Problem Solving"
+    ],
+    [
+      "CIS162",
+      "Variables, Data Types, and Expressions"
+    ],
+    [
+      "CIS162",
+      "Using Objects and Classes (String, Scanner)"
+    ],
+    [
+      "CIS162",
+      "Conditional Logic (if/else, switch)"
+    ],
+    [
+      "CIS162",
+      "Iteration and Loops (while, for)"
+    ],
+    [
+      "CIS162",
+      "Defining Classes and Methods"
+    ],
+    [
+      "CIS162",
+      "Arrays (Single/Multi-dimensional)"
+    ],
+    [
+      "CIS162",
+      "Inheritance & Polymorphism"
+    ],
+    [
+      "CIS162",
+      "Exception Handling & File I/O"
+    ],
+    [
+      "CIS241",
+      "Unix/Linux & Shell Scripting (Bash)"
+    ],
+    [
+      "CIS241",
+      "Introduction to C: Syntax and gcc"
+    ],
+    [
+      "CIS241",
+      "Pointers and Memory Management"
+    ],
+    [
+      "CIS241",
+      "Structures and Linked Lists in C"
+    ],
+    [
+      "CIS241",
+      "Processes and Signals"
+    ],
+    [
+      "CIS241",
+      "Inter-process Communication (IPC)"
+    ],
+    [
+      "CIS241",
+      "Makefiles & Git"
+    ],
+    [
+      "CIS350",
+      "Software Process Models (Agile/Waterfall)"
+    ],
+    [
+      "CIS350",
+      "Requirements Engineering & Git"
+    ],
+    [
+      "CIS350",
+      "Domain Modeling & UML"
+    ],
+    [
+      "CIS350",
+      "Software Architecture (MVC)"
+    ],
+    [
+      "CIS350",
+      "Design Principles (SOLID/DRY)"
+    ],
+    [
+      "CIS350",
+      "Design Patterns (Singleton/Factory/Observer)"
+    ],
+    [
+      "CIS350",
+      "Software Testing (Unit/Integration)"
+    ],
+    [
+      "CIS350",
+      "CI/CD & Deployment"
+    ],
+    [
+      "CIS290",
+      "Professional Ethics (ACM/IEEE Codes)"
+    ],
+    [
+      "CIS290",
+      "Intellectual Property & Copyright"
+    ],
+    [
+      "CIS290",
+      "Privacy & Surveillance"
+    ],
+    [
+      "CIS290",
+      "Cybersecurity Ethics"
+    ],
+    [
+      "CIS290",
+      "Social Impact of Computing"
+    ],
+    [
+      "CIS290",
+      "Resume & Interview Preparation"
+    ],
+    [
+      "CIS290",
+      "Workplace Culture & Professionalism"
+    ],
+    [
+      "CIS351",
+      "Combinational Logic & Circuits"
+    ],
+    [
+      "CIS351",
+      "Sequential Logic (Latches/Flip-flops)"
+    ],
+    [
+      "CIS351",
+      "Datapath & ALU Design"
+    ],
+    [
+      "CIS351",
+      "Single-Cycle CPU & Control Unit"
+    ],
+    [
+      "CIS351",
+      "Pipelining & Hazards"
+    ],
+    [
+      "CIS351",
+      "Memory Hierarchy (Cache/VM)"
+    ],
+    [
+      "CIS351",
+      "Assembly Language (MIPS/RISC-V)"
+    ],
+    [
+      "CIS353",
+      "ER Modeling & Relational Mapping"
+    ],
+    [
+      "CIS353",
+      "Relational Algebra"
+    ],
+    [
+      "CIS353",
+      "SQL Basics (DDL/DML)"
+    ],
+    [
+      "CIS353",
+      "Advanced SQL (Joins/Subqueries/Triggers)"
+    ],
+    [
+      "CIS353",
+      "Normalization (1NF-BCNF)"
+    ],
+    [
+      "CIS353",
+      "Transactions (ACID) & Concurrency"
+    ],
+    [
+      "CIS353",
+      "Indexing & Storage (B-Trees)"
+    ],
+    [
+      "CIS452",
+      "OS Structures & System Calls"
+    ],
+    [
+      "CIS452",
+      "Process & Thread Management"
+    ],
+    [
+      "CIS452",
+      "Inter-process Communication (IPC)"
+    ],
+    [
+      "CIS452",
+      "Synchronization & Deadlocks"
+    ],
+    [
+      "CIS452",
+      "Memory Management (Paging/VM)"
+    ],
+    [
+      "CIS452",
+      "File Systems & Mass Storage"
+    ],
+    [
+      "CIS452",
+      "OS Security & Protection"
+    ],
+    [
+      "CIS457",
+      "Layered Network Models (OSI/TCP-IP)"
+    ],
+    [
+      "CIS457",
+      "Physical & Data Link Layers"
+    ],
+    [
+      "CIS457",
+      "Network Layer (IP/CIDR/Routing)"
+    ],
+    [
+      "CIS457",
+      "Transport Layer (TCP/UDP)"
+    ],
+    [
+      "CIS457",
+      "Application Layer (DNS/HTTP/SMTP)"
+    ],
+    [
+      "CIS457",
+      "Network Security (SSL/TLS)"
+    ],
+    [
+      "CIS457",
+      "Wireless & Multimedia Networks"
+    ],
+    [
+      "CIS343",
+      "Syntax & Semantics (BNF/EBNF)"
+    ],
+    [
+      "CIS343",
+      "Lexical Analysis & Parsing"
+    ],
+    [
+      "CIS343",
+      "Names, Bindings, and Scopes"
+    ],
+    [
+      "CIS343",
+      "Data Types & Pointers"
+    ],
+    [
+      "CIS343",
+      "Subprograms & Stack Management"
+    ],
+    [
+      "CIS343",
+      "Functional Programming (Scheme/Haskell)"
+    ],
+    [
+      "CIS343",
+      "Logic Programming (Prolog)"
+    ],
+    [
+      "SE413",
+      "Test Levels (Unit/Integration/System)"
+    ],
+    [
+      "SE413",
+      "Black-Box & White-Box Testing"
+    ],
+    [
+      "SE413",
+      "Test Coverage & Metrics"
+    ],
+    [
+      "SE413",
+      "Regression & Non-functional Testing"
+    ],
+    [
+      "SE413",
+      "Test Automation & Tools"
+    ],
+    [
+      "SE413",
+      "Defect Tracking & Reporting"
+    ],
+    [
+      "SE422",
+      "Architectural Styles (Layered/P2P)"
+    ],
+    [
+      "SE422",
+      "Architectural Patterns (MVC/Microservices)"
+    ],
+    [
+      "SE422",
+      "UML Modeling (Sequence/State)"
+    ],
+    [
+      "SE422",
+      "Creational & Structural Patterns"
+    ],
+    [
+      "SE422",
+      "Design for Quality (Scalability/Security)"
+    ],
+    [
+      "SE422",
+      "Technical Debt & Refactoring"
+    ],
+    [
+      "SE430",
+      "Agile Methodologies (Scrum/Kanban)"
+    ],
+    [
+      "SE430",
+      "Git Workflows & Branching"
+    ],
+    [
+      "SE430",
+      "CI/CD & Build Automation"
+    ],
+    [
+      "SE430",
+      "Containerization (Docker)"
+    ],
+    [
+      "SE430",
+      "Container Orchestration (Kubernetes)"
+    ],
+    [
+      "SE430",
+      "Infrastructure as Code (Terraform/Ansible)"
+    ],
+    [
+      "SE430",
+      "SRE & DevOps Culture"
+    ],
+    [
+      "SE437",
+      "SQA Standards (ISO 9001/IEEE)"
+    ],
+    [
+      "SE437",
+      "Process Improvement (CMMI/TMMi)"
+    ],
+    [
+      "SE437",
+      "Product vs Process Metrics"
+    ],
+    [
+      "SE437",
+      "Root Cause Analysis (RCA)"
+    ],
+    [
+      "SE437",
+      "Reviews, Walkthroughs, and Audits"
+    ],
+    [
+      "SE437",
+      "Risk Management in SQA"
+    ],
+    [
+      "AI501",
+      "Heuristic Search & Logic"
+    ],
+    [
+      "AI501",
+      "Linear & Logistic Regression"
+    ],
+    [
+      "AI501",
+      "Neural Networks & Deep Learning"
+    ],
+    [
+      "AI501",
+      "Unsupervised Learning (K-Means/PCA)"
+    ],
+    [
+      "AI501",
+      "AI Ethics & Algorithmic Fairness"
+    ],
+    [
+      "AI502",
+      "VAEs & GANs Foundations"
+    ],
+    [
+      "AI502",
+      "Transformers & Attention Mechanisms"
+    ],
+    [
+      "AI502",
+      "Large Language Models (LLMs)"
+    ],
+    [
+      "AI502",
+      "Diffusion Models (DALL-E/Stable Diffusion)"
+    ],
+    [
+      "AI502",
+      "Multimodal Models (CLIP)"
+    ],
+    [
+      "AI545",
+      "Data Engineering & Pipelines"
+    ],
+    [
+      "AI545",
+      "Experiment Tracking (MLflow/W&B)"
+    ],
+    [
+      "AI545",
+      "Containerization & Orchestration"
+    ],
+    [
+      "AI545",
+      "Model Deployment (Canary/Blue-Green)"
+    ],
+    [
+      "AI545",
+      "Model Monitoring & Drift Detection"
+    ],
+    [
+      "CIS635",
+      "Sequence Alignment (Smith-Waterman/BLAST)"
+    ],
+    [
+      "CIS635",
+      "Hidden Markov Models (HMMs)"
+    ],
+    [
+      "CIS635",
+      "Phylogenetic Trees"
+    ],
+    [
+      "CIS635",
+      "Association Rule Mining"
+    ],
+    [
+      "CIS635",
+      "Biomedical Text Mining"
+    ],
+    [
+      "CIS678",
+      "PAC Learning & Decision Trees"
+    ],
+    [
+      "CIS678",
+      "Neural Networks (Backpropagation)"
+    ],
+    [
+      "CIS678",
+      "Bayesian Learning"
+    ],
+    [
+      "CIS678",
+      "Genetic Algorithms"
+    ],
+    [
+      "CIS678",
+      "Reinforcement Learning (Q-Learning)"
+    ],
+    [
+      "CIS615",
+      "Risk Management & Security Policy"
+    ],
+    [
+      "CIS616",
+      "Applied Cryptography (Grad)"
+    ],
+    [
+      "CIS617",
+      "Digital Artifact Analysis"
+    ],
+    [
+      "CIS619",
+      "Cyber Threat Detection with Data Science"
+    ],
+    [
+      "SE511",
+      "SE Process & UML Modeling"
+    ],
+    [
+      "SE511",
+      "Design Patterns (I & II)"
+    ],
+    [
+      "SE512",
+      "Elicitation & Analysis Techniques"
+    ],
+    [
+      "SE512",
+      "Formal vs Informal Specification"
+    ],
+    [
+      "SE537",
+      "Product & Process Quality"
+    ],
+    [
+      "SE537",
+      "SQA Metrics & Maturity Models"
+    ],
+    [
+      "CIS641",
+      "SDLC & Process Modeling (DFDs)"
+    ],
+    [
+      "CIS641",
+      "Architecture & UI Design"
+    ],
+    [
+      "CIS654",
+      "Layered Protocols (OSI/TCP-IP)"
+    ],
+    [
+      "CIS654",
+      "Network Security & VPNs"
+    ],
+    [
+      "CIS658",
+      "Front-end & React Arch"
+    ],
+    [
+      "CIS658",
+      "Microservices & Cloud Deployment"
+    ],
+    [
+      "STA616",
+      "SAS Environment & Macros"
+    ],
+    [
+      "STA631",
+      "Linear & Logistic Regression"
+    ],
+    [
+      "AI402",
+      "Deep Learning & GANs"
+    ],
+    [
+      "AI402",
+      "Transformers & LLM Prompting"
+    ],
+    [
+      "CYB420",
+      "Adversarial ML & Defenses"
+    ],
+    [
+      "CYB420",
+      "Explainability & Ethics (XAI)"
+    ]
+  ]
+}
