@@ -1,12 +1,24 @@
-# Operation: Circuit Breaker
+---
+title: "Operation: Circuit Breaker"
+description: "A dual-algorithm DFS+BFS emergency through Grand Rapids ArtPrize territory."
+sidebar_position: 2
+image: /img/quests/circuit-breaker/scene-01-midnight-alert.png
+---
 
-<CardSlam question="When DFS Meets BFS: The Grand Rapids Rescue" subtext="A Dual-Algorithm Emergency Through ArtPrize Territory" />
+import CardSlam from "@site/src/components/CardSlam";
+
+<CardSlam
+  question="When DFS Meets BFS: The Grand Rapids Rescue"
+  subtext="A Dual-Algorithm Emergency Through ArtPrize Territory"
+/>
 
 ---
 
 ## The Midnight Alert
 
 The Grand River glowed electric blue under the pedestrian **Blue Bridge** as Dr. Nate Chen's phone erupted with an emergency alert. At 11:47 PM on September 23rd, 2026—peak ArtPrize installation week—something catastrophic had happened.
+
+<img className="quest-image" src="/img/quests/circuit-breaker/scene-01-midnight-alert.png" alt="Dr. Nate Chen on the Blue Bridge at night during the emergency alert" />
 
 **Maya Patel**, the 28-year-old Indian-American systems architect who'd built the entire ArtPrize visitor routing engine, was panicking from her Heritage Hill Victorian. Her voice cracked through the encrypted call: "Nate, the load balancers are fried. Half a million visitors tomorrow. The navigation system is completely bricked."
 
@@ -49,6 +61,8 @@ def dfs_only(graph, start, target):
 
 "The problem," Priya explained, pulling up visitor heatmaps, "is that DFS finds *a* path, but not necessarily the *optimal* path. Visitors are getting routed through Heritage Hill, then all the way to **Fulton Street**, then back to downtown. It's a nightmare."
 
+<img className="quest-image" src="/img/quests/circuit-breaker/scene-02-heritage-hill.png" alt="Maya Patel at her Heritage Hill Victorian home surrounded by laptop screens showing graph visualizations" />
+
 Nate leaned forward. "DFS is great for exploration—finding any path through a maze. But BFS guarantees the shortest path in an unweighted graph. We need both."
 
 ```python
@@ -78,6 +92,8 @@ Maya's eyes widened. "So BFS would find the minimum number of venues between any
 
 "Exactly," Nate said. "But here's the twist—we need DFS to *explore* connected components, then BFS to *optimize* within them."
 
+<img className="quest-image" src="/img/quests/circuit-breaker/scene-03-zoo-war-room.png" alt="The team gathered around the 30-foot waterfall at John Ball Zoo with holographic graph visualizations" />
+
 ---
 
 ## The Dual-Algorithm Strategy
@@ -85,6 +101,8 @@ Maya's eyes widened. "So BFS would find the minimum number of venues between any
 The team relocated to the **rooftop café** at John Ball Zoo, overlooking the Grand River. Downtown Grand Rapids sparkled in the distance. ArtPrize installations lit up the **historic bridges** crossing the river—the 1892 Grand Rapids and Indiana Railroad bridge near Fulton and Pearl.
 
 "Here's the architecture," Nate began, sketching on his tablet. "We use DFS to identify all connected components—clusters of venues that are reachable from each other. Then, within each component, we use BFS to find optimal paths."
+
+<img className="quest-image" src="/img/quests/circuit-breaker/scene-04-rooftop-strategy.png" alt="The team on the rooftop café at John Ball Zoo overlooking Grand Rapids at dawn with historic bridges visible" />
 
 ```python
 # Step 1: DFS to Find Connected Components
@@ -170,6 +188,8 @@ Dawn broke over **Heritage Hill** as the team deployed the code. The historic ne
 
 "Running the simulation," Priya announced. "Loading venue graph: 200 nodes, 450 edges. Starting dual-algorithm routing."
 
+<img className="quest-image" src="/img/quests/circuit-breaker/scene-05-code-deploys.png" alt="Priya Okoye coding intensely with Python DFS and BFS code on screen, downtown Grand Rapids in background" />
+
 ```python
 # Real-World Venue Graph (Simplified Grand Rapids Map)
 grand_rapids_venues = {
@@ -200,6 +220,8 @@ print(f"Connected Venues: {len(component)} venues reachable")
 ```
 
 The simulation ran. The old DFS-only system had visitors taking 8-12 venue hops to cross downtown. The new dual-algorithm system? **Maximum 3 hops**.
+
+<img className="quest-image" src="/img/quests/circuit-breaker/scene-06-heritage-test.png" alt="Heritage Hill historic neighborhood with visitors using the navigation app successfully" />
 
 Maya let out a whoop. "We just cut average visitor travel time by 60%! The **Gerald R. Ford Museum** crowd can hit the **Grand Rapids Public Museum** in two stops. The **Meyer May House** tour connects directly to the Blue Bridge installations."
 
@@ -257,6 +279,8 @@ By 9:00 AM, the system was live. ArtPrize visitors flooded in from across Michig
 
 The team watched from the **Frederik Meijer Gardens** sculpture park, surrounded by Dale Chihuly's glass installations. The **Butterflies Are Blooming** exhibition would open in March 2026, and they'd already integrated the routing system for that too.
 
+<img className="quest-image" src="/img/quests/circuit-breaker/scene-07-meijer-deployment.png" alt="The team celebrating successful deployment at Meijer Gardens sculpture park with colorful glass art" />
+
 "You know what we proved?" Priya said, sipping her coffee. "DFS alone is like exploring without a map. BFS alone is efficient but blind to the bigger structure. Together?"
 
 "Together," Maya finished, "they see the forest *and* the trees."
@@ -266,6 +290,8 @@ Nate pulled up the final metrics on his phone:
 - **Visitor satisfaction**: Up 43%
 - **Venue coverage**: 94% of visitors hitting 5+ venues (was 61%)
 - **System uptime**: 99.97%
+
+<img className="quest-image" src="/img/quests/circuit-breaker/scene-08-victory-metrics.png" alt="Close-up of smartphone showing victory metrics dashboard with 60 percent reduction and 94 percent coverage" />
 
 "The **Grand Rapids Lantern Festival** team just signed on," Maya said. "April through June at John Ball Zoo. They want the same routing for their 50+ hand-crafted lantern displays."
 
@@ -356,6 +382,8 @@ tour_route = hybrid_dfs_bfs_router(
 )
 print(f"Complete Tour: {' -> '.join(tour_route)}")
 ```
+
+<img className="quest-image" src="/img/quests/circuit-breaker/scene-09-grand-rapids-flows.png" alt="Epic panoramic view of Grand Rapids at sunset with glowing flow lines connecting venues across the city" />
 
 The three of them stood there—Dr. Nate Chen, Maya Patel, Priya Okoye—watching visitors flow through Grand Rapids like a perfectly optimized graph traversal.
 
