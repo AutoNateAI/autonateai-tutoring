@@ -1,0 +1,8 @@
+{
+  "label": "Circuit Breaker",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "index"
+  }
+}
