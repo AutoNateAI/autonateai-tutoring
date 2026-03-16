@@ -73,7 +73,7 @@ const config: Config = {
         },
         {
           to: '/booking', 
-          label: 'Book Tutoring Session', 
+          label: 'Workshops and Services', 
           position: 'left',
           className: 'button button--primary margin-left--md nav-booking-button',
         },
@@ -95,7 +95,7 @@ const config: Config = {
           title: 'Tutoring',
           items: [
             {
-              label: 'Book a Session',
+              label: 'Workshops & Services',
               to: '/booking',
             },
           ],

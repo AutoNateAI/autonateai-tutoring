@@ -146,13 +146,23 @@
   }
 }
 
-/* Hero Section: Deeper Background for High Signal */
+/* Hero Section: Even Deeper Navy for High Signal */
 .heroBanner {
-  background-color: #0d1526 !important;
+  background-color: #050a1a !important; /* Deep Navy */
   padding: 4rem 1rem !important;
   min-height: 100vh;
   display: flex;
   align-items: center;
+}
+
+/* Fix button labels in light mode */
+.card .button--outline.button--primary {
+  color: var(--ifm-color-primary);
+  font-weight: 800;
+}
+
+[data-theme='dark'] .card .button--outline.button--primary {
+  color: var(--autonate-teal);
 }
 
 .hero__title {
