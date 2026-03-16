@@ -1,0 +1,48 @@
+{
+  "_comment": "Sample batch config for AutoNateAI mission campaigns. Copy and customize for your quest.",
+  "model": "gpt-image-1.5",
+  "size": "1536x1024",
+  "quality": "high",
+  "fidelity": "high",
+  "concurrency": 5,
+  "images": [
+    {
+      "prompt": "Handsome Asian-American male genius Dr. Nate Chen, mid-30s, sharp intelligent features, confident demeanor, modern tech professional, wearing stylish casual tech wear, holding a laptop, cinematic lighting, Disney/Pixar animated 3D style, high fidelity character portrait, NO text, NO letters, NO words",
+      "output": "static/img/quests/[MISSION]/character-nate.png",
+      "references": []
+    },
+    {
+      "prompt": "Indian-American woman Maya Patel, 28 years old, systems architect, warm brown skin, dark wavy hair, expressive intelligent eyes, tech-savvy professional, modern business casual attire, holding a tablet with code visualizations, cinematic lighting, Disney/Pixar animated 3D style, high fidelity character portrait, NO text, NO letters, NO words",
+      "output": "static/img/quests/[MISSION]/character-maya.png",
+      "references": []
+    },
+    {
+      "prompt": "Filipino-American woman Priya Okoye, 26 years old, computer vision specialist, light brown skin, dark long hair, focused determined expression, modern tech style clothing, debugging code on laptop, cinematic lighting, Disney/Pixar animated 3D style, high fidelity character portrait, NO text, NO letters, NO words",
+      "output": "static/img/quests/[MISSION]/character-priya.png",
+      "references": []
+    },
+    {
+      "prompt": "[SCENE 1 DESCRIPTION with character name], cinematic lighting, Disney/Pixar animated 3D style, 16:9 aspect ratio, high fidelity. NO text, NO letters, NO words",
+      "output": "static/img/quests/[MISSION]/scene-01.png",
+      "references": [
+        "static/img/quests/[MISSION]/character-nate.png"
+      ]
+    },
+    {
+      "prompt": "[SCENE 2 DESCRIPTION with character name], cinematic lighting, Disney/Pixar animated 3D style, 16:9 aspect ratio, high fidelity. NO text, NO letters, NO words",
+      "output": "static/img/quests/[MISSION]/scene-02.png",
+      "references": [
+        "static/img/quests/[MISSION]/character-maya.png"
+      ]
+    },
+    {
+      "prompt": "[SCENE 3 DESCRIPTION with all three characters], team huddle composition, cinematic lighting, Disney/Pixar animated 3D style, 16:9 aspect ratio, high fidelity. NO text, NO letters, NO words",
+      "output": "static/img/quests/[MISSION]/scene-03.png",
+      "references": [
+        "static/img/quests/[MISSION]/character-nate.png",
+        "static/img/quests/[MISSION]/character-maya.png",
+        "static/img/quests/[MISSION]/character-priya.png"
+      ]
+    }
+  ]
+}
