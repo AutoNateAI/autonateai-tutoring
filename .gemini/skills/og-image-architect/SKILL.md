@@ -33,3 +33,33 @@ Suggest 3 options to the user:
     *   `--size`: "1024x1024" (Square for social compatibility).
     *   `--output`: `static/img/og-[page-name].png`.
 3.  Update the page's metadata (frontmatter or Layout prop) to link the new image.
+
+## Pro Tips
+
+### Batch OG Generation
+For multiple quests, generate all OG images in one batch using `batch-image-generator`:
+
+```json
+{
+  "concurrency": 5,
+  "images": [
+    {
+      "prompt": "Epic cinematic scene of Grand Rapids ArtPrize festival...",
+      "output": "static/img/og-circuit-breaker.png",
+      "references": []
+    },
+    {
+      "prompt": "Van Andel Arena basketball stadium with tactical graph overlay...",
+      "output": "static/img/og-court-clear.png",
+      "references": []
+    }
+  ]
+}
+```
+
+### Integration with Mission Campaigns
+**Recommended Workflow:**
+1. Generate 12 quest images first (3 chars + 9 scenes)
+2. Generate OG image as the "13th image" using batch generator
+3. OG image should capture the **essence** of the mission, not a specific scene
+4. Use wider environmental shots for maximum social media impact
