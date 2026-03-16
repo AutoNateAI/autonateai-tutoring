@@ -56,7 +56,7 @@ const sessions: BookingCardProps[] = [
         For <b>Researchers</b> and advanced students. We build agentic workflows to ingest papers, extract structured insights into Sheets, and visualize the topology of your research domain.
       </p>
     ),
-    link: 'https://calendar.app.google/Y1cPMxpCfj6qU3jR8',
+    link: 'https://calendar.app.google/LTN9pu8uPV7Qwbmd7',
   },
   {
     id: 'business-consult',
