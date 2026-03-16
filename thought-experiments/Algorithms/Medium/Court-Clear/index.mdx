@@ -1,0 +1,427 @@
+---
+title: "Operation: Court Clear"
+description: "A BFS stadium evacuation emergency during a Grand Rapids Rise basketball game."
+sidebar_position: 2
+image: /img/quests/court-clear/scene-01-tipoff.png
+---
+
+import CardSlam from "@site/src/components/CardSlam";
+
+<CardSlam
+  question="Can You Evacuate 10,000 Fans Before Chaos Erupts?"
+  subtext="A BFS Emergency at Van Andel Arena"
+/>
+
+---
+
+## The Tipoff
+
+The Van Andel Arena roared as the Grand Rapids Rise tipped off against the Chicago Sky. Dr. Nate Chen leaned forward in his seat, smartphone buzzing in his hand. At 7:23 PM on March 16, 2026—sellout crowd, 10,000+ fans—something critical had just triggered.
+
+<img className="quest-image" src="/img/quests/court-clear/scene-01-tipoff.png" alt="Dr. Nate Chen, Maya Patel, and Priya Okoye at Van Andel Arena basketball game, looking at smartphones showing code" />
+
+**Maya Patel**, 28, Indian-American systems architect and Rise superfan, gasped mid-bite into her hot dog. Her phone lit up with an emergency alert from the arena's facility management system: "FIRE ALARM SECTOR 7. EVACUATION PROTOCOL REQUIRED."
+
+"Nate, Priya—look at this!" Maya shoved her phone between them. "The evacuation system is using DFS. It's trying to route everyone through ONE exit!"
+
+**Priya Okoye**, 26, Filipino-American computer vision specialist, was already pulling up the arena's graph structure on her phone. "This is bad. DFS finds *a* path, but not the *optimal* path. We need BFS to find shortest routes from every section to every exit."
+
+Nate grinned, pulling up his cloud IDE. "Good thing we coded stadium evacuation algorithms for fun. Let me connect to the arena's cloud controller."
+
+The three of them huddled over their phones, fingers flying across screens. The game continued below, but their mission had just begun: **Operation Court Clear**.
+
+---
+
+## The Emergency Protocol
+
+Maya pointed at her phone showing the arena's venue graph. "Van Andel has 8,500 permanent seats plus 44 luxury suites and 1,800 club seats. Each section is a node. Walkways are edges. Exits are target nodes."
+
+```python
+# The BROKEN DFS-Only Evacuation
+def dfs_evacuation(graph, start_section, exits):
+    """
+    DFS finds A path to an exit, but NOT the shortest path.
+    This causes bottlenecks and panic.
+    """
+    visited = set()
+    stack = [(start_section, [start_section])]
+    
+    while stack:
+        section, path = stack.pop()
+        if section in exits:
+            return path
+        if section not in visited:
+            visited.add(section)
+            for neighbor in reversed(graph.get(section, [])):
+                if neighbor not in visited:
+                    stack.append((neighbor, path + [neighbor]))
+    return None
+```
+
+"The problem," Priya explained, watching the arena's digital signage flicker, "is DFS sends Section 101 through the main concourse exit. But Section 102 ALSO gets routed the same way. Bottleneck!"
+
+Nate was already typing. "BFS guarantees the shortest path in an unweighted graph. From any section, we find the MINIMUM number of hops to the nearest exit."
+
+```python
+# BFS for Shortest Evacuation Path
+from collections import deque
+
+def bfs_evacuation(graph, start_section, exits):
+    """
+    BFS finds the SHORTEST path to the nearest exit.
+    This minimizes evacuation time and prevents bottlenecks.
+    """
+    if start_section in exits:
+        return [start_section]
+    
+    visited = {start_section}
+    queue = deque([(start_section, [start_section])])
+    
+    while queue:
+        section, path = queue.popleft()
+        # BFS: Explore level by level (closest sections first)
+        for neighbor in graph.get(section, []):
+            if neighbor not in visited:
+                if neighbor in exits:
+                    return path + [neighbor]
+                visited.add(neighbor)
+                queue.append((neighbor, path + [neighbor]))
+    return None
+```
+
+<img className="quest-image" src="/img/quests/court-clear/scene-02-alert.png" alt="Maya Patel looking concerned at smartphone showing red emergency alert, basketball court in background" />
+
+Maya's eyes widened. "So BFS would route Section 101 to Exit A, Section 102 to Exit B, automatically balancing the load?"
+
+"Exactly," Nate said. "But we need to do this for ALL sections simultaneously."
+
+---
+
+## The Cloud Connection
+
+The arena's jumbotron flickered. Somewhere in the control booth, the facility manager was wondering why the evacuation system wasn't auto-deploying.
+
+Priya pulled up the cloud API docs on her phone. "The arena uses a REST API for crowd control. I can push our BFS algorithm directly to their routing engine."
+
+```python
+# Complete Stadium Evacuation Router
+class StadiumEvacuationRouter:
+    def __init__(self, venue_graph, exits):
+        """
+        Initialize router with venue graph and exit nodes.
+        
+        Args:
+            venue_graph: Dict mapping section -> list of adjacent sections
+            exits: Set of exit section IDs
+        """
+        self.graph = venue_graph
+        self.exits = exits
+        self.optimal_routes = self._precompute_all_routes()
+    
+    def _bfs_shortest_path(self, start, targets):
+        """Find shortest path from start to any target using BFS."""
+        if start in targets:
+            return [start]
+        
+        visited = {start}
+        queue = deque([(start, [start])])
+        
+        while queue:
+            section, path = queue.popleft()
+            for neighbor in self.graph.get(section, []):
+                if neighbor not in visited:
+                    if neighbor in targets:
+                        return path + [neighbor]
+                    visited.add(neighbor)
+                    queue.append((neighbor, path + [neighbor]))
+        return None
+    
+    def _precompute_all_routes(self):
+        """Precompute optimal evacuation route for every section."""
+        routes = {}
+        for section in self.graph:
+            routes[section] = self._bfs_shortest_path(section, self.exits)
+        return routes
+    
+    def get_evacuation_route(self, section):
+        """Get optimal evacuation route for a given section."""
+        return self.optimal_routes.get(section)
+    
+    def get_all_routes(self):
+        """Return all precomputed evacuation routes."""
+        return self.optimal_routes
+    
+    def estimate_evacuation_time(self, people_per_section=150, walk_speed=30):
+        """
+        Estimate total evacuation time in seconds.
+        
+        Args:
+            people_per_section: Average people per section
+            walk_speed: Seconds to traverse one edge (walkway)
+        """
+        max_hops = 0
+        for route in self.optimal_routes.values():
+            if route:
+                hops = len(route) - 1
+                max_hops = max(max_hops, hops)
+        
+        # Estimate: max_hops * walk_speed + loading time
+        loading_time = (people_per_section * len(self.optimal_routes)) / 100
+        return (max_hops * walk_speed) + loading_time
+```
+
+<img className="quest-image" src="/img/quests/court-clear/scene-03-graph.png" alt="Dr. Nate Chen pointing at smartphone showing graph visualization with nodes and edges, arena crowd blurred" />
+
+Nate held up his phone showing the precomputed routes. "I've calculated optimal paths for all 150 sections. Max evacuation time: 4 minutes 30 seconds."
+
+Priya was already integrating. "Pushing to the cloud controller now..."
+
+---
+
+## The Real-Time Deploy
+
+The three friends huddled closer, phones forming an impromptu war room. Holographic graph visualizations seemed to float above their screens as they connected to the arena's cloud system.
+
+```python
+# Cloud Integration: Push BFS to Arena Control System
+import requests
+
+def deploy_to_arena_controller(router, api_endpoint, auth_token):
+    """
+    Deploy evacuation routes to arena's cloud control system.
+    
+    Args:
+        router: StadiumEvacuationRouter instance
+        api_endpoint: Arena API URL
+        auth_token: Authentication token
+    """
+    routes = router.get_all_routes()
+    
+    payload = {
+        "evacuation_mode": "BFS_OPTIMAL",
+        "routes": routes,
+        "priority": "EMERGENCY",
+        "timestamp": datetime.now().isoformat()
+    }
+    
+    headers = {
+        "Authorization": f"Bearer {auth_token}",
+        "Content-Type": "application/json"
+    }
+    
+    response = requests.post(
+        f"{api_endpoint}/api/v1/evacuation/deploy",
+        json=payload,
+        headers=headers
+    )
+    
+    if response.status_code == 200:
+        print("✅ Evacuation routes deployed successfully!")
+        return True
+    else:
+        print(f"❌ Deployment failed: {response.text}")
+        return False
+```
+
+<img className="quest-image" src="/img/quests/court-clear/scene-04-coding.png" alt="Priya Okoye coding intensely on smartphone showing Python BFS code, Van Andel Arena jumbotron in background" />
+
+Priya's fingers flew across her screen. "Authenticating... connecting... deploying..."
+
+The arena's digital signage flickered again. Then, green checkmarks appeared on their phones.
+
+**DEPLOYMENT SUCCESSFUL. EVACUATION PROTOCOL: BFS_OPTIMAL**
+
+<img className="quest-image" src="/img/quests/court-clear/scene-05-huddle.png" alt="Three friends huddled in arena seats with smartphones, holographic graph visualization above phones, basketball game in background" />
+
+---
+
+## The Arena Graph
+
+Van Andel Arena's layout was a perfect test case. The main bowl had sections arranged in quadrants, each with multiple exit paths.
+
+```python
+# Van Andel Arena Venue Graph (Simplified)
+VAN_ANDEL_ARENA = {
+    # Lower Bowl - Quad 1 (Sections 101-110)
+    'section_101': ['section_102', 'concourse_a', 'exit_a'],
+    'section_102': ['section_101', 'section_103', 'concourse_a'],
+    'section_103': ['section_102', 'section_104', 'concourse_b', 'exit_b'],
+    'section_104': ['section_103', 'section_105', 'concourse_b'],
+    'section_105': ['section_104', 'section_106', 'concourse_c', 'exit_c'],
+    'section_106': ['section_105', 'section_107', 'concourse_c'],
+    'section_107': ['section_106', 'section_108', 'concourse_d', 'exit_d'],
+    'section_108': ['section_107', 'section_109', 'concourse_d'],
+    'section_109': ['section_108', 'section_110', 'concourse_a'],
+    'section_110': ['section_109', 'concourse_a', 'exit_a'],
+    
+    # Concourses (connect sections to exits)
+    'concourse_a': ['section_101', 'section_102', 'section_109', 'section_110', 'exit_a', 'exit_e'],
+    'concourse_b': ['section_103', 'section_104', 'exit_b', 'exit_f'],
+    'concourse_c': ['section_105', 'section_106', 'exit_c', 'exit_g'],
+    'concourse_d': ['section_107', 'section_108', 'exit_d', 'exit_h'],
+    
+    # Exits (terminal nodes)
+    'exit_a': ['section_101', 'section_110', 'concourse_a'],
+    'exit_b': ['section_103', 'concourse_b'],
+    'exit_c': ['section_105', 'concourse_c'],
+    'exit_d': ['section_107', 'concourse_d'],
+    'exit_e': ['concourse_a'],
+    'exit_f': ['concourse_b'],
+    'exit_g': ['concourse_c'],
+    'exit_h': ['concourse_d'],
+}
+
+EXITS = {'exit_a', 'exit_b', 'exit_c', 'exit_d', 'exit_e', 'exit_f', 'exit_g', 'exit_h'}
+```
+
+<img className="quest-image" src="/img/quests/court-clear/scene-06-arena-graph.png" alt="Van Andel Arena overhead view with animated evacuation flow lines, crowd in seats, graph nodes at exits" />
+
+Maya watched the arena's crowd flow visualization. "Look! Section 101 is routing to Exit A (2 hops). Section 105 is routing to Exit C (2 hops). The load is balanced!"
+
+Nate checked the metrics. "DFS would have sent 80% through Exit A. BFS distributes across all 8 exits."
+
+---
+
+## The Victory
+
+The arena's fire alarm had been a false alarm—overheated popcorn machine in Section 107. But the evacuation system test was real.
+
+Priya's phone buzzed. A message from the Van Andel facility manager:
+
+**"Whoever deployed the BFS update? That was genius. Evacuation drill completed in 3:45. Previous record: 6:20. You just saved lives."**
+
+<img className="quest-image" src="/img/quests/court-clear/scene-07-code-success.png" alt="Smartphone screen showing BFS algorithm code with green success indicators, arena lights reflected on screen" />
+
+The three friends high-fived as the crowd cheered below—the Rise had just scored a three-pointer.
+
+"You know what we proved?" Priya said. "DFS is like following one corridor until you hit a wall. BFS scans all paths simultaneously and picks the shortest."
+
+Maya grinned. "And we did it from our seats during a basketball game. Cloud computing is wild."
+
+Nate pulled up the final metrics:
+- **Evacuation time**: Reduced from 6m 20s to 3m 45s (**41% faster**)
+- **Exit utilization**: Balanced across all 8 exits (**100% coverage**)
+- **Bottleneck reduction**: From 80% congestion to 12% (**85% improvement**)
+
+<img className="quest-image" src="/img/quests/court-clear/scene-08-celebration.png" alt="Three friends celebrating in arena seats with smartphones showing success message, crowd cheering, basketball players on court visible" />
+
+"The **Joe Louis Arena** in Detroit just reached out," Maya said, showing her phone. "They want the same system for their hockey games."
+
+"And **Little Caesars Arena**," Priya added. "We're booking solid through 2026."
+
+Nate smiled, watching the Rise players shake hands after their win. "This is what we do. We don't just solve algorithms. We solve *stadiums*."
+
+---
+
+## The Final Algorithm
+
+```python
+# Production-Ready BFS Stadium Evacuation
+def optimal_stadium_evacuation(venue_graph, exits, start_sections):
+    """
+    Find optimal evacuation routes for multiple sections simultaneously.
+    Uses BFS to guarantee shortest paths.
+    
+    Args:
+        venue_graph: Dict mapping section -> list of adjacent sections
+        exits: Set of exit section IDs
+        start_sections: List of sections needing evacuation
+    
+    Returns:
+        Dict mapping each start section to its optimal evacuation route
+    """
+    from collections import deque
+    
+    def bfs_shortest_path(start, targets):
+        """Find shortest path from start to any target."""
+        if start in targets:
+            return [start]
+        
+        visited = {start}
+        queue = deque([(start, [start])])
+        
+        while queue:
+            section, path = queue.popleft()
+            for neighbor in venue_graph.get(section, []):
+                if neighbor not in visited:
+                    if neighbor in targets:
+                        return path + [neighbor]
+                    visited.add(neighbor)
+                    queue.append((neighbor, path + [neighbor]))
+        return None
+    
+    # Compute routes for all sections
+    routes = {}
+    for section in start_sections:
+        routes[section] = bfs_shortest_path(section, exits)
+    
+    return routes
+
+# Usage: Evacuate all 150 sections of Van Andel Arena
+evacuation_routes = optimal_stadium_evacuation(
+    VAN_ANDEL_ARENA,
+    EXITS,
+    start_sections=[f'section_{i}' for i in range(101, 251)]
+)
+
+# Display results
+for section, route in list(evacuation_routes.items())[:5]:
+    print(f"{section}: {' -> '.join(route)}")
+```
+
+<img className="quest-image" src="/img/quests/court-clear/scene-09-arena-wide.png" alt="Epic wide shot of Van Andel Arena interior at night with animated evacuation flow lines showing optimal paths from seats to exits" />
+
+The arena emptied smoothly after the game. Fans flowed through exits like a perfectly optimized BFS traversal—level by level, closest first, no bottlenecks.
+
+DFS had given them depth. BFS had given them breadth. Together, they'd built something that would protect thousands of fans across Michigan's biggest venues.
+
+**Mission Complete.**
+
+---
+
+## Technical Deep Dive
+
+### BFS vs DFS for Evacuation
+
+| **Scenario** | **Algorithm** | **Result** | **Why** |
+|--------------|---------------|------------|---------|
+| Single exit, maze-like | DFS | ⚠️ Slow | Finds first path, may be longest |
+| Multiple exits, balanced load | BFS | ✅ Optimal | Finds shortest path to nearest exit |
+| Memory constrained | DFS | ✅ O(h) | Uses less memory than BFS O(w) |
+| Need all paths | BFS | ✅ Complete | Explores all levels systematically |
+| Real-time routing | BFS | ✅ Fast | Precomputable, O(V+E) per section |
+
+### Complexity Analysis
+
+```python
+"""
+Time Complexity:
+- BFS single route: O(V + E) where V = sections, E = walkways
+- Precompute all routes: O(V * (V + E))
+- Query route: O(1) after precomputation
+
+Space Complexity:
+- BFS queue: O(V) for visited set + O(V) for queue
+- Precomputed routes: O(V²) for storing all paths
+- Evacuation time: O(V) to find max hops
+
+Van Andel Arena Stats:
+- Sections (V): ~150
+- Walkways (E): ~300
+- Exits: 8
+- Max hops: 4-6
+- Evacuation time: 3-5 minutes
+"""
+```
+
+### Your Mission
+
+Build an evacuation system for your local venue:
+1. **Map the graph** - Sections as nodes, walkways as edges
+2. **Identify exits** - Mark terminal nodes
+3. **Precompute with BFS** - Find optimal routes for all sections
+4. **Deploy to cloud** - Real-time API integration
+
+The code is your starter rig. Van Andel is your testbed. The world is your graph.
+
+**Go save some lives.**
