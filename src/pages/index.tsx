@@ -67,7 +67,24 @@ function HomepageHeader() {
         .hero-content-fade-in {
           opacity: 0;
           animation: scaleIn 0.8s ease-out forwards;
-          animation-delay: 1.5s; /* Matches the SVG animation delay */
+          animation-delay: 2.6s; /* Starts right after the SVG finishes animating */
+        }
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .hero-content-fade-in {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+          }
         }
         @media (min-width: 997px) {
           .hero-row-desktop {
