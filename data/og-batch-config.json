@@ -1,0 +1,54 @@
+{
+  "model": "gpt-image-1.5",
+  "size": "1536x1024",
+  "quality": "high",
+  "fidelity": "high",
+  "concurrency": 5,
+  "images": [
+    {
+      "prompt": "Cinematic Disney Pixar style 3D scene for an AI learning brand homepage, three glowing pathways opening into one bold future, a student with a laptop, a researcher with notes and evidence cards, and a professional with a clean dashboard all moving through a luminous portal of structured AI workflows, warm invitation energy, navy teal gold palette, sharp textures, premium lighting, NO text, NO letters, NO words",
+      "output": "static/img/og-homepage.png",
+      "references": []
+    },
+    {
+      "prompt": "Cinematic Disney Pixar style 3D image for an AI library landing page, an inviting grand portal branching into three worlds for students researchers and professionals, glowing workflow maps, notebooks, dashboards and AI orbs floating through the scene, high curiosity and exploration energy, premium lighting, navy teal gold palette, NO text, NO letters, NO words",
+      "output": "static/img/og-thought-experiments.png",
+      "references": []
+    },
+    {
+      "prompt": "Cinematic Disney Pixar style 3D image for a student AI library page, college students in a collaborative study session building AI workflows on laptops with visual graph paths and structured notes glowing around them, energetic practical learning, premium lighting, navy teal with bright gold accents, NO text, NO letters, NO words",
+      "output": "static/img/og-students-library.png",
+      "references": []
+    },
+    {
+      "prompt": "Cinematic Disney Pixar style 3D image for a researchers AI library page, focused researchers in a modern lab library environment organizing papers into luminous evidence maps and structured AI synthesis systems, intelligent calm momentum, premium lighting, deep navy teal palette with precise gold highlights, NO text, NO letters, NO words",
+      "output": "static/img/og-researchers-library.png",
+      "references": []
+    },
+    {
+      "prompt": "Cinematic Disney Pixar style 3D image for a professionals AI library page, ambitious professionals around a polished workspace using AI dashboards, workflow pipelines and structured outputs to drive real work, modern elegant atmosphere, premium lighting, navy teal palette with metallic highlights, NO text, NO letters, NO words",
+      "output": "static/img/og-professionals-library.png",
+      "references": []
+    },
+    {
+      "prompt": "Transform the person in the reference image into a polished Disney Pixar style animated founder and mentor, he stands in a bright futuristic AI studio with a student, a researcher and a professional all gathered around glowing workflow maps and laptops, the group is inviting the viewer to join and learn, premium cinematic lighting, high input fidelity for the founder face, navy teal gold palette, NO text, NO letters, NO words",
+      "output": "static/img/og-booking.png",
+      "references": ["static/img/nate-instructor.jpg"]
+    },
+    {
+      "prompt": "Transform the person in the reference image into a polished Disney Pixar style animated instructor, he is coaching a small group of college students around laptops and structured AI workflow boards, everyone is engaged and energized, warm cinematic classroom lighting, high input fidelity for the founder face, navy teal gold palette, NO text, NO letters, NO words",
+      "output": "static/img/og-student-workflow.png",
+      "references": ["static/img/nate-instructor.jpg"]
+    },
+    {
+      "prompt": "Transform the person in the reference image into a polished Disney Pixar style animated instructor and principal consultant, he is working with researchers around a table of papers, evidence cards, laptops and structured AI synthesis maps, sharp thoughtful energy, premium cinematic lighting, high input fidelity for the founder face, navy teal gold palette, NO text, NO letters, NO words",
+      "output": "static/img/og-research-cohort.png",
+      "references": ["static/img/nate-instructor.jpg"]
+    },
+    {
+      "prompt": "Transform the person in the reference image into a polished Disney Pixar style animated founder and consultant, he is standing with professionals in a modern AI workspace with clean dashboards, cloud servers, dev environment screens and workflow diagrams, premium cinematic lighting, high input fidelity for the founder face, navy teal gold palette, NO text, NO letters, NO words",
+      "output": "static/img/og-devbox-setup.png",
+      "references": ["static/img/nate-instructor.jpg"]
+    }
+  ]
+}

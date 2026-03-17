@@ -9,9 +9,9 @@ const bookingLink = 'https://calendar.app.google/fTQpDxdnJXaYE8neA';
 export default function DevboxSetupPage(): React.JSX.Element {
   return (
     <Layout
-      title="DevBox Setup"
-      description="Details for the DevBox setup service for professionals who want a cleaner AI environment."
-      image="https://autonateai.com/img/og-booking.png">
+      title="DevBox Setup | Build Your AI Workspace"
+      description="A higher-touch setup path for professionals who want a cleaner AI environment, stronger tooling, and structured execution."
+      image="https://autonateai.com/img/og-devbox-setup.png">
       <main className="container padding-vert--xl">
         <div className="margin-bottom--lg">
           <Link to="/booking">← Back to Programs</Link>

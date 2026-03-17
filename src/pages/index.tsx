@@ -308,8 +308,8 @@ function PricingAndSchedule() {
 export default function Home(): ReactNode {
   return (
     <Layout
-      title="Daily AI Thought Experiments"
-      description="Practice with daily AI thought experiments, then accelerate inside live cohorts built for students, researchers, and professionals."
+      title="Daily AI Thought Experiments | Learn AI Faster"
+      description="Practice with daily AI thought experiments, then join a student cohort, research cohort, or DevBox path to build usable AI systems faster."
       image="https://autonateai.com/img/og-homepage.png">
       <HomepageHeader />
       <main>

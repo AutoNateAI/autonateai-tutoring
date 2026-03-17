@@ -89,8 +89,8 @@ function ServiceCard({title, price, schedule, audience, description, href, ctaLa
 export default function BookingPage(): React.JSX.Element {
   return (
     <Layout
-      title="Programs and Services"
-      description="Choose the support path that matches how you want to learn and apply AI: live cohorts or a DevBox setup."
+      title="Choose Your AI Path | Cohorts and DevBox Setup"
+      description="Pick the fastest path into usable AI: Student Workflow Cohort, Research Cohort, or a higher-touch DevBox setup."
       image="https://autonateai.com/img/og-booking.png">
       <main className="container padding-vert--xl">
         <div className="text--center margin-bottom--xl">

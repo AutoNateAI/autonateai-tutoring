@@ -9,9 +9,9 @@ const bookingLink = 'https://calendar.app.google/Z34RvXUL5epXJk1K8';
 export default function WorkshopDetailsPage(): React.JSX.Element {
   return (
     <Layout
-      title="Student Workflow Cohort"
-      description="Details for the live student workflow cohort."
-      image="https://autonateai.com/img/og-booking.png">
+      title="Student Workflow Cohort | Build Your AI System Faster"
+      description="A live student cohort for turning ChatGPT, Sheets, and structured prompts into a usable workflow system."
+      image="https://autonateai.com/img/og-student-workflow.png">
       <main className="container padding-vert--xl">
         <div className="margin-bottom--lg">
           <Link to="/booking">← Back to Programs</Link>

@@ -9,9 +9,9 @@ const bookingLink = 'https://calendar.app.google/LTN9pu8uPV7Qwbmd7';
 export default function ResearcherDetailsPage(): React.JSX.Element {
   return (
     <Layout
-      title="Research Cohort"
-      description="Details for the live research cohort for researchers who want structured AI workflows."
-      image="https://autonateai.com/img/og-booking.png">
+      title="Research Cohort | Organize Research With AI"
+      description="A live research cohort for cleaner synthesis, stronger note systems, and more structured AI-powered research workflows."
+      image="https://autonateai.com/img/og-research-cohort.png">
       <main className="container padding-vert--xl">
         <div className="margin-bottom--lg">
           <Link to="/booking">← Back to Programs</Link>
