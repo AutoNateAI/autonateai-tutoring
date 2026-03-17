@@ -1,32 +1,65 @@
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import TopologicalWeb from '@site/src/components/TopologicalWeb';
 
 import styles from './index.module.css';
 
+type PathCardProps = {
+  title: string;
+  copy: string;
+  libraryLink: string;
+  detailLink: string;
+  detailLabel: string;
+};
+
+function PathCard({title, copy, libraryLink, detailLink, detailLabel}: PathCardProps) {
+  return (
+    <div className="col col--4 margin-bottom--lg">
+      <div
+        className="card shadow--md"
+        style={{
+          height: '100%',
+          border: '1px solid var(--autonate-teal)',
+          background: '#0d1526',
+        }}>
+        <div className="card__header">
+          <Heading as="h3" style={{color: '#ffffff'}}>
+            {title}
+          </Heading>
+        </div>
+        <div className="card__body">
+          <p style={{color: '#cbd5e0'}}>{copy}</p>
+        </div>
+        <div className="card__footer" style={{display: 'grid', gap: '0.75rem'}}>
+          <Link className="button button--outline button--primary button--block" to={libraryLink}>
+            Explore Library
+          </Link>
+          <Link className="button button--primary button--block" to={detailLink}>
+            {detailLabel}
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  const titleWords = "Interactive Thinking Quests".split(" ");
+  const titleWords = 'AI Thought Experiments'.split(' ');
 
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
           {titleWords.map((word, idx) => (
-            <span 
-              key={idx} 
-              className="slam-word" 
-              style={{ animationDelay: `${idx * 0.2}s` }}
-            >
+            <span key={idx} className="slam-word" style={{animationDelay: `${idx * 0.18}s`}}>
               {word}
             </span>
           ))}
         </Heading>
-        
+
         <div className="row row--align-center margin-top--lg hero-row-desktop">
           <div className="col col--7">
             <div className="hero-svg-wrapper bigger-svg">
@@ -35,20 +68,37 @@ function HomepageHeader() {
           </div>
           <div className="col col--5 text--left">
             <div className="hero-content-fade-in">
-              <p className="hero__subtitle" style={{ textAlign: 'left', margin: '0 0 2rem 0' }}>
-                Bridging the gap between academic theory and <span className="hero-highlight-gold">Industrial Excellence</span>. We provide high-stakes workshops for students and researchers, and <span className="hero-highlight-gold">Applied Intelligence Systems</span> for local businesses to automate data management and eliminate operational headaches.
+              <p className="hero__subtitle" style={{textAlign: 'left', margin: '0 0 1.5rem 0'}}>
+                Learn AI through <span className="hero-highlight-gold">daily thought experiments</span>,
+                then accelerate the skill-building inside a live cohort that shows you how to turn ChatGPT,
+                Sheets, and structured workflows into a personal AI system.
               </p>
-              
-              <div className={clsx('buttons', styles.buttons)} style={{ justifyContent: 'flex-start' }}>
+
+              <div
+                style={{
+                  border: '1px solid rgba(37, 194, 160, 0.35)',
+                  borderRadius: '18px',
+                  padding: '1rem 1.1rem',
+                  background: 'rgba(8, 15, 32, 0.8)',
+                  color: '#d7e3f4',
+                  marginBottom: '1.75rem',
+                }}>
+                <strong style={{display: 'block', color: '#ffffff', marginBottom: '0.4rem'}}>
+                  Live Cohorts
+                </strong>
+                Monday through Thursday, 7:30 PM to 9:30 PM EST. Maximum 25 students. $129 for the full 2-hour session.
+              </div>
+
+              <div className={clsx('buttons', styles.buttons)} style={{justifyContent: 'flex-start', gap: '0.75rem', flexWrap: 'wrap'}}>
                 <Link
                   className="button button--secondary button--lg hero-button-filled hero-experiments-button"
                   to="/thought-experiments/">
-                  Commence Mission 🧠
+                  Explore Thought Experiments
                 </Link>
                 <Link
-                  className="button button--primary button--lg margin-left--md hero-button-filled hero-booking-button"
+                  className="button button--primary button--lg hero-button-filled hero-booking-button"
                   to="/booking">
-                  Workshops & Services
+                  View Services
                 </Link>
               </div>
             </div>
@@ -67,7 +117,7 @@ function HomepageHeader() {
         .hero-content-fade-in {
           opacity: 0;
           animation: scaleIn 0.8s ease-out forwards;
-          animation-delay: 2.6s; /* Starts right after the SVG finishes animating */
+          animation-delay: 2.3s;
         }
         @keyframes scaleIn {
           from {
@@ -91,11 +141,10 @@ function HomepageHeader() {
             flex-direction: row;
           }
           .bigger-svg {
-            transform: scale(1.5);
+            transform: scale(1.45);
             margin-bottom: 0;
           }
         }
-        /* Override existing subtitle/button animations to sync them */
         .hero__subtitle, .hero-experiments-button, .hero-booking-button {
           animation: none !important;
           opacity: 1 !important;
@@ -105,67 +154,46 @@ function HomepageHeader() {
   );
 }
 
-function TargetSections() {
+function PracticeLoop() {
   return (
-    <section className="padding-vert--xl" style={{ backgroundColor: '#050a1a' }}>
+    <section className="padding-vert--xl" style={{backgroundColor: '#07101f'}}>
       <div className="container">
         <div className="row">
-          {/* For Students */}
-          <div className="col col--3 margin-bottom--lg">
-            <div className="card shadow--md" style={{ height: '100%', border: '1px solid var(--autonate-teal)', background: '#0d1526' }}>
-              <div className="card__header">
-                <Heading as="h3" style={{ color: '#ffffff' }}>For Students</Heading>
-              </div>
-              <div className="card__body">
-                <p style={{ color: '#cbd5e0' }}>Master the underlying <b>Topology of Success</b>. Our interactive thinking quests transform textbook patterns into cinematic missions, preparing you for the next generation of software engineering.</p>
-              </div>
-              <div className="card__footer">
-                <Link className="button button--outline button--primary button--block" to="/booking#student-workshop">View Workshops</Link>
-              </div>
-            </div>
+          <div className="col col--5 margin-bottom--lg">
+            <Heading as="h2" style={{color: '#ffffff', marginBottom: '1rem'}}>
+              The Practice Loop
+            </Heading>
+            <p style={{color: '#d0dae9', fontSize: '1.05rem', lineHeight: '1.7'}}>
+              The thought experiments are the daily reps. The live cohort is the shortcut. You practice the ideas in an
+              edutaining way every day, then jump into a guided session when you want the systems, prompts, and workflow
+              structure to click faster.
+            </p>
           </div>
-          
-          {/* For Researchers */}
-          <div className="col col--3 margin-bottom--lg">
-            <div className="card shadow--md" style={{ height: '100%', border: '1px solid var(--autonate-teal)', background: '#0d1526' }}>
-              <div className="card__header">
-                <Heading as="h3" style={{ color: '#ffffff' }}>For Researchers</Heading>
+          <div className="col col--7">
+            <div className="row">
+              <div className="col col--4 margin-bottom--md">
+                <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
+                  <div className="card__body">
+                    <Heading as="h3" style={{color: '#ffffff', fontSize: '1.1rem'}}>1. Explore</Heading>
+                    <p style={{color: '#cbd5e0', marginBottom: 0}}>Use the daily thought experiments to build pattern recognition and systems intuition.</p>
+                  </div>
+                </div>
               </div>
-              <div className="card__body">
-                <p style={{ color: '#cbd5e0' }}>Orchestrate your knowledge. We build autonomous agent loops that ingest, synthesize, and map complex research domains, turning months of literature review into real-time insight.</p>
+              <div className="col col--4 margin-bottom--md">
+                <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
+                  <div className="card__body">
+                    <Heading as="h3" style={{color: '#ffffff', fontSize: '1.1rem'}}>2. Accelerate</Heading>
+                    <p style={{color: '#cbd5e0', marginBottom: 0}}>Join a live cohort to build your AI system faster with structure, feedback, and a clear workflow.</p>
+                  </div>
+                </div>
               </div>
-              <div className="card__footer">
-                <Link className="button button--outline button--primary button--block" to="/booking#researcher-workshop">Join Workshop</Link>
-              </div>
-            </div>
-          </div>
-
-          {/* For Local Businesses */}
-          <div className="col col--3 margin-bottom--lg">
-            <div className="card shadow--md" style={{ height: '100%', border: '1px solid var(--autonate-teal)', background: '#0d1526' }}>
-              <div className="card__header">
-                <Heading as="h3" style={{ color: '#ffffff' }}>For Local Shops</Heading>
-              </div>
-              <div className="card__body">
-                <p style={{ color: '#cbd5e0' }}>Eliminate your operational debt. We turn your "spreadsheet hell" into a <b>Small Business Command Center</b>, connecting AI to your inventory and sales for effortless management.</p>
-              </div>
-              <div className="card__footer">
-                <Link className="button button--outline button--primary button--block" to="/booking#business-consult">Book Consult</Link>
-              </div>
-            </div>
-          </div>
-
-          {/* For Custom Builds */}
-          <div className="col col--3 margin-bottom--lg">
-            <div className="card shadow--md" style={{ height: '100%', border: '1px solid var(--autonate-teal)', background: '#0d1526' }}>
-              <div className="card__header">
-                <Heading as="h3" style={{ color: '#ffffff' }}>Custom Builds</Heading>
-              </div>
-              <div className="card__body">
-                <p style={{ color: '#cbd5e0' }}>Architecting for scale. We design custom AI-powered toolchains and industrial automation pipelines for enterprises facing unique technical bottlenecks.</p>
-              </div>
-              <div className="card__footer">
-                <Link className="button button--outline button--primary button--block" to="/booking#custom-build">Request Build</Link>
+              <div className="col col--4 margin-bottom--md">
+                <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
+                  <div className="card__body">
+                    <Heading as="h3" style={{color: '#ffffff', fontSize: '1.1rem'}}>3. Apply</Heading>
+                    <p style={{color: '#cbd5e0', marginBottom: 0}}>Turn the practice into better notes, stronger research systems, or a working AI environment.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -175,15 +203,56 @@ function TargetSections() {
   );
 }
 
+function AudiencePaths() {
+  return (
+    <section className="padding-vert--xl" style={{backgroundColor: '#050a1a'}}>
+      <div className="container">
+        <div className="text--center margin-bottom--xl">
+          <Heading as="h2" style={{color: '#ffffff', marginBottom: '0.75rem'}}>
+            Choose Your Path
+          </Heading>
+          <p style={{color: '#d0dae9', maxWidth: '760px', margin: '0 auto'}}>
+            Start in the library that matches your current role, then use the service page for the level of support you want.
+          </p>
+        </div>
+        <div className="row">
+          <PathCard
+            title="Students"
+            copy="Use the daily thought experiments to practice graph thinking, structured workflows, and practical AI execution. Join the live cohort when you want the system to click faster."
+            libraryLink="/thought-experiments/students/"
+            detailLink="/services/workshop"
+            detailLabel="Workshop Details"
+          />
+          <PathCard
+            title="Researchers"
+            copy="Build cleaner synthesis workflows, organize ideas into systems, and move from scattered notes to repeatable research infrastructure."
+            libraryLink="/thought-experiments/researchers/"
+            detailLink="/services/researchers"
+            detailLabel="Research Cohort Details"
+          />
+          <PathCard
+            title="Professionals"
+            copy="Apply AI in real work, then move into a DevBox setup when you want a cleaner environment for structured experimentation and execution."
+            libraryLink="/thought-experiments/professionals/"
+            detailLink="/services/devbox-setup"
+            detailLabel="DevBox Setup Details"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): ReactNode {
   return (
     <Layout
-      title="Interactive Thinking Quests | Applied Intelligence"
-      description="Bridging the gap between academic theory and industrial excellence through topological mastery and AI-powered systems."
+      title="Daily AI Thought Experiments"
+      description="Practice with daily AI thought experiments, then accelerate inside live cohorts built for students, researchers, and professionals."
       image="https://autonateai.com/img/og-homepage.png">
       <HomepageHeader />
       <main>
-        <TargetSections />
+        <PracticeLoop />
+        <AudiencePaths />
       </main>
     </Layout>
   );

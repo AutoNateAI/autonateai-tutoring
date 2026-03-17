@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'AutoNateAI | Engineering Mastery',
-  tagline: 'Bridging the gap between academic theory and industrial excellence through topological CS mastery.',
+  title: 'AutoNateAI | Daily AI Thought Experiments',
+  tagline: 'Daily AI thought experiments, live cohorts, and practical systems for students, researchers, and professionals.',
   favicon: 'img/logo.svg',
 
   future: {
@@ -68,12 +68,12 @@ const config: Config = {
       items: [
         {
           to: '/thought-experiments/',
-          label: 'Thought Experiments',
+          label: 'AI Library',
           position: 'left',
         },
         {
           to: '/booking', 
-          label: 'Workshops and Services', 
+          label: 'Programs', 
           position: 'left',
           className: 'button button--primary margin-left--md nav-booking-button',
         },
@@ -86,7 +86,7 @@ const config: Config = {
           title: 'Explore',
           items: [
             {
-              label: 'Thought Experiments',
+              label: 'AI Library',
               to: '/thought-experiments/',
             },
           ],
@@ -95,7 +95,7 @@ const config: Config = {
           title: 'Tutoring',
           items: [
             {
-              label: 'Workshops & Services',
+              label: 'Programs',
               to: '/booking',
             },
           ],
