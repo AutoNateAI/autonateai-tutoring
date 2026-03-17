@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import TopologicalWeb from '@site/src/components/TopologicalWeb';
+import FounderPanel from '@site/src/components/FounderPanel';
 
 import styles from './index.module.css';
 
@@ -54,7 +55,7 @@ function HomepageHeader() {
       <div className="container">
         <Heading as="h1" className="hero__title">
           {titleWords.map((word, idx) => (
-            <span key={idx} className="slam-word" style={{animationDelay: `${idx * 0.18}s`}}>
+            <span key={idx} className="slam-word" style={{animationDelay: `${idx * 0.38}s`}}>
               {word}
             </span>
           ))}
@@ -84,9 +85,9 @@ function HomepageHeader() {
                   marginBottom: '1.75rem',
                 }}>
                 <strong style={{display: 'block', color: '#ffffff', marginBottom: '0.4rem'}}>
-                  Live Cohorts
+                  Live Learning Paths
                 </strong>
-                Monday through Thursday, 7:30 PM to 9:30 PM EST. Maximum 25 students. $129 for the full 2-hour session.
+                Daily thought experiments build the reps. Live cohorts run Monday through Thursday, 7:30 PM to 9:30 PM EST, with capped rooms and clear next-step support when you want to move faster.
               </div>
 
               <div className={clsx('buttons', styles.buttons)} style={{justifyContent: 'flex-start', gap: '0.75rem', flexWrap: 'wrap'}}>
@@ -218,10 +219,10 @@ function AudiencePaths() {
         <div className="row">
           <PathCard
             title="Students"
-            copy="Use the daily thought experiments to practice graph thinking, structured workflows, and practical AI execution. Join the live cohort when you want the system to click faster."
+            copy="Use the daily thought experiments to practice graph thinking, structured workflows, and practical AI execution. Join the student cohort when you want the system to click faster."
             libraryLink="/thought-experiments/students/"
             detailLink="/services/workshop"
-            detailLabel="Workshop Details"
+            detailLabel="Student Cohort Details"
           />
           <PathCard
             title="Researchers"
@@ -243,6 +244,67 @@ function AudiencePaths() {
   );
 }
 
+function PricingAndSchedule() {
+  return (
+    <section className="padding-vert--xl" style={{backgroundColor: '#07101f'}}>
+      <div className="container">
+        <div className="text--center margin-bottom--xl">
+          <Heading as="h2" style={{color: '#ffffff', marginBottom: '0.75rem'}}>
+            Pricing And Schedule
+          </Heading>
+          <p style={{color: '#d0dae9', maxWidth: '740px', margin: '0 auto'}}>
+            Clear timing. Clear pricing. Pick the path that matches how fast you want the system to click.
+          </p>
+        </div>
+        <div className="row">
+          <div className="col col--4 margin-bottom--md">
+            <Link to="/services/workshop" style={{display: 'block', height: '100%', textDecoration: 'none'}}>
+              <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="card__body">
+                  <Heading as="h3" style={{color: '#ffffff', fontSize: '1.2rem'}}>Student Workflow Cohort</Heading>
+                  <p style={{color: '#cbd5e0', marginBottom: '0.6rem'}}>Monday and Wednesday</p>
+                  <p style={{color: '#ffffff', fontWeight: 800, marginBottom: '0.6rem'}}>7:30 PM to 9:30 PM EST</p>
+                  <p style={{color: '#cbd5e0', marginBottom: '0.35rem'}}>Maximum 25 students</p>
+                  <p style={{color: '#25c2a0', fontWeight: 800, marginBottom: '0.75rem'}}>$129 for the full 2 hours</p>
+                  <p style={{color: '#8cd9c8', fontWeight: 700, marginBottom: 0}}>View details →</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="col col--4 margin-bottom--md">
+            <Link to="/services/researchers" style={{display: 'block', height: '100%', textDecoration: 'none'}}>
+              <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="card__body">
+                  <Heading as="h3" style={{color: '#ffffff', fontSize: '1.2rem'}}>Research Cohort</Heading>
+                  <p style={{color: '#cbd5e0', marginBottom: '0.6rem'}}>Tuesday and Thursday</p>
+                  <p style={{color: '#ffffff', fontWeight: 800, marginBottom: '0.6rem'}}>7:30 PM to 9:30 PM EST</p>
+                  <p style={{color: '#cbd5e0', marginBottom: '0.35rem'}}>Maximum 25 students</p>
+                  <p style={{color: '#25c2a0', fontWeight: 800, marginBottom: '0.75rem'}}>$189 for the full 2 hours</p>
+                  <p style={{color: '#8cd9c8', fontWeight: 700, marginBottom: 0}}>View details →</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="col col--4 margin-bottom--md">
+            <Link to="/services/devbox-setup" style={{display: 'block', height: '100%', textDecoration: 'none'}}>
+              <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="card__body">
+                  <Heading as="h3" style={{color: '#ffffff', fontSize: '1.2rem'}}>DevBox Setup</Heading>
+                  <p style={{color: '#cbd5e0', marginBottom: '0.6rem'}}>Discovery-first service</p>
+                  <p style={{color: '#ffffff', fontWeight: 800, marginBottom: '0.6rem'}}>Scoped around your workflow</p>
+                  <p style={{color: '#cbd5e0', marginBottom: '0.35rem'}}>Higher-touch environment planning</p>
+                  <p style={{color: '#25c2a0', fontWeight: 800, marginBottom: '0.75rem'}}>Starts with a discovery call</p>
+                  <p style={{color: '#8cd9c8', fontWeight: 700, marginBottom: 0}}>View details →</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): ReactNode {
   return (
     <Layout
@@ -253,6 +315,12 @@ export default function Home(): ReactNode {
       <main>
         <PracticeLoop />
         <AudiencePaths />
+        <PricingAndSchedule />
+        <section className="padding-bottom--xl" style={{backgroundColor: '#07101f'}}>
+          <div className="container">
+            <FounderPanel />
+          </div>
+        </section>
       </main>
     </Layout>
   );

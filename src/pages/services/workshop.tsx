@@ -2,14 +2,15 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import FounderPanel from '@site/src/components/FounderPanel';
 
 const bookingLink = 'https://calendar.app.google/Z34RvXUL5epXJk1K8';
 
 export default function WorkshopDetailsPage(): React.JSX.Element {
   return (
     <Layout
-      title="AI Workflow Cohort"
-      description="Details for the live AI workflow cohort for students and professionals."
+      title="Student Workflow Cohort"
+      description="Details for the live student workflow cohort."
       image="https://autonateai.com/img/og-booking.png">
       <main className="container padding-vert--xl">
         <div className="margin-bottom--lg">
@@ -17,13 +18,13 @@ export default function WorkshopDetailsPage(): React.JSX.Element {
         </div>
         <section className="card shadow--md" style={{background: '#0d1526', border: '1px solid rgba(37, 194, 160, 0.28)'}}>
           <div className="card__body" style={{padding: '2rem'}}>
-            <Heading as="h1" style={{color: '#ffffff'}}>AI Workflow Cohort</Heading>
+            <Heading as="h1" style={{color: '#ffffff'}}>Student Workflow Cohort</Heading>
             <p style={{color: '#d0dae9', fontSize: '1.1rem', lineHeight: '1.7'}}>
-              A live 2-hour session for students and professionals who want to build a practical AI system instead of
-              collecting random prompts and messy notes.
+              A live 2-hour session for students who want to build practical AI workflows instead of collecting random
+              prompts and messy notes.
             </p>
             <div style={{display: 'grid', gap: '0.65rem', margin: '1.5rem 0', color: '#ffffff'}}>
-              <div><strong>Schedule:</strong> Monday through Thursday, 7:30 PM to 9:30 PM EST</div>
+              <div><strong>Schedule:</strong> Monday and Wednesday, 7:30 PM to 9:30 PM EST</div>
               <div><strong>Price:</strong> $129 for the full two hours</div>
               <div><strong>Capacity:</strong> Maximum 25 students per cohort</div>
             </div>
@@ -49,6 +50,7 @@ export default function WorkshopDetailsPage(): React.JSX.Element {
             </div>
           </div>
         </section>
+        <FounderPanel compact />
       </main>
     </Layout>
   );

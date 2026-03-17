@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import FounderPanel from '@site/src/components/FounderPanel';
 
 const bookingLink = 'https://calendar.app.google/fTQpDxdnJXaYE8neA';
 
@@ -49,6 +50,7 @@ export default function DevboxSetupPage(): React.JSX.Element {
             </div>
           </div>
         </section>
+        <FounderPanel compact />
       </main>
     </Layout>
   );

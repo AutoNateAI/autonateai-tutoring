@@ -15,23 +15,23 @@ type ServiceCardProps = {
 
 const services: ServiceCardProps[] = [
   {
-    title: 'AI Workflow Cohort',
+    title: 'Student Workflow Cohort',
     price: '$129',
-    schedule: 'Monday through Thursday, 7:30 PM to 9:30 PM EST',
-    audience: 'Students and professionals who want a faster path from AI confusion to structured execution.',
+    schedule: 'Monday and Wednesday, 7:30 PM to 9:30 PM EST',
+    audience: 'Students who want a faster path from AI confusion to structured execution.',
     description: (
       <p>
-        This is the core live session. You learn how to turn ChatGPT, Google Sheets, and structured prompts into a
-        personal AI system you can actually use. Maximum 25 students.
+        This is the student-facing live session. You learn how to turn ChatGPT, Google Sheets, and structured prompts
+        into a student workflow system you can actually use. Maximum 25 students.
       </p>
     ),
     href: '/services/workshop',
-    ctaLabel: 'View Cohort Details',
+    ctaLabel: 'View Student Details',
   },
   {
     title: 'Research Cohort',
-    price: '$129',
-    schedule: 'Monday through Thursday, 7:30 PM to 9:30 PM EST',
+    price: '$189',
+    schedule: 'Tuesday and Thursday, 7:30 PM to 9:30 PM EST',
     audience: 'Researchers who need cleaner note systems, stronger synthesis workflows, and better research organization.',
     description: (
       <p>
@@ -93,42 +93,10 @@ export default function BookingPage(): React.JSX.Element {
       description="Choose the support path that matches how you want to learn and apply AI: live cohorts or a DevBox setup."
       image="https://autonateai.com/img/og-booking.png">
       <main className="container padding-vert--xl">
-        <section
-          className="margin-bottom--xl shadow--lw"
-          style={{
-            backgroundColor: 'var(--ifm-color-emphasis-100)',
-            borderRadius: '16px',
-            overflow: 'hidden',
-          }}>
-          <div className="row no-gutters" style={{alignItems: 'stretch'}}>
-            <div className="col col--5">
-              <img
-                src="/img/nate-instructor.jpg"
-                alt="Nate - AutoNateAI Instructor"
-                style={{width: '100%', height: '100%', objectFit: 'cover', minHeight: '350px', objectPosition: 'center 20%'}}
-              />
-            </div>
-            <div className="col col--7 padding--lg" style={{padding: '1.5rem'}}>
-              <Heading as="h1" style={{fontSize: '2.2rem', marginBottom: '1rem'}}>
-                Practice Daily. Learn Live. Apply Faster.
-              </Heading>
-              <p style={{fontSize: '1rem', lineHeight: '1.6', marginBottom: '1rem'}}>
-                The thought experiments are your daily reps. The live cohorts are where you compress the learning curve.
-                Every cohort runs from <span className="highlight-brand">7:30 PM to 9:30 PM EST</span>, keeps the room to
-                <span className="highlight-focus"> 25 students maximum</span>, and costs
-                <span className="highlight-job"> $129 for the full two hours</span>.
-              </p>
-              <p style={{fontSize: '0.95rem', lineHeight: '1.6', marginBottom: 0}}>
-                If you want the higher-touch infrastructure path instead, the DevBox setup page is the place to start.
-              </p>
-            </div>
-          </div>
-        </section>
-
         <div className="text--center margin-bottom--xl">
           <Heading as="h2" style={{fontSize: '2.3rem'}}>Choose Your Next Step</Heading>
           <p className="hero__subtitle" style={{maxWidth: '780px', margin: '0.75rem auto 0', fontSize: '1.05rem'}}>
-            Start with a detail page, review the fit, then use the Google booking link there when you are ready.
+            Three doors. Pick the one that gets you to usable AI the fastest.
           </p>
         </div>
 

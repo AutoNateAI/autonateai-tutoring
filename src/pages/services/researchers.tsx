@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import FounderPanel from '@site/src/components/FounderPanel';
 
 const bookingLink = 'https://calendar.app.google/LTN9pu8uPV7Qwbmd7';
 
@@ -23,8 +24,8 @@ export default function ResearcherDetailsPage(): React.JSX.Element {
               to move from sources to usable insight.
             </p>
             <div style={{display: 'grid', gap: '0.65rem', margin: '1.5rem 0', color: '#ffffff'}}>
-              <div><strong>Schedule:</strong> Monday through Thursday, 7:30 PM to 9:30 PM EST</div>
-              <div><strong>Price:</strong> $129 for the full two hours</div>
+              <div><strong>Schedule:</strong> Tuesday and Thursday, 7:30 PM to 9:30 PM EST</div>
+              <div><strong>Price:</strong> $189 for the full two hours</div>
               <div><strong>Capacity:</strong> Maximum 25 students per cohort</div>
             </div>
             <Heading as="h2" style={{color: '#ffffff', fontSize: '1.4rem'}}>What You Focus On</Heading>
@@ -49,6 +50,7 @@ export default function ResearcherDetailsPage(): React.JSX.Element {
             </div>
           </div>
         </section>
+        <FounderPanel compact />
       </main>
     </Layout>
   );

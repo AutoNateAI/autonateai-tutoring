@@ -189,9 +189,9 @@
   font-weight: 500;
   max-width: 900px;
   margin: 3.5rem auto 2.5rem !important;
-  opacity: 0;
+  /* opacity: 0;
   animation: scaleIn 0.8s ease-out forwards;
-  animation-delay: 2.5s;
+  animation-delay: 2.5s; */
 }
 
 @media (min-width: 768px) {
