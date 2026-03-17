@@ -42,7 +42,7 @@ The agent MUST have access to the following skills within `autonateai-tutoring/.
 ---
 
 ## 📂 Phase 4: Placement & Organization
-*   **Mission Content:** Save the `.mdx` file in the appropriate category under `autonateai-tutoring/thought-experiments/` (e.g., `Algorithms/Hard/`).
+*   **Mission Content:** Save the `.mdx` file in the appropriate audience library under `autonateai-tutoring/thought-experiments/` (e.g., `students/Hard/`).
 *   **Assets:** Store generated images in `autonateai-tutoring/static/img/quests/[quest-name]/`.
 
 ---

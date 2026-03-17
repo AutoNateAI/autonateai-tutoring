@@ -16,7 +16,7 @@ const CHARACTERS = {
 };
 
 const MISSION_NAME = "silicon-deadlock";
-const MDX_PATH = path.join(__dirname, '..', 'thought-experiments', 'Algorithms', 'Medium', 'silicon-deadlock.mdx');
+const MDX_PATH = path.join(__dirname, '..', 'thought-experiments', 'students', 'Medium', 'silicon-deadlock.mdx');
 
 const IMAGES = [
   { id: 1, prompt: "Cinematic wide shot of a massive, dark automated shipping port in Grand Rapids with data centers on fire and hundreds of idle robotic trucks forming a massive gridlock. High-stakes emergency vibe." },
