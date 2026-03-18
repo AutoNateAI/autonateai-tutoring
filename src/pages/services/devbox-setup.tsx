@@ -3,15 +3,26 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import FounderPanel from '@site/src/components/FounderPanel';
+import PageSocialMeta from '@site/src/components/PageSocialMeta';
 
 const bookingLink = 'https://calendar.app.google/fTQpDxdnJXaYE8neA';
 
 export default function DevboxSetupPage(): React.JSX.Element {
+  const title = 'DevBox Setup | Build Your AI Workspace';
+  const description =
+    'A higher-touch setup path for professionals who want a cleaner AI environment, stronger tooling, and structured execution.';
+
   return (
     <Layout
-      title="DevBox Setup | Build Your AI Workspace"
-      description="A higher-touch setup path for professionals who want a cleaner AI environment, stronger tooling, and structured execution."
+      title={title}
+      description={description}
       image="https://autonateai.com/img/og-devbox-setup.png">
+      <PageSocialMeta
+        title={`${title} | AutoNateAI | Daily AI Thought Experiments`}
+        description={description}
+        image="/img/og-devbox-setup.png"
+        path="/services/devbox-setup"
+      />
       <main className="container padding-vert--xl">
         <div className="margin-bottom--lg">
           <Link to="/booking">← Back to Programs</Link>

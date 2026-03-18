@@ -3,15 +3,26 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import FounderPanel from '@site/src/components/FounderPanel';
+import PageSocialMeta from '@site/src/components/PageSocialMeta';
 
 const bookingLink = 'https://calendar.app.google/Z34RvXUL5epXJk1K8';
 
 export default function WorkshopDetailsPage(): React.JSX.Element {
+  const title = 'Student Workflow Cohort | Build Your AI System Faster';
+  const description =
+    'A live student cohort for turning ChatGPT, Sheets, and structured prompts into a usable workflow system.';
+
   return (
     <Layout
-      title="Student Workflow Cohort | Build Your AI System Faster"
-      description="A live student cohort for turning ChatGPT, Sheets, and structured prompts into a usable workflow system."
+      title={title}
+      description={description}
       image="https://autonateai.com/img/og-student-workflow.png">
+      <PageSocialMeta
+        title={`${title} | AutoNateAI | Daily AI Thought Experiments`}
+        description={description}
+        image="/img/og-student-workflow.png"
+        path="/services/workshop"
+      />
       <main className="container padding-vert--xl">
         <div className="margin-bottom--lg">
           <Link to="/booking">← Back to Programs</Link>

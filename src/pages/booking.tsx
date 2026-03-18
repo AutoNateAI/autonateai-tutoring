@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import PageSocialMeta from '@site/src/components/PageSocialMeta';
 
 type ServiceCardProps = {
   title: string;
@@ -87,11 +88,21 @@ function ServiceCard({title, price, schedule, audience, description, href, ctaLa
 }
 
 export default function BookingPage(): React.JSX.Element {
+  const title = 'Choose Your AI Path | Cohorts and DevBox Setup';
+  const description =
+    'Pick the fastest path into usable AI: Student Workflow Cohort, Research Cohort, or a higher-touch DevBox setup.';
+
   return (
     <Layout
-      title="Choose Your AI Path | Cohorts and DevBox Setup"
-      description="Pick the fastest path into usable AI: Student Workflow Cohort, Research Cohort, or a higher-touch DevBox setup."
+      title={title}
+      description={description}
       image="https://autonateai.com/img/og-booking.png">
+      <PageSocialMeta
+        title={`${title} | AutoNateAI | Daily AI Thought Experiments`}
+        description={description}
+        image="/img/og-booking.png"
+        path="/booking"
+      />
       <main className="container padding-vert--xl">
         <div className="text--center margin-bottom--xl">
           <Heading as="h2" style={{fontSize: '2.3rem'}}>Choose Your Next Step</Heading>

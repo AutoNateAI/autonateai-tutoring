@@ -5,6 +5,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import TopologicalWeb from '@site/src/components/TopologicalWeb';
 import FounderPanel from '@site/src/components/FounderPanel';
+import PageSocialMeta from '@site/src/components/PageSocialMeta';
 
 import styles from './index.module.css';
 
@@ -306,11 +307,21 @@ function PricingAndSchedule() {
 }
 
 export default function Home(): ReactNode {
+  const title = 'Daily AI Thought Experiments | Learn AI Faster';
+  const description =
+    'Practice with daily AI thought experiments, then join a student cohort, research cohort, or DevBox path to build usable AI systems faster.';
+
   return (
     <Layout
-      title="Daily AI Thought Experiments | Learn AI Faster"
-      description="Practice with daily AI thought experiments, then join a student cohort, research cohort, or DevBox path to build usable AI systems faster."
+      title={title}
+      description={description}
       image="https://autonateai.com/img/og-homepage.png">
+      <PageSocialMeta
+        title={`${title} | AutoNateAI | Daily AI Thought Experiments`}
+        description={description}
+        image="/img/og-homepage.png"
+        path="/"
+      />
       <HomepageHeader />
       <main>
         <PracticeLoop />

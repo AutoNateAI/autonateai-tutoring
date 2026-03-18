@@ -3,15 +3,26 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import FounderPanel from '@site/src/components/FounderPanel';
+import PageSocialMeta from '@site/src/components/PageSocialMeta';
 
 const bookingLink = 'https://calendar.app.google/LTN9pu8uPV7Qwbmd7';
 
 export default function ResearcherDetailsPage(): React.JSX.Element {
+  const title = 'Research Cohort | Organize Research With AI';
+  const description =
+    'A live research cohort for cleaner synthesis, stronger note systems, and more structured AI-powered research workflows.';
+
   return (
     <Layout
-      title="Research Cohort | Organize Research With AI"
-      description="A live research cohort for cleaner synthesis, stronger note systems, and more structured AI-powered research workflows."
+      title={title}
+      description={description}
       image="https://autonateai.com/img/og-research-cohort.png">
+      <PageSocialMeta
+        title={`${title} | AutoNateAI | Daily AI Thought Experiments`}
+        description={description}
+        image="/img/og-research-cohort.png"
+        path="/services/researchers"
+      />
       <main className="container padding-vert--xl">
         <div className="margin-bottom--lg">
           <Link to="/booking">← Back to Programs</Link>
