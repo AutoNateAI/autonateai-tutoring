@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Search Query Matrices | AutoNateAI</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0a0a0f;
+    color: #e0e0e0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .bg-grid {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(0,255,170,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,170,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 0;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00ffaa, #00aaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: #888;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .hero .tagline {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 6px 16px;
+    border: 1px solid rgba(0,255,170,0.3);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #00ffaa;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .matrix-section {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .matrix-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+
+  .matrix-number {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0a0a0f;
+    background: linear-gradient(135deg, #00ffaa, #00ddaa);
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .matrix-section.content .matrix-number {
+    background: linear-gradient(135deg, #aa77ff, #7744ff);
+  }
+
+  .matrix-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .matrix-subtitle {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    padding-left: 50px;
+  }
+
+  .matrix-grid {
+    display: grid;
+    gap: 12px;
+  }
+
+  .query-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.25s ease;
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  .query-card:hover {
+    background: rgba(0,255,170,0.04);
+    border-color: rgba(0,255,170,0.15);
+    transform: translateX(0) scale(1.005);
+  }
+
+  .matrix-section.content .query-card:hover {
+    background: rgba(170,119,255,0.04);
+    border-color: rgba(170,119,255,0.15);
+  }
+
+  .query-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #00ffaa;
+    background: rgba(0,255,170,0.1);
+    min-width: 28px; height: 28px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .matrix-section.content .query-num {
+    color: #aa77ff;
+    background: rgba(170,119,255,0.1);
+  }
+
+  .query-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .query-goal {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #00ddaa;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  .matrix-section.content .query-goal {
+    color: #bb88ff;
+  }
+
+  .query-text {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.88rem;
+    color: #ccc;
+    line-height: 1.6;
+    word-break: break-word;
+    user-select: all;
+  }
+
+  .query-text .op {
+    color: #00ffaa;
+    font-weight: 700;
+  }
+
+  .matrix-section.content .query-text .op {
+    color: #aa77ff;
+    font-weight: 700;
+  }
+
+  .copy-btn {
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #888;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+
+  .copy-btn:hover {
+    background: rgba(0,255,170,0.1);
+    border-color: rgba(0,255,170,0.3);
+    color: #00ffaa;
+  }
+
+  .matrix-section.content .copy-btn:hover {
+    background: rgba(170,119,255,0.1);
+    border-color: rgba(170,119,255,0.3);
+    color: #aa77ff;
+  }
+
+  .copy-btn.copied {
+    background: rgba(0,255,170,0.15);
+    border-color: #00ffaa;
+    color: #00ffaa;
+  }
+
+  .strategy-box {
+    margin-top: 16px;
+    padding: 18px 20px;
+    background: rgba(0,255,170,0.03);
+    border: 1px solid rgba(0,255,170,0.08);
+    border-radius: 12px;
+    opacity: 0;
+  }
+
+  .matrix-section.content .strategy-box {
+    background: rgba(170,119,255,0.03);
+    border-color: rgba(170,119,255,0.08);
+  }
+
+  .strategy-box h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00ffaa;
+    margin-bottom: 10px;
+  }
+
+  .matrix-section.content .strategy-box h3 {
+    color: #aa77ff;
+  }
+
+  .strategy-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .strategy-box li {
+    font-size: 0.88rem;
+    color: #999;
+    padding: 4px 0;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .strategy-box li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #00ffaa;
+  }
+
+  .matrix-section.content .strategy-box li::before {
+    color: #aa77ff;
+  }
+
+  .copy-all-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+  }
+
+  .copy-all-btn {
+    background: linear-gradient(135deg, rgba(0,255,170,0.15), rgba(0,170,255,0.15));
+    border: 1px solid rgba(0,255,170,0.25);
+    color: #00ffaa;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 600;
+    font-family: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .copy-all-btn:hover {
+    background: linear-gradient(135deg, rgba(0,255,170,0.25), rgba(0,170,255,0.25));
+    transform: translateY(-1px);
+  }
+
+  .matrix-section.content .copy-all-btn {
+    background: linear-gradient(135deg, rgba(170,119,255,0.15), rgba(119,68,255,0.15));
+    border-color: rgba(170,119,255,0.25);
+    color: #aa77ff;
+  }
+
+  .matrix-section.content .copy-all-btn:hover {
+    background: linear-gradient(135deg, rgba(170,119,255,0.25), rgba(119,68,255,0.25));
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: #00ffaa;
+    color: #0a0a0f;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  @media (max-width: 700px) {
+    .hero h1 { font-size: 1.8rem; }
+    .matrix-header h2 { font-size: 1.1rem; }
+    .query-card { flex-wrap: wrap; }
+    .copy-btn { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="toast" id="toast">Copied to clipboard</div>
+
+<div class="container">
+  <div class="hero">
+    <h1>Advanced Search Query Matrices</h1>
+    <p>Stop scrolling. Start mining. Combine keywords, intent, and location to cut through billions of posts and surface real opportunity.</p>
+    <span class="tagline">Controlled Signal Extraction</span>
+  </div>
+
+  <!-- MATRIX 1 -->
+  <section class="matrix-section tech" id="matrix1">
+    <div class="matrix-header">
+      <div class="matrix-number">1</div>
+      <h2>Software Engineering / Python Automation</h2>
+    </div>
+    <p class="matrix-subtitle">Find people talking about tech needs, hiring, software usage, or automation pain &mdash; Grand Rapids / West Michigan</p>
+
+    <div class="copy-all-bar">
+      <button class="copy-all-btn" onclick="copyAll('matrix1')">Copy All Queries</button>
+    </div>
+
+    <div class="matrix-grid" id="matrix1-grid"></div>
+
+    <div class="strategy-box" id="strategy1">
+      <h3>Strategic Angles</h3>
+      <ul>
+        <li><strong>#3 &amp; #4</strong> surface pain posts. Pain equals opportunity.</li>
+        <li><strong>#5</strong> finds companies using software that can be extended or automated &mdash; that's a consulting wedge.</li>
+        <li><strong>#11 &amp; #12</strong> activate alumni + fraternity proximity leverage &mdash; warm network gravity.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MATRIX 2 -->
+  <section class="matrix-section content" id="matrix2">
+    <div class="matrix-header">
+      <div class="matrix-number">2</div>
+      <h2>Content Creation / Media / Digital Marketing</h2>
+    </div>
+    <p class="matrix-subtitle">Find creators, brands, agencies, and businesses producing or needing content &mdash; Grand Rapids / West Michigan</p>
+
+    <div class="copy-all-bar">
+      <button class="copy-all-btn" onclick="copyAll('matrix2')">Copy All Queries</button>
+    </div>
+
+    <div class="matrix-grid" id="matrix2-grid"></div>
+
+    <div class="strategy-box" id="strategy2">
+      <h3>Strategic Angles</h3>
+      <ul>
+        <li><strong>#7 &amp; #8</strong> are gold &mdash; realtors and restaurants live and die by content.</li>
+        <li><strong>#11</strong> finds businesses at peak visibility hunger.</li>
+        <li><strong>#12</strong> &mdash; agencies may need overflow editors or shooters.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+const matrix1Data = [
+  { goal: "Find tech jobs locally", query: `("hiring" OR "looking for") AND ("software engineer" OR "Python developer") AND ("Grand Rapids" OR "West Michigan")` },
+  { goal: "Find engineers seeking work", query: `("open to work" OR "seeking opportunity") AND ("software engineer" OR "backend developer") AND ("Michigan")` },
+  { goal: "Surface automation pain", query: `("manual process" OR "spreadsheet hell" OR "too much Excel") AND ("Grand Rapids" OR "MI")` },
+  { goal: "Find automation demand", query: `("need automation" OR "automate this" OR "workflow automation") AND ("Grand Rapids" OR "West Michigan")` },
+  { goal: "Find companies using key software", query: `("using Salesforce" OR "using HubSpot" OR "using NetSuite") AND ("Grand Rapids" OR "Michigan")` },
+  { goal: "Find ops/IT managers + automation", query: `("operations manager" OR "IT manager") AND ("process improvement" OR "automation") AND ("Grand Rapids")` },
+  { goal: "Find laid-off tech talent", query: `("laid off" OR "impacted by layoffs") AND ("tech" OR "software") AND ("Michigan")` },
+  { goal: "Find Python/Django devs", query: `("Python" AND "Django") AND ("Grand Rapids" OR "West Michigan")` },
+  { goal: "Find RPA & low-code users", query: `("RPA" OR "robotic process automation" OR "Zapier" OR "Power Automate") AND ("Michigan")` },
+  { goal: "Find teams hiring engineers", query: `("hiring engineers" OR "growing our dev team") AND ("Grand Rapids")` },
+  { goal: "Leverage alumni networks", query: `("Davenport University" OR "Western Michigan University") AND ("software" OR "engineering") AND ("Grand Rapids")` },
+  { goal: "Leverage fraternity network", query: `("Alpha Phi Alpha" OR "Alpha network") AND ("tech" OR "engineering") AND ("Michigan")` },
+];
+
+const matrix2Data = [
+  { goal: "Find content creator jobs", query: `("hiring" OR "looking for") AND ("content creator" OR "videographer" OR "social media manager") AND ("Grand Rapids")` },
+  { goal: "Find freelance creators", query: `("open to work" OR "freelance") AND ("content creation" OR "video editing") AND ("Michigan")` },
+  { goal: "Find businesses needing content", query: `("we need content" OR "need a videographer" OR "need social media help") AND ("Grand Rapids")` },
+  { goal: "Find brands building audiences", query: `("growing our brand" OR "building our audience") AND ("West Michigan")` },
+  { goal: "Find marketing/brand managers", query: `("marketing manager" OR "brand manager") AND ("Grand Rapids")` },
+  { goal: "Find local podcasts & channels", query: `("podcast" OR "YouTube channel") AND ("Grand Rapids" OR "Michigan")` },
+  { goal: "Find realtors needing video", query: `("real estate" OR "realtor") AND ("video marketing" OR "content") AND ("Grand Rapids")` },
+  { goal: "Find local biz on social", query: `("restaurant owner" OR "local business owner") AND ("Instagram" OR "TikTok") AND ("Grand Rapids")` },
+  { goal: "Leverage alumni networks", query: `("Davenport University" OR "Western Michigan University") AND ("marketing" OR "media") AND ("Grand Rapids")` },
+  { goal: "Leverage fraternity network", query: `("Alpha Phi Alpha" OR "Alpha network") AND ("marketing" OR "business") AND ("Michigan")` },
+  { goal: "Find new businesses launching", query: `("launching soon" OR "grand opening") AND ("Grand Rapids")` },
+  { goal: "Find local agencies", query: `("digital marketing agency") AND ("Grand Rapids" OR "West Michigan")` },
+];
+
+function highlightOps(text) {
+  return text.replace(/\b(AND|OR)\b/g, '<span class="op">$1</span>');
+}
+
+function buildCards(data, gridId) {
+  const grid = document.getElementById(gridId);
+  data.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'query-card';
+    card.innerHTML = `
+      <div class="query-num">${i + 1}</div>
+      <div class="query-body">
+        <div class="query-goal">${item.goal}</div>
+        <div class="query-text">${highlightOps(item.query)}</div>
+      </div>
+      <button class="copy-btn" onclick="copyQuery(this, ${gridId === 'matrix1-grid' ? 'matrix1Data' : 'matrix2Data'}, ${i})">Copy</button>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function copyQuery(btn, data, index) {
+  navigator.clipboard.writeText(data[index].query).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    showToast('Query copied to clipboard');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+function copyAll(matrixId) {
+  const data = matrixId === 'matrix1' ? matrix1Data : matrix2Data;
+  const text = data.map((d, i) => `${i + 1}. ${d.query}`).join('\n\n');
+  navigator.clipboard.writeText(text).then(() => {
+    showToast('All queries copied to clipboard');
+  });
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  anime.remove(toast);
+  anime({
+    targets: toast,
+    translateX: '-50%',
+    translateY: [80, 0],
+    opacity: [0, 1],
+    duration: 400,
+    easing: 'easeOutCubic',
+    complete: () => {
+      setTimeout(() => {
+        anime({
+          targets: toast,
+          translateY: [0, 80],
+          opacity: [1, 0],
+          duration: 300,
+          easing: 'easeInCubic',
+        });
+      }, 1400);
+    }
+  });
+}
+
+buildCards(matrix1Data, 'matrix1-grid');
+buildCards(matrix2Data, 'matrix2-grid');
+
+// Animations
+anime({
+  targets: '.hero',
+  opacity: [0, 1],
+  translateY: [30, 0],
+  duration: 900,
+  easing: 'easeOutCubic',
+});
+
+anime({
+  targets: '.matrix-section',
+  opacity: [0, 1],
+  translateY: [40, 0],
+  duration: 800,
+  delay: anime.stagger(300, { start: 500 }),
+  easing: 'easeOutCubic',
+});
+
+anime({
+  targets: '#matrix1 .query-card',
+  opacity: [0, 1],
+  translateX: [-20, 0],
+  duration: 500,
+  delay: anime.stagger(80, { start: 900 }),
+  easing: 'easeOutCubic',
+});
+
+anime({
+  targets: '#matrix2 .query-card',
+  opacity: [0, 1],
+  translateX: [-20, 0],
+  duration: 500,
+  delay: anime.stagger(80, { start: 1500 }),
+  easing: 'easeOutCubic',
+});
+
+anime({
+  targets: '.strategy-box',
+  opacity: [0, 1],
+  translateY: [20, 0],
+  duration: 600,
+  delay: anime.stagger(200, { start: 2200 }),
+  easing: 'easeOutCubic',
+});
+</script>
+
+</body>
+</html>

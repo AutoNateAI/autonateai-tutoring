@@ -1,0 +1,55 @@
+{
+  "_comment": "Operation: Court Clear - Batch config for 9 cinematic scenes (Phase 2)",
+  "model": "gpt-image-1.5",
+  "size": "1536x1024",
+  "quality": "high",
+  "fidelity": "high",
+  "concurrency": 5,
+  "images": [
+    {
+      "prompt": "Dr. Nate Chen, Maya Patel, and Priya Okoye sitting in Van Andel Arena basketball stadium in Grand Rapids during Grand Rapids Rise game, all three looking at their smartphones showing code, arena lights above, crowd in background, excited expressions, Disney/Pixar cinematic style, 16:9, high fidelity. NO text, NO letters, NO words",
+      "output": "static/img/quests/court-clear/scene-01-tipoff.png",
+      "references": ["static/img/quests/court-clear/character-nate.png", "static/img/quests/court-clear/character-maya.png", "static/img/quests/court-clear/character-priya.png"]
+    },
+    {
+      "prompt": "Maya Patel looking concerned at smartphone showing red alert notification, Van Andel Arena basketball court visible in background with players on court, arena lighting, Disney/Pixar style, 16:9, high fidelity. NO text, NO letters, NO words",
+      "output": "static/img/quests/court-clear/scene-02-alert.png",
+      "references": ["static/img/quests/court-clear/character-maya.png"]
+    },
+    {
+      "prompt": "Dr. Nate Chen pointing at smartphone screen showing graph visualization with nodes and edges, basketball arena crowd blurred in background, focused expression, Disney/Pixar style, 16:9, high fidelity. NO text, NO letters, NO words",
+      "output": "static/img/quests/court-clear/scene-03-graph.png",
+      "references": ["static/img/quests/court-clear/character-nate.png"]
+    },
+    {
+      "prompt": "Priya Okoye coding intensely on smartphone, fingers typing rapidly, smartphone screen showing Python BFS code, Van Andel Arena jumbotron visible in background, determined expression, Disney/Pixar style, 16:9, high fidelity. NO text, NO letters, NO words",
+      "output": "static/img/quests/court-clear/scene-04-coding.png",
+      "references": ["static/img/quests/court-clear/character-priya.png"]
+    },
+    {
+      "prompt": "Three friends huddled together in arena seats, smartphones connected to cloud server, holographic graph visualization floating above their phones, basketball game in background, team collaboration, Disney/Pixar style, 16:9, high fidelity. NO text, NO letters, NO words",
+      "output": "static/img/quests/court-clear/scene-05-huddle.png",
+      "references": ["static/img/quests/court-clear/character-nate.png", "static/img/quests/court-clear/character-maya.png", "static/img/quests/court-clear/character-priya.png"]
+    },
+    {
+      "prompt": "Van Andel Arena overhead view showing basketball court with animated flow lines representing evacuation routes, crowd of spectators in seats, graph nodes at exits, Disney/Pixar style, 16:9, high fidelity. NO text, NO letters, NO words",
+      "output": "static/img/quests/court-clear/scene-06-arena-graph.png",
+      "references": []
+    },
+    {
+      "prompt": "Smartphone screen close-up showing BFS algorithm code with queue data structure, green success indicators, reflection of basketball arena lights on screen, Disney/Pixar style, 16:9, high fidelity. NO text, NO letters, NO words",
+      "output": "static/img/quests/court-clear/scene-07-code-success.png",
+      "references": []
+    },
+    {
+      "prompt": "Three friends celebrating in arena seats, smartphones showing 100 percent success message, crowd cheering around them, basketball players on court visible below, triumphant expressions, Disney/Pixar style, 16:9, high fidelity. NO text, NO letters, NO words",
+      "output": "static/img/quests/court-clear/scene-08-celebration.png",
+      "references": ["static/img/quests/court-clear/character-nate.png", "static/img/quests/court-clear/character-maya.png", "static/img/quests/court-clear/character-priya.png"]
+    },
+    {
+      "prompt": "Epic wide shot of Van Andel Arena interior at night, basketball game in progress, animated evacuation flow lines showing optimal paths from seats to exits, packed crowd, dramatic arena lighting, Disney/Pixar cinematic finale, 16:9, high fidelity. NO text, NO letters, NO words",
+      "output": "static/img/quests/court-clear/scene-09-arena-wide.png",
+      "references": []
+    }
+  ]
+}
