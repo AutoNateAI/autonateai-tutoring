@@ -96,6 +96,7 @@ function HomepageHeader() {
           display: grid;
           gap: 1.5rem;
           justify-items: center;
+          padding-inline: 0.65rem;
         }
         .hero-video-shell {
           border: 1px solid rgba(37, 194, 160, 0.28);
@@ -112,6 +113,14 @@ function HomepageHeader() {
           aspect-ratio: 16 / 10;
           object-fit: cover;
           background: #081121;
+        }
+        @media (max-width: 768px) {
+          .hero-media-stack {
+            padding-inline: 0.15rem;
+          }
+          .hero-video-shell {
+            border-radius: 18px;
+          }
         }
         .hero-content-fade-in {
           opacity: 0;
