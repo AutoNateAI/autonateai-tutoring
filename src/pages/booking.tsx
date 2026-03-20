@@ -3,6 +3,9 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
+import PortalPreviewEmbed from '@site/src/components/PortalPreviewEmbed';
+
+const portalBase = 'https://autonateai.github.io/autonateai-workshop-portal/#';
 
 type ServiceCardProps = {
   title: string;
@@ -116,6 +119,14 @@ export default function BookingPage(): React.JSX.Element {
             <ServiceCard key={service.title} {...service} />
           ))}
         </div>
+
+        <PortalPreviewEmbed
+          title="Preview the actual portal students get after purchase"
+          description="This is the real product surface, not a mockup. The premium courses unlock the narrated track dashboards, workflow pages, prompt packs, and linked Sheets inside the portal."
+          dashboardUrl={`${portalBase}/preview/student`}
+          workflowUrl={`${portalBase}/preview/workflows/daily-time-grid`}
+          openUrl={`${portalBase}/preview/student`}
+        />
       </main>
     </Layout>
   );
