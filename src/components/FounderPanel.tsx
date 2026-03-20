@@ -17,7 +17,7 @@ export default function FounderPanel({compact = false}: FounderPanelProps): Reac
       }}>
       <div className="row no-gutters" style={{alignItems: 'stretch'}}>
         <div className="col col--4">
-          <Link to="/services/researchers" style={{display: 'block', height: '100%'}}>
+          <Link to="/services/ai-first-researcher" style={{display: 'block', height: '100%'}}>
             <img
               src="/img/nate-instructor.jpg"
               alt="Nate Baker - Founder, Instructor, and Principal Consultant at AutoNateAI"
@@ -43,14 +43,14 @@ export default function FounderPanel({compact = false}: FounderPanelProps): Reac
             <span className="highlight-job"> Principal Consultant</span> behind AutoNateAI.
           </p>
           <p style={{fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '0.9rem'}}>
-            I run the workshop business, design the thought experiments, and lead the consulting work myself. The goal
+            I design the async courses, build the thought experiments, and lead the consulting work myself. The goal
             is simple: help students, researchers, and professionals turn AI concepts into systems they can actually use.
           </p>
           <p style={{fontSize: '0.95rem', lineHeight: '1.6', marginBottom: 0}}>
-            The live cohorts speed up the learning. The thought experiments keep the reps going every day.
+            The premium async courses speed up the learning. The thought experiments keep the reps going every day.
           </p>
           <div style={{marginTop: '1.15rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap'}}>
-            <Link className="button button--primary" to="/services/researchers">
+            <Link className="button button--primary" to="/services/ai-first-researcher">
               Read More
             </Link>
             <Link className="button button--secondary" to="/thought-experiments/">

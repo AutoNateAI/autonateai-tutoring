@@ -72,7 +72,7 @@ function HomepageHeader() {
             <div className="hero-content-fade-in">
               <p className="hero__subtitle" style={{textAlign: 'left', margin: '0 0 1.5rem 0'}}>
                 Learn AI through <span className="hero-highlight-gold">daily thought experiments</span>,
-                then accelerate the skill-building inside a live cohort that shows you how to turn ChatGPT,
+                then go deeper with premium async courses that show you how to turn ChatGPT,
                 Sheets, and structured workflows into a personal AI system.
               </p>
 
@@ -86,9 +86,9 @@ function HomepageHeader() {
                   marginBottom: '1.75rem',
                 }}>
                 <strong style={{display: 'block', color: '#ffffff', marginBottom: '0.4rem'}}>
-                  Live Learning Paths
+                  Practice And Upgrade Paths
                 </strong>
-                Daily thought experiments build the reps. Live cohorts run Monday through Thursday, 7:30 PM to 9:30 PM EST, with capped rooms and clear next-step support when you want to move faster.
+                Daily thought experiments build the reps. The premium async courses add narrated lectures, workflow kits, and structured prompt packs when you want a faster path to a real AI system.
               </div>
 
               <div className={clsx('buttons', styles.buttons)} style={{justifyContent: 'flex-start', gap: '0.75rem', flexWrap: 'wrap'}}>
@@ -185,7 +185,7 @@ function PracticeLoop() {
                 <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
                   <div className="card__body">
                     <Heading as="h3" style={{color: '#ffffff', fontSize: '1.1rem'}}>2. Accelerate</Heading>
-                    <p style={{color: '#cbd5e0', marginBottom: 0}}>Join a live cohort to build your AI system faster with structure, feedback, and a clear workflow.</p>
+                    <p style={{color: '#cbd5e0', marginBottom: 0}}>Use a premium async course to build your AI system faster with narrated instruction, workflow kits, and a clear structure.</p>
                   </div>
                 </div>
               </div>
@@ -220,17 +220,17 @@ function AudiencePaths() {
         <div className="row">
           <PathCard
             title="Students"
-            copy="Use the daily thought experiments to practice graph thinking, structured workflows, and practical AI execution. Join the student cohort when you want the system to click faster."
+            copy="Use the daily thought experiments to practice graph thinking, structured workflows, and practical AI execution. Move into the AI-First Student course when you want the full system."
             libraryLink="/thought-experiments/students/"
-            detailLink="/services/workshop"
-            detailLabel="Student Cohort Details"
+            detailLink="/services/ai-first-student"
+            detailLabel="Student Course Details"
           />
           <PathCard
             title="Researchers"
             copy="Build cleaner synthesis workflows, organize ideas into systems, and move from scattered notes to repeatable research infrastructure."
             libraryLink="/thought-experiments/researchers/"
-            detailLink="/services/researchers"
-            detailLabel="Research Cohort Details"
+            detailLink="/services/ai-first-researcher"
+            detailLabel="Research Course Details"
           />
           <PathCard
             title="Professionals"
@@ -259,28 +259,28 @@ function PricingAndSchedule() {
         </div>
         <div className="row">
           <div className="col col--4 margin-bottom--md">
-            <Link to="/services/workshop" style={{display: 'block', height: '100%', textDecoration: 'none'}}>
+            <Link to="/services/ai-first-student" style={{display: 'block', height: '100%', textDecoration: 'none'}}>
               <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
                 <div className="card__body">
-                  <Heading as="h3" style={{color: '#ffffff', fontSize: '1.2rem'}}>Student Workflow Cohort</Heading>
-                  <p style={{color: '#cbd5e0', marginBottom: '0.6rem'}}>Monday and Wednesday</p>
-                  <p style={{color: '#ffffff', fontWeight: 800, marginBottom: '0.6rem'}}>7:30 PM to 9:30 PM EST</p>
-                  <p style={{color: '#cbd5e0', marginBottom: '0.35rem'}}>Maximum 25 students</p>
-                  <p style={{color: '#25c2a0', fontWeight: 800, marginBottom: '0.75rem'}}>$129 for the full 2 hours</p>
+                  <Heading as="h3" style={{color: '#ffffff', fontSize: '1.2rem'}}>AI-First Student</Heading>
+                  <p style={{color: '#cbd5e0', marginBottom: '0.6rem'}}>Premium async course</p>
+                  <p style={{color: '#ffffff', fontWeight: 800, marginBottom: '0.6rem'}}>Narrated lecture deck + workflow kits</p>
+                  <p style={{color: '#cbd5e0', marginBottom: '0.35rem'}}>6 sheet workflows and guided prompt packs</p>
+                  <p style={{color: '#25c2a0', fontWeight: 800, marginBottom: '0.75rem'}}>$129 one-time purchase</p>
                   <p style={{color: '#8cd9c8', fontWeight: 700, marginBottom: 0}}>View details →</p>
                 </div>
               </div>
             </Link>
           </div>
           <div className="col col--4 margin-bottom--md">
-            <Link to="/services/researchers" style={{display: 'block', height: '100%', textDecoration: 'none'}}>
+            <Link to="/services/ai-first-researcher" style={{display: 'block', height: '100%', textDecoration: 'none'}}>
               <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
                 <div className="card__body">
-                  <Heading as="h3" style={{color: '#ffffff', fontSize: '1.2rem'}}>Research Cohort</Heading>
-                  <p style={{color: '#cbd5e0', marginBottom: '0.6rem'}}>Tuesday and Thursday</p>
-                  <p style={{color: '#ffffff', fontWeight: 800, marginBottom: '0.6rem'}}>7:30 PM to 9:30 PM EST</p>
-                  <p style={{color: '#cbd5e0', marginBottom: '0.35rem'}}>Maximum 25 students</p>
-                  <p style={{color: '#25c2a0', fontWeight: 800, marginBottom: '0.75rem'}}>$189 for the full 2 hours</p>
+                  <Heading as="h3" style={{color: '#ffffff', fontSize: '1.2rem'}}>AI-First Researcher</Heading>
+                  <p style={{color: '#cbd5e0', marginBottom: '0.6rem'}}>Premium async course</p>
+                  <p style={{color: '#ffffff', fontWeight: 800, marginBottom: '0.6rem'}}>Narrated lecture deck + research kits</p>
+                  <p style={{color: '#cbd5e0', marginBottom: '0.35rem'}}>6 research workflows and guided prompt packs</p>
+                  <p style={{color: '#25c2a0', fontWeight: 800, marginBottom: '0.75rem'}}>$189 one-time purchase</p>
                   <p style={{color: '#8cd9c8', fontWeight: 700, marginBottom: 0}}>View details →</p>
                 </div>
               </div>
@@ -309,7 +309,7 @@ function PricingAndSchedule() {
 export default function Home(): ReactNode {
   const title = 'Daily AI Thought Experiments | Learn AI Faster';
   const description =
-    'Practice with daily AI thought experiments, then join a student cohort, research cohort, or DevBox path to build usable AI systems faster.';
+    'Practice with daily AI thought experiments, then upgrade into AI-First Student, AI-First Researcher, or a DevBox path to build usable AI systems faster.';
 
   return (
     <Layout

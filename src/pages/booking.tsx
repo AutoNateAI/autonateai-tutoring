@@ -16,32 +16,32 @@ type ServiceCardProps = {
 
 const services: ServiceCardProps[] = [
   {
-    title: 'Student Workflow Cohort',
+    title: 'AI-First Student',
     price: '$129',
-    schedule: 'Monday and Wednesday, 7:30 PM to 9:30 PM EST',
-    audience: 'Students who want a faster path from AI confusion to structured execution.',
+    schedule: 'One-time purchase, instant access',
+    audience: 'Students who want a real AI operating system for school, planning, and day-to-day execution.',
     description: (
       <p>
-        This is the student-facing live session. You learn how to turn ChatGPT, Google Sheets, and structured prompts
-        into a student workflow system you can actually use. Maximum 25 students.
+        A premium async course with narrated lecture slides, 6 workflow kits, prompt packs, and connected Google
+        Sheets that help students plan, study, reflect, and organize with AI.
       </p>
     ),
-    href: '/services/workshop',
-    ctaLabel: 'View Student Details',
+    href: '/services/ai-first-student',
+    ctaLabel: 'View Student Course',
   },
   {
-    title: 'Research Cohort',
+    title: 'AI-First Researcher',
     price: '$189',
-    schedule: 'Tuesday and Thursday, 7:30 PM to 9:30 PM EST',
-    audience: 'Researchers who need cleaner note systems, stronger synthesis workflows, and better research organization.',
+    schedule: 'One-time purchase, instant access',
+    audience: 'Researchers who need stronger synthesis systems, better note infrastructure, and cleaner AI-assisted research workflows.',
     description: (
       <p>
-        Built for research-heavy work. The same live cohort cadence, but framed around structured notes, evidence
-        extraction, synthesis, and research workflows. Maximum 25 students.
+        A premium async course with narrated lectures, 6 research workflow kits, prompt packs, and structured sheets
+        designed for intake, synthesis, comparison, and insight generation.
       </p>
     ),
-    href: '/services/researchers',
-    ctaLabel: 'View Research Details',
+    href: '/services/ai-first-researcher',
+    ctaLabel: 'View Research Course',
   },
   {
     title: 'DevBox Setup',
@@ -88,9 +88,9 @@ function ServiceCard({title, price, schedule, audience, description, href, ctaLa
 }
 
 export default function BookingPage(): React.JSX.Element {
-  const title = 'Choose Your AI Path | Cohorts and DevBox Setup';
+  const title = 'Choose Your AI Path | Async Courses and DevBox Setup';
   const description =
-    'Pick the fastest path into usable AI: Student Workflow Cohort, Research Cohort, or a higher-touch DevBox setup.';
+    'Pick the fastest path into usable AI: AI-First Student, AI-First Researcher, or a higher-touch DevBox setup.';
 
   return (
     <Layout
@@ -107,7 +107,7 @@ export default function BookingPage(): React.JSX.Element {
         <div className="text--center margin-bottom--xl">
           <Heading as="h2" style={{fontSize: '2.3rem'}}>Choose Your Next Step</Heading>
           <p className="hero__subtitle" style={{maxWidth: '780px', margin: '0.75rem auto 0', fontSize: '1.05rem'}}>
-            Three doors. Pick the one that gets you to usable AI the fastest.
+            Two premium async courses and one higher-touch service. Pick the path that gets you to usable AI the fastest.
           </p>
         </div>
 

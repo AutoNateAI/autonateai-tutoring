@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'AutoNateAI | Daily AI Thought Experiments',
-  tagline: 'Daily AI thought experiments, live cohorts, and practical systems for students, researchers, and professionals.',
+  tagline: 'Daily AI thought experiments, premium async courses, and practical systems for students, researchers, and professionals.',
   favicon: 'img/logo.svg',
 
   future: {
