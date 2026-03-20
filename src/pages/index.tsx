@@ -61,64 +61,41 @@ function HomepageHeader() {
           ))}
         </Heading>
 
-        <div className="row row--align-center margin-top--lg hero-row-desktop">
-          <div className="col col--7">
-            <div className="hero-video-shell">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster="/img/og-homepage.png"
-                className="hero-demo-video">
-                <source src="/video/autonateai-portal-promo.mp4" type="video/mp4" />
-              </video>
-            </div>
+        <div className="margin-top--lg hero-media-stack">
+          <div className="hero-video-shell hero-content-fade-in">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/img/og-homepage.png"
+              className="hero-demo-video">
+              <source src="/video/autonateai-portal-promo.mp4" type="video/mp4" />
+            </video>
           </div>
-          <div className="col col--5 text--left">
-            <div className="hero-content-fade-in">
-              <p className="hero__subtitle" style={{textAlign: 'left', margin: '0 0 1.5rem 0'}}>
-                Learn AI through <span className="hero-highlight-gold">daily thought experiments</span>,
-                then go deeper with premium async courses that show you how to turn ChatGPT,
-                Sheets, and structured workflows into a personal AI system.
-              </p>
 
-              <div
-                style={{
-                  border: '1px solid rgba(37, 194, 160, 0.35)',
-                  borderRadius: '18px',
-                  padding: '1rem 1.1rem',
-                  background: 'rgba(8, 15, 32, 0.8)',
-                  color: '#d7e3f4',
-                  marginBottom: '1.75rem',
-                }}>
-                <strong style={{display: 'block', color: '#ffffff', marginBottom: '0.4rem'}}>
-                  Practice And Upgrade Paths
-                </strong>
-                Daily thought experiments build the reps. The premium async courses add narrated lectures, workflow kits, and structured prompt packs when you want a faster path to a real AI system.
-              </div>
-
-              <div className={clsx('buttons', styles.buttons)} style={{justifyContent: 'flex-start', gap: '0.75rem', flexWrap: 'wrap'}}>
-                <Link
-                  className="button button--secondary button--lg hero-button-filled hero-experiments-button"
-                  to="/thought-experiments/">
-                  Explore Thought Experiments
-                </Link>
-                <Link
-                  className="button button--primary button--lg hero-button-filled hero-booking-button"
-                  to="/booking">
-                  View Services
-                </Link>
-              </div>
-            </div>
+          <div
+            className={clsx('buttons', styles.buttons, 'hero-content-fade-in')}
+            style={{justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap'}}>
+            <Link
+              className="button button--secondary button--lg hero-button-filled hero-experiments-button"
+              to="/thought-experiments/">
+              Explore Thought Experiments
+            </Link>
+            <Link
+              className="button button--primary button--lg hero-button-filled hero-booking-button"
+              to="/booking">
+              View Services
+            </Link>
           </div>
         </div>
       </div>
       <style>{`
-        .hero-row-desktop {
-          display: flex;
-          flex-direction: column;
+        .hero-media-stack {
+          display: grid;
+          gap: 1.5rem;
+          justify-items: center;
         }
         .hero-video-shell {
           border: 1px solid rgba(37, 194, 160, 0.28);
@@ -126,7 +103,7 @@ function HomepageHeader() {
           overflow: hidden;
           background: #081121;
           box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
-          margin-bottom: 2rem;
+          width: min(100%, 960px);
         }
         .hero-demo-video {
           display: block;
@@ -158,15 +135,7 @@ function HomepageHeader() {
             transform: none !important;
           }
         }
-        @media (min-width: 997px) {
-          .hero-row-desktop {
-            flex-direction: row;
-          }
-          .hero-video-shell {
-            margin-bottom: 0;
-          }
-        }
-        .hero__subtitle, .hero-experiments-button, .hero-booking-button {
+        .hero-experiments-button, .hero-booking-button {
           animation: none !important;
           opacity: 1 !important;
         }
