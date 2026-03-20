@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import FounderPanel from '@site/src/components/FounderPanel';
+import HeroPromoVideo from '@site/src/components/HeroPromoVideo';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
 
 import styles from './index.module.css';
@@ -62,18 +63,7 @@ function HomepageHeader() {
         </Heading>
 
         <div className="margin-top--lg hero-media-stack">
-          <div className="hero-video-shell hero-content-fade-in">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster="/img/og-homepage.png"
-              className="hero-demo-video">
-              <source src="/video/autonateai-portal-promo.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <HeroPromoVideo />
 
           <div
             className={clsx('buttons', styles.buttons, 'hero-content-fade-in')}
@@ -99,12 +89,27 @@ function HomepageHeader() {
           padding-inline: 0.65rem;
         }
         .hero-video-shell {
+          position: relative;
           border: 1px solid rgba(37, 194, 160, 0.28);
           border-radius: 24px;
           overflow: hidden;
           background: #081121;
           box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
           width: min(100%, 960px);
+        }
+        .hero-sound-toggle {
+          position: absolute;
+          right: 1rem;
+          bottom: 1rem;
+          border: 1px solid rgba(255,255,255,0.16);
+          border-radius: 999px;
+          padding: 0.72rem 1rem;
+          background: rgba(7, 16, 31, 0.84);
+          color: #ffffff;
+          font-weight: 700;
+          font-size: 0.92rem;
+          backdrop-filter: blur(10px);
+          cursor: pointer;
         }
         .hero-demo-video {
           display: block;
@@ -120,6 +125,12 @@ function HomepageHeader() {
           }
           .hero-video-shell {
             border-radius: 18px;
+          }
+          .hero-sound-toggle {
+            right: 0.75rem;
+            bottom: 0.75rem;
+            padding: 0.65rem 0.9rem;
+            font-size: 0.84rem;
           }
         }
         .hero-content-fade-in {
