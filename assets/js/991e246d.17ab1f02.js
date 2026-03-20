@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkautonateai_tutoring=globalThis.webpackChunkautonateai_tutoring||[]).push([[3795],{2044(e,t,r){r.r(t),r.d(t,{default:()=>s});var a=r(6540),i=r(4848);function s(){return(0,a.useEffect)(()=>{window.location.replace("/services/ai-first-researcher")},[]),(0,i.jsx)("meta",{httpEquiv:"refresh",content:"0; url=/services/ai-first-researcher"})}}}]);

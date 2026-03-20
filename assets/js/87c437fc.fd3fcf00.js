@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkautonateai_tutoring=globalThis.webpackChunkautonateai_tutoring||[]).push([[3878],{4430(t,e,a){a.r(e),a.d(e,{default:()=>u});var i=a(6540),s=a(4848);function u(){return(0,i.useEffect)(()=>{window.location.replace("/services/ai-first-student")},[]),(0,s.jsx)("meta",{httpEquiv:"refresh",content:"0; url=/services/ai-first-student"})}}}]);
