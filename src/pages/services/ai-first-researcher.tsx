@@ -4,6 +4,9 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import FounderPanel from '@site/src/components/FounderPanel';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
+import PortalPreviewEmbed from '@site/src/components/PortalPreviewEmbed';
+
+const portalBase = 'https://autonateai.github.io/autonateai-workshop-portal/#';
 
 export default function AiFirstResearcherPage(): React.JSX.Element {
   const title = 'AI-First Researcher | Build Your Research Operating System';
@@ -56,6 +59,13 @@ export default function AiFirstResearcherPage(): React.JSX.Element {
             </div>
           </div>
         </section>
+        <PortalPreviewEmbed
+          title="See the researcher portal before you buy"
+          description="This is the real researcher product surface: the research track dashboard, narrated lecture system, and the workflow page used to structure intake, synthesis, and insight generation."
+          dashboardUrl={`${portalBase}/preview/researcher`}
+          workflowUrl={`${portalBase}/preview/workflows/source-intake-sheet`}
+          openUrl={`${portalBase}/preview/researcher`}
+        />
         <FounderPanel compact />
       </main>
     </Layout>

@@ -4,6 +4,9 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import FounderPanel from '@site/src/components/FounderPanel';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
+import PortalPreviewEmbed from '@site/src/components/PortalPreviewEmbed';
+
+const portalBase = 'https://autonateai.github.io/autonateai-workshop-portal/#';
 
 export default function AiFirstStudentPage(): React.JSX.Element {
   const title = 'AI-First Student | Build Your Student Operating System';
@@ -56,6 +59,13 @@ export default function AiFirstStudentPage(): React.JSX.Element {
             </div>
           </div>
         </section>
+        <PortalPreviewEmbed
+          title="See the student portal before you buy"
+          description="This is the real student product surface: the track dashboard, narrated lecture system, and the workflow page students use to run prompt packs into their connected Sheets."
+          dashboardUrl={`${portalBase}/preview/student`}
+          workflowUrl={`${portalBase}/preview/workflows/daily-time-grid`}
+          openUrl={`${portalBase}/preview/student`}
+        />
         <FounderPanel compact />
       </main>
     </Layout>
