@@ -4,10 +4,14 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import TopologicalWeb from '@site/src/components/TopologicalWeb';
+import CoursePromoVideo from '@site/src/components/CoursePromoVideo';
 import FounderPanel from '@site/src/components/FounderPanel';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
+import PortalPreviewEmbed from '@site/src/components/PortalPreviewEmbed';
 
 import styles from './index.module.css';
+
+const portalBase = 'https://autonateai.github.io/autonateai-workshop-portal/#';
 
 type PathCardProps = {
   title: string;
@@ -205,6 +209,26 @@ function PracticeLoop() {
   );
 }
 
+function ProductDemo() {
+  return (
+    <section className="padding-vert--xl" style={{backgroundColor: '#050a1a'}}>
+      <div className="container">
+        <CoursePromoVideo
+          title="Watch the portal before you jump in"
+          description="The premium async courses are not just videos or PDFs. They open into a narrated portal with track dashboards, workflow packs, and connected Sheets that students and researchers can use immediately."
+        />
+        <PortalPreviewEmbed
+          title="Explore the actual portal surface"
+          description="Watch the demo, then inspect the live product. These previews show the real track dashboards and workflow pages the courses unlock."
+          dashboardUrl={`${portalBase}/preview/student`}
+          workflowUrl={`${portalBase}/preview/workflows/daily-time-grid`}
+          openUrl={`${portalBase}/preview/student`}
+        />
+      </div>
+    </section>
+  );
+}
+
 function AudiencePaths() {
   return (
     <section className="padding-vert--xl" style={{backgroundColor: '#050a1a'}}>
@@ -325,6 +349,7 @@ export default function Home(): ReactNode {
       <HomepageHeader />
       <main>
         <PracticeLoop />
+        <ProductDemo />
         <AudiencePaths />
         <PricingAndSchedule />
         <section className="padding-bottom--xl" style={{backgroundColor: '#07101f'}}>

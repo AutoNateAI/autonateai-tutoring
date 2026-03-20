@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import CoursePromoVideo from '@site/src/components/CoursePromoVideo';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
 import PortalPreviewEmbed from '@site/src/components/PortalPreviewEmbed';
 
@@ -119,6 +120,11 @@ export default function BookingPage(): React.JSX.Element {
             <ServiceCard key={service.title} {...service} />
           ))}
         </div>
+
+        <CoursePromoVideo
+          title="Watch the async course portal in action"
+          description="This short demo shows the actual portal experience: narrated lecture decks, workflow pages, prompt packs, and connected Sheets for both tracks."
+        />
 
         <PortalPreviewEmbed
           title="Preview the actual portal students get after purchase"
