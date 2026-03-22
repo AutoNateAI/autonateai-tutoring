@@ -23,7 +23,8 @@ const config: Config = {
     squareLocationId: process.env.SQUARE_LOCATION_ID ?? 'L24Y6AS4SSFG2',
     squareEnvironment: process.env.SQUARE_ENVIRONMENT ?? 'sandbox',
     checkoutApiBaseUrl:
-      process.env.CHECKOUT_API_BASE_URL ?? 'https://us-central1-autonateai-learning-hub.cloudfunctions.net',
+      process.env.CHECKOUT_API_BASE_URL ??
+      'https://createsquarecoursepayment-4qinfaeidq-uc.a.run.app',
     portalBaseUrl: process.env.PORTAL_BASE_URL ?? 'https://workshop.autonateai.com',
   },
 

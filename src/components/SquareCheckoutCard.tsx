@@ -42,6 +42,14 @@ function loadSquareScript(environment: string) {
   });
 }
 
+function resolveCheckoutUrl(baseUrl: string) {
+  const trimmed = String(baseUrl || '').replace(/\/+$/, '');
+  if (trimmed.endsWith('/createSquareCoursePayment')) {
+    return trimmed;
+  }
+  return `${trimmed}/createSquareCoursePayment`;
+}
+
 export default function SquareCheckoutCard({
   initialProductId,
 }: {
@@ -53,6 +61,7 @@ export default function SquareCheckoutCard({
   const locationId = customFields.squareLocationId ?? '';
   const environment = customFields.squareEnvironment ?? 'sandbox';
   const checkoutApiBaseUrl = customFields.checkoutApiBaseUrl ?? '';
+  const checkoutUrl = resolveCheckoutUrl(checkoutApiBaseUrl);
   const portalBaseUrl = customFields.portalBaseUrl ?? 'https://workshop.autonateai.com';
 
   const [selectedProductId, setSelectedProductId] = useState<ProductId>(initialProductId ?? 'ai-first-student');
@@ -148,7 +157,7 @@ export default function SquareCheckoutCard({
       }
 
       setMessage('Creating payment and portal account...');
-      const response = await fetch(`${checkoutApiBaseUrl}/createSquareCoursePayment`, {
+      const response = await fetch(checkoutUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
