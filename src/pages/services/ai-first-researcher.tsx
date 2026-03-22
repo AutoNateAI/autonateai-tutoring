@@ -5,6 +5,8 @@ import Heading from '@theme/Heading';
 import FounderPanel from '@site/src/components/FounderPanel';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
 import PortalPreviewEmbed from '@site/src/components/PortalPreviewEmbed';
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import SquareCheckoutCard from '@site/src/components/SquareCheckoutCard';
 
 const portalBase = 'https://autonateai.github.io/autonateai-workshop-portal/#';
 
@@ -50,15 +52,15 @@ export default function AiFirstResearcherPage(): React.JSX.Element {
               makes those reps easier to organize, compare, and turn into usable insight.
             </p>
             <div style={{display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem'}}>
-              <Link className="button button--primary button--lg" to="/booking?product=ai-first-researcher">
-                Get AI-First Researcher
-              </Link>
               <Link className="button button--secondary button--lg" to="/thought-experiments/researchers/">
                 Explore Research Library
               </Link>
             </div>
           </div>
         </section>
+        <BrowserOnly fallback={<div className="margin-top--lg">Loading checkout…</div>}>
+          {() => <SquareCheckoutCard initialProductId="ai-first-researcher" />}
+        </BrowserOnly>
         <PortalPreviewEmbed
           title="See the researcher portal before you buy"
           description="This is the real researcher product surface: the research track dashboard, narrated lecture system, and the workflow page used to structure intake, synthesis, and insight generation."

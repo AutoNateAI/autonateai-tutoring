@@ -1,7 +1,14 @@
 import crypto from 'node:crypto';
 import {onRequest} from 'firebase-functions/v2/https';
 import {logger} from 'firebase-functions/v2';
-import {ensurePortalUser, grantCourseAccess} from './firebaseAccess.js';
+import {
+  ensurePortalUser,
+  generateTemporaryPassword,
+  grantCourseAccess,
+  markPasswordSetupRequired,
+  normalizeEmail,
+  upsertEmailAccess,
+} from './firebaseAccess.js';
 import {getCourseProduct} from './products.js';
 
 function cors(res) {
@@ -59,10 +66,10 @@ export const createSquareCoursePayment = onRequest(
     }
 
     try {
-      const {sourceId, productId, customerName, email, password} = req.body ?? {};
+      const {sourceId, productId, customerName, email} = req.body ?? {};
 
-      if (!sourceId || !productId || !customerName || !email || !password) {
-        res.status(400).json({error: 'sourceId, productId, customerName, email, and password are required.'});
+      if (!sourceId || !productId || !customerName || !email) {
+        res.status(400).json({error: 'sourceId, productId, customerName, and email are required.'});
         return;
       }
 
@@ -72,11 +79,7 @@ export const createSquareCoursePayment = onRequest(
         return;
       }
 
-      const user = await ensurePortalUser({
-        email,
-        password,
-        displayName: customerName,
-      });
+      const normalizedEmail = normalizeEmail(email);
 
       const paymentPayload = {
         idempotency_key: crypto.randomUUID(),
@@ -87,29 +90,53 @@ export const createSquareCoursePayment = onRequest(
           currency: product.currency,
         },
         autocomplete: true,
-        note: `${product.title} purchase for ${String(email).trim().toLowerCase()}`,
-        buyer_email_address: String(email).trim().toLowerCase(),
-        reference_id: `${product.id}:${user.uid}`,
+        note: `${product.title} purchase for ${normalizedEmail}`,
+        buyer_email_address: normalizedEmail,
+        reference_id: `${product.id}:${normalizedEmail}`,
       };
 
       const squareResponse = await squareRequest('/v2/payments', paymentPayload);
       const payment = squareResponse.payment;
+      const temporaryPassword = generateTemporaryPassword();
+      const {user, created} = await ensurePortalUser({
+        email: normalizedEmail,
+        password: temporaryPassword,
+        displayName: customerName,
+      });
 
+      await upsertEmailAccess({
+        email: normalizedEmail,
+        productId: product.id,
+        customerName,
+        paymentId: payment.id,
+        orderId: payment.order_id,
+        amountCents: product.amountCents,
+      });
       await grantCourseAccess({
         uid: user.uid,
-        email: String(email).trim().toLowerCase(),
+        email: normalizedEmail,
         paymentId: payment.id,
         orderId: payment.order_id,
         productId: product.id,
         amountCents: product.amountCents,
         customerName,
       });
+      if (created) {
+        await markPasswordSetupRequired({
+          uid: user.uid,
+          email: normalizedEmail,
+          displayName: customerName,
+        });
+      }
 
       res.status(200).json({
         ok: true,
         paymentId: payment.id,
         productId: product.id,
         portalUrl: product.portalUrl,
+        portalEmail: normalizedEmail,
+        temporaryPassword: created ? temporaryPassword : null,
+        mustChangePassword: created,
       });
     } catch (error) {
       logger.error('createSquareCoursePayment failed', error);

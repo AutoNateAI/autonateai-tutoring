@@ -69,7 +69,7 @@ export default function SquareCheckoutCard({
   const [message, setMessage] = useState('');
   const [customerName, setCustomerName] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [temporaryPassword, setTemporaryPassword] = useState('');
   const [successUrl, setSuccessUrl] = useState('');
   const cardRef = useRef<any>(null);
   const mountedRef = useRef(false);
@@ -141,9 +141,9 @@ export default function SquareCheckoutCard({
       return;
     }
 
-    if (!customerName.trim() || !email.trim() || password.length < 8) {
+    if (!customerName.trim() || !email.trim()) {
       setStatus('error');
-      setMessage('Enter your name, a valid email, and a password with at least 8 characters.');
+      setMessage('Enter your name and a valid email.');
       return;
     }
 
@@ -167,7 +167,6 @@ export default function SquareCheckoutCard({
           productId: selectedProduct.id,
           customerName,
           email,
-          password,
         }),
       });
 
@@ -180,8 +179,11 @@ export default function SquareCheckoutCard({
       if (mountedRef.current) {
         setStatus('success');
         setSuccessUrl(nextUrl);
+        setTemporaryPassword(payload.temporaryPassword ?? '');
         setMessage(
-          `Payment complete. Your portal account is ready. Use ${email} and the password you just created.`,
+          payload.temporaryPassword
+            ? `Payment complete. Your portal account is ready. Use ${email} and the temporary password below, then update it when you first sign in.`
+            : `Payment complete. Your paid access is ready for ${email}. Sign in to the portal with this email to continue.`,
         );
       }
     } catch (error) {
@@ -202,9 +204,9 @@ export default function SquareCheckoutCard({
       }}>
       <div className="card__body" style={{padding: '2rem'}}>
         <div style={{color: '#8cd9c8', fontWeight: 700, marginBottom: '0.45rem'}}>Native checkout</div>
-        <h2 style={{color: '#ffffff', marginBottom: '0.75rem'}}>Buy the course and create the portal account in one flow</h2>
+        <h2 style={{color: '#ffffff', marginBottom: '0.75rem'}}>Buy the course and unlock the portal in one flow</h2>
         <p style={{color: '#cbd5e0', lineHeight: '1.7', maxWidth: '760px'}}>
-          Pick the track, enter the email and password you want to use at the portal, then pay with Square. When the payment clears, access gets granted immediately.
+          Enter your name and email, pay with Square, and the system will create your portal access automatically. You can sign in with the temporary password we generate or claim access with the same paid email inside the portal.
         </p>
 
         <form onSubmit={handleCheckout} style={{display: 'grid', gap: '1rem', marginTop: '1.5rem'}}>
@@ -264,17 +266,6 @@ export default function SquareCheckoutCard({
             </div>
           </div>
 
-          <label style={{display: 'grid', gap: '0.35rem', color: '#ffffff'}}>
-            <span>Portal password</span>
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              className="input"
-              style={{padding: '0.9rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.12)', background: '#081121', color: '#ffffff'}}
-            />
-          </label>
-
           <div
             id="square-card-container"
             style={{
@@ -301,6 +292,20 @@ export default function SquareCheckoutCard({
               </a>
             ) : null}
           </div>
+
+          {status === 'success' && temporaryPassword ? (
+            <div
+              style={{
+                color: '#f9fbff',
+                background: 'rgba(125, 211, 199, 0.08)',
+                border: '1px solid rgba(125, 211, 199, 0.24)',
+                borderRadius: '14px',
+                padding: '0.95rem 1rem',
+              }}>
+              <div style={{fontWeight: 700, marginBottom: '0.25rem'}}>Temporary portal password</div>
+              <code style={{fontSize: '1rem'}}>{temporaryPassword}</code>
+            </div>
+          ) : null}
 
           {message ? (
             <div
