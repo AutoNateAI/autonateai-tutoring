@@ -99,7 +99,7 @@ export const createSquareCoursePayment = onRequest(
       const squareResponse = await squareRequest('/v2/payments', paymentPayload);
       const payment = squareResponse.payment;
       const temporaryPassword = generateTemporaryPassword();
-      const {user, created} = await ensurePortalUser({
+      const {user} = await ensurePortalUser({
         email: normalizedEmail,
         password: temporaryPassword,
         displayName: customerName,
@@ -122,13 +122,11 @@ export const createSquareCoursePayment = onRequest(
         amountCents: product.amountCents,
         customerName,
       });
-      if (created) {
-        await markPasswordSetupRequired({
-          uid: user.uid,
-          email: normalizedEmail,
-          displayName: customerName,
-        });
-      }
+      await markPasswordSetupRequired({
+        uid: user.uid,
+        email: normalizedEmail,
+        displayName: customerName,
+      });
 
       let emailSent = false;
       try {
@@ -136,7 +134,7 @@ export const createSquareCoursePayment = onRequest(
           email: normalizedEmail,
           customerName,
           product,
-          temporaryPassword: created ? temporaryPassword : null,
+          temporaryPassword,
         });
         emailSent = Boolean(emailResult?.sent);
       } catch (emailError) {
@@ -149,8 +147,8 @@ export const createSquareCoursePayment = onRequest(
         productId: product.id,
         portalUrl: product.portalUrl,
         portalEmail: normalizedEmail,
-        temporaryPassword: created ? temporaryPassword : null,
-        mustChangePassword: created,
+        temporaryPassword,
+        mustChangePassword: true,
         emailSent,
       });
     } catch (error) {

@@ -22,6 +22,7 @@ export async function ensurePortalUser({email, password, displayName}) {
   try {
     const existingUser = await auth.getUserByEmail(normalizedEmail);
     await auth.updateUser(existingUser.uid, {
+      password,
       displayName: displayName || existingUser.displayName || undefined,
     });
     return {user: existingUser, created: false};
