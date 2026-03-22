@@ -182,8 +182,8 @@ export default function SquareCheckoutCard({
         setTemporaryPassword(payload.temporaryPassword ?? '');
         setMessage(
           payload.temporaryPassword
-            ? `Payment complete. Your portal account is ready. Use ${email} and the temporary password below, then update it when you first sign in.`
-            : `Payment complete. Your paid access is ready for ${email}. Sign in to the portal with this email to continue.`,
+            ? `Payment complete. Your portal account is ready. Use ${email} and the temporary password below, then update it when you first sign in.${payload.emailSent ? ' A copy was also emailed to you.' : ''}`
+            : `Payment complete. Your paid access is ready for ${email}. Sign in to the portal with this email to continue.${payload.emailSent ? ' A receipt email was also sent.' : ''}`,
         );
       }
     } catch (error) {
@@ -191,6 +191,18 @@ export default function SquareCheckoutCard({
         setStatus('error');
         setMessage(error instanceof Error ? error.message : 'Payment failed.');
       }
+    }
+  }
+
+  async function handleCopyTemporaryPassword() {
+    if (!temporaryPassword) {
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(temporaryPassword);
+      setMessage('Temporary password copied. Open the portal and paste it in.');
+    } catch (error) {
+      setMessage('Could not copy automatically. Select the temporary password and copy it manually.');
     }
   }
 
@@ -303,7 +315,12 @@ export default function SquareCheckoutCard({
                 padding: '0.95rem 1rem',
               }}>
               <div style={{fontWeight: 700, marginBottom: '0.25rem'}}>Temporary portal password</div>
-              <code style={{fontSize: '1rem'}}>{temporaryPassword}</code>
+              <div style={{display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap'}}>
+                <code style={{fontSize: '1rem'}}>{temporaryPassword}</code>
+                <button type="button" className="button button--sm button--secondary" onClick={handleCopyTemporaryPassword}>
+                  Copy password
+                </button>
+              </div>
             </div>
           ) : null}
 

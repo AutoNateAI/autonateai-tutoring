@@ -9,6 +9,7 @@ import {
   normalizeEmail,
   upsertEmailAccess,
 } from './firebaseAccess.js';
+import {sendPortalPurchaseEmail} from './email.js';
 import {getCourseProduct} from './products.js';
 
 function cors(res) {
@@ -129,6 +130,19 @@ export const createSquareCoursePayment = onRequest(
         });
       }
 
+      let emailSent = false;
+      try {
+        const emailResult = await sendPortalPurchaseEmail({
+          email: normalizedEmail,
+          customerName,
+          product,
+          temporaryPassword: created ? temporaryPassword : null,
+        });
+        emailSent = Boolean(emailResult?.sent);
+      } catch (emailError) {
+        logger.error('Portal purchase email failed', emailError);
+      }
+
       res.status(200).json({
         ok: true,
         paymentId: payment.id,
@@ -137,6 +151,7 @@ export const createSquareCoursePayment = onRequest(
         portalEmail: normalizedEmail,
         temporaryPassword: created ? temporaryPassword : null,
         mustChangePassword: created,
+        emailSent,
       });
     } catch (error) {
       logger.error('createSquareCoursePayment failed', error);
