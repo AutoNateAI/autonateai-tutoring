@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
+import BrowserOnlyCheckout from '@site/src/components/BrowserOnlyCheckout';
 
 type ServiceCardProps = {
   title: string;
@@ -116,6 +117,8 @@ export default function BookingPage(): React.JSX.Element {
             <ServiceCard key={service.title} {...service} />
           ))}
         </div>
+
+        <BrowserOnlyCheckout />
       </main>
     </Layout>
   );

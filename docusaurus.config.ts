@@ -18,6 +18,14 @@ const config: Config = {
   projectName: 'autonateai-tutoring',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
+  customFields: {
+    squareAppId: process.env.SQUARE_APP_ID ?? 'sandbox-sq0idb-B5DpjemGsulORCrDXW80lQ',
+    squareLocationId: process.env.SQUARE_LOCATION_ID ?? 'L24Y6AS4SSFG2',
+    squareEnvironment: process.env.SQUARE_ENVIRONMENT ?? 'sandbox',
+    checkoutApiBaseUrl:
+      process.env.CHECKOUT_API_BASE_URL ?? 'https://us-central1-autonateai-learning-hub.cloudfunctions.net',
+    portalBaseUrl: process.env.PORTAL_BASE_URL ?? 'https://workshop.autonateai.com',
+  },
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
