@@ -25,7 +25,7 @@ const config: Config = {
     checkoutApiBaseUrl:
       process.env.CHECKOUT_API_BASE_URL ??
       'https://createsquarecoursepayment-4qinfaeidq-uc.a.run.app',
-    portalBaseUrl: process.env.PORTAL_BASE_URL ?? 'https://workshop.autonateai.com',
+    portalBaseUrl: process.env.PORTAL_BASE_URL ?? 'https://portal.autonateai.com',
   },
 
   onBrokenLinks: 'throw',

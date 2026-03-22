@@ -8,7 +8,7 @@ import PortalPreviewEmbed from '@site/src/components/PortalPreviewEmbed';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import SquareCheckoutCard from '@site/src/components/SquareCheckoutCard';
 
-const portalBase = 'https://autonateai.github.io/autonateai-workshop-portal/#';
+const portalBase = 'https://portal.autonateai.com/#';
 
 export default function AiFirstResearcherPage(): React.JSX.Element {
   const title = 'AI-First Researcher | Build Your Research Operating System';
