@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://autonateai.com/blog</id>
-    <title>AutoNateAI | Daily AI Thought Experiments Blog</title>
+    <title>AutoNateAI | Student Transformation Blog</title>
     <updated>2026-03-13T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://autonateai.com/blog"/>
-    <subtitle>AutoNateAI | Daily AI Thought Experiments Blog</subtitle>
+    <subtitle>AutoNateAI | Student Transformation Blog</subtitle>
     <icon>https://autonateai.com/img/logo.svg</icon>
     <entry>
         <title type="html"><![CDATA[Thought Experiment #1: The Topology of Success]]></title>
