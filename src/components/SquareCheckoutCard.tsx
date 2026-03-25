@@ -239,7 +239,7 @@ export default function SquareCheckoutCard({
           </div>
         </div>
 
-        <div className={styles.checkoutBlock}>
+        <div className={`${styles.checkoutBlock} ${styles.productAccessBlock}`}>
           <div className={styles.checkoutBlockLabel}>Portal Access</div>
           <div className={styles.productChoiceStack}>
             <label className={styles.productChoiceActive}>
