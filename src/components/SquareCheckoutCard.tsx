@@ -51,6 +51,49 @@ function resolveCheckoutUrl(baseUrl: string) {
   return `${trimmed}/createSquareCoursePayment`;
 }
 
+function getSquareCardStyle() {
+  return {
+    '.input-container': {
+      backgroundColor: '#050e1d',
+      borderColor: 'rgba(137, 206, 255, 0.12)',
+      borderRadius: '18px',
+    },
+    '.input-container.is-focus': {
+      borderColor: '#25c2a0',
+    },
+    '.input-container.is-error': {
+      borderColor: '#ff8d8d',
+    },
+    '.message-text': {
+      color: '#8ea1b4',
+      fontSize: '12px',
+    },
+    '.message-text.is-error': {
+      color: '#ffb4ab',
+    },
+    '.message-icon': {
+      color: '#8ea1b4',
+    },
+    '.message-icon.is-error': {
+      color: '#ffb4ab',
+    },
+    input: {
+      backgroundColor: '#050e1d',
+      color: '#dae2f8',
+      fontFamily: 'Inter, sans-serif',
+      fontSize: '16px',
+    },
+    'input::placeholder': {
+      color: '#4a5b72',
+    },
+    '@media screen and (max-width: 600px)': {
+      input: {
+        fontSize: '16px',
+      },
+    },
+  };
+}
+
 export default function SquareCheckoutCard({
   initialProductId,
 }: {
@@ -108,7 +151,9 @@ export default function SquareCheckoutCard({
         }
 
         const payments = await square.payments(applicationId, locationId);
-        const card = await payments.card();
+        const card = await payments.card({
+          style: getSquareCardStyle(),
+        });
         await card.attach('#square-card-container');
         if (!cancelled) {
           cardRef.current = card;
