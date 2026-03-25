@@ -1,7 +1,16 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-export default function HeroPromoVideo(): React.JSX.Element {
+type HeroPromoVideoProps = {
+  className?: string;
+};
+
+type FullscreenVideo = HTMLVideoElement & {
+  webkitEnterFullscreen?: () => void;
+};
+
+export default function HeroPromoVideo({className = ''}: HeroPromoVideoProps): React.JSX.Element {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const shellRef = useRef<HTMLDivElement | null>(null);
   const [soundOn, setSoundOn] = useState(false);
 
   useEffect(() => {
@@ -16,7 +25,8 @@ export default function HeroPromoVideo(): React.JSX.Element {
   }, [soundOn]);
 
   const handleFullscreen = async () => {
-    const video = videoRef.current;
+    const video = videoRef.current as FullscreenVideo | null;
+    const shell = shellRef.current;
     if (!video) {
       return;
     }
@@ -27,13 +37,23 @@ export default function HeroPromoVideo(): React.JSX.Element {
     video.volume = 1;
     await video.play().catch(() => {});
 
+    if (typeof video.webkitEnterFullscreen === 'function') {
+      video.webkitEnterFullscreen();
+      return;
+    }
+
+    if (document.fullscreenElement !== shell && shell?.requestFullscreen) {
+      await shell.requestFullscreen().catch(() => {});
+      return;
+    }
+
     if (document.fullscreenElement !== video && video.requestFullscreen) {
       await video.requestFullscreen().catch(() => {});
     }
   };
 
   return (
-    <div className="hero-video-shell hero-content-fade-in">
+    <div ref={shellRef} className={`hero-video-shell hero-content-fade-in ${className}`.trim()}>
       <video
         ref={videoRef}
         autoPlay

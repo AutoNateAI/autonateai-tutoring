@@ -91,6 +91,7 @@ export default function Home(): React.JSX.Element {
             <Heading as="h1" className={styles.heroTitle}>
               Stop drowning in school pressure.
             </Heading>
+            <HeroPromoVideo className={styles.heroVideoMobile} />
             <p className={styles.heroShift}>The gap is not intelligence. It is infrastructure.</p>
             <p className={styles.heroBody}>
               This is not a generic AI course. It is a narrated student operating upgrade that teaches overloaded
@@ -108,7 +109,7 @@ export default function Home(): React.JSX.Element {
             <p className={styles.meta}>$129 one time. Instant access after checkout.</p>
           </div>
           <div className={styles.heroVisual}>
-            <HeroPromoVideo />
+            <HeroPromoVideo className={styles.heroVideoDesktop} />
             <div className={styles.heroNote}>
               High-agency students do not just work harder. They run better systems.
             </div>

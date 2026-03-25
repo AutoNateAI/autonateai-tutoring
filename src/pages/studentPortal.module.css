@@ -134,6 +134,14 @@
   gap: 1rem;
 }
 
+.heroVideoMobile {
+  display: none;
+}
+
+.heroVideoDesktop {
+  display: block;
+}
+
 .heroFrame,
 .cardFrame,
 .workflowFrame {
@@ -789,8 +797,21 @@
     gap: 0.7rem;
   }
 
+  .heroCopy {
+    gap: 0.85rem;
+  }
+
   .heroTitle {
     font-size: clamp(2.55rem, 13vw, 4rem);
+  }
+
+  .heroVideoMobile {
+    display: block;
+  }
+
+  .heroVideoDesktop,
+  .heroNote {
+    display: none;
   }
 
   .checkoutPageTitle {
