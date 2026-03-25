@@ -31,6 +31,203 @@ Good default runtime per embedded clip:
 - Ability cards: 6 to 10 seconds each
 - Workflow cards: 10 to 16 seconds each
 
+## First Pass Direction
+
+The first pass should feel more dramatic and more relatable than a standard SaaS screen recording.
+
+The core idea:
+
+- A stressed student opens the portal.
+- The lecture makes the problem feel seen.
+- The student opens a workflow.
+- A coding agent in the terminal helps reason through the prompt.
+- The Google Sheet becomes the visible structure layer.
+- The result feels like chaos getting turned into order in real time.
+
+This is the emotional angle we should push:
+
+- not "look at this dashboard"
+- but "watch the system take pressure and turn it into structure"
+
+## Music Direction
+
+For the first pass, use dramatic music instead of neutral product music.
+
+The dramatic score should do this:
+
+- open with tension
+- make the student pressure feel real
+- rise when the portal appears
+- keep momentum as Codex and the sheet start working together
+- resolve into clarity once the structure is visible
+
+Important:
+
+- narration stays primary
+- music should be emotionally strong but still duck under speech
+- music can swell more during transitions, UI reveals, and moments where the sheet fills in
+
+## First Pass Hero Concept
+
+This should be the first serious candidate for the homepage hero replacement.
+
+### Working concept
+
+`Pressure -> Portal -> Agent -> Sheet -> Clarity`
+
+### Sequence
+
+1. Login screen appears with the demo account.
+2. Student dashboard opens.
+3. Student track opens and the narrated lecture begins.
+4. One lecture moment lands with moving storyboard frames and advancing captions.
+5. Cut to a workflow page.
+6. Prompt placeholders get filled with a realistic school scenario.
+7. Cut to terminal where Codex helps answer or structure the prompt.
+8. Cut to the Google Sheet showing the organized output.
+9. Return to the portal workflow with the feeling that the system is now live.
+
+### Why this works
+
+It shows:
+
+- the product is real
+- the product teaches
+- the product connects to real tools
+- the product works with AI agents
+- the sheet is not decorative, it is the logic layer
+
+## Relatable Student Scenario
+
+The first pass should use a believable student problem, not abstract filler.
+
+Recommended scenario:
+
+- the student has multiple assignments
+- a reading task
+- a looming deadline
+- low clarity on where to begin
+
+Example setup:
+
+`I have a calc homework set due tomorrow, a paper source check due Friday, and I still need to study for a quiz. I also work tonight and I am already behind.`
+
+That kind of input will feel real on camera and make the transformation obvious.
+
+## Codex + Sheet Demo Pattern
+
+This is likely the most distinctive part of the whole demo.
+
+### Goal
+
+Show that the portal prompt pack is not isolated. It can work with an agent and then become visible structure in Google Sheets.
+
+### Recommended sequence
+
+1. Open the workflow in the portal.
+2. Fill the prompt with a realistic student situation.
+3. Copy the prompt.
+4. Cut to terminal with Codex.
+5. Codex reasons through the prompt and produces a structured answer.
+6. Cut to the Google Sheet.
+7. Show the sheet receiving the organized structure.
+8. Return to the portal for the final frame.
+
+### Why this matters
+
+This proves:
+
+- the prompt pack has real utility
+- the terminal is part of the modern student workflow
+- AI is not replacing the student, it is helping structure cognition
+- the sheet becomes the externalized thinking surface
+
+## Google Sheet Inclusion
+
+Yes, we should absolutely show the sheet.
+
+Without the sheet, the viewer sees prompts and UI.
+With the sheet, the viewer understands the actual system architecture.
+
+The sheet should be shown in a way that makes structure obvious:
+
+- rows appearing
+- categories visible
+- time blocks or task groups forming
+- priorities becoming legible
+
+The sheet does not need a long screen share. It needs one strong visual proof moment.
+
+## Best First Pass Candidate
+
+If we only build one serious demo first, it should be:
+
+### Assignment Sprint Planner or Daily Time Grid
+
+Why:
+
+- immediately relatable
+- visually understandable
+- good fit for prompt -> Codex -> Sheet transformation
+- easy to explain in a short landing-page video
+
+### Suggested first-pass flow
+
+- Login
+- Student dashboard
+- Student lecture moment
+- Open `Daily Time Grid` or `Assignment Sprint Planner`
+- Fill prompt
+- Copy prompt
+- Show Codex terminal reasoning
+- Show Google Sheet populated
+- End on clean portal UI
+
+## Editing Style For First Pass
+
+The first pass should not feel like a tutorial.
+It should feel like a product drama with practical proof.
+
+Editing style:
+
+- tighter cuts
+- zooms into important UI areas
+- music swells on transitions
+- captions or overlays only where needed
+- terminal shots kept clean and readable
+- sheet reveal treated like payoff, not admin work
+
+## Landing Page Placement For First Pass
+
+Recommended placement order for this concept:
+
+1. Hero slot
+2. `Narrated Story Deck` workflow card
+3. `Portal Thinking Systems` workflow card
+
+The same base footage can later be cut into smaller ability-card loops.
+
+## What We Need To Capture
+
+For this first pass specifically, the capture list should include:
+
+- portal login
+- student dashboard
+- student lecture deck with narration on
+- one workflow page
+- prompt copy action
+- Codex terminal session
+- Google Sheet visible and being filled
+
+## Next Translation Step
+
+After review, this should be converted into:
+
+1. A narrative script
+2. A capture shot list
+3. A timing map for music, narration, and transitions
+4. A Remotion scene breakdown
+
 ## Hero Demo
 
 ### Slot
