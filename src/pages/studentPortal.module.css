@@ -1,0 +1,398 @@
+.layout {
+  background:
+    radial-gradient(circle at top right, rgba(79, 222, 187, 0.12), transparent 26%),
+    radial-gradient(circle at 10% 18%, rgba(137, 206, 255, 0.12), transparent 20%),
+    linear-gradient(180deg, #0a1323 0%, #07101d 100%);
+}
+
+.shell {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.hero,
+.checkoutHero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0 1rem;
+}
+
+.checkoutHero {
+  padding-top: 1rem;
+}
+
+.heroCopy,
+.checkoutCopy {
+  display: grid;
+  gap: 1rem;
+}
+
+.kicker {
+  display: inline-block;
+  color: #4fdebb;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.heroTitle {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2.85rem, 6vw, 5.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.heroShift {
+  margin: 0;
+  color: #dff8ff;
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
+  font-weight: 700;
+}
+
+.heroBody,
+.sectionCopy,
+.cardCopy,
+.heroNote,
+.priceNote {
+  margin: 0;
+  color: #c4d4e6;
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+.heroActions,
+.priceActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.primaryCta,
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0.95rem 1.35rem;
+  border-radius: 18px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.primaryCta {
+  background: linear-gradient(135deg, #4fdebb 0%, #00a2e6 100%);
+  color: #041a22;
+  box-shadow: 0 24px 60px rgba(0, 162, 230, 0.18);
+}
+
+.secondaryCta {
+  border: 1px solid rgba(137, 206, 255, 0.18);
+  background: rgba(255, 255, 255, 0.03);
+  color: #dae2f8;
+}
+
+.meta {
+  margin: 0;
+  color: #8ea1b4;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.heroVisual,
+.checkoutVisual {
+  display: grid;
+  gap: 1rem;
+}
+
+.heroFrame,
+.cardFrame,
+.workflowFrame {
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(137, 206, 255, 0.14);
+  background: rgba(8, 16, 24, 0.92);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+}
+
+.heroFrame {
+  aspect-ratio: 4 / 5;
+}
+
+.heroFrame img,
+.cardFrame img,
+.workflowFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heroNote {
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+  background: rgba(19, 28, 43, 0.72);
+  border: 1px solid rgba(137, 206, 255, 0.1);
+}
+
+.section {
+  padding-top: 4rem;
+}
+
+.sectionHead,
+.centerHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: end;
+  margin-bottom: 1.8rem;
+}
+
+.centerHead {
+  justify-content: center;
+  text-align: center;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 3.2vw, 3.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.sectionCopy {
+  max-width: 46ch;
+}
+
+.abilityGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.abilityCard,
+.workflowCard,
+.pricingCard,
+.midCtaPanel {
+  border-radius: 28px;
+  border: 1px solid rgba(137, 206, 255, 0.12);
+  background: rgba(19, 28, 43, 0.72);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+}
+
+.abilityCard {
+  padding: 1.15rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.abilityIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(79, 222, 187, 0.16);
+  color: #4fdebb;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.cardTitle {
+  margin: 0 0 0.45rem;
+  color: #ffffff;
+  font-size: 1.18rem;
+}
+
+.cardCopy {
+  font-size: 0.98rem;
+}
+
+.cardFrame {
+  aspect-ratio: 16 / 10;
+}
+
+.workflowGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.workflowCard {
+  overflow: hidden;
+}
+
+.workflowCopy {
+  padding: 1.3rem 1.3rem 0;
+}
+
+.workflowFrame {
+  aspect-ratio: 16 / 9;
+  margin: 1rem;
+  border-radius: 22px;
+}
+
+.midCta {
+  padding-top: 4rem;
+}
+
+.midCtaPanel {
+  padding: 2rem;
+  text-align: center;
+}
+
+.midCtaPanel .primaryCta {
+  margin-top: 1.3rem;
+}
+
+.pricingCard {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.priceBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.55rem 1rem;
+  border-radius: 0 28px 0 18px;
+  background: linear-gradient(135deg, #4fdebb, #25c2a0);
+  color: #00382c;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.priceRow,
+.checkoutPriceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.priceAmount {
+  color: #ffffff;
+  font-size: clamp(3.4rem, 8vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.priceUnit {
+  color: #9eb2c8;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.priceList,
+.checkoutList {
+  list-style: none;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.priceList li,
+.checkoutList li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  color: #dae2f8;
+}
+
+.check {
+  color: #4fdebb;
+  font-weight: 800;
+}
+
+.priceNote {
+  margin-top: 1rem;
+}
+
+.backLink {
+  color: #8cd9c8;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.checkoutSection {
+  padding-top: 1rem;
+}
+
+.loadingCard {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: rgba(13, 21, 38, 0.86);
+  border: 1px solid rgba(37, 194, 160, 0.28);
+  color: #d7e3f4;
+}
+
+@media (max-width: 996px) {
+  .hero,
+  .checkoutHero,
+  .workflowGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .abilityGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .shell {
+    width: min(100%, calc(100% - 1.2rem));
+    padding-top: 1rem;
+  }
+
+  .hero,
+  .checkoutHero {
+    gap: 1.4rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(2.55rem, 13vw, 4rem);
+  }
+
+  .heroActions,
+  .priceActions {
+    flex-direction: column;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    width: 100%;
+  }
+
+  .abilityGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingCard,
+  .midCtaPanel,
+  .workflowCopy {
+    padding: 1.2rem;
+  }
+}

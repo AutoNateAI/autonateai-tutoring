@@ -1,343 +1,219 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
+import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
-import FounderPanel from '@site/src/components/FounderPanel';
-import HeroPromoVideo from '@site/src/components/HeroPromoVideo';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
 
-import styles from './index.module.css';
+import styles from './studentPortal.module.css';
 
-type PathCardProps = {
-  title: string;
-  copy: string;
-  libraryLink: string;
-  detailLink: string;
-  detailLabel: string;
-};
+const checkoutPath = '/services/ai-first-student';
+const portalImageBase = 'https://portal.autonateai.com/img/storyboards/student';
 
-function PathCard({title, copy, libraryLink, detailLink, detailLabel}: PathCardProps) {
-  return (
-    <div className="col col--4 margin-bottom--lg">
-      <div
-        className="card shadow--md"
-        style={{
-          height: '100%',
-          border: '1px solid var(--autonate-teal)',
-          background: '#0d1526',
-        }}>
-        <div className="card__header">
-          <Heading as="h3" style={{color: '#ffffff'}}>
-            {title}
-          </Heading>
-        </div>
-        <div className="card__body">
-          <p style={{color: '#cbd5e0'}}>{copy}</p>
-        </div>
-        <div className="card__footer" style={{display: 'grid', gap: '0.75rem'}}>
-          <Link className="button button--outline button--primary button--block" to={libraryLink}>
-            Explore Library
-          </Link>
-          <Link className="button button--primary button--block" to={detailLink}>
-            {detailLabel}
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
+const abilityCards = [
+  {
+    icon: '▣',
+    title: 'Daily Time Grid',
+    copy: 'For when your day feels impossible and you need structure that respects real life instead of fake perfect schedules.',
+    image: `${portalImageBase}/23-c.png`,
+  },
+  {
+    icon: '⚡',
+    title: 'Assignment Sprint Planner',
+    copy: 'For when a big assignment feels too vague to start and you need the first visible moves mapped clearly.',
+    image: `${portalImageBase}/24-c.png`,
+  },
+  {
+    icon: '▤',
+    title: 'Reading Capture Matrix',
+    copy: 'For when you read and nothing sticks, and you need the ideas turned into durable structure.',
+    image: `${portalImageBase}/25-b.png`,
+  },
+  {
+    icon: '◫',
+    title: 'Study Heatmap Board',
+    copy: 'For when everything feels urgent and you need to see what actually deserves focus first.',
+    image: `${portalImageBase}/26-d.png`,
+  },
+  {
+    icon: '◉',
+    title: 'Paper Source Matrix',
+    copy: 'For when your sources and claims are scattered across tabs, notes, and half-finished drafts.',
+    image: `${portalImageBase}/27-c.png`,
+  },
+  {
+    icon: '◎',
+    title: 'Day Debrief Lab',
+    copy: 'For when you keep repeating the same bad patterns and need reflection that compounds into strategy.',
+    image: `${portalImageBase}/28-d.png`,
+  },
+];
 
-function HomepageHeader() {
-  const titleWords = 'AI Thought Experiments'.split(' ');
+const workflowCards = [
+  {
+    title: 'Narrated Story Deck',
+    copy:
+      'A cinematic guided experience that teaches students why overload happens, how AI changes the game, and how to install structure instead of panic.',
+    image: `${portalImageBase}/01-c.png`,
+  },
+  {
+    title: 'Portal Thinking Systems',
+    copy:
+      'Reusable systems for planning, studying, reading, writing, and reflection that students can actually run against their current life.',
+    image: `${portalImageBase}/21-f.png`,
+  },
+];
 
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {titleWords.map((word, idx) => (
-            <span key={idx} className="slam-word" style={{animationDelay: `${idx * 0.38}s`}}>
-              {word}
-            </span>
-          ))}
-        </Heading>
+const pricingItems = [
+  'Narrated student transformation experience',
+  'Thinking Systems for planning, studying, reading, research, and reflection',
+  'Connected workflow structure that turns AI into leverage',
+  'One-time purchase with immediate portal access',
+];
 
-        <div className="margin-top--lg hero-media-stack">
-          <HeroPromoVideo />
-
-          <div
-            className={clsx('buttons', styles.buttons, 'hero-content-fade-in')}
-            style={{justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap'}}>
-            <Link
-              className="button button--secondary button--lg hero-button-filled hero-experiments-button"
-              to="/thought-experiments/">
-              Explore Thought Experiments
-            </Link>
-            <Link
-              className="button button--primary button--lg hero-button-filled hero-booking-button"
-              to="/booking">
-              View Services
-            </Link>
-          </div>
-        </div>
-      </div>
-      <style>{`
-        .hero-media-stack {
-          display: grid;
-          gap: 1.5rem;
-          justify-items: center;
-          padding-inline: 0.65rem;
-        }
-        .hero-video-shell {
-          position: relative;
-          border: 1px solid rgba(37, 194, 160, 0.28);
-          border-radius: 24px;
-          overflow: hidden;
-          background: #081121;
-          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
-          width: min(100%, 960px);
-        }
-        .hero-sound-toggle {
-          position: absolute;
-          right: 1rem;
-          bottom: 1rem;
-          border: 1px solid rgba(255,255,255,0.16);
-          border-radius: 999px;
-          padding: 0.72rem 1rem;
-          background: rgba(7, 16, 31, 0.84);
-          color: #ffffff;
-          font-weight: 700;
-          font-size: 0.92rem;
-          backdrop-filter: blur(10px);
-          cursor: pointer;
-        }
-        .hero-demo-video {
-          display: block;
-          width: 100%;
-          height: auto;
-          aspect-ratio: 16 / 10;
-          object-fit: cover;
-          background: #081121;
-        }
-        @media (max-width: 768px) {
-          .hero-media-stack {
-            padding-inline: 0.15rem;
-          }
-          .hero-video-shell {
-            border-radius: 18px;
-          }
-          .hero-sound-toggle {
-            right: 0.75rem;
-            bottom: 0.75rem;
-            padding: 0.65rem 0.9rem;
-            font-size: 0.84rem;
-          }
-        }
-        .hero-content-fade-in {
-          opacity: 0;
-          animation: scaleIn 0.8s ease-out forwards;
-          animation-delay: 2.3s;
-        }
-        @keyframes scaleIn {
-          from {
-            opacity: 0;
-            transform: scale(0.8);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .hero-content-fade-in {
-            animation: none !important;
-            opacity: 1 !important;
-            transform: none !important;
-          }
-        }
-        .hero-experiments-button, .hero-booking-button {
-          animation: none !important;
-          opacity: 1 !important;
-        }
-      `}</style>
-    </header>
-  );
-}
-
-function PracticeLoop() {
-  return (
-    <section className="padding-vert--xl" style={{backgroundColor: '#07101f'}}>
-      <div className="container">
-        <div className="row">
-          <div className="col col--5 margin-bottom--lg">
-            <Heading as="h2" style={{color: '#ffffff', marginBottom: '1rem'}}>
-              The Practice Loop
-            </Heading>
-            <p style={{color: '#d0dae9', fontSize: '1.05rem', lineHeight: '1.7'}}>
-              The thought experiments are the daily reps. The live cohort is the shortcut. You practice the ideas in an
-              edutaining way every day, then jump into a guided session when you want the systems, prompts, and workflow
-              structure to click faster.
-            </p>
-          </div>
-          <div className="col col--7">
-            <div className="row">
-              <div className="col col--4 margin-bottom--md">
-                <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
-                  <div className="card__body">
-                    <Heading as="h3" style={{color: '#ffffff', fontSize: '1.1rem'}}>1. Explore</Heading>
-                    <p style={{color: '#cbd5e0', marginBottom: 0}}>Use the daily thought experiments to build pattern recognition and systems intuition.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col col--4 margin-bottom--md">
-                <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
-                  <div className="card__body">
-                    <Heading as="h3" style={{color: '#ffffff', fontSize: '1.1rem'}}>2. Accelerate</Heading>
-                    <p style={{color: '#cbd5e0', marginBottom: 0}}>Use a premium async course to build your AI system faster with narrated instruction, workflow kits, and a clear structure.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col col--4 margin-bottom--md">
-                <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
-                  <div className="card__body">
-                    <Heading as="h3" style={{color: '#ffffff', fontSize: '1.1rem'}}>3. Apply</Heading>
-                    <p style={{color: '#cbd5e0', marginBottom: 0}}>Turn the practice into better notes, stronger research systems, or a working AI environment.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function AudiencePaths() {
-  return (
-    <section className="padding-vert--xl" style={{backgroundColor: '#050a1a'}}>
-      <div className="container">
-        <div className="text--center margin-bottom--xl">
-          <Heading as="h2" style={{color: '#ffffff', marginBottom: '0.75rem'}}>
-            Choose Your Path
-          </Heading>
-          <p style={{color: '#d0dae9', maxWidth: '760px', margin: '0 auto'}}>
-            Start in the library that matches your current role, then use the service page for the level of support you want.
-          </p>
-        </div>
-        <div className="row">
-          <PathCard
-            title="Students"
-            copy="Use the daily thought experiments to practice graph thinking, structured workflows, and practical AI execution. Move into the AI-First Student course when you want the full system."
-            libraryLink="/thought-experiments/students/"
-            detailLink="/services/ai-first-student"
-            detailLabel="Student Course Details"
-          />
-          <PathCard
-            title="Researchers"
-            copy="Build cleaner synthesis workflows, organize ideas into systems, and move from scattered notes to repeatable research infrastructure."
-            libraryLink="/thought-experiments/researchers/"
-            detailLink="/services/ai-first-researcher"
-            detailLabel="Research Course Details"
-          />
-          <PathCard
-            title="Professionals"
-            copy="Apply AI in real work, then move into a DevBox setup when you want a cleaner environment for structured experimentation and execution."
-            libraryLink="/thought-experiments/professionals/"
-            detailLink="/services/devbox-setup"
-            detailLabel="DevBox Setup Details"
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PricingAndSchedule() {
-  return (
-    <section className="padding-vert--xl" style={{backgroundColor: '#07101f'}}>
-      <div className="container">
-        <div className="text--center margin-bottom--xl">
-          <Heading as="h2" style={{color: '#ffffff', marginBottom: '0.75rem'}}>
-            Pricing And Schedule
-          </Heading>
-          <p style={{color: '#d0dae9', maxWidth: '740px', margin: '0 auto'}}>
-            Clear timing. Clear pricing. Pick the path that matches how fast you want the system to click.
-          </p>
-        </div>
-        <div className="row">
-          <div className="col col--4 margin-bottom--md">
-            <Link to="/services/ai-first-student" style={{display: 'block', height: '100%', textDecoration: 'none'}}>
-              <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
-                <div className="card__body">
-                  <Heading as="h3" style={{color: '#ffffff', fontSize: '1.2rem'}}>AI-First Student</Heading>
-                  <p style={{color: '#cbd5e0', marginBottom: '0.6rem'}}>Premium async course</p>
-                  <p style={{color: '#ffffff', fontWeight: 800, marginBottom: '0.6rem'}}>Narrated lecture deck + workflow kits</p>
-                  <p style={{color: '#cbd5e0', marginBottom: '0.35rem'}}>6 sheet workflows and guided prompt packs</p>
-                  <p style={{color: '#25c2a0', fontWeight: 800, marginBottom: '0.75rem'}}>$129 one-time purchase</p>
-                  <p style={{color: '#8cd9c8', fontWeight: 700, marginBottom: 0}}>View details →</p>
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div className="col col--4 margin-bottom--md">
-            <Link to="/services/ai-first-researcher" style={{display: 'block', height: '100%', textDecoration: 'none'}}>
-              <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
-                <div className="card__body">
-                  <Heading as="h3" style={{color: '#ffffff', fontSize: '1.2rem'}}>AI-First Researcher</Heading>
-                  <p style={{color: '#cbd5e0', marginBottom: '0.6rem'}}>Premium async course</p>
-                  <p style={{color: '#ffffff', fontWeight: 800, marginBottom: '0.6rem'}}>Narrated lecture deck + research kits</p>
-                  <p style={{color: '#cbd5e0', marginBottom: '0.35rem'}}>6 research workflows and guided prompt packs</p>
-                  <p style={{color: '#25c2a0', fontWeight: 800, marginBottom: '0.75rem'}}>$189 one-time purchase</p>
-                  <p style={{color: '#8cd9c8', fontWeight: 700, marginBottom: 0}}>View details →</p>
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div className="col col--4 margin-bottom--md">
-            <Link to="/services/devbox-setup" style={{display: 'block', height: '100%', textDecoration: 'none'}}>
-              <div className="card shadow--sm" style={{height: '100%', background: '#0d1526', border: '1px solid rgba(255,255,255,0.08)'}}>
-                <div className="card__body">
-                  <Heading as="h3" style={{color: '#ffffff', fontSize: '1.2rem'}}>DevBox Setup</Heading>
-                  <p style={{color: '#cbd5e0', marginBottom: '0.6rem'}}>Discovery-first service</p>
-                  <p style={{color: '#ffffff', fontWeight: 800, marginBottom: '0.6rem'}}>Scoped around your workflow</p>
-                  <p style={{color: '#cbd5e0', marginBottom: '0.35rem'}}>Higher-touch environment planning</p>
-                  <p style={{color: '#25c2a0', fontWeight: 800, marginBottom: '0.75rem'}}>Starts with a discovery call</p>
-                  <p style={{color: '#8cd9c8', fontWeight: 700, marginBottom: 0}}>View details →</p>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export default function Home(): ReactNode {
-  const title = 'Daily AI Thought Experiments | Learn AI Faster';
+export default function Home(): React.JSX.Element {
+  const title = 'AutoNateAI | Student Transformation';
   const description =
-    'Practice with daily AI thought experiments, then upgrade into AI-First Student, AI-First Researcher, or a DevBox path to build usable AI systems faster.';
+    'Stop drowning in school pressure. Build the AI-powered system that helps you think, plan, study, and execute.';
 
   return (
-    <Layout
-      title={title}
-      description={description}
-      image="https://autonateai.com/img/og-homepage.png">
+    <Layout title={title} description={description} wrapperClassName={styles.layout}>
       <PageSocialMeta
-        title={`${title} | AutoNateAI | Daily AI Thought Experiments`}
+        title={`${title} | AutoNateAI`}
         description={description}
-        image="/img/og-homepage.png"
+        image="/img/og-student-workflow.png"
         path="/"
       />
-      <HomepageHeader />
-      <main>
-        <PracticeLoop />
-        <AudiencePaths />
-        <PricingAndSchedule />
-        <section className="padding-bottom--xl" style={{backgroundColor: '#07101f'}}>
-          <div className="container">
-            <FounderPanel />
+      <main className={styles.shell}>
+        <section className={styles.hero}>
+          <div className={styles.heroCopy}>
+            <span className={styles.kicker}>Architecture For Excellence</span>
+            <Heading as="h1" className={styles.heroTitle}>
+              Stop drowning in school pressure.
+            </Heading>
+            <p className={styles.heroShift}>The gap is not intelligence. It is infrastructure.</p>
+            <p className={styles.heroBody}>
+              This is not a generic AI course. It is a narrated student operating upgrade that teaches overloaded
+              students how to use AI, structured workbooks, and Thinking Systems to become calmer, clearer, and more
+              effective.
+            </p>
+            <div className={styles.heroActions}>
+              <Link className={styles.primaryCta} to={checkoutPath}>
+                Initialize System
+              </Link>
+              <a className={styles.secondaryCta} href="https://portal.autonateai.com/#/login">
+                Already Bought? Sign In
+              </a>
+            </div>
+            <p className={styles.meta}>$129 one time. Instant access after checkout.</p>
+          </div>
+          <div className={styles.heroVisual}>
+            <div className={styles.heroFrame}>
+              <img src={`${portalImageBase}/07-f.png`} alt="Student transformation portal preview" />
+            </div>
+            <div className={styles.heroNote}>
+              High-agency students do not just work harder. They run better systems.
+            </div>
+          </div>
+        </section>
+
+        <section id="system" className={styles.section}>
+          <div className={styles.sectionHead}>
+            <div>
+              <span className={styles.kicker}>Unlocked Abilities</span>
+              <Heading as="h2" className={styles.sectionTitle}>
+                Thinking Systems for real student pressure
+              </Heading>
+            </div>
+            <p className={styles.sectionCopy}>
+              Each system is built for a specific kind of school pain: impossible days, vague assignments, weak
+              retention, scattered sources, bad prioritization, and repeated patterns.
+            </p>
+          </div>
+          <div className={styles.abilityGrid}>
+            {abilityCards.map((card) => (
+              <article key={card.title} className={styles.abilityCard}>
+                <div className={styles.abilityIcon}>{card.icon}</div>
+                <div>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <p className={styles.cardCopy}>{card.copy}</p>
+                </div>
+                <div className={styles.cardFrame}>
+                  <img src={card.image} alt={`${card.title} portal preview`} loading="lazy" />
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="workflows" className={styles.section}>
+          <div className={styles.sectionHead}>
+            <div>
+              <span className={styles.kicker}>Integrated Workflows</span>
+              <Heading as="h2" className={styles.sectionTitle}>
+                What students actually get
+              </Heading>
+            </div>
+            <p className={styles.sectionCopy}>
+              The product is part cinematic story experience, part practical AI setup path, and part student operating
+              system students can apply immediately.
+            </p>
+          </div>
+          <div className={styles.workflowGrid}>
+            {workflowCards.map((card) => (
+              <article key={card.title} className={styles.workflowCard}>
+                <div className={styles.workflowCopy}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <p className={styles.cardCopy}>{card.copy}</p>
+                </div>
+                <div className={styles.workflowFrame}>
+                  <img src={card.image} alt={card.title} loading="lazy" />
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.midCta}>
+          <div className={styles.midCtaPanel}>
+            <Heading as="h2" className={styles.sectionTitle}>
+              Ready to install leverage instead of more noise?
+            </Heading>
+            <Link className={styles.primaryCta} to={checkoutPath}>
+              Go To Checkout
+            </Link>
+          </div>
+        </section>
+
+        <section id="pricing" className={styles.section}>
+          <div className={styles.centerHead}>
+            <span className={styles.kicker}>System Ownership</span>
+            <Heading as="h2" className={styles.sectionTitle}>
+              One-time student portal access
+            </Heading>
+          </div>
+          <div className={styles.pricingCard}>
+            <div className={styles.priceBadge}>Lifetime</div>
+            <div className={styles.priceRow}>
+              <span className={styles.priceAmount}>$129</span>
+              <span className={styles.priceUnit}>USD</span>
+            </div>
+            <ul className={styles.priceList}>
+              {pricingItems.map((item) => (
+                <li key={item}>
+                  <span className={styles.check}>✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className={styles.priceActions}>
+              <Link className={styles.primaryCta} to={checkoutPath}>
+                Buy Student Portal
+              </Link>
+              <a className={styles.secondaryCta} href="https://portal.autonateai.com/#/login">
+                Existing Access
+              </a>
+            </div>
+            <p className={styles.priceNote}>No subscription. No extra membership layer. One payment, then enter the portal.</p>
           </div>
         </section>
       </main>

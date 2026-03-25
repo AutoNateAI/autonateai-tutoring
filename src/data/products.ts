@@ -17,7 +17,7 @@ export const products: ProductDefinition[] = [
     priceCents: 12900,
     priceLabel: '$129',
     description:
-      'Narrated lecture deck, 6 workflow kits, prompt packs, and connected Google Sheets for planning, studying, and reflection.',
+      'Narrated story deck, Thinking Systems, and connected Google Sheets for planning, studying, and reflection.',
     audience:
       'Students who want a real AI operating system for school, planning, and day-to-day execution.',
     portalPath: '/#/tracks/student',

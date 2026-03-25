@@ -2,72 +2,85 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import FounderPanel from '@site/src/components/FounderPanel';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
 import PortalPreviewEmbed from '@site/src/components/PortalPreviewEmbed';
-import BrowserOnly from '@docusaurus/BrowserOnly';
 import SquareCheckoutCard from '@site/src/components/SquareCheckoutCard';
 
+import styles from '../studentPortal.module.css';
+
 const portalBase = 'https://portal.autonateai.com/#';
+const portalImageBase = 'https://portal.autonateai.com/img/storyboards/student';
+
+const checkoutBullets = [
+  'Narrated student transformation deck with real portal visuals',
+  'Thinking Systems for planning, assignments, reading, studying, and reflection',
+  'Immediate portal access created after payment',
+  'One-time purchase at $129',
+];
 
 export default function AiFirstStudentPage(): React.JSX.Element {
   const title = 'AI-First Student | Build Your Student Operating System';
   const description =
-    'A premium async course for students who want narrated instruction, workflow kits, prompt packs, and connected Sheets to build a real AI system.';
+    'Buy the AutoNateAI student portal and unlock narrated instruction, Thinking Systems, workflow structure, and real AI leverage for school.';
 
   return (
-    <Layout title={title} description={description} image="https://autonateai.com/img/og-student-workflow.png">
+    <Layout title={title} description={description} wrapperClassName={styles.layout}>
       <PageSocialMeta
-        title={`${title} | AutoNateAI | Daily AI Thought Experiments`}
+        title={`${title} | AutoNateAI`}
         description={description}
         image="/img/og-student-workflow.png"
         path="/services/ai-first-student"
       />
-      <main className="container padding-vert--xl">
-        <div className="margin-bottom--lg">
-          <Link to="/booking">← Back to Programs</Link>
-        </div>
-        <section className="card shadow--md" style={{background: '#0d1526', border: '1px solid rgba(37, 194, 160, 0.28)'}}>
-          <div className="card__body" style={{padding: '2rem'}}>
-            <Heading as="h1" style={{color: '#ffffff'}}>AI-First Student</Heading>
-            <p style={{color: '#d0dae9', fontSize: '1.1rem', lineHeight: '1.7'}}>
-              A premium async course for students who want to turn AI into a real operating system for school, planning,
-              reflection, and daily execution.
+      <main className={styles.shell}>
+        <section className={styles.checkoutHero}>
+          <div className={styles.checkoutCopy}>
+            <Link className={styles.backLink} to="/">
+              ← Back to landing page
+            </Link>
+            <span className={styles.kicker}>Checkout</span>
+            <Heading as="h1" className={styles.heroTitle}>
+              Buy the student operating upgrade
+            </Heading>
+            <p className={styles.heroBody}>
+              This checkout unlocks the narrated portal, the Thinking Systems, and the student workflow structure that
+              turns AI into real leverage instead of random noise.
             </p>
-            <div style={{display: 'grid', gap: '0.65rem', margin: '1.5rem 0', color: '#ffffff'}}>
-              <div><strong>Format:</strong> One-time purchase with instant access</div>
-              <div><strong>Price:</strong> $129</div>
-              <div><strong>Inside:</strong> Narrated lecture deck, 6 workflow kits, prompt packs, and linked Google Sheets</div>
+            <div className={styles.checkoutPriceRow}>
+              <span className={styles.priceAmount}>$129</span>
+              <span className={styles.priceUnit}>one time</span>
             </div>
-            <Heading as="h2" style={{color: '#ffffff', fontSize: '1.4rem'}}>What You Get</Heading>
-            <ul style={{color: '#cbd5e0', lineHeight: '1.8'}}>
-              <li>A narrated mini-lecture that teaches graph thinking and systems thinking for student life</li>
-              <li>6 sheet-based workflow kits designed for planning, studying, and debriefing</li>
-              <li>3 prompts per workflow so you can move from messy input to structured outputs</li>
-              <li>A portal experience that works on mobile, tablet, and desktop</li>
+            <ul className={styles.checkoutList}>
+              {checkoutBullets.map((item) => (
+                <li key={item}>
+                  <span className={styles.check}>✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
-            <Heading as="h2" style={{color: '#ffffff', fontSize: '1.4rem'}}>How It Fits The Free Library</Heading>
-            <p style={{color: '#cbd5e0', lineHeight: '1.7'}}>
-              The daily thought experiments build the reps. AI-First Student gives you the narrated framework and the
-              concrete workflow system so those reps compound into an actual way of working.
-            </p>
-            <div style={{display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem'}}>
-              <Link className="button button--secondary button--lg" to="/thought-experiments/students/">
-                Explore Student Library
-              </Link>
+          </div>
+          <div className={styles.checkoutVisual}>
+            <div className={styles.heroFrame}>
+              <img src={`${portalImageBase}/30-e.png`} alt="Student portal preview" />
             </div>
           </div>
         </section>
-        <BrowserOnly fallback={<div className="margin-top--lg">Loading checkout…</div>}>
-          {() => <SquareCheckoutCard initialProductId="ai-first-student" />}
-        </BrowserOnly>
+
+        <section className={styles.checkoutSection}>
+          <BrowserOnly fallback={<div className={styles.loadingCard}>Loading secure checkout…</div>}>
+            {() => <SquareCheckoutCard initialProductId="ai-first-student" />}
+          </BrowserOnly>
+        </section>
+
         <PortalPreviewEmbed
-          title="See the student portal before you buy"
-          description="This is the real student product surface: the track dashboard, narrated lecture system, and the workflow page students use to run prompt packs into their connected Sheets."
+          title="See the real portal before you buy"
+          description="This is the live student experience: the cinematic deck, the portal dashboard, and the workflow system students use after checkout."
           dashboardUrl={`${portalBase}/preview/student`}
           workflowUrl={`${portalBase}/preview/workflows/daily-time-grid`}
           openUrl={`${portalBase}/preview/student`}
         />
+
         <FounderPanel compact />
       </main>
     </Layout>
