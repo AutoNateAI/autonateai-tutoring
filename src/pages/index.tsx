@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
+import HeroPromoVideo from '@site/src/components/HeroPromoVideo';
 
 import styles from './studentPortal.module.css';
 
@@ -107,9 +108,7 @@ export default function Home(): React.JSX.Element {
             <p className={styles.meta}>$129 one time. Instant access after checkout.</p>
           </div>
           <div className={styles.heroVisual}>
-            <div className={styles.heroFrame}>
-              <img src={`${portalImageBase}/07-f.png`} alt="Student transformation portal preview" />
-            </div>
+            <HeroPromoVideo />
             <div className={styles.heroNote}>
               High-agency students do not just work harder. They run better systems.
             </div>

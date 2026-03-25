@@ -15,6 +15,23 @@ export default function HeroPromoVideo(): React.JSX.Element {
     void video.play().catch(() => {});
   }, [soundOn]);
 
+  const handleFullscreen = async () => {
+    const video = videoRef.current;
+    if (!video) {
+      return;
+    }
+
+    setSoundOn(true);
+    video.currentTime = 0;
+    video.muted = false;
+    video.volume = 1;
+    await video.play().catch(() => {});
+
+    if (document.fullscreenElement !== video && video.requestFullscreen) {
+      await video.requestFullscreen().catch(() => {});
+    }
+  };
+
   return (
     <div className="hero-video-shell hero-content-fade-in">
       <video
@@ -29,12 +46,17 @@ export default function HeroPromoVideo(): React.JSX.Element {
         <source src="/video/autonateai-portal-promo.mp4" type="video/mp4" />
       </video>
 
-      <button
-        type="button"
-        onClick={() => setSoundOn((value) => !value)}
-        className="hero-sound-toggle">
-        {soundOn ? 'Sound On' : 'Tap For Sound'}
-      </button>
+      <div className="hero-video-actions">
+        <button
+          type="button"
+          onClick={() => setSoundOn((value) => !value)}
+          className="hero-sound-toggle">
+          {soundOn ? 'Sound On' : 'Tap For Sound'}
+        </button>
+        <button type="button" onClick={() => void handleFullscreen()} className="hero-fullscreen-toggle">
+          Full Screen Demo
+        </button>
+      </div>
     </div>
   );
 }
