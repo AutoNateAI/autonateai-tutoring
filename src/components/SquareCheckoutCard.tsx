@@ -54,19 +54,20 @@ function resolveCheckoutUrl(baseUrl: string) {
 function getSquareCardStyle() {
   return {
     '.input-container': {
-      'background-color': '#050e1d',
-      'border-color': 'rgba(137, 206, 255, 0.12)',
-      'border-radius': '18px',
+      borderColor: 'rgba(137, 206, 255, 0.12)',
+      borderRadius: '18px',
+      borderWidth: '1px',
     },
     '.input-container.is-focus': {
-      'border-color': '#25c2a0',
+      borderColor: '#25c2a0',
+      borderWidth: '1px',
     },
     '.input-container.is-error': {
-      'border-color': '#ff8d8d',
+      borderColor: '#ff8d8d',
+      borderWidth: '1px',
     },
     '.message-text': {
       color: '#8ea1b4',
-      'font-size': '12px',
     },
     '.message-text.is-error': {
       color: '#ffb4ab',
@@ -78,17 +79,28 @@ function getSquareCardStyle() {
       color: '#ffb4ab',
     },
     input: {
-      'background-color': '#050e1d',
+      backgroundColor: '#050e1d',
       color: '#dae2f8',
-      'font-family': 'Inter',
-      'font-size': '16px',
+      fontFamily: 'Helvetica Neue',
+      fontSize: '16px',
+      fontWeight: '500',
     },
     'input::placeholder': {
       color: '#4a5b72',
     },
+    'input.is-focus': {
+      backgroundColor: '#050e1d',
+      color: '#dae2f8',
+      fontFamily: 'Helvetica Neue',
+      fontSize: '16px',
+      fontWeight: '500',
+    },
+    'input.is-error': {
+      color: '#ffb4ab',
+    },
     '@media screen and (max-width: 600px)': {
       input: {
-        'font-size': '16px',
+        fontSize: '16px',
       },
     },
   };
