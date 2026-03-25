@@ -65,25 +65,16 @@ const config: Config = {
     image: 'img/og-homepage.png',
     colorMode: {
       defaultMode: 'dark',
-      disableSwitch: false,
+      disableSwitch: true,
       respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'AutoNateAI',
-      logo: {
-        alt: 'AutoNateAI Logo',
-        src: 'img/logo.svg',
-      },
       items: [
         {
-          to: '/',
-          label: 'Home',
-          position: 'left',
-        },
-        {
           to: '/services/ai-first-student',
-          label: 'Get Started',
-          position: 'left',
+          label: 'Initialize System',
+          position: 'right',
           className: 'button button--primary margin-left--md nav-booking-button',
         },
       ],

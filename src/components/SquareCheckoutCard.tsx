@@ -1,6 +1,7 @@
 import React, {useEffect, useMemo, useRef, useState} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {getProductById, products, type ProductId} from '@site/src/data/products';
+import {getProductById, type ProductId} from '@site/src/data/products';
+import styles from '@site/src/pages/studentPortal.module.css';
 
 type CheckoutState = 'idle' | 'loading' | 'ready' | 'processing' | 'success' | 'error';
 
@@ -206,138 +207,154 @@ export default function SquareCheckoutCard({
     }
   }
 
+  const summaryItems = [
+    'Lifetime core portal updates',
+    'Thinking Systems for daily execution',
+    'Secure access creation after payment',
+  ];
+
   return (
-    <section
-      className="card shadow--lg"
-      style={{
-        background: '#0d1526',
-        border: '1px solid rgba(37, 194, 160, 0.28)',
-        marginTop: '2rem',
-      }}>
-      <div className="card__body" style={{padding: '2rem'}}>
-        <div style={{color: '#8cd9c8', fontWeight: 700, marginBottom: '0.45rem'}}>Native checkout</div>
-        <h2 style={{color: '#ffffff', marginBottom: '0.75rem'}}>Buy the course and unlock the portal in one flow</h2>
-        <p style={{color: '#cbd5e0', lineHeight: '1.7', maxWidth: '760px'}}>
-          Enter your name and email, pay with Square, and the system will create your portal access automatically. You can sign in with the temporary password we generate or claim access with the same paid email inside the portal.
-        </p>
+    <section className={styles.checkoutGrid}>
+      <form id="secure-checkout-form" className={styles.checkoutFormPanel} onSubmit={handleCheckout}>
+        <div className={styles.checkoutPanelHeader}>
+          <h2 className={styles.checkoutPanelTitle}>Secure Checkout</h2>
+          <p className={styles.checkoutPanelKicker}>System Initialization Protocol</p>
+        </div>
 
-        <form onSubmit={handleCheckout} style={{display: 'grid', gap: '1rem', marginTop: '1.5rem'}}>
-          <div style={{display: 'grid', gap: '0.85rem'}}>
-            {products.map((product) => {
-              const active = product.id === selectedProductId;
-              return (
-                <label
-                  key={product.id}
-                  style={{
-                    display: 'block',
-                    padding: '1rem 1.1rem',
-                    borderRadius: '18px',
-                    border: active ? '1px solid #25c2a0' : '1px solid rgba(255,255,255,0.08)',
-                    background: active ? 'rgba(37, 194, 160, 0.1)' : 'rgba(255,255,255,0.03)',
-                    cursor: 'pointer',
-                  }}>
-                  <input
-                    type="radio"
-                    name="productId"
-                    value={product.id}
-                    checked={active}
-                    onChange={() => setSelectedProductId(product.id)}
-                    style={{marginRight: '0.65rem'}}
-                  />
-                  <strong style={{color: '#ffffff'}}>{product.title}</strong>{' '}
-                  <span style={{color: '#8cd9c8', fontWeight: 700}}>{product.priceLabel}</span>
-                  <div style={{color: '#cbd5e0', marginTop: '0.45rem'}}>{product.description}</div>
-                </label>
-              );
-            })}
-          </div>
-
-          <div className="row">
-            <div className="col col--6 margin-bottom--md">
-              <label style={{display: 'grid', gap: '0.35rem', color: '#ffffff'}}>
-                <span>Full name</span>
-                <input
-                  value={customerName}
-                  onChange={(event) => setCustomerName(event.target.value)}
-                  className="input"
-                  style={{padding: '0.9rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.12)', background: '#081121', color: '#ffffff'}}
-                />
-              </label>
+        <div className={styles.checkoutBlock}>
+          <div className={styles.checkoutBlockLabel}>Payment Selection</div>
+          <div className={styles.paymentChoiceGrid}>
+            <div className={`${styles.paymentChoice} ${styles.paymentChoiceActive}`}>
+              <span className={styles.paymentChoiceIcon}>◫</span>
+              <span>Credit Card</span>
             </div>
-            <div className="col col--6 margin-bottom--md">
-              <label style={{display: 'grid', gap: '0.35rem', color: '#ffffff'}}>
-                <span>Email</span>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  className="input"
-                  style={{padding: '0.9rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.12)', background: '#081121', color: '#ffffff'}}
-                />
-              </label>
+            <div className={styles.paymentChoiceMuted}>
+              <span className={styles.paymentChoiceIcon}>◎</span>
+              <span>Secure</span>
+            </div>
+            <div className={styles.paymentChoiceMuted}>
+              <span className={styles.paymentChoiceIcon}>◌</span>
+              <span>Protected</span>
             </div>
           </div>
+        </div>
 
-          <div
-            id="square-card-container"
-            style={{
-              minHeight: '90px',
-              borderRadius: '16px',
-              padding: '1rem',
-              border: '1px solid rgba(255,255,255,0.08)',
-              background: '#081121',
-            }}
-          />
+        <div className={styles.checkoutBlock}>
+          <div className={styles.checkoutBlockLabel}>Portal Access</div>
+          <div className={styles.productChoiceStack}>
+            <label className={styles.productChoiceActive}>
+              <input type="radio" name="productId" value={selectedProduct.id} checked readOnly />
+              <div className={styles.productChoiceBody}>
+                <div className={styles.productChoiceTopRow}>
+                  <strong>{selectedProduct.title}</strong>
+                  <span>{selectedProduct.priceLabel}</span>
+                </div>
+                <div className={styles.productChoiceCopy}>{selectedProduct.description}</div>
+              </div>
+            </label>
+          </div>
+        </div>
 
-          <div style={{display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'center'}}>
+        <div className={styles.checkoutBlock}>
+          <div className={styles.checkoutBlockLabel}>Billing Information</div>
+          <div className={styles.checkoutFieldGrid}>
+            <label className={styles.checkoutField}>
+              <span>Full Name</span>
+              <input
+                value={customerName}
+                onChange={(event) => setCustomerName(event.target.value)}
+                placeholder="ALEXANDER VANCE"
+                autoComplete="name"
+              />
+            </label>
+            <label className={styles.checkoutField}>
+              <span>Email Address</span>
+              <input
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="ARCHITECT@AUTONATE.AI"
+                autoComplete="email"
+              />
+            </label>
+            <div className={styles.cardShellField}>
+              <span className={styles.checkoutFieldLabel}>Card Details</span>
+              <div id="square-card-container" className={styles.squareCardContainer} />
+            </div>
+          </div>
+        </div>
+
+        {status === 'success' && temporaryPassword ? (
+          <div className={styles.checkoutSuccessCard}>
+            <div className={styles.checkoutSuccessTitle}>Temporary portal password</div>
+            <div className={styles.checkoutSuccessRow}>
+              <code>{temporaryPassword}</code>
+              <button type="button" className={styles.inlineAction} onClick={handleCopyTemporaryPassword}>
+                Copy password
+              </button>
+            </div>
+          </div>
+        ) : null}
+
+        {message ? (
+          <div className={status === 'error' ? styles.checkoutMessageError : styles.checkoutMessage}>
+            {message}
+          </div>
+        ) : null}
+      </form>
+
+      <aside className={styles.checkoutSummaryPanel}>
+        <div className={styles.checkoutSummarySticky}>
+          <div className={styles.checkoutBlockLabel}>Order Summary</div>
+          <div className={styles.summaryHeader}>
+            <div>
+              <h3 className={styles.summaryTitle}>Initialize System</h3>
+              <p className={styles.summarySubtitle}>Student Transformation Portal</p>
+            </div>
+            <span className={styles.summaryPrice}>{selectedProduct.priceLabel}</span>
+          </div>
+
+          <div className={styles.summaryFeatureBox}>
+            {summaryItems.map((item) => (
+              <div key={item} className={styles.summaryFeature}>
+                <span className={styles.check}>✓</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.summaryTotals}>
+            <div>
+              <span>Subtotal</span>
+              <span>{selectedProduct.priceLabel}.00</span>
+            </div>
+            <div>
+              <span>Network Fee</span>
+              <span>$0.00</span>
+            </div>
+            <div className={styles.summaryTotalDue}>
+              <span>Total Due</span>
+              <span>{selectedProduct.priceLabel}.00</span>
+            </div>
+          </div>
+
+          <div className={styles.summaryActions}>
             <button
               type="submit"
-              className="button button--primary button--lg"
+              form="secure-checkout-form"
+              className={styles.checkoutSubmit}
               disabled={status === 'loading' || status === 'processing' || status === 'idle'}>
-              {status === 'processing' ? `Pay ${selectedProduct.priceLabel}...` : `Pay ${selectedProduct.priceLabel}`}
+              {status === 'processing' ? `Complete Purchase ${selectedProduct.priceLabel}...` : 'Complete Purchase'}
             </button>
             {status === 'success' && successUrl ? (
-              <a
-                className="button button--secondary button--lg"
-                href={successUrl}>
-                Open portal
+              <a className={styles.openPortalButton} href={successUrl}>
+                Open Portal
               </a>
             ) : null}
+            <div className={styles.summarySecurityNote}>Encrypted Square checkout. Portal access is created after payment.</div>
           </div>
-
-          {status === 'success' && temporaryPassword ? (
-            <div
-              style={{
-                color: '#f9fbff',
-                background: 'rgba(125, 211, 199, 0.08)',
-                border: '1px solid rgba(125, 211, 199, 0.24)',
-                borderRadius: '14px',
-                padding: '0.95rem 1rem',
-              }}>
-              <div style={{fontWeight: 700, marginBottom: '0.25rem'}}>Temporary portal password</div>
-              <div style={{display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap'}}>
-                <code style={{fontSize: '1rem'}}>{temporaryPassword}</code>
-                <button type="button" className="button button--sm button--secondary" onClick={handleCopyTemporaryPassword}>
-                  Copy password
-                </button>
-              </div>
-            </div>
-          ) : null}
-
-          {message ? (
-            <div
-              style={{
-                color: status === 'error' ? '#ffb4b4' : '#d7e3f4',
-                background: status === 'error' ? 'rgba(185, 28, 28, 0.14)' : 'rgba(37, 194, 160, 0.08)',
-                border: `1px solid ${status === 'error' ? 'rgba(248, 113, 113, 0.3)' : 'rgba(37, 194, 160, 0.22)'}`,
-                borderRadius: '14px',
-                padding: '0.95rem 1rem',
-              }}>
-              {message}
-            </div>
-          ) : null}
-        </form>
-      </div>
+        </div>
+      </aside>
     </section>
   );
 }

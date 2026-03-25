@@ -24,6 +24,10 @@
   padding-top: 1rem;
 }
 
+.checkoutPageIntro {
+  padding: 1rem 0 0.5rem;
+}
+
 .heroCopy,
 .checkoutCopy {
   display: grid;
@@ -52,6 +56,22 @@
   color: #dff8ff;
   font-size: clamp(1.15rem, 2vw, 1.65rem);
   font-weight: 700;
+}
+
+.checkoutPageTitle,
+.checkoutPanelTitle {
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+
+.checkoutPageTitle {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 0.98;
+}
+
+.checkoutPanelTitle {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
 }
 
 .heroBody,
@@ -344,10 +364,379 @@
   color: #d7e3f4;
 }
 
+.checkoutGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.checkoutFormPanel,
+.checkoutSummarySticky {
+  border-radius: 28px;
+  border: 1px solid rgba(137, 206, 255, 0.12);
+  background: rgba(44, 53, 69, 0.38);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.checkoutFormPanel {
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.checkoutSummarySticky {
+  position: sticky;
+  top: 6.75rem;
+  padding: 2rem;
+}
+
+.checkoutPanelHeader {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.checkoutPanelKicker,
+.checkoutBlockLabel,
+.checkoutFieldLabel,
+.summaryTotals span:first-child,
+.summarySecurityNote,
+.summarySubtitle {
+  color: #8ea1b4;
+  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.checkoutBlock {
+  display: grid;
+  gap: 1rem;
+}
+
+.paymentChoiceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.paymentChoice,
+.paymentChoiceMuted {
+  min-height: 108px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  gap: 0.45rem;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.paymentChoice {
+  border: 1px solid rgba(137, 206, 255, 0.42);
+  color: #dae2f8;
+  box-shadow: 0 0 18px rgba(137, 206, 255, 0.12);
+}
+
+.paymentChoiceActive {
+  background: linear-gradient(180deg, rgba(23, 32, 47, 0.94), rgba(19, 28, 43, 0.74));
+}
+
+.paymentChoiceMuted {
+  border: 1px solid rgba(60, 74, 69, 0.42);
+  background: rgba(19, 28, 43, 0.5);
+  color: #85948e;
+}
+
+.paymentChoiceIcon {
+  font-size: 1.25rem;
+}
+
+.productChoiceStack {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.productChoice,
+.productChoiceActive {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: start;
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.productChoice {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.productChoiceActive {
+  border: 1px solid rgba(79, 222, 187, 0.42);
+  background: rgba(37, 194, 160, 0.08);
+  box-shadow: 0 0 20px rgba(79, 222, 187, 0.12);
+}
+
+.productChoice input,
+.productChoiceActive input {
+  margin-top: 0.35rem;
+  accent-color: #25c2a0;
+}
+
+.productChoiceBody {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.productChoiceTopRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: #ffffff;
+}
+
+.productChoiceTopRow span {
+  color: #4fdebb;
+  font-weight: 800;
+}
+
+.productChoiceCopy {
+  color: #c4d4e6;
+  line-height: 1.6;
+}
+
+.checkoutFieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.checkoutField,
+.cardShellField {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.cardShellField {
+  grid-column: 1 / -1;
+}
+
+.checkoutField span,
+.checkoutFieldLabel {
+  margin-left: 0.15rem;
+}
+
+.checkoutField input,
+.squareCardContainer {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: #050e1d;
+  color: #dae2f8;
+}
+
+.checkoutField input {
+  min-height: 58px;
+  padding: 0.95rem 1rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.checkoutField input::placeholder {
+  color: #4a5b72;
+}
+
+.checkoutField input:focus {
+  outline: none;
+  border-color: #25c2a0;
+  box-shadow: 0 0 0 2px rgba(37, 194, 160, 0.18);
+}
+
+.squareCardContainer {
+  min-height: 104px;
+  padding: 1rem;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.checkoutSuccessCard,
+.checkoutMessage,
+.checkoutMessageError {
+  border-radius: 18px;
+  padding: 1rem 1.1rem;
+}
+
+.checkoutSuccessCard,
+.checkoutMessage {
+  color: #d7e3f4;
+  background: rgba(37, 194, 160, 0.08);
+  border: 1px solid rgba(37, 194, 160, 0.22);
+}
+
+.checkoutMessageError {
+  color: #ffb4b4;
+  background: rgba(185, 28, 28, 0.14);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.checkoutSuccessTitle {
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.checkoutSuccessRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.checkoutSuccessRow code {
+  font-size: 0.98rem;
+}
+
+.inlineAction,
+.checkoutSubmit,
+.openPortalButton {
+  border: none;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.inlineAction {
+  padding: 0.7rem 0.9rem;
+  background: rgba(137, 206, 255, 0.12);
+  color: #dae2f8;
+  cursor: pointer;
+}
+
+.checkoutSummaryPanel {
+  display: block;
+}
+
+.summaryHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+  margin: 1.2rem 0 1.4rem;
+}
+
+.summaryTitle {
+  margin: 0 0 0.35rem;
+  color: #ffffff;
+  font-size: 1.35rem;
+}
+
+.summaryPrice {
+  color: #4fdebb;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.summaryFeatureBox {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background: rgba(5, 14, 29, 0.46);
+}
+
+.summaryFeature {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  color: #c4d4e6;
+  font-size: 0.88rem;
+}
+
+.summaryTotals {
+  display: grid;
+  gap: 0.8rem;
+  padding-top: 1.4rem;
+  margin-top: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.summaryTotals div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #dae2f8;
+}
+
+.summaryTotalDue {
+  padding-top: 0.25rem;
+  align-items: end;
+}
+
+.summaryTotalDue span:first-child {
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.summaryTotalDue span:last-child {
+  color: #4fdebb;
+  font-size: 2.35rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.summaryActions {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.checkoutSubmit,
+.openPortalButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  width: 100%;
+  padding: 1rem 1.15rem;
+}
+
+.checkoutSubmit {
+  background: linear-gradient(135deg, #4fdebb 0%, #25c2a0 100%);
+  color: #002019;
+  box-shadow: 0 0 22px rgba(79, 222, 187, 0.24);
+  cursor: pointer;
+}
+
+.checkoutSubmit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.openPortalButton {
+  background: rgba(137, 206, 255, 0.12);
+  color: #dae2f8;
+  border: 1px solid rgba(137, 206, 255, 0.18);
+}
+
+.summarySecurityNote {
+  text-align: center;
+  line-height: 1.6;
+}
+
 @media (max-width: 996px) {
   .hero,
   .checkoutHero,
-  .workflowGrid {
+  .workflowGrid,
+  .checkoutGrid {
     grid-template-columns: 1fr;
   }
 
@@ -358,6 +747,10 @@
 
   .abilityGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .checkoutSummarySticky {
+    position: static;
   }
 }
 
@@ -392,7 +785,19 @@
 
   .pricingCard,
   .midCtaPanel,
-  .workflowCopy {
+  .workflowCopy,
+  .checkoutFormPanel,
+  .checkoutSummarySticky {
     padding: 1.2rem;
+  }
+
+  .paymentChoiceGrid,
+  .checkoutFieldGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .paymentChoice,
+  .paymentChoiceMuted {
+    min-height: 88px;
   }
 }

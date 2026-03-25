@@ -3,22 +3,10 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import FounderPanel from '@site/src/components/FounderPanel';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
-import PortalPreviewEmbed from '@site/src/components/PortalPreviewEmbed';
 import SquareCheckoutCard from '@site/src/components/SquareCheckoutCard';
 
 import styles from '../studentPortal.module.css';
-
-const portalBase = 'https://portal.autonateai.com/#';
-const portalImageBase = 'https://portal.autonateai.com/img/storyboards/student';
-
-const checkoutBullets = [
-  'Narrated student transformation deck with real portal visuals',
-  'Thinking Systems for planning, assignments, reading, studying, and reflection',
-  'Immediate portal access created after payment',
-  'One-time purchase at $129',
-];
 
 export default function AiFirstStudentPage(): React.JSX.Element {
   const title = 'AI-First Student | Build Your Student Operating System';
@@ -34,36 +22,19 @@ export default function AiFirstStudentPage(): React.JSX.Element {
         path="/services/ai-first-student"
       />
       <main className={styles.shell}>
-        <section className={styles.checkoutHero}>
+        <section className={styles.checkoutPageIntro}>
           <div className={styles.checkoutCopy}>
             <Link className={styles.backLink} to="/">
               ← Back to landing page
             </Link>
-            <span className={styles.kicker}>Checkout</span>
-            <Heading as="h1" className={styles.heroTitle}>
-              Buy the student operating upgrade
+            <span className={styles.kicker}>Secure Checkout</span>
+            <Heading as="h1" className={styles.checkoutPageTitle}>
+              Initialize the student portal
             </Heading>
             <p className={styles.heroBody}>
-              This checkout unlocks the narrated portal, the Thinking Systems, and the student workflow structure that
-              turns AI into real leverage instead of random noise.
+              This flow keeps the live Square payment logic intact. After payment, the system creates your paid portal
+              access and routes you into the student experience.
             </p>
-            <div className={styles.checkoutPriceRow}>
-              <span className={styles.priceAmount}>$129</span>
-              <span className={styles.priceUnit}>one time</span>
-            </div>
-            <ul className={styles.checkoutList}>
-              {checkoutBullets.map((item) => (
-                <li key={item}>
-                  <span className={styles.check}>✓</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className={styles.checkoutVisual}>
-            <div className={styles.heroFrame}>
-              <img src={`${portalImageBase}/30-e.png`} alt="Student portal preview" />
-            </div>
           </div>
         </section>
 
@@ -72,16 +43,6 @@ export default function AiFirstStudentPage(): React.JSX.Element {
             {() => <SquareCheckoutCard initialProductId="ai-first-student" />}
           </BrowserOnly>
         </section>
-
-        <PortalPreviewEmbed
-          title="See the real portal before you buy"
-          description="This is the live student experience: the cinematic deck, the portal dashboard, and the workflow system students use after checkout."
-          dashboardUrl={`${portalBase}/preview/student`}
-          workflowUrl={`${portalBase}/preview/workflows/daily-time-grid`}
-          openUrl={`${portalBase}/preview/student`}
-        />
-
-        <FounderPanel compact />
       </main>
     </Layout>
   );
