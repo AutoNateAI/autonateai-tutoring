@@ -72,6 +72,11 @@ const config: Config = {
       title: 'AutoNateAI',
       items: [
         {
+          to: '/research',
+          label: 'Research',
+          position: 'right',
+        },
+        {
           to: '/programs',
           label: 'Programs',
           position: 'right',
