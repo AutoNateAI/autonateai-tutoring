@@ -100,6 +100,10 @@ const config: Config = {
               to: '/',
             },
             {
+              label: 'Research',
+              to: '/research',
+            },
+            {
               label: 'Book Coaching',
               to: '/services/ai-first-student',
             },
