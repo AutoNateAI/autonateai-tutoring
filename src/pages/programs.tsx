@@ -5,34 +5,40 @@ import Heading from '@theme/Heading';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
 import ProgramsCheckoutCard from '@site/src/components/ProgramsCheckoutCard';
+import HeroPromoVideo from '@site/src/components/HeroPromoVideo';
 
 import styles from './studentPortal.module.css';
-
-const portalImageBase = 'https://portal.autonateai.com/img/storyboards/student';
 
 const galleryCards = [
   {
     title: 'Narrated mindset shift',
     copy:
       'Students move from overload to structure through the story deck before they touch the deeper workflows.',
-    image: `${portalImageBase}/01-c.png`,
+    type: 'video',
+    src: '/video/portal-demos/student-lecture-desktop.mp4',
+    poster: '/img/programs/student-lecture-desktop.png',
   },
   {
     title: 'Workflow installation',
     copy: 'The live workshop shows students how to use the systems, not just admire them.',
-    image: `${portalImageBase}/10-a.png`,
+    type: 'video',
+    src: '/video/portal-demos/student-setup-desktop.mp4',
+    poster: '/img/programs/student-track-desktop.png',
   },
   {
-    title: 'Thinking systems in the portal',
-    copy: 'Prompt packs, workbook logic, and workflow systems stay available long after the session ends.',
-    image: `${portalImageBase}/21-f.png`,
+    title: 'Prompt packs with real structure',
+    copy: 'Students see the workflow prompts, fill them in fast, and copy structured instructions directly into action.',
+    type: 'video',
+    src: '/video/portal-demos/assignment-sprint-desktop.mp4',
+    poster: '/img/programs/student-workflow-filled-desktop.png',
   },
   {
-    title: 'Visible student operating layer',
-    copy: 'Students leave with structure they can actually keep running in school, work, and college-prep pressure.',
-    image: `${portalImageBase}/23-c.png`,
+    title: 'Connected Google Sheet logic layer',
+    copy: 'The Google Sheet makes the system visible so student work becomes retrievable, analyzable, and easier to sustain.',
+    type: 'image',
+    src: '/img/programs/student-day-grid-sheet-desktop.png',
   },
-];
+] as const;
 
 const outcomeItems = [
   'Workforce-development language and delivery that centers practical AI fluency, organization, and follow-through',
@@ -70,6 +76,14 @@ export default function ProgramsPage(): React.JSX.Element {
             <Heading as="h1" className={styles.heroTitle}>
               Install student systems across the whole cohort.
             </Heading>
+            <HeroPromoVideo
+              className={styles.heroVideoMobile}
+              src="/video/programs-hero-promo.mp4"
+              poster="/img/og-programs.png"
+              soundLabel="Tap For Narration"
+              fullscreenLabel="Full Screen Overview"
+              objectFit="contain"
+            />
             <p className={styles.heroShift}>2 to 4 live hours. Lifetime portal access. Practical workflows that stick.</p>
             <p className={styles.heroBody}>
               This offer is built for schools, directors, workforce-development programs, and college-prep organizations
@@ -80,14 +94,20 @@ export default function ProgramsPage(): React.JSX.Element {
               <a className={styles.primaryCta} href="#program-checkout">
                 Purchase Program
               </a>
-              <Link className={styles.secondaryCta} to="/services/ai-first-student">
+              <Link className={styles.secondaryCta} to="/">
                 View 1:1 Coaching
               </Link>
             </div>
           </div>
-          <div className={styles.heroVisual}>
-            <div className={styles.heroFrame}>
-              <img src={`${portalImageBase}/30-a.png`} alt="AutoNateAI student workshop portal preview" />
+          <div className={`${styles.heroVisual} ${styles.programsHeroVisual}`}>
+            <div className={`${styles.heroFrame} ${styles.programHeroFrame}`}>
+              <HeroPromoVideo
+                src="/video/programs-hero-promo.mp4"
+                poster="/img/og-programs.png"
+                soundLabel="Tap For Narration"
+                fullscreenLabel="Full Screen Overview"
+                objectFit="contain"
+              />
             </div>
             <div className={styles.heroNote}>
               Once the organization pays to install the program, students receive the portal upgrade that keeps working
@@ -158,7 +178,19 @@ export default function ProgramsPage(): React.JSX.Element {
                   <p className={styles.cardCopy}>{card.copy}</p>
                 </div>
                 <div className={styles.workflowFrame}>
-                  <img src={card.image} alt={card.title} loading="lazy" />
+                  {card.type === 'video' ? (
+                    <video
+                      src={card.src}
+                      poster={card.poster}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                    />
+                  ) : (
+                    <img src={card.src} alt={card.title} loading="lazy" />
+                  )}
                 </div>
               </article>
             ))}

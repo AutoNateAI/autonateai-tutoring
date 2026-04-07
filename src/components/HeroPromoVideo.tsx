@@ -2,13 +2,25 @@ import React, {useEffect, useRef, useState} from 'react';
 
 type HeroPromoVideoProps = {
   className?: string;
+  src?: string;
+  poster?: string;
+  soundLabel?: string;
+  fullscreenLabel?: string;
+  objectFit?: 'cover' | 'contain';
 };
 
 type FullscreenVideo = HTMLVideoElement & {
   webkitEnterFullscreen?: () => void;
 };
 
-export default function HeroPromoVideo({className = ''}: HeroPromoVideoProps): React.JSX.Element {
+export default function HeroPromoVideo({
+  className = '',
+  src = '/video/autonateai-portal-promo.mp4',
+  poster = '/img/og-homepage.png',
+  soundLabel = 'Tap For Sound',
+  fullscreenLabel = 'Full Screen Demo',
+  objectFit = 'cover',
+}: HeroPromoVideoProps): React.JSX.Element {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const shellRef = useRef<HTMLDivElement | null>(null);
   const [soundOn, setSoundOn] = useState(false);
@@ -61,9 +73,10 @@ export default function HeroPromoVideo({className = ''}: HeroPromoVideoProps): R
         loop
         playsInline
         preload="metadata"
-        poster="/img/og-homepage.png"
-        className="hero-demo-video">
-        <source src="/video/autonateai-portal-promo.mp4" type="video/mp4" />
+        poster={poster}
+        className="hero-demo-video"
+        style={{objectFit}}>
+        <source src={src} type="video/mp4" />
       </video>
 
       <div className="hero-video-actions">
@@ -71,10 +84,10 @@ export default function HeroPromoVideo({className = ''}: HeroPromoVideoProps): R
           type="button"
           onClick={() => setSoundOn((value) => !value)}
           className="hero-sound-toggle">
-          {soundOn ? 'Sound On' : 'Tap For Sound'}
+          {soundOn ? 'Sound On' : soundLabel}
         </button>
         <button type="button" onClick={() => void handleFullscreen()} className="hero-fullscreen-toggle">
-          Full Screen Demo
+          {fullscreenLabel}
         </button>
       </div>
     </div>

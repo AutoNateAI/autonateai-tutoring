@@ -72,13 +72,13 @@ const config: Config = {
       title: 'AutoNateAI',
       items: [
         {
-          to: '/research',
-          label: 'Research',
+          to: '/programs',
+          label: 'Programs',
           position: 'right',
         },
         {
-          to: '/programs',
-          label: 'Programs',
+          to: '/research',
+          label: 'Research',
           position: 'right',
         },
         {
@@ -100,16 +100,16 @@ const config: Config = {
               to: '/',
             },
             {
-              label: 'Research',
-              to: '/research',
-            },
-            {
               label: 'Book Coaching',
               to: '/services/ai-first-student',
             },
             {
               label: 'Programs',
               to: '/programs',
+            },
+            {
+              label: 'Research',
+              to: '/research',
             },
           ],
         },
