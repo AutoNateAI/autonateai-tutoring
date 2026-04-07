@@ -389,6 +389,23 @@
   padding: 1.4rem;
 }
 
+.articleVisual {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1.2rem 0 0;
+}
+
+.articleImageFrame {
+  aspect-ratio: 16 / 9;
+}
+
+.visualCaption {
+  margin: 0;
+  color: #8ea1b4;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
 .articleBody h2,
 .articleBody h3 {
   margin: 0 0 0.8rem;
@@ -749,6 +766,10 @@
   .asideCard {
     position: static;
   }
+
+  .articleImageFrame {
+    aspect-ratio: 16 / 10;
+  }
 }
 
 @media (max-width: 767px) {
@@ -785,6 +806,14 @@
   .articleBody section,
   .asideCard {
     padding: 1.1rem;
+  }
+
+  .articleVisual {
+    margin-top: 1rem;
+  }
+
+  .visualCaption {
+    font-size: 0.82rem;
   }
 
   .paginationRow {

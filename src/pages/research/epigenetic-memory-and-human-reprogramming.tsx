@@ -1,4 +1,5 @@
 import React from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import ResearchArticleLayout from '@site/src/components/research/ResearchArticleLayout';
 import {researchArticles} from '@site/src/data/researchArticles';
 import styles from '@site/src/components/research/research.module.css';
@@ -6,6 +7,15 @@ import styles from '@site/src/components/research/research.module.css';
 const article = researchArticles[0];
 
 export default function EpigeneticMemoryArticle(): React.JSX.Element {
+  const visuals = {
+    exposure: useBaseUrl('/img/research/article-node-map-exposure.png'),
+    regulation: useBaseUrl('/img/research/article-node-map-regulation.png'),
+    reconstruction: useBaseUrl('/img/research/article-node-map-reconstruction.png'),
+    timeline: useBaseUrl('/img/research/article-node-map-timeline.png'),
+    sources: useBaseUrl('/img/research/article-node-map-sources.png'),
+    bridge: useBaseUrl('/img/research/article-node-map-bridge.png'),
+  };
+
   return (
     <ResearchArticleLayout article={article}>
       <section>
@@ -22,6 +32,19 @@ export default function EpigeneticMemoryArticle(): React.JSX.Element {
           real bottleneck is often not just what is written, but how state is being maintained. Once you understand
           that, the conversation about change gets sharper immediately.
         </p>
+        <figure className={styles.articleVisual}>
+          <div className={styles.articleImageFrame}>
+            <img
+              src={visuals.exposure}
+              alt="An interconnected network showing genotype, environment, stress, nutrients, and chromatin state as part of one regulatory field."
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption className={styles.visualCaption}>
+            The opening field map: inherited structure, exposures, and regulatory state all moving in the same system.
+          </figcaption>
+        </figure>
       </section>
 
       <section>
@@ -139,6 +162,20 @@ export default function EpigeneticMemoryArticle(): React.JSX.Element {
             </div>
           </article>
         </div>
+        <figure className={styles.articleVisual}>
+          <div className={styles.articleImageFrame}>
+            <img
+              src={visuals.regulation}
+              alt="A wide professional graph illustration showing methylation, chromatin accessibility, and regulatory routing as interconnected node layers."
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption className={styles.visualCaption}>
+            Mechanism over vibes. This is the article’s visual reminder that methylation, chromatin access, and routing
+            logic are all part of the same operating stack.
+          </figcaption>
+        </figure>
       </section>
 
       <section>
@@ -166,6 +203,20 @@ export default function EpigeneticMemoryArticle(): React.JSX.Element {
             <span>Function, resilience, failure modes, adaptation, and the visible pattern people call destiny.</span>
           </div>
         </div>
+        <figure className={styles.articleVisual}>
+          <div className={styles.articleImageFrame}>
+            <img
+              src={visuals.reconstruction}
+              alt="A widescreen layered node map showing environment flowing into epigenetic state, memory, and human output."
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption className={styles.visualCaption}>
+            The reconstruction stack rendered as a systems map: environment shapes state, state shapes memory, and
+            memory shapes output.
+          </figcaption>
+        </figure>
       </section>
 
       <section>
@@ -196,6 +247,20 @@ export default function EpigeneticMemoryArticle(): React.JSX.Element {
             </p>
           </article>
         </div>
+        <figure className={styles.articleVisual}>
+          <div className={styles.articleImageFrame}>
+            <img
+              src={visuals.timeline}
+              alt="A cinematic research timeline visualization with connected nodes representing discovery, intervention, and translational leverage."
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption className={styles.visualCaption}>
+            The lane tightens when discovery, intervention, and clinical relevance start connecting like one coherent
+            graph instead of isolated papers.
+          </figcaption>
+        </figure>
       </section>
 
       <section>
@@ -211,6 +276,20 @@ export default function EpigeneticMemoryArticle(): React.JSX.Element {
           interventions, from vitamin C strategies in myeloid malignancies to combinations of immunotherapy and
           epigenetic drugs. That is the part I respect. Not vibes. Not branding. Mechanism trying to become leverage.
         </p>
+        <figure className={styles.articleVisual}>
+          <div className={styles.articleImageFrame}>
+            <img
+              src={visuals.sources}
+              alt="A widescreen publication network showing evidence clusters, source pathways, and research interconnections."
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption className={styles.visualCaption}>
+            Source interconnection matters. The article is stronger when the institutional map, single-cell work,
+            intervention papers, and reprogramming constraints can be read as one evidence network.
+          </figcaption>
+        </figure>
       </section>
 
       <section>
@@ -346,6 +425,20 @@ export default function EpigeneticMemoryArticle(): React.JSX.Element {
           implying that reconstruction is less about motivational noise and more about changing what the system can do,
           stabilize, and repeat under pressure. Same human. Different accessible future.
         </p>
+        <figure className={styles.articleVisual}>
+          <div className={styles.articleImageFrame}>
+            <img
+              src={visuals.bridge}
+              alt="A refined cinematic bridge between epigenetic systems research and human cognitive workflow reconstruction."
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption className={styles.visualCaption}>
+            This is the bridge back to the product thesis: different domain, same obsession with durable systems change
+            instead of shallow motivational theater.
+          </figcaption>
+        </figure>
       </section>
 
       <section>

@@ -1,0 +1,49 @@
+{
+  "model": "gpt-image-1.5",
+  "size": "1536x1024",
+  "quality": "high",
+  "fidelity": "high",
+  "concurrency": 3,
+  "images": [
+    {
+      "prompt": "A dramatic widescreen cinematic editorial image for a research landing page, a brilliant young Black researcher standing inside a futuristic bioinformatics chamber surrounded by glowing epigenetic maps, chromatin ribbons, methylation graphs, laboratory glass, and node-link knowledge systems, elite intellect energy, premium deep navy teal and gold palette, sharp lighting, super professional scientific storytelling, NO text, NO letters, NO words",
+      "output": "static/img/research/research-hub-hero.png",
+      "references": []
+    },
+    {
+      "prompt": "A dramatic widescreen cinematic editorial image for an article about epigenetic memory and human reprogramming, a young Black super-intellect researcher in profile inside a luminous storm of chromatin loops, DNA ribbons, methylation marks, regulatory nodes, and data overlays, smart and smooth elite energy, deep navy teal and gold palette, premium contrast, super professional scientific storytelling, NO text, NO letters, NO words",
+      "output": "static/img/research/article-epigenetic-memory.png",
+      "references": []
+    },
+    {
+      "prompt": "A dramatic widescreen scientific editorial image showing the interconnection between genotype, environment, stress, nutrients, pathogens, and chromatin regulation as an abstract glowing network sculpture, premium biomedical intelligence aesthetic, elegant graph nodes and flowing connection lines, no interface labels, no captions, no typography, no faux UI text, deep navy teal and gold palette, cinematic contrast, super professional, supportive not distracting, NO text, NO letters, NO words",
+      "output": "static/img/research/article-node-map-exposure.png",
+      "references": []
+    },
+    {
+      "prompt": "A dramatic widescreen scientific editorial image showing chromatin accessibility, DNA methylation, histone marks, and transcription factor routing as a beautiful layered abstract node graph, no screen UI, no desk setup, no labels, no captions, no typography, premium research visualization energy, deep navy teal and gold palette, super professional publication quality, NO text, NO letters, NO words",
+      "output": "static/img/research/article-node-map-regulation.png",
+      "references": []
+    },
+    {
+      "prompt": "A dramatic widescreen systems diagram style image showing four connected layers from environment to epigenetic state to cellular memory to human output, rendered as elegant luminous nodes and arcs in an abstract premium scientific composition, no labels, no captions, no typography, no infographic text, polished professional research publication feel, deep navy teal and gold palette, NO text, NO letters, NO words",
+      "output": "static/img/research/article-node-map-reconstruction.png",
+      "references": []
+    },
+    {
+      "prompt": "A dramatic widescreen editorial data image showing a translational research timeline from discovery to intervention to clinical leverage, built as connected glowing nodes, lab imagery, trial signals, and graph overlays in an abstract cinematic composition, no labels, no captions, no typography, no faux infographic text, premium professional biomedical storytelling aesthetic, deep navy teal and gold palette, NO text, NO letters, NO words",
+      "output": "static/img/research/article-node-map-timeline.png",
+      "references": []
+    },
+    {
+      "prompt": "A dramatic widescreen editorial data sculpture showing major epigenetics research sources as interconnected publication nodes, signal clusters, evidence pathways, and mechanistic layers, abstract premium visual language for a data driven article, no panels with text, no labels, no captions, no typography, deep navy teal and gold palette, super professional, NO text, NO letters, NO words",
+      "output": "static/img/research/article-node-map-sources.png",
+      "references": []
+    },
+    {
+      "prompt": "A dramatic widescreen editorial image showing the bridge between epigenetic systems research and human cognitive reconstruction, a refined abstract composition with connected node maps, workflow pathways, educational systems, and biological memory signals, no labels, no captions, no typography, super professional premium look, deep navy teal and gold palette, supportive not distracting, NO text, NO letters, NO words",
+      "output": "static/img/research/article-node-map-bridge.png",
+      "references": []
+    }
+  ]
+}
