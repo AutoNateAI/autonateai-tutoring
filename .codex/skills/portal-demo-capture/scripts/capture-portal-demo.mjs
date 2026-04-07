@@ -7,7 +7,7 @@ const defaults = {
   base: process.env.PORTAL_BASE_URL || "https://portal.autonateai.com",
   email: process.env.PORTAL_DEMO_EMAIL || "demo-student-portal@autonateai.com",
   password: process.env.PORTAL_DEMO_PASSWORD || "DemoPortal!2026Student",
-  device: "mobile",
+  device: "desktop",
   outputDir: path.resolve(process.cwd(), "static/video/portal-demos"),
   trimStart: 1,
 };
@@ -166,13 +166,18 @@ async function authenticateContext(context) {
 }
 
 async function createRecordedContext(browser) {
-  return browser.newContext({
+  const context = await browser.newContext({
     ...getCaptureProfile(),
     recordVideo: {
       dir: tempDir,
       size: getCaptureSize(),
     },
   });
+
+  const origin = new URL(config.base).origin;
+  await context.grantPermissions(["clipboard-read", "clipboard-write"], { origin });
+
+  return context;
 }
 
 async function finalizeVideo(page, context, outputName) {

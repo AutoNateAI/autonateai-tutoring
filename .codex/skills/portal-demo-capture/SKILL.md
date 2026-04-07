@@ -10,8 +10,9 @@ Use this skill when a page needs real portal walkthrough media instead of genera
 ## What this skill does
 
 - records the standard student portal demo flows with Playwright
-- supports `mobile` and `desktop` capture modes
+- supports `mobile` and `desktop` capture modes, defaulting to `desktop`
 - trims the first second off the exported clip to skip load-in
+- grants clipboard permissions so copy demos show the real success path
 - outputs H.264 MP4 files ready for the tutoring site
 
 ## Prereqs
@@ -30,13 +31,13 @@ npx playwright install chromium
 ## Standard capture command
 
 ```bash
-node .codex/skills/portal-demo-capture/scripts/capture-portal-demo.mjs --device mobile --output-dir static/video/portal-demos
+node .codex/skills/portal-demo-capture/scripts/capture-portal-demo.mjs --device desktop --output-dir static/video/portal-demos
 ```
 
-Desktop version:
+Mobile version:
 
 ```bash
-node .codex/skills/portal-demo-capture/scripts/capture-portal-demo.mjs --device desktop --output-dir static/video/portal-demos
+node .codex/skills/portal-demo-capture/scripts/capture-portal-demo.mjs --device mobile --output-dir static/video/portal-demos
 ```
 
 ## Useful flags
@@ -69,4 +70,3 @@ Desktop mode uses the same names with `-desktop`.
 3. Prefer phone-framed recordings inside cards for student-facing pages.
 4. Prefer wider desktop captures for director, program, or ops pages.
 5. Rebuild and check responsive layout after swapping assets.
-
