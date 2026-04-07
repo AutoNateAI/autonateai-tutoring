@@ -5,17 +5,23 @@ import styles from '@site/src/pages/studentPortal.module.css';
 
 type CheckoutState = 'idle' | 'loading' | 'ready' | 'processing' | 'success' | 'error';
 
-const packageIds: ProductId[] = [
-  'student-systems-program-25-2h',
-  'student-systems-program-25-3h',
-  'student-systems-program-25-4h',
-  'student-systems-program-50-2h',
-  'student-systems-program-50-3h',
-  'student-systems-program-50-4h',
-  'student-systems-program-100-2h',
-  'student-systems-program-100-3h',
-  'student-systems-program-100-4h',
-];
+const packageProductIds: Record<number, Record<number, ProductId>> = {
+  25: {
+    2: 'student-systems-program-25-2h',
+    3: 'student-systems-program-25-3h',
+    4: 'student-systems-program-25-4h',
+  },
+  50: {
+    2: 'student-systems-program-50-2h',
+    3: 'student-systems-program-50-3h',
+    4: 'student-systems-program-50-4h',
+  },
+  100: {
+    2: 'student-systems-program-100-2h',
+    3: 'student-systems-program-100-3h',
+    4: 'student-systems-program-100-4h',
+  },
+};
 
 function loadSquareScript(environment: string) {
   const scriptId = 'square-web-payments-sdk';
@@ -87,6 +93,16 @@ function getSquareCardStyle() {
   };
 }
 
+function cohortRateLabel(studentCount: number) {
+  if (studentCount === 25) {
+    return '$129/student';
+  }
+  if (studentCount === 50) {
+    return '$119/student';
+  }
+  return '$109/student';
+}
+
 function formatPackageLabel(studentCount?: number, workshopHours?: number) {
   return `Up to ${studentCount ?? 0} students · ${workshopHours ?? 0} hours`;
 }
@@ -100,7 +116,8 @@ export default function ProgramsCheckoutCard(): React.JSX.Element {
   const checkoutApiBaseUrl = customFields.checkoutApiBaseUrl ?? '';
   const checkoutUrl = resolveCheckoutUrl(checkoutApiBaseUrl);
 
-  const [selectedProductId, setSelectedProductId] = useState<ProductId>('student-systems-program-100-2h');
+  const [selectedStudentCount, setSelectedStudentCount] = useState<25 | 50 | 100>(100);
+  const [selectedWorkshopHours, setSelectedWorkshopHours] = useState<2 | 3 | 4>(2);
   const [status, setStatus] = useState<CheckoutState>('idle');
   const [message, setMessage] = useState('');
   const [customerName, setCustomerName] = useState('');
@@ -109,16 +126,15 @@ export default function ProgramsCheckoutCard(): React.JSX.Element {
   const cardRef = useRef<any>(null);
   const mountedRef = useRef(false);
 
+  const selectedProductId = packageProductIds[selectedStudentCount][selectedWorkshopHours];
   const selectedProduct = useMemo(() => getProductById(selectedProductId), [selectedProductId]);
-  const groupedProducts = useMemo(
+  const durationProducts = useMemo(
     () =>
-      [25, 50, 100].map((count) => ({
-        count,
-        products: packageIds
-          .map((id) => getProductById(id))
-          .filter((product) => product.studentCount === count),
+      ([2, 3, 4] as const).map((hours) => ({
+        hours,
+        product: getProductById(packageProductIds[selectedStudentCount][hours]),
       })),
-    [],
+    [selectedStudentCount],
   );
 
   useEffect(() => {
@@ -245,43 +261,55 @@ export default function ProgramsCheckoutCard(): React.JSX.Element {
         </div>
 
         <div className={styles.checkoutBlock}>
-          <div className={styles.checkoutBlockLabel}>Package Selection</div>
-          <div className={styles.programTierGrid}>
-            {groupedProducts.map((group) => (
-              <div key={group.count} className={styles.programTierCard}>
-                <div className={styles.programTierHeader}>
-                  <strong>Up to {group.count} students</strong>
-                  <span>{group.count === 25 ? '$129/student' : group.count === 50 ? '$119/student' : '$109/student'}</span>
-                </div>
-                <div className={styles.productChoiceStack}>
-                  {group.products.map((product) => (
-                    <label
-                      key={product.id}
-                      className={selectedProductId === product.id ? styles.productChoiceActive : styles.productChoice}>
-                      <input
-                        type="radio"
-                        name="productId"
-                        value={product.id}
-                        checked={selectedProductId === product.id}
-                        onChange={() => setSelectedProductId(product.id)}
-                      />
-                      <div className={styles.productChoiceBody}>
-                        <div className={styles.productChoiceTopRow}>
-                          <strong>{formatPackageLabel(product.studentCount, product.workshopHours)}</strong>
-                          <span>{product.priceLabel}</span>
-                        </div>
-                        <div className={styles.productChoiceCopy}>{product.description}</div>
-                      </div>
-                    </label>
-                  ))}
-                </div>
-              </div>
+          <div className={styles.checkoutBlockLabel}>1. Choose Cohort Size</div>
+          <div className={styles.selectorCarousel}>
+            {([25, 50, 100] as const).map((count) => (
+              <button
+                key={count}
+                type="button"
+                className={selectedStudentCount === count ? styles.selectorCardActive : styles.selectorCard}
+                onClick={() => setSelectedStudentCount(count)}>
+                <span className={styles.selectorEyebrow}>Cohort</span>
+                <strong>Up to {count} students</strong>
+                <span className={styles.selectorMeta}>{cohortRateLabel(count)}</span>
+              </button>
             ))}
           </div>
         </div>
 
         <div className={styles.checkoutBlock}>
-          <div className={styles.checkoutBlockLabel}>Director Information</div>
+          <div className={styles.checkoutBlockLabel}>2. Choose Workshop Length</div>
+          <div className={styles.selectorCarousel}>
+            {durationProducts.map(({hours, product}) => (
+              <button
+                key={hours}
+                type="button"
+                className={selectedWorkshopHours === hours ? styles.selectorCardActive : styles.selectorCard}
+                onClick={() => setSelectedWorkshopHours(hours as 2 | 3 | 4)}>
+                <span className={styles.selectorEyebrow}>Workshop</span>
+                <strong>{hours} hours</strong>
+                <span className={styles.selectorMeta}>{product.priceLabel}</span>
+                <span className={styles.selectorCopy}>
+                  {hours === 2 ? 'Base package' : `Adds ${hours - 2} extra hour${hours > 3 ? 's' : ''} at $25 per student`}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.checkoutSuccessCard}>
+          <div className={styles.checkoutSuccessTitle}>Selected package</div>
+          <div className={styles.packagePreviewRow}>
+            <div>
+              <strong>{formatPackageLabel(selectedProduct.studentCount, selectedProduct.workshopHours)}</strong>
+              <div className={styles.productChoiceCopy}>{selectedProduct.description}</div>
+            </div>
+            <div className={styles.packagePreviewPrice}>{selectedProduct.priceLabel}</div>
+          </div>
+        </div>
+
+        <div className={styles.checkoutBlock}>
+          <div className={styles.checkoutBlockLabel}>3. Director Information</div>
           <div className={styles.checkoutFieldGrid}>
             <label className={styles.checkoutField}>
               <span>Director Name</span>

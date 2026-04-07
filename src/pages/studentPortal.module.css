@@ -498,32 +498,90 @@
   gap: 0.8rem;
 }
 
-.programTierGrid {
+.selectorCarousel {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.programTierCard {
-  padding: 1rem;
-  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 1fr);
   gap: 0.9rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 0.35rem;
 }
 
-.programTierHeader {
+.selectorCarousel::-webkit-scrollbar {
+  display: none;
+}
+
+.selectorCard,
+.selectorCardActive {
+  display: grid;
+  gap: 0.45rem;
+  text-align: left;
+  border-radius: 22px;
+  padding: 1.1rem 1.15rem;
+  min-height: 168px;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.selectorCard {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: #dae2f8;
+}
+
+.selectorCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(137, 206, 255, 0.2);
+}
+
+.selectorCardActive {
+  border: 1px solid rgba(79, 222, 187, 0.42);
+  background: linear-gradient(180deg, rgba(21, 53, 65, 0.72), rgba(19, 28, 43, 0.94));
+  color: #ffffff;
+  box-shadow: 0 0 24px rgba(79, 222, 187, 0.14);
+}
+
+.selectorEyebrow {
+  color: #8ea1b4;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.selectorMeta {
+  color: #4fdebb;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.selectorCopy {
+  color: #c4d4e6;
+  line-height: 1.55;
+  font-size: 0.9rem;
+}
+
+.packagePreviewRow {
   display: flex;
   justify-content: space-between;
-  gap: 0.75rem;
-  align-items: baseline;
-  color: #ffffff;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
-.programTierHeader span {
+.packagePreviewPrice {
   color: #4fdebb;
-  font-size: 0.78rem;
+  font-size: 2rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: -0.04em;
 }
 
 .productChoice,
@@ -801,7 +859,6 @@
   .checkoutHero,
   .workflowGrid,
   .programGallery,
-  .programTierGrid,
   .checkoutGrid {
     grid-template-columns: 1fr;
   }
@@ -938,6 +995,24 @@
 
   .checkoutFieldGrid {
     grid-template-columns: 1fr;
+  }
+
+  .selectorCarousel {
+    grid-auto-columns: 82%;
+  }
+
+  .selectorCard,
+  .selectorCardActive {
+    min-height: 152px;
+    padding: 1rem;
+  }
+
+  .packagePreviewRow {
+    flex-direction: column;
+  }
+
+  .packagePreviewPrice {
+    font-size: 1.75rem;
   }
 
   .paymentChoiceGrid {
