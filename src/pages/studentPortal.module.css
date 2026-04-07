@@ -273,6 +273,7 @@
   display: grid;
   justify-items: center;
   margin-top: 0.1rem;
+  width: 100%;
 }
 
 .workflowGrid {
@@ -312,8 +313,10 @@
   position: relative;
   display: grid;
   place-items: center;
+  width: 100%;
+  max-width: 100%;
   aspect-ratio: 16 / 10;
-  min-height: 240px;
+  min-height: 0;
   padding: 0.4rem;
   border-radius: 22px;
   background: linear-gradient(180deg, rgba(9, 18, 30, 0.96), rgba(5, 11, 22, 1));
@@ -1023,6 +1026,16 @@
 
   .checkoutSummarySticky {
     position: static;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1180px) {
+  .abilityGrid {
+    grid-auto-columns: minmax(420px, 48vw);
+  }
+
+  .demoMediaShell {
+    aspect-ratio: 16 / 9.5;
   }
 }
 
