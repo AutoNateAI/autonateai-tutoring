@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkautonateai_tutoring=globalThis.webpackChunkautonateai_tutoring||[]).push([[3878],{4430(t,a,e){e.r(a),e.d(a,{default:()=>n});var r=e(6540),u=e(4848);function n(){return(0,r.useEffect)(()=>{window.location.replace("/programs")},[]),(0,u.jsx)("meta",{httpEquiv:"refresh",content:"0; url=/programs"})}}}]);
