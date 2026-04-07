@@ -87,11 +87,40 @@ const updateItems = [
 ];
 
 function PortalDemoPhone({src, label}: {src: string; label: string}): React.JSX.Element {
+  const videoRef = React.useRef<HTMLVideoElement | null>(null);
+
+  React.useEffect(() => {
+    const video = videoRef.current;
+
+    if (!video) {
+      return undefined;
+    }
+
+    const jumpPastLoadIn = (): void => {
+      if (!video.duration || Number.isNaN(video.duration)) {
+        return;
+      }
+
+      video.currentTime = Math.min(1, Math.max(0, video.duration - 0.25));
+    };
+
+    if (video.readyState >= 1) {
+      jumpPastLoadIn();
+    } else {
+      video.addEventListener('loadedmetadata', jumpPastLoadIn, {once: true});
+    }
+
+    return () => {
+      video.removeEventListener('loadedmetadata', jumpPastLoadIn);
+    };
+  }, [src]);
+
   return (
     <div className={styles.demoMediaShell}>
       <div className={styles.demoGlow} />
       <div className={styles.demoPhoneFrame}>
         <video
+          ref={videoRef}
           className={styles.demoPhoneVideo}
           autoPlay
           muted
