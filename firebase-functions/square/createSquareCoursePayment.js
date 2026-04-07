@@ -67,7 +67,7 @@ export const createSquareCoursePayment = onRequest(
     }
 
     try {
-      const {sourceId, productId, customerName, email} = req.body ?? {};
+      const {sourceId, productId, customerName, email, organizationName} = req.body ?? {};
 
       if (!sourceId || !productId || !customerName || !email) {
         res.status(400).json({error: 'sourceId, productId, customerName, and email are required.'});
@@ -91,42 +91,49 @@ export const createSquareCoursePayment = onRequest(
           currency: product.currency,
         },
         autocomplete: true,
-        note: `${product.title} purchase for ${normalizedEmail}`,
+        note:
+          product.fulfillmentType === 'organization-program'
+            ? `${product.title} for ${organizationName || customerName} (${normalizedEmail})`
+            : `${product.title} purchase for ${normalizedEmail}`,
         buyer_email_address: normalizedEmail,
         reference_id: `${product.id}:${normalizedEmail}`,
       };
 
       const squareResponse = await squareRequest('/v2/payments', paymentPayload);
       const payment = squareResponse.payment;
-      const temporaryPassword = generateTemporaryPassword();
-      const {user} = await ensurePortalUser({
-        email: normalizedEmail,
-        password: temporaryPassword,
-        displayName: customerName,
-      });
+      let temporaryPassword = '';
 
-      await upsertEmailAccess({
-        email: normalizedEmail,
-        productId: product.id,
-        customerName,
-        paymentId: payment.id,
-        orderId: payment.order_id,
-        amountCents: product.amountCents,
-      });
-      await grantCourseAccess({
-        uid: user.uid,
-        email: normalizedEmail,
-        paymentId: payment.id,
-        orderId: payment.order_id,
-        productId: product.id,
-        amountCents: product.amountCents,
-        customerName,
-      });
-      await markPasswordSetupRequired({
-        uid: user.uid,
-        email: normalizedEmail,
-        displayName: customerName,
-      });
+      if (product.grantsPortalAccess) {
+        temporaryPassword = generateTemporaryPassword();
+        const {user} = await ensurePortalUser({
+          email: normalizedEmail,
+          password: temporaryPassword,
+          displayName: customerName,
+        });
+
+        await upsertEmailAccess({
+          email: normalizedEmail,
+          productId: product.id,
+          customerName,
+          paymentId: payment.id,
+          orderId: payment.order_id,
+          amountCents: product.amountCents,
+        });
+        await grantCourseAccess({
+          uid: user.uid,
+          email: normalizedEmail,
+          paymentId: payment.id,
+          orderId: payment.order_id,
+          productId: product.id,
+          amountCents: product.amountCents,
+          customerName,
+        });
+        await markPasswordSetupRequired({
+          uid: user.uid,
+          email: normalizedEmail,
+          displayName: customerName,
+        });
+      }
 
       let emailSent = false;
       try {
@@ -134,22 +141,31 @@ export const createSquareCoursePayment = onRequest(
           email: normalizedEmail,
           customerName,
           product,
-          temporaryPassword,
+          temporaryPassword: temporaryPassword || undefined,
+          organizationName,
         });
         emailSent = Boolean(emailResult?.sent);
       } catch (emailError) {
         logger.error('Portal purchase email failed', emailError);
       }
 
+      const successMessage =
+        product.fulfillmentType === 'organization-program'
+          ? `Payment complete. ${organizationName || customerName} is confirmed for the workshop program. Nate will follow up by email with scheduling options and next installation steps.${emailSent ? ' A confirmation email was also sent.' : ''}`
+          : temporaryPassword
+            ? `Payment complete. Your portal account is ready. Use ${normalizedEmail} and the temporary password below, then update it when you first sign in. Nate will also follow up by email with his calendar availability for your live 2-hour coaching session.${emailSent ? ' A copy was also emailed to you.' : ''}`
+            : `Payment complete. Your paid access is ready for ${normalizedEmail}.${emailSent ? ' A receipt email was also sent.' : ''}`;
+
       res.status(200).json({
         ok: true,
         paymentId: payment.id,
         productId: product.id,
-        portalUrl: product.portalUrl,
+        portalUrl: product.portalUrl ?? '',
         portalEmail: normalizedEmail,
         temporaryPassword,
-        mustChangePassword: true,
+        mustChangePassword: Boolean(temporaryPassword),
         emailSent,
+        successMessage,
       });
     } catch (error) {
       logger.error('createSquareCoursePayment failed', error);

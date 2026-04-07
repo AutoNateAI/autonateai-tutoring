@@ -16,18 +16,32 @@ type ServiceCardProps = {
 
 const services: ServiceCardProps[] = [
   {
-    title: 'AI-First Student',
-    price: '$129',
-    schedule: 'One-time purchase, instant access',
-    audience: 'Students who want a real AI operating system for school, planning, and day-to-day execution.',
+    title: '2-Hour Student Systems Coaching',
+    price: '$159',
+    schedule: 'Live coaching + lifetime portal access',
+    audience: 'Students who want the system installed with them, taught live, and reinforced with practical workflows they keep.',
     description: (
       <p>
-        A premium async course with narrated lecture slides, 6 workflow kits, prompt packs, and connected Google
-        Sheets that help students plan, study, reflect, and organize with AI.
+        A live 2-hour coaching session that gets the tools installed, teaches the portal workflows, and gives students
+        lifetime access to the living portal after payment.
       </p>
     ),
     href: '/services/ai-first-student',
-    ctaLabel: 'View Student Course',
+    ctaLabel: 'View Student Coaching',
+  },
+  {
+    title: 'Student Systems Workshop Programs',
+    price: '$3,225 - $15,900',
+    schedule: '2 to 4 live hours + lifetime portal access for each student',
+    audience: 'Schools, college-prep programs, and workforce-development teams buying for cohorts of up to 100 students.',
+    description: (
+      <p>
+        Live student systems workshops that teach the mindset shift, install the workflows, and give every student the
+        portal upgrade that continues evolving over time.
+      </p>
+    ),
+    href: '/programs',
+    ctaLabel: 'View Programs',
   },
   {
     title: 'AI-First Researcher',
@@ -88,15 +102,12 @@ function ServiceCard({title, price, schedule, audience, description, href, ctaLa
 }
 
 export default function BookingPage(): React.JSX.Element {
-  const title = 'Choose Your AI Path | Async Courses and DevBox Setup';
+  const title = 'Choose Your AI Path | Coaching, Programs, and Systems';
   const description =
-    'Pick the fastest path into usable AI: AI-First Student, AI-First Researcher, or a higher-touch DevBox setup.';
+    'Pick the fastest path into usable AI: live student coaching, student workshop programs, research systems, or a higher-touch DevBox setup.';
 
   return (
-    <Layout
-      title={title}
-      description={description}
-      image="https://autonateai.com/img/og-booking.png">
+    <Layout title={title} description={description}>
       <PageSocialMeta
         title={`${title} | AutoNateAI | Daily AI Thought Experiments`}
         description={description}
@@ -107,7 +118,7 @@ export default function BookingPage(): React.JSX.Element {
         <div className="text--center margin-bottom--xl">
           <Heading as="h2" style={{fontSize: '2.3rem'}}>Choose Your Next Step</Heading>
           <p className="hero__subtitle" style={{maxWidth: '780px', margin: '0.75rem auto 0', fontSize: '1.05rem'}}>
-            Two premium async courses and one higher-touch service. Pick the path that gets you to usable AI the fastest.
+            Coaching for individuals, programs for cohorts, and higher-touch systems work for specialized use cases.
           </p>
         </div>
 

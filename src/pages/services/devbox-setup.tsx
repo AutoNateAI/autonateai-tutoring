@@ -13,10 +13,7 @@ export default function DevboxSetupPage(): React.JSX.Element {
     'A higher-touch setup path for professionals who want a cleaner AI environment, stronger tooling, and structured execution.';
 
   return (
-    <Layout
-      title={title}
-      description={description}
-      image="https://autonateai.com/img/og-devbox-setup.png">
+    <Layout title={title} description={description}>
       <PageSocialMeta
         title={`${title} | AutoNateAI | Daily AI Thought Experiments`}
         description={description}

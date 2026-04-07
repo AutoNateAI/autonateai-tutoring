@@ -72,8 +72,13 @@ const config: Config = {
       title: 'AutoNateAI',
       items: [
         {
+          to: '/programs',
+          label: 'Programs',
+          position: 'right',
+        },
+        {
           to: '/services/ai-first-student',
-          label: 'Initialize System',
+          label: 'Book Coaching',
           position: 'right',
           className: 'button button--primary margin-left--md nav-booking-button',
         },
@@ -83,15 +88,19 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Student Portal',
+          title: 'Offers',
           items: [
             {
               label: 'Home',
               to: '/',
             },
             {
-              label: 'Checkout',
+              label: 'Book Coaching',
               to: '/services/ai-first-student',
+            },
+            {
+              label: 'Programs',
+              to: '/programs',
             },
           ],
         },

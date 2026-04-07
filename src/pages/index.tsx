@@ -7,111 +7,112 @@ import HeroPromoVideo from '@site/src/components/HeroPromoVideo';
 
 import styles from './studentPortal.module.css';
 
-const checkoutPath = '/services/ai-first-student';
+const coachingPath = '/services/ai-first-student';
+const programsPath = '/programs';
 const portalImageBase = 'https://portal.autonateai.com/img/storyboards/student';
 
 const abilityCards = [
   {
     icon: '▣',
     title: 'Daily Time Grid',
-    copy: 'For when your day feels impossible and you need structure that respects real life instead of fake perfect schedules.',
+    copy: 'For when the whole day feels impossible and a student needs a visible system for time, roles, priorities, and recovery.',
     image: `${portalImageBase}/23-c.png`,
   },
   {
     icon: '⚡',
     title: 'Assignment Sprint Planner',
-    copy: 'For when a big assignment feels too vague to start and you need the first visible moves mapped clearly.',
+    copy: 'For when the work feels too big to start and the next useful actions need to become obvious immediately.',
     image: `${portalImageBase}/24-c.png`,
   },
   {
     icon: '▤',
     title: 'Reading Capture Matrix',
-    copy: 'For when you read and nothing sticks, and you need the ideas turned into durable structure.',
+    copy: 'For when students read but nothing sticks and they need structured notes that survive pressure and repetition.',
     image: `${portalImageBase}/25-b.png`,
   },
   {
     icon: '◫',
     title: 'Study Heatmap Board',
-    copy: 'For when everything feels urgent and you need to see what actually deserves focus first.',
+    copy: 'For when everything feels urgent and students need to see what deserves focus before burnout starts running the day.',
     image: `${portalImageBase}/26-d.png`,
   },
   {
     icon: '◉',
     title: 'Paper Source Matrix',
-    copy: 'For when your sources and claims are scattered across tabs, notes, and half-finished drafts.',
+    copy: 'For when the research is scattered across tabs, screenshots, and half-finished drafts and needs real structure.',
     image: `${portalImageBase}/27-c.png`,
   },
   {
     icon: '◎',
     title: 'Day Debrief Lab',
-    copy: 'For when you keep repeating the same bad patterns and need reflection that compounds into strategy.',
+    copy: 'For when bad patterns keep repeating and reflection needs to turn into signal, strategy, and better execution.',
     image: `${portalImageBase}/28-d.png`,
   },
 ];
 
 const workflowCards = [
   {
-    title: 'Narrated Story Deck',
+    title: 'Live Installation Coaching',
     copy:
-      'A cinematic guided experience that teaches students why overload happens, how AI changes the game, and how to install structure instead of panic.',
-    image: `${portalImageBase}/01-c.png`,
+      'This is not a passive portal drop. The 2-hour coaching session gets the tools installed, shows students how to use the workflows, and helps the system click while support is live.',
+    image: `${portalImageBase}/10-a.png`,
   },
   {
-    title: 'Portal Thinking Systems',
+    title: 'Narrated Story Deck + Thinking Systems',
     copy:
-      'Reusable systems for planning, studying, reading, writing, and reflection that students can actually run against their current life.',
+      'Students learn the mindset shift first, then move into practical systems for planning, studying, reading, writing, and reflection with AI.',
     image: `${portalImageBase}/21-f.png`,
   },
 ];
 
-const pricingItems = [
-  'Narrated student transformation experience',
-  'Thinking Systems for planning, studying, reading, research, and reflection',
-  'Connected workflow structure that turns AI into leverage',
-  'One-time purchase with immediate portal access',
+const updateItems = [
+  'Weekly portal updates and workflow improvements',
+  'New features shaped by student feedback and real usage patterns',
+  'Director analytics roadmap for program reporting and funding visibility',
 ];
 
 export default function Home(): React.JSX.Element {
-  const title = 'AutoNateAI | Student Transformation';
+  const title = 'AutoNateAI | Student Systems Coaching';
   const description =
-    'Stop drowning in school pressure. Build the AI-powered system that helps you think, plan, study, and execute.';
+    'Book a live 2-hour student systems coaching session, get the portal installed, and keep lifetime access to practical AI workflows that reduce overload.';
 
   return (
     <Layout title={title} description={description} wrapperClassName={styles.layout}>
       <PageSocialMeta
         title={`${title} | AutoNateAI`}
         description={description}
-        image="/img/og-student-workflow.png"
+        image="/img/og-homepage.png"
         path="/"
       />
       <main className={styles.shell}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
-            <span className={styles.kicker}>Architecture For Excellence</span>
+            <span className={styles.kicker}>Student Systems Coaching</span>
             <Heading as="h1" className={styles.heroTitle}>
               Stop drowning in school pressure.
             </Heading>
             <HeroPromoVideo className={styles.heroVideoMobile} />
             <p className={styles.heroShift}>The gap is not intelligence. It is infrastructure.</p>
             <p className={styles.heroBody}>
-              This is not a generic AI course. It is a narrated student operating upgrade that teaches overloaded
-              students how to use AI, structured workbooks, and Thinking Systems to become calmer, clearer, and more
-              effective.
+              AutoNateAI is now a live 2-hour coaching session that gets the system installed, teaches students how to
+              use the workflows, and gives them lifetime access to the portal they keep building on after the session
+              ends.
             </p>
             <div className={styles.heroActions}>
-              <Link className={styles.primaryCta} to={checkoutPath}>
-                Initialize System
+              <Link className={styles.primaryCta} to={coachingPath}>
+                Book 2-Hour Coaching
               </Link>
-              <a className={styles.secondaryCta} href="https://portal.autonateai.com/#/login">
-                Already Bought? Sign In
-              </a>
+              <Link className={styles.secondaryCta} to={programsPath}>
+                Explore Programs
+              </Link>
             </div>
-            <p className={styles.meta}>$129 one time. Instant access after checkout.</p>
+            <p className={styles.meta}>$159 per student for 1:1 coaching. Org workshops available for up to 100 students.</p>
           </div>
           <div className={styles.heroVisual}>
             <HeroPromoVideo className={styles.heroVideoDesktop} />
             <div className={styles.heroNote}>
-              High-agency students do not just work harder. They run better systems.
+              Students do not need more noise. They need a system that can hold their load and teach them how to think
+              with AI on purpose.
             </div>
           </div>
         </section>
@@ -121,12 +122,12 @@ export default function Home(): React.JSX.Element {
             <div>
               <span className={styles.kicker}>Unlocked Abilities</span>
               <Heading as="h2" className={styles.sectionTitle}>
-                Thinking Systems for real student pressure
+                Real workflows for real student pressure
               </Heading>
             </div>
             <p className={styles.sectionCopy}>
-              Each system is built for a specific kind of school pain: impossible days, vague assignments, weak
-              retention, scattered sources, bad prioritization, and repeated patterns.
+              These are not random prompts. They are Thinking Systems tied to specific forms of overload so students can
+              leave the coaching session with workflows they can run immediately.
             </p>
           </div>
           <div className={styles.abilityGrid}>
@@ -148,14 +149,14 @@ export default function Home(): React.JSX.Element {
         <section id="workflows" className={styles.section}>
           <div className={styles.sectionHead}>
             <div>
-              <span className={styles.kicker}>Integrated Workflows</span>
+              <span className={styles.kicker}>Installed With You</span>
               <Heading as="h2" className={styles.sectionTitle}>
-                What students actually get
+                What the coaching actually delivers
               </Heading>
             </div>
             <p className={styles.sectionCopy}>
-              The product is part cinematic story experience, part practical AI setup path, and part student operating
-              system students can apply immediately.
+              The session combines live setup, the narrated portal experience, practical workbook workflows, and a
+              lasting student operating system students can keep applying after the call.
             </p>
           </div>
           <div className={styles.workflowGrid}>
@@ -173,47 +174,90 @@ export default function Home(): React.JSX.Element {
           </div>
         </section>
 
-        <section className={styles.midCta}>
-          <div className={styles.midCtaPanel}>
-            <Heading as="h2" className={styles.sectionTitle}>
-              Ready to install leverage instead of more noise?
-            </Heading>
-            <Link className={styles.primaryCta} to={checkoutPath}>
-              Go To Checkout
-            </Link>
-          </div>
-        </section>
-
-        <section id="pricing" className={styles.section}>
-          <div className={styles.centerHead}>
-            <span className={styles.kicker}>System Ownership</span>
-            <Heading as="h2" className={styles.sectionTitle}>
-              One-time student portal access
-            </Heading>
-          </div>
-          <div className={styles.pricingCard}>
-            <div className={styles.priceBadge}>Lifetime</div>
-            <div className={styles.priceRow}>
-              <span className={styles.priceAmount}>$129</span>
-              <span className={styles.priceUnit}>USD</span>
+        <section className={styles.section}>
+          <div className={styles.sectionHead}>
+            <div>
+              <span className={styles.kicker}>Living Portal</span>
+              <Heading as="h2" className={styles.sectionTitle}>
+                This system keeps getting better
+              </Heading>
             </div>
+            <p className={styles.sectionCopy}>
+              The portal is living and breathing. We update it weekly, listen to student feedback, and actively build new
+              features that make students more efficient over time.
+            </p>
+          </div>
+          <div className={styles.infoPanel}>
             <ul className={styles.priceList}>
-              {pricingItems.map((item) => (
+              {updateItems.map((item) => (
                 <li key={item}>
                   <span className={styles.check}>✓</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        <section className={styles.midCta}>
+          <div className={styles.midCtaPanel}>
+            <Heading as="h2" className={styles.sectionTitle}>
+              Need this installed across a school, workforce-development cohort, or college-prep program?
+            </Heading>
+            <p className={styles.heroBody}>
+              The same system can be delivered live to groups in 2 to 4 hours, with lifetime portal access for each
+              student and a roadmap toward director analytics over time.
+            </p>
+            <div className={styles.heroActions}>
+              <Link className={styles.primaryCta} to={programsPath}>
+                View Programs
+              </Link>
+              <Link className={styles.secondaryCta} to={coachingPath}>
+                Start With 1:1 Coaching
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section id="pricing" className={styles.section}>
+          <div className={styles.centerHead}>
+            <span className={styles.kicker}>Student Offer</span>
+            <Heading as="h2" className={styles.sectionTitle}>
+              2-hour coaching + lifetime portal access
+            </Heading>
+          </div>
+          <div className={styles.pricingCard}>
+            <div className={styles.priceBadge}>Live</div>
+            <div className={styles.priceRow}>
+              <span className={styles.priceAmount}>$159</span>
+              <span className={styles.priceUnit}>Per student</span>
+            </div>
+            <ul className={styles.priceList}>
+              <li>
+                <span className={styles.check}>✓</span>
+                <span>Live 2-hour coaching session focused on installation and practical workflow use</span>
+              </li>
+              <li>
+                <span className={styles.check}>✓</span>
+                <span>Automatic lifetime access to the student portal after payment</span>
+              </li>
+              <li>
+                <span className={styles.check}>✓</span>
+                <span>Real practical systems for planning, studying, reading, writing, and reflection</span>
+              </li>
+            </ul>
             <div className={styles.priceActions}>
-              <Link className={styles.primaryCta} to={checkoutPath}>
-                Buy Student Portal
+              <Link className={styles.primaryCta} to={coachingPath}>
+                Buy Coaching Session
               </Link>
               <a className={styles.secondaryCta} href="https://portal.autonateai.com/#/login">
-                Existing Access
+                Already Bought? Sign In
               </a>
             </div>
-            <p className={styles.priceNote}>No subscription. No extra membership layer. One payment, then enter the portal.</p>
+            <p className={styles.priceNote}>
+              After purchase, portal access is created automatically and Nate follows up by email with calendar
+              availability for the live coaching session.
+            </p>
           </div>
         </section>
       </main>

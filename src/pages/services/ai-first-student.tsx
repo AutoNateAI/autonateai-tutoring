@@ -9,9 +9,9 @@ import SquareCheckoutCard from '@site/src/components/SquareCheckoutCard';
 import styles from '../studentPortal.module.css';
 
 export default function AiFirstStudentPage(): React.JSX.Element {
-  const title = 'AI-First Student | Build Your Student Operating System';
+  const title = '2-Hour Student Systems Coaching | AutoNateAI';
   const description =
-    'Buy the AutoNateAI student portal and unlock narrated instruction, Thinking Systems, workflow structure, and real AI leverage for school.';
+    'Book a live 2-hour student systems coaching session, get lifetime portal access, and learn how to use practical AI workflows for school and life.';
 
   return (
     <Layout title={title} description={description} wrapperClassName={styles.layout}>
@@ -29,11 +29,12 @@ export default function AiFirstStudentPage(): React.JSX.Element {
             </Link>
             <span className={styles.kicker}>Secure Checkout</span>
             <Heading as="h1" className={styles.checkoutPageTitle}>
-              Initialize the student portal
+              Book the live student systems coaching session
             </Heading>
             <p className={styles.heroBody}>
-              This flow keeps the live Square payment logic intact. After payment, the system creates your paid portal
-              access and routes you into the student experience.
+              After payment, the system creates your lifetime portal access automatically. Nate then follows up by email
+              with calendar availability so you can choose your live 2-hour coaching session and learn how to use the
+              workflows for real.
             </p>
           </div>
         </section>

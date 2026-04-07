@@ -16,7 +16,7 @@ export default function AiFirstResearcherPage(): React.JSX.Element {
     'A premium async course for researchers who want narrated instruction, workflow kits, prompt packs, and structured Sheets for synthesis and insight.';
 
   return (
-    <Layout title={title} description={description} image="https://autonateai.com/img/og-research-cohort.png">
+    <Layout title={title} description={description}>
       <PageSocialMeta
         title={`${title} | AutoNateAI | Daily AI Thought Experiments`}
         description={description}
