@@ -9,59 +9,74 @@ import styles from './studentPortal.module.css';
 
 const coachingPath = '/services/ai-first-student';
 const programsPath = '/programs';
-const portalImageBase = 'https://portal.autonateai.com/img/storyboards/student';
 
-const abilityCards = [
+type DemoCard = {
+  icon?: string;
+  title: string;
+  copy: string;
+  video: string;
+  label: string;
+};
+
+const abilityCards: DemoCard[] = [
   {
     icon: '▣',
     title: 'Daily Time Grid',
     copy: 'For when the whole day feels impossible and a student needs a visible system for time, roles, priorities, and recovery.',
-    image: `${portalImageBase}/23-c.png`,
+    video: '/video/portal-demos/daily-time-grid-mobile.mp4',
+    label: 'Daily Time Grid workflow demo',
   },
   {
     icon: '⚡',
     title: 'Assignment Sprint Planner',
     copy: 'For when the work feels too big to start and the next useful actions need to become obvious immediately.',
-    image: `${portalImageBase}/24-c.png`,
+    video: '/video/portal-demos/assignment-sprint-mobile.mp4',
+    label: 'Assignment Sprint Planner workflow demo',
   },
   {
     icon: '▤',
     title: 'Reading Capture Matrix',
     copy: 'For when students read but nothing sticks and they need structured notes that survive pressure and repetition.',
-    image: `${portalImageBase}/25-b.png`,
+    video: '/video/portal-demos/reading-capture-mobile.mp4',
+    label: 'Reading Capture Matrix workflow demo',
   },
   {
     icon: '◫',
     title: 'Study Heatmap Board',
     copy: 'For when everything feels urgent and students need to see what deserves focus before burnout starts running the day.',
-    image: `${portalImageBase}/26-d.png`,
+    video: '/video/portal-demos/study-heatmap-mobile.mp4',
+    label: 'Study Heatmap Board workflow demo',
   },
   {
     icon: '◉',
     title: 'Paper Source Matrix',
     copy: 'For when the research is scattered across tabs, screenshots, and half-finished drafts and needs real structure.',
-    image: `${portalImageBase}/27-c.png`,
+    video: '/video/portal-demos/paper-source-mobile.mp4',
+    label: 'Paper Source Matrix workflow demo',
   },
   {
     icon: '◎',
     title: 'Day Debrief Lab',
     copy: 'For when bad patterns keep repeating and reflection needs to turn into signal, strategy, and better execution.',
-    image: `${portalImageBase}/28-d.png`,
+    video: '/video/portal-demos/day-debrief-mobile.mp4',
+    label: 'Day Debrief Lab workflow demo',
   },
 ];
 
-const workflowCards = [
+const workflowCards: DemoCard[] = [
   {
     title: 'Live Installation Coaching',
     copy:
       'This is not a passive portal drop. The 2-hour coaching session gets the tools installed, shows students how to use the workflows, and helps the system click while support is live.',
-    image: `${portalImageBase}/10-a.png`,
+    video: '/video/portal-demos/student-sheet-copy-mobile.mp4',
+    label: 'Portal sheet copy demo',
   },
   {
     title: 'Narrated Story Deck + Thinking Systems',
     copy:
       'Students learn the mindset shift first, then move into practical systems for planning, studying, reading, writing, and reflection with AI.',
-    image: `${portalImageBase}/21-f.png`,
+    video: '/video/portal-demos/student-lecture-mobile.mp4',
+    label: 'Narrated story deck demo',
   },
 ];
 
@@ -70,6 +85,26 @@ const updateItems = [
   'New features shaped by student feedback and real usage patterns',
   'Director analytics roadmap for program reporting and funding visibility',
 ];
+
+function PortalDemoPhone({src, label}: {src: string; label: string}): React.JSX.Element {
+  return (
+    <div className={styles.demoMediaShell}>
+      <div className={styles.demoGlow} />
+      <div className={styles.demoPhoneFrame}>
+        <video
+          className={styles.demoPhoneVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label={label}>
+          <source src={src} type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  );
+}
 
 export default function Home(): React.JSX.Element {
   const title = 'AutoNateAI | Student Systems Coaching';
@@ -138,8 +173,8 @@ export default function Home(): React.JSX.Element {
                   <h3 className={styles.cardTitle}>{card.title}</h3>
                   <p className={styles.cardCopy}>{card.copy}</p>
                 </div>
-                <div className={styles.cardFrame}>
-                  <img src={card.image} alt={`${card.title} portal preview`} loading="lazy" />
+                <div className={styles.demoCardFrame}>
+                  <PortalDemoPhone src={card.video} label={card.label} />
                 </div>
               </article>
             ))}
@@ -166,8 +201,8 @@ export default function Home(): React.JSX.Element {
                   <h3 className={styles.cardTitle}>{card.title}</h3>
                   <p className={styles.cardCopy}>{card.copy}</p>
                 </div>
-                <div className={styles.workflowFrame}>
-                  <img src={card.image} alt={card.title} loading="lazy" />
+                <div className={styles.demoWorkflowFrame}>
+                  <PortalDemoPhone src={card.video} label={card.label} />
                 </div>
               </article>
             ))}
@@ -261,6 +296,15 @@ export default function Home(): React.JSX.Element {
           </div>
         </section>
       </main>
+      <div className={styles.mobileStickyCta}>
+        <div className={styles.mobileStickyCopy}>
+          <strong>Ready to book your coaching session?</strong>
+          <span>Jump straight to secure checkout and get the portal installed.</span>
+        </div>
+        <Link className={styles.mobileStickyButton} to={coachingPath}>
+          Buy Coaching
+        </Link>
+      </div>
     </Layout>
   );
 }

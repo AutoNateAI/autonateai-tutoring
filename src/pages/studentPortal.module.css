@@ -265,6 +265,11 @@
   aspect-ratio: 16 / 10;
 }
 
+.demoCardFrame {
+  display: grid;
+  justify-items: center;
+}
+
 .workflowGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -289,6 +294,58 @@
   aspect-ratio: 16 / 9;
   margin: 1rem;
   border-radius: 22px;
+}
+
+.demoWorkflowFrame {
+  margin: 1rem;
+}
+
+.demoMediaShell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 360px;
+  padding: 1rem 0.85rem;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top, rgba(79, 222, 187, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(8, 16, 24, 0.94), rgba(5, 11, 22, 0.98));
+  border: 1px solid rgba(137, 206, 255, 0.12);
+  overflow: hidden;
+}
+
+.demoGlow {
+  position: absolute;
+  inset: auto 50% 10% auto;
+  width: 240px;
+  height: 240px;
+  transform: translateX(50%);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(79, 222, 187, 0.3), rgba(0, 162, 230, 0));
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.demoPhoneFrame {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 248px);
+  aspect-ratio: 390 / 844;
+  padding: 0.45rem;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(250, 253, 255, 0.14), rgba(12, 18, 30, 0.9));
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.demoPhoneVideo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 24px;
+  background: #02060d;
 }
 
 .midCta {
@@ -1036,6 +1093,15 @@
 
   .inlineCtaSection {
     padding-top: 1.2rem;
+  }
+
+  .demoMediaShell {
+    min-height: 320px;
+    padding: 0.85rem 0.75rem;
+  }
+
+  .demoPhoneFrame {
+    width: min(100%, 214px);
   }
 
   .inlineCtaPanel {
