@@ -295,6 +295,33 @@
   padding-top: 4rem;
 }
 
+.inlineCtaSection {
+  padding-top: 2rem;
+}
+
+.inlineCtaPanel {
+  padding: 1.25rem 1.4rem;
+  border-radius: 24px;
+  border: 1px solid rgba(137, 206, 255, 0.12);
+  background: rgba(19, 28, 43, 0.72);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.inlineCtaCopy {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.sectionCtaRow {
+  padding-top: 1.25rem;
+}
+
 .midCtaPanel {
   padding: 2rem;
   text-align: center;
@@ -854,6 +881,10 @@
   line-height: 1.6;
 }
 
+.mobileStickyCta {
+  display: none;
+}
+
 @media (max-width: 996px) {
   .hero,
   .checkoutHero,
@@ -864,6 +895,11 @@
   }
 
   .sectionHead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inlineCtaPanel {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -881,6 +917,7 @@
   .shell {
     width: min(100%, calc(100% - 1.2rem));
     padding-top: 1rem;
+    padding-bottom: 6.5rem;
   }
 
   .hero,
@@ -997,6 +1034,23 @@
     grid-template-columns: 1fr;
   }
 
+  .inlineCtaSection {
+    padding-top: 1.2rem;
+  }
+
+  .inlineCtaPanel {
+    padding: 1rem;
+  }
+
+  .inlineCtaCopy {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .sectionCtaRow .primaryCta {
+    width: 100%;
+  }
+
   .selectorCarousel {
     grid-auto-columns: 82%;
   }
@@ -1053,5 +1107,52 @@
   .summarySecurityNote {
     font-size: 0.62rem;
     letter-spacing: 0.14em;
+  }
+
+  .mobileStickyCta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.9rem;
+    align-items: center;
+    padding: 0.85rem 1rem calc(0.85rem + env(safe-area-inset-bottom));
+    border-top: 1px solid rgba(137, 206, 255, 0.14);
+    background: rgba(7, 16, 29, 0.96);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .mobileStickyCopy {
+    display: grid;
+    gap: 0.2rem;
+    color: #dae2f8;
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .mobileStickyCopy strong {
+    color: #ffffff;
+    font-size: 0.86rem;
+  }
+
+  .mobileStickyButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.85rem 1rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #4fdebb 0%, #00a2e6 100%);
+    color: #041a22;
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 }

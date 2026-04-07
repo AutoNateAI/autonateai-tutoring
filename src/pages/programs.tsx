@@ -96,6 +96,17 @@ export default function ProgramsPage(): React.JSX.Element {
           </div>
         </section>
 
+        <section className={styles.inlineCtaSection}>
+          <div className={styles.inlineCtaPanel}>
+            <p className={styles.inlineCtaCopy}>Ready to lock the cohort package in now?</p>
+            <div className={styles.heroActions}>
+              <a className={styles.primaryCta} href="#program-checkout">
+                Choose Payment Option
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section className={styles.section}>
           <div className={styles.sectionHead}>
             <div>
@@ -118,6 +129,11 @@ export default function ProgramsPage(): React.JSX.Element {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className={styles.sectionCtaRow}>
+            <a className={styles.primaryCta} href="#program-checkout">
+              Pick Cohort Pricing
+            </a>
           </div>
         </section>
 
@@ -147,6 +163,11 @@ export default function ProgramsPage(): React.JSX.Element {
               </article>
             ))}
           </div>
+          <div className={styles.sectionCtaRow}>
+            <a className={styles.primaryCta} href="#program-checkout">
+              Get Students Into The Portal
+            </a>
+          </div>
         </section>
 
         <section className={styles.section}>
@@ -172,6 +193,11 @@ export default function ProgramsPage(): React.JSX.Element {
               ))}
             </ul>
           </div>
+          <div className={styles.sectionCtaRow}>
+            <a className={styles.primaryCta} href="#program-checkout">
+              Move To Checkout
+            </a>
+          </div>
         </section>
 
         <section id="program-checkout" className={styles.section}>
@@ -194,6 +220,15 @@ export default function ProgramsPage(): React.JSX.Element {
           </section>
         </section>
       </main>
+      <div className={styles.mobileStickyCta}>
+        <div className={styles.mobileStickyCopy}>
+          <strong>Ready to buy for your cohort?</strong>
+          <span>Jump straight to the payment options.</span>
+        </div>
+        <a className={styles.mobileStickyButton} href="#program-checkout">
+          Choose Payment
+        </a>
+      </div>
     </Layout>
   );
 }
