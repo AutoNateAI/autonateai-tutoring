@@ -18,7 +18,7 @@ export default function ResearchArticleLayout({
       <PageSocialMeta
         title={`${article.title} | AutoNateAI Research`}
         description={article.description}
-        image={article.image}
+        image={article.socialImage ?? article.image}
         path={`/research/${article.slug}`}
       />
       <main className={styles.shell}>

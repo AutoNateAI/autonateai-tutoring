@@ -12,6 +12,7 @@ export const researchArticles: ResearchArticle[] = [
     status: 'Published',
     featured: true,
     image: '/img/research/article-epigenetic-memory.png',
+    socialImage: '/img/og-research-epigenetic-memory.png',
     imageAlt: 'A futuristic portrait scene showing a researcher inside a field of luminous epigenetic networks and biological memory layers.',
     kicker: 'Research Node 001',
     quote:

@@ -16,6 +16,7 @@ export type ResearchArticle = {
   status: 'Published';
   featured: boolean;
   image: string;
+  socialImage?: string;
   imageAlt: string;
   kicker: string;
   quote: string;

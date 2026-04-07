@@ -1,137 +1,15 @@
-const https = require('https');
-const fs = require('fs');
+const {spawnSync} = require('child_process');
 const path = require('path');
 
-const apiKey = process.env.OPENAI_API_KEY;
+const configPath = path.join(__dirname, 'og-image-batch.json');
+const generatorPath = path.join(__dirname, '..', '.gemini', 'skills', 'batch-image-generator', 'scripts', 'batch_generate.py');
 
-if (!apiKey) {
-  console.error('❌ Error: OPENAI_API_KEY not found.');
-  process.exit(1);
+const result = spawnSync('python3', [generatorPath, '--config', configPath], {
+  stdio: 'inherit',
+  cwd: path.join(__dirname, '..'),
+  env: process.env,
+});
+
+if (result.status !== 0) {
+  process.exit(result.status ?? 1);
 }
-
-const PAGES = [
-  {
-    name: 'homepage',
-    outputFile: 'og-homepage.png',
-    prompt: `A dramatic widescreen cinematic key art image for an AI-powered student systems coaching homepage.
-    A sharp Black mentor coaching an ambitious student across a glowing desk while enormous holographic time grids, study matrices, workflow cards, and structured portal screens unfold through the air like a command center.
-    The moment should feel transformational, high-stakes, and premium, like the exact second overwhelm turns into control.
-    Deep navy, electric teal, and gold palette. Rich contrast. Epic lighting. Editorial realism with futuristic atmosphere.
-    Strictly NO words, NO text, NO letters.`
-  },
-  {
-    name: 'programs',
-    outputFile: 'og-programs.png',
-    prompt: `A dramatic widescreen cinematic key art image for a student workshop programs page.
-    A Black mentor and a program director stand above a large cohort of students using laptops inside a futuristic training room full of glowing workflow boards, dashboards, AI note systems, and college-prep planning maps.
-    The feeling is organized transformation at scale, with workforce-development and college-prep energy, premium institutional confidence, and strong cinematic composition.
-    Deep navy, electric teal, and gold palette. Rich contrast. Premium lighting.
-    Strictly NO words, NO text, NO letters.`
-  },
-  {
-    name: 'thought-experiments',
-    outputFile: 'og-thought-experiments.png',
-    prompt: `A cinematic adventure-themed image. 
-    A group of engineering students wearing high-tech tactical gear, standing in front of a giant digital portal. 
-    Inside the portal is a landscape made entirely of floating code blocks and data structures. 
-    The students are looking in with determination. 
-    Meme-like quality: Action-movie poster vibes, dramatic "LFG" energy. 
-    Accents of maize gold and high-signal red. 
-    Strictly NO words, NO text, NO letters.`
-  },
-  {
-    name: 'booking',
-    outputFile: 'og-booking.png',
-    prompt: `A captivating cinematic image of a mentor-student interaction. 
-    A senior architect silhouette (Nate) pointing at a holographic distributed system diagram. 
-    An engineering student next to him has their mind literally "expanding" with glowing neural connections. 
-    Meme-like quality: Over-the-top "galaxy brain" aesthetic but professional and sharp. 
-    Deep navy and forest teal palette. 
-    Strictly NO words, NO text, NO letters.`
-  },
-  {
-    name: 'silicon-deadlock',
-    outputFile: 'og-silicon-deadlock.png',
-    prompt: `A cinematic wide shot of a futuristic automated shipping port. 
-    Gigantic stacks of glowing silicon chips are gridlocked. 
-    A massive red circular dependency loop is hovering over the port like a storm cloud. 
-    An engineering student is frantically typing at a glowing terminal in the foreground. 
-    Meme-like quality: Disaster-movie tension, epic high-stakes scale. 
-    Maize gold and cyber cyan highlights. 
-    Strictly NO words, NO text, NO letters.`
-  }
-];
-
-async function generateImage(page) {
-  console.log(`🚀 Generating meme-like image for ${page.name}...`);
-  const requestBody = JSON.stringify({
-    model: 'dall-e-3',
-    prompt: page.prompt,
-    n: 1,
-    size: '1792x1024',
-    quality: 'hd'
-  });
-
-  const options = {
-    hostname: 'api.openai.com',
-    port: 443,
-    path: '/v1/images/generations',
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`,
-      'Content-Length': Buffer.byteLength(requestBody)
-    }
-  };
-
-  return new Promise((resolve, reject) => {
-    const req = https.request(options, (res) => {
-      let data = '';
-      res.on('data', (chunk) => data += chunk);
-      res.on('end', () => {
-        try {
-          const response = JSON.parse(data);
-          if (response.error) reject(new Error(response.error.message));
-          else resolve(response.data[0].url);
-        } catch (e) { reject(e); }
-      });
-    });
-    req.on('error', reject);
-    req.write(requestBody);
-    req.end();
-  });
-}
-
-async function downloadImage(url, outputPath) {
-  return new Promise((resolve, reject) => {
-    https.get(url, (res) => {
-      const file = fs.createWriteStream(outputPath);
-      res.pipe(file);
-      file.on('finish', () => {
-        file.close();
-        resolve();
-      });
-    }).on('error', reject);
-  });
-}
-
-async function run() {
-  const outputDir = path.join(__dirname, '..', 'static', 'img');
-  if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
-
-  // Only generate missing images or all if requested
-  for (const page of PAGES) {
-    const outputPath = path.join(outputDir, page.outputFile);
-    if (!fs.existsSync(outputPath) || ['homepage', 'programs', 'silicon-deadlock'].includes(page.name)) {
-      try {
-        const url = await generateImage(page);
-        await downloadImage(url, outputPath);
-        console.log(`✅ Saved ${page.outputFile}`);
-      } catch (err) {
-        console.error(`❌ Failed ${page.name}: ${err.message}`);
-      }
-    }
-  }
-}
-
-run();

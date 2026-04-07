@@ -1,0 +1,29 @@
+{
+  "model": "gpt-image-1.5",
+  "size": "1536x1024",
+  "quality": "high",
+  "fidelity": "high",
+  "concurrency": 2,
+  "images": [
+    {
+      "prompt": "A dramatic widescreen cinematic editorial image for an AI-powered student systems coaching homepage. A focused student at the edge of overload is being pulled into control by a powerful elegant AI planning environment, glowing time grids, study maps, assignment pathways, and a premium portal command center opening around them. The feeling should make ambitious students want to click immediately because the chaos is turning into leverage. Deep navy, electric teal, and gold palette. Editorial realism with futuristic atmosphere. No teacher lecture pose. No typography, no labels, no captions, no interface text. NO text, NO letters, NO words.",
+      "output": "static/img/og-homepage.png",
+      "references": []
+    },
+    {
+      "prompt": "A dramatic widescreen cinematic editorial image for a student workshop programs page. A confident program director overlooking a cohort of students in a premium futuristic training environment where organized AI systems, workforce readiness, college-prep structure, and measurable transformation are visible through elegant dashboards, workflow maps, and coordinated student momentum. The visual should make directors want to click because it signals institutional confidence, student outcomes, and scale. Deep navy, electric teal, and gold palette. No typography, no labels, no captions, no interface text. NO text, NO letters, NO words.",
+      "output": "static/img/og-programs.png",
+      "references": []
+    },
+    {
+      "prompt": "A dramatic widescreen cinematic editorial image for a research hub about epigenetics, reconstruction, and multidisciplinary inquiry. A brilliant young Black researcher moving through a vast luminous knowledge field of biological memory layers, chromatin arcs, evidence networks, and translational research signals, all rendered as an elegant abstract discovery environment. The visual should make epigenetics and systems researchers want to click because it feels serious, sharp, and intellectually alive. Deep navy, teal, and gold palette. No typography, no labels, no captions, no faux infographic panels. NO text, NO letters, NO words.",
+      "output": "static/img/og-research.png",
+      "references": []
+    },
+    {
+      "prompt": "A dramatic widescreen cinematic editorial image for a research article about epigenetic memory and human reprogramming. A powerful abstract composition showing DNA structure, regulatory memory, chromatin state transitions, and human reconstruction as one connected luminous system, with a subtle human silhouette emerging through the network. The visual should make readers interested in epigenetic memory, state change, and deliberate reconstruction want to click immediately. Deep navy, teal, and gold palette. Premium scientific storytelling. No typography, no labels, no captions, no faux UI text. NO text, NO letters, NO words.",
+      "output": "static/img/og-research-epigenetic-memory.png",
+      "references": []
+    }
+  ]
+}

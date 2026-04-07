@@ -44,7 +44,7 @@ export default function ResearchPage(): React.JSX.Element {
       <PageSocialMeta
         title="Research | AutoNateAI"
         description="A public research hub for epigenetics, reconstruction, and multidisciplinary inquiry."
-        image="/img/research/research-hub-hero.png"
+        image="/img/og-research.png"
         path="/research"
       />
       <main className={styles.shell}>
