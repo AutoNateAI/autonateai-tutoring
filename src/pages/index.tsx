@@ -16,6 +16,8 @@ type DemoCard = {
   copy: string;
   video: string;
   label: string;
+  cue: string;
+  cueDetail: string;
 };
 
 const abilityCards: DemoCard[] = [
@@ -25,6 +27,8 @@ const abilityCards: DemoCard[] = [
     copy: 'For when the whole day feels impossible and a student needs a visible system for time, roles, priorities, and recovery.',
     video: '/video/portal-demos/daily-time-grid-desktop.mp4',
     label: 'Daily Time Grid workflow demo',
+    cue: 'Map the chaos',
+    cueDetail: 'Fill the prompt, then run the system.',
   },
   {
     icon: '⚡',
@@ -32,6 +36,8 @@ const abilityCards: DemoCard[] = [
     copy: 'For when the work feels too big to start and the next useful actions need to become obvious immediately.',
     video: '/video/portal-demos/assignment-sprint-desktop.mp4',
     label: 'Assignment Sprint Planner workflow demo',
+    cue: 'Break inertia',
+    cueDetail: 'Turn vague pressure into next actions.',
   },
   {
     icon: '▤',
@@ -39,6 +45,8 @@ const abilityCards: DemoCard[] = [
     copy: 'For when students read but nothing sticks and they need structured notes that survive pressure and repetition.',
     video: '/video/portal-demos/reading-capture-desktop.mp4',
     label: 'Reading Capture Matrix workflow demo',
+    cue: 'Catch the signal',
+    cueDetail: 'Build notes that actually stay useful.',
   },
   {
     icon: '◫',
@@ -46,6 +54,8 @@ const abilityCards: DemoCard[] = [
     copy: 'For when everything feels urgent and students need to see what deserves focus before burnout starts running the day.',
     video: '/video/portal-demos/study-heatmap-desktop.mp4',
     label: 'Study Heatmap Board workflow demo',
+    cue: 'See the load',
+    cueDetail: 'Surface what deserves your attention first.',
   },
   {
     icon: '◉',
@@ -53,6 +63,8 @@ const abilityCards: DemoCard[] = [
     copy: 'For when the research is scattered across tabs, screenshots, and half-finished drafts and needs real structure.',
     video: '/video/portal-demos/paper-source-desktop.mp4',
     label: 'Paper Source Matrix workflow demo',
+    cue: 'Organize the evidence',
+    cueDetail: 'Bring scattered research into one frame.',
   },
   {
     icon: '◎',
@@ -60,6 +72,8 @@ const abilityCards: DemoCard[] = [
     copy: 'For when bad patterns keep repeating and reflection needs to turn into signal, strategy, and better execution.',
     video: '/video/portal-demos/day-debrief-desktop.mp4',
     label: 'Day Debrief Lab workflow demo',
+    cue: 'Read the pattern',
+    cueDetail: 'Turn reflection into the next smarter move.',
   },
 ];
 
@@ -68,8 +82,10 @@ const workflowCards: DemoCard[] = [
     title: 'Live Installation Coaching',
     copy:
       'This is not a passive portal drop. The 2-hour coaching session gets the tools installed, shows students how to use the workflows, and helps the system click while support is live.',
-    video: '/video/portal-demos/daily-time-grid-desktop.mp4',
-    label: 'Portal workflow copy demo',
+    video: '/video/portal-demos/student-setup-desktop.mp4',
+    label: 'Portal setup demo',
+    cue: 'Install the system',
+    cueDetail: 'Start in Setup so the tools, access, and flow are ready.',
   },
   {
     title: 'Narrated Story Deck + Thinking Systems',
@@ -77,6 +93,8 @@ const workflowCards: DemoCard[] = [
       'Students learn the mindset shift first, then move into practical systems for planning, studying, reading, writing, and reflection with AI.',
     video: '/video/portal-demos/student-lecture-desktop.mp4',
     label: 'Narrated story deck demo',
+    cue: 'Start with the shift',
+    cueDetail: 'Narration frames the system before execution starts.',
   },
 ];
 
@@ -86,7 +104,17 @@ const updateItems = [
   'Director analytics roadmap for program reporting and funding visibility',
 ];
 
-function PortalDemoPhone({src, label}: {src: string; label: string}): React.JSX.Element {
+function PortalDemoPhone({
+  src,
+  label,
+  cue,
+  cueDetail,
+}: {
+  src: string;
+  label: string;
+  cue: string;
+  cueDetail: string;
+}): React.JSX.Element {
   const videoRef = React.useRef<HTMLVideoElement | null>(null);
 
   React.useEffect(() => {
@@ -102,6 +130,7 @@ function PortalDemoPhone({src, label}: {src: string; label: string}): React.JSX.
       }
 
       video.currentTime = Math.min(1, Math.max(0, video.duration - 0.25));
+      video.playbackRate = 0.72;
     };
 
     if (video.readyState >= 1) {
@@ -118,6 +147,10 @@ function PortalDemoPhone({src, label}: {src: string; label: string}): React.JSX.
   return (
     <div className={styles.demoMediaShell}>
       <div className={styles.demoGlow} />
+      <div className={styles.demoCue}>
+        <strong>{cue}</strong>
+        <span>{cueDetail}</span>
+      </div>
       <div className={styles.demoPhoneFrame}>
         <video
           ref={videoRef}
@@ -200,11 +233,11 @@ export default function Home(): React.JSX.Element {
                 <div className={styles.abilityIcon}>{card.icon}</div>
                 <div>
                   <h3 className={styles.cardTitle}>{card.title}</h3>
-                  <p className={styles.cardCopy}>{card.copy}</p>
                 </div>
                 <div className={styles.demoCardFrame}>
-                  <PortalDemoPhone src={card.video} label={card.label} />
+                  <PortalDemoPhone src={card.video} label={card.label} cue={card.cue} cueDetail={card.cueDetail} />
                 </div>
+                <p className={styles.cardCopy}>{card.copy}</p>
               </article>
             ))}
           </div>
@@ -228,10 +261,12 @@ export default function Home(): React.JSX.Element {
               <article key={card.title} className={styles.workflowCard}>
                 <div className={styles.workflowCopy}>
                   <h3 className={styles.cardTitle}>{card.title}</h3>
-                  <p className={styles.cardCopy}>{card.copy}</p>
                 </div>
                 <div className={styles.demoWorkflowFrame}>
-                  <PortalDemoPhone src={card.video} label={card.label} />
+                  <PortalDemoPhone src={card.video} label={card.label} cue={card.cue} cueDetail={card.cueDetail} />
+                </div>
+                <div className={styles.workflowBody}>
+                  <p className={styles.cardCopy}>{card.copy}</p>
                 </div>
               </article>
             ))}
