@@ -169,14 +169,14 @@ function PortalDemoPhone({
 }
 
 export default function Home(): React.JSX.Element {
-  const title = 'AutoNateAI | Student Systems Coaching';
+  const title = 'AutoNateAI | Agentic AI Coaching';
   const description =
-    'Book a live 2-hour student systems coaching session, get the portal installed, and keep lifetime access to practical AI workflows that reduce overload.';
+    'Book a live 2-hour Agentic AI coaching session, get the portal installed, and keep lifetime access to practical AI workflows that reduce overload and improve execution.';
 
   return (
     <Layout title={title} description={description} wrapperClassName={styles.layout}>
       <PageSocialMeta
-        title={`${title} | AutoNateAI`}
+        title={title}
         description={description}
         image="/img/og-homepage.png"
         path="/"
@@ -184,16 +184,15 @@ export default function Home(): React.JSX.Element {
       <main className={styles.shell}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
-            <span className={styles.kicker}>Student Systems Coaching</span>
+            <span className={styles.kicker}>Agentic AI Coaching</span>
             <Heading as="h1" className={styles.heroTitle}>
-              Stop drowning in school pressure.
+              Install agentic AI into how you think and execute.
             </Heading>
             <HeroPromoVideo className={styles.heroVideoMobile} />
-            <p className={styles.heroShift}>The gap is not intelligence. It is infrastructure.</p>
+            <p className={styles.heroShift}>The gap is not talent. It is workflow, tooling, and retrieval.</p>
             <p className={styles.heroBody}>
-              AutoNateAI is now a live 2-hour coaching session that gets the system installed, teaches students how to
-              use the workflows, and gives them lifetime access to the portal they keep building on after the session
-              ends.
+              AutoNateAI is a live 2-hour Agentic AI coaching session. I install the tools, teach the workflows, and
+              show students how to use AI with structure so they leave with cleaner execution and lifetime portal access.
             </p>
             <div className={styles.heroActions}>
               <Link className={styles.primaryCta} to={coachingPath}>
@@ -203,13 +202,12 @@ export default function Home(): React.JSX.Element {
                 Explore Programs
               </Link>
             </div>
-            <p className={styles.meta}>$159 per student for 1:1 coaching. Org workshops available for up to 100 students.</p>
+            <p className={styles.meta}>$159 per student for 1:1 Agentic AI coaching. Org programs available for up to 100 students.</p>
           </div>
           <div className={styles.heroVisual}>
             <HeroPromoVideo className={styles.heroVideoDesktop} />
             <div className={styles.heroNote}>
-              Students do not need more noise. They need a system that can hold their load and teach them how to think
-              with AI on purpose.
+              Students do not need more noise. They need agentic AI coaching that installs a real system and makes AI usable on purpose.
             </div>
           </div>
         </section>
@@ -219,11 +217,11 @@ export default function Home(): React.JSX.Element {
             <div>
               <span className={styles.kicker}>Unlocked Abilities</span>
               <Heading as="h2" className={styles.sectionTitle}>
-                Real workflows for real student pressure
+                Real workflows for real pressure
               </Heading>
             </div>
             <p className={styles.sectionCopy}>
-              These are not random prompts. They are Thinking Systems tied to specific forms of overload so students can
+              These are not random prompts. They are agentic Thinking Systems tied to specific forms of overload so students can
               leave the coaching session with workflows they can run immediately.
             </p>
           </div>
@@ -252,8 +250,8 @@ export default function Home(): React.JSX.Element {
               </Heading>
             </div>
             <p className={styles.sectionCopy}>
-              The session combines live setup, the narrated portal experience, practical workbook workflows, and a
-              lasting student operating system students can keep applying after the call.
+              The session combines live setup, agentic workflow coaching, the narrated portal experience, and practical
+              workbook systems students can keep applying after the call.
             </p>
           </div>
           <div className={styles.workflowGrid}>
@@ -282,8 +280,8 @@ export default function Home(): React.JSX.Element {
               </Heading>
             </div>
             <p className={styles.sectionCopy}>
-              The portal is living and breathing. We update it weekly, listen to student feedback, and actively build new
-              features that make students more efficient over time.
+              The portal is living and breathing. We update it weekly, listen to student feedback, and actively build
+              new features that make agentic AI work more cleanly over time.
             </p>
           </div>
           <div className={styles.infoPanel}>
@@ -304,8 +302,8 @@ export default function Home(): React.JSX.Element {
               Need this installed across a school, workforce-development cohort, or college-prep program?
             </Heading>
             <p className={styles.heroBody}>
-              The same system can be delivered live to groups in 2 to 4 hours, with lifetime portal access for each
-              student and a roadmap toward director analytics over time.
+              The same Agentic AI coaching model can be delivered live to groups in 2 to 4 hours, with lifetime portal
+              access for each student and a roadmap toward director analytics over time.
             </p>
             <div className={styles.heroActions}>
               <Link className={styles.primaryCta} to={programsPath}>
@@ -320,9 +318,9 @@ export default function Home(): React.JSX.Element {
 
         <section id="pricing" className={styles.section}>
           <div className={styles.centerHead}>
-            <span className={styles.kicker}>Student Offer</span>
+            <span className={styles.kicker}>1:1 Offer</span>
             <Heading as="h2" className={styles.sectionTitle}>
-              2-hour coaching + lifetime portal access
+              2-hour Agentic AI coaching + lifetime portal access
             </Heading>
           </div>
           <div className={styles.pricingCard}>
@@ -334,7 +332,7 @@ export default function Home(): React.JSX.Element {
             <ul className={styles.priceList}>
               <li>
                 <span className={styles.check}>✓</span>
-                <span>Live 2-hour coaching session focused on installation and practical workflow use</span>
+                <span>Live 2-hour coaching session focused on agentic AI installation and practical workflow use</span>
               </li>
               <li>
                 <span className={styles.check}>✓</span>
@@ -355,14 +353,14 @@ export default function Home(): React.JSX.Element {
             </div>
             <p className={styles.priceNote}>
               After purchase, portal access is created automatically and Nate follows up by email with calendar
-              availability for the live coaching session.
+              availability for the live Agentic AI coaching session.
             </p>
           </div>
         </section>
       </main>
       <div className={styles.mobileStickyCta}>
         <div className={styles.mobileStickyCopy}>
-          <strong>Ready to book your coaching session?</strong>
+          <strong>Ready to book your Agentic AI coaching session?</strong>
           <span>Jump straight to secure checkout and get the portal installed.</span>
         </div>
         <Link className={styles.mobileStickyButton} to={coachingPath}>
