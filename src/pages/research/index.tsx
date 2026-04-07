@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
+import HeroPromoVideo from '@site/src/components/HeroPromoVideo';
 import {featuredResearchArticle, researchArticles} from '@site/src/data/researchArticles';
 import styles from '@site/src/components/research/research.module.css';
 
@@ -70,8 +71,14 @@ export default function ResearchPage(): React.JSX.Element {
               </a>
             </div>
           </div>
-          <div className={styles.heroImageFrame}>
-            <img src="/img/research/research-hub-hero.png" alt="AutoNateAI research hub hero visual" />
+          <div className={`${styles.heroImageFrame} ${styles.heroVideoFrame}`}>
+            <HeroPromoVideo
+              src="/video/autonateai-research-promo.mp4"
+              poster="/img/og-research.png"
+              className={styles.heroPromoVideo}
+              soundLabel="Tap For Sound"
+              fullscreenLabel="Full Screen Research Promo"
+            />
           </div>
         </section>
 
