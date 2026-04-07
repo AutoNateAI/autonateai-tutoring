@@ -13,12 +13,12 @@ const IMAGES = [
   {
     outputFile: 'research-hub-hero.png',
     prompt:
-      'A premium cinematic digital illustration for a research landing page, a brilliant young Black researcher standing in a futuristic bioinformatics studio surrounded by glowing epigenetic maps, chromatin ribbons, methylation graphs, laboratory light, node-link knowledge systems, deep navy teal and gold palette, elegant and intellectual, no text, no letters, no words',
+      'A dramatic widescreen cinematic editorial image for a research landing page, a brilliant young Black researcher standing inside a futuristic bioinformatics chamber surrounded by glowing epigenetic maps, chromatin ribbons, methylation graphs, laboratory glass, and node-link knowledge systems, elite intellect energy, premium deep navy teal and gold palette, sharp lighting, no text, no letters, no words',
   },
   {
     outputFile: 'article-epigenetic-memory.png',
     prompt:
-      'A premium cinematic editorial illustration for an article about epigenetic memory and human reprogramming, a young Black super-intellect researcher in profile inside a luminous field of chromatin loops, methylation marks, DNA ribbons and regulatory nodes, smart calm elite energy, deep navy teal and gold palette, no text, no letters, no words',
+      'A dramatic widescreen cinematic editorial image for an article about epigenetic memory and human reprogramming, a young Black super-intellect researcher in profile inside a luminous storm of chromatin loops, DNA ribbons, methylation marks, regulatory nodes, and data overlays, smart and smooth elite energy, deep navy teal and gold palette, premium contrast, no text, no letters, no words',
   },
 ];
 
@@ -27,8 +27,8 @@ function generateImage(prompt) {
     model: 'dall-e-3',
     prompt,
     n: 1,
-    size: '1024x1024',
-    quality: 'standard',
+    size: '1792x1024',
+    quality: 'hd',
   });
 
   const options = {

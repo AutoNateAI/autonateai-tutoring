@@ -13,19 +13,19 @@ const PAGES = [
   {
     name: 'homepage',
     outputFile: 'og-homepage.png',
-    prompt: `A cinematic, premium image for a student systems coaching homepage.
-    A mentor coaching an ambitious student at a laptop while glowing workflow boards, time grids, study matrices, and structured portal screens float around them.
-    The emotional tone is relief, clarity, and forward momentum after overload.
-    Premium lighting, deep navy, teal, and gold palette.
+    prompt: `A dramatic widescreen cinematic key art image for an AI-powered student systems coaching homepage.
+    A sharp Black mentor coaching an ambitious student across a glowing desk while enormous holographic time grids, study matrices, workflow cards, and structured portal screens unfold through the air like a command center.
+    The moment should feel transformational, high-stakes, and premium, like the exact second overwhelm turns into control.
+    Deep navy, electric teal, and gold palette. Rich contrast. Epic lighting. Editorial realism with futuristic atmosphere.
     Strictly NO words, NO text, NO letters.`
   },
   {
     name: 'programs',
     outputFile: 'og-programs.png',
-    prompt: `A cinematic, premium image for an educational programs page.
-    A director and a mentor overlooking a cohort of students using laptops, workflow boards, and structured portal systems in a modern training environment.
-    The scene should communicate workforce development, college prep, and organized student transformation at scale.
-    Premium lighting, deep navy, teal, and gold palette.
+    prompt: `A dramatic widescreen cinematic key art image for a student workshop programs page.
+    A Black mentor and a program director stand above a large cohort of students using laptops inside a futuristic training room full of glowing workflow boards, dashboards, AI note systems, and college-prep planning maps.
+    The feeling is organized transformation at scale, with workforce-development and college-prep energy, premium institutional confidence, and strong cinematic composition.
+    Deep navy, electric teal, and gold palette. Rich contrast. Premium lighting.
     Strictly NO words, NO text, NO letters.`
   },
   {
@@ -68,8 +68,8 @@ async function generateImage(page) {
     model: 'dall-e-3',
     prompt: page.prompt,
     n: 1,
-    size: '1024x1024',
-    quality: 'standard'
+    size: '1792x1024',
+    quality: 'hd'
   });
 
   const options = {
@@ -122,7 +122,7 @@ async function run() {
   // Only generate missing images or all if requested
   for (const page of PAGES) {
     const outputPath = path.join(outputDir, page.outputFile);
-    if (!fs.existsSync(outputPath) || page.name === 'silicon-deadlock') {
+    if (!fs.existsSync(outputPath) || ['homepage', 'programs', 'silicon-deadlock'].includes(page.name)) {
       try {
         const url = await generateImage(page);
         await downloadImage(url, outputPath);
