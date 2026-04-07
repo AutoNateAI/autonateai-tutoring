@@ -67,6 +67,81 @@ export default function EpigeneticMemoryArticle(): React.JSX.Element {
       </section>
 
       <section>
+        <h2>Data story: what is actually shaping the system?</h2>
+        <p>
+          The immature take is to ask whether genes or environment matter more, like the field owes you a cheap winner.
+          The smarter read is that epigenetic state is where multiple forces negotiate. That means the research is most
+          useful when it tells us how much structure is inherited, how much remains plastic, and where intervention can
+          actually move the needle.
+        </p>
+        <div className={styles.chartGrid}>
+          <article className={styles.chartCard}>
+            <div className={styles.chartLabel}>Dominant field signal</div>
+            <h3>Context keeps touching the machinery</h3>
+            <div className={styles.comparisonChart}>
+              <div className={styles.comparisonRow}>
+                <span>Exposure / environment</span>
+                <div className={styles.comparisonTrack}>
+                  <div className={styles.comparisonFillStrong} style={{width: '82%'}} />
+                </div>
+                <strong>82</strong>
+              </div>
+              <div className={styles.comparisonRow}>
+                <span>Inherited structure</span>
+                <div className={styles.comparisonTrack}>
+                  <div className={styles.comparisonFillMid} style={{width: '48%'}} />
+                </div>
+                <strong>48</strong>
+              </div>
+              <div className={styles.comparisonRow}>
+                <span>Deliberate intervention</span>
+                <div className={styles.comparisonTrack}>
+                  <div className={styles.comparisonFillAccent} style={{width: '67%'}} />
+                </div>
+                <strong>67</strong>
+              </div>
+            </div>
+            <p>
+              Not a literal universal score. A conceptual read from the papers: the field keeps saying inherited
+              structure matters, but lived context and targeted intervention are absolutely in the room.
+            </p>
+          </article>
+
+          <article className={styles.chartCard}>
+            <div className={styles.chartLabel}>Interpretation stack</div>
+            <h3>What each source contributes</h3>
+            <div className={styles.clusterChart}>
+              <div className={styles.clusterColumn}>
+                <span className={styles.clusterValue}>Map</span>
+                <div className={styles.clusterBar} style={{height: '74%'}} />
+                <small>VAI program signal</small>
+              </div>
+              <div className={styles.clusterColumn}>
+                <span className={styles.clusterValue}>Measure</span>
+                <div className={styles.clusterBar} style={{height: '92%'}} />
+                <small>single-cell profiling</small>
+              </div>
+              <div className={styles.clusterColumn}>
+                <span className={styles.clusterValue}>Move</span>
+                <div className={styles.clusterBar} style={{height: '68%'}} />
+                <small>therapeutic perturbation</small>
+              </div>
+              <div className={styles.clusterColumn}>
+                <span className={styles.clusterValue}>Edit</span>
+                <div className={styles.clusterBar} style={{height: '64%'}} />
+                <small>epigenetic editing</small>
+              </div>
+              <div className={styles.clusterColumn}>
+                <span className={styles.clusterValue}>Constrain</span>
+                <div className={styles.clusterBar} style={{height: '80%'}} />
+                <small>chromatin barriers</small>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
         <h2>The reconstruction stack</h2>
         <p>
           Here is the conceptual model I care about. If you want change to become durable, you cannot stare at behavior
@@ -94,6 +169,36 @@ export default function EpigeneticMemoryArticle(): React.JSX.Element {
       </section>
 
       <section>
+        <h2>Signal timeline: how this lane tightens up</h2>
+        <div className={styles.timelineGrid}>
+          <article className={styles.timelineCard}>
+            <span className={styles.timelineYear}>2014</span>
+            <h3>Dream Team formation</h3>
+            <p>
+              Van Andel Institute’s SU2C Epigenetics Dream Team locks in a translational posture. This lane is now
+              explicitly trying to convert epigenetic insight into leverage.
+            </p>
+          </article>
+          <article className={styles.timelineCard}>
+            <span className={styles.timelineYear}>2024</span>
+            <h3>Intervention gets sharper</h3>
+            <p>
+              Vitamin C / IDH1 AML work and epigenetic-editing reviews both signal the same thing: state is not sacred.
+              It can be measured, pressured, and in some cases intentionally shifted.
+            </p>
+          </article>
+          <article className={styles.timelineCard}>
+            <span className={styles.timelineYear}>2025</span>
+            <h3>Single-cell resolution gets serious</h3>
+            <p>
+              Large-scale immune-cell profiling makes the conversation more precise. Now we can inspect how genotype and
+              context shape regulatory state at a much cleaner resolution.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
         <h2>Why Van Andel Institute is a serious signal here</h2>
         <p>
           VAI matters because it does not treat epigenetics like a fancy adjective. It treats it like a translational
@@ -106,6 +211,52 @@ export default function EpigeneticMemoryArticle(): React.JSX.Element {
           interventions, from vitamin C strategies in myeloid malignancies to combinations of immunotherapy and
           epigenetic drugs. That is the part I respect. Not vibes. Not branding. Mechanism trying to become leverage.
         </p>
+      </section>
+
+      <section>
+        <h2>Research pressure map</h2>
+        <div className={styles.chartGrid}>
+          <article className={styles.chartCard}>
+            <div className={styles.chartLabel}>Constraint model</div>
+            <h3>Why reprogramming is hard</h3>
+            <div className={styles.metricList}>
+              <div className={styles.metricRow}>
+                <span>Chromatin barriers</span>
+                <strong>High</strong>
+              </div>
+              <div className={styles.metricRow}>
+                <span>Cell identity memory</span>
+                <strong>High</strong>
+              </div>
+              <div className={styles.metricRow}>
+                <span>Environmental plasticity</span>
+                <strong>Medium-High</strong>
+              </div>
+              <div className={styles.metricRow}>
+                <span>Therapeutic addressability</span>
+                <strong>Rising</strong>
+              </div>
+            </div>
+          </article>
+          <article className={styles.chartCard}>
+            <div className={styles.chartLabel}>Takeaway</div>
+            <h3>The field is saying two things at once</h3>
+            <ul className={styles.signalList}>
+              <li>
+                <span className={styles.check}>✓</span>
+                <span>State has memory, so shallow interventions bounce off.</span>
+              </li>
+              <li>
+                <span className={styles.check}>✓</span>
+                <span>State also has plasticity, so sharp interventions are not pointless.</span>
+              </li>
+              <li>
+                <span className={styles.check}>✓</span>
+                <span>The real game is learning where the system is rigid versus where it can still be rewritten.</span>
+              </li>
+            </ul>
+          </article>
+        </div>
       </section>
 
       <section>
@@ -147,6 +298,38 @@ export default function EpigeneticMemoryArticle(): React.JSX.Element {
               </tr>
             </tbody>
           </table>
+        </div>
+        <div className={styles.mobileSourceCards}>
+          <article className={styles.mobileSourceCard}>
+            <strong>VAI–SU2C Dream Team</strong>
+            <span>Institutional signal</span>
+            <p>Translational epigenetics map tied to real intervention.</p>
+            <p>The field is mature enough to justify serious public node-building.</p>
+          </article>
+          <article className={styles.mobileSourceCard}>
+            <strong>Nature Genetics 2025</strong>
+            <span>Immune-cell profiling</span>
+            <p>Shows genotype and exposure both shape epigenomic state.</p>
+            <p>Context is machinery, not background decoration.</p>
+          </article>
+          <article className={styles.mobileSourceCard}>
+            <strong>Nature 2024 vitamin C / IDH1 AML</strong>
+            <span>Intervention signal</span>
+            <p>Altered epigenetic states can be pushed by metabolic intervention.</p>
+            <p>State can be perturbed. Stability is real, not absolute.</p>
+          </article>
+          <article className={styles.mobileSourceCard}>
+            <strong>Cell 2024 epigenetic editing</strong>
+            <span>Tooling signal</span>
+            <p>Precision editing of regulatory state without rewriting DNA sequence.</p>
+            <p>The programming metaphor gets less metaphorical here.</p>
+          </article>
+          <article className={styles.mobileSourceCard}>
+            <strong>Epigenetics &amp; Chromatin 2025</strong>
+            <span>Constraint signal</span>
+            <p>Explains chromatin barriers around identity and reprogramming.</p>
+            <p>Durable change depends on what the system permits.</p>
+          </article>
         </div>
       </section>
 

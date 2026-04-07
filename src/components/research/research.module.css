@@ -416,6 +416,116 @@
   gap: 0.8rem;
 }
 
+.chartGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.chartCard {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.1rem;
+  border-radius: 22px;
+  background: rgba(5, 14, 29, 0.46);
+  border: 1px solid rgba(137, 206, 255, 0.08);
+}
+
+.chartLabel {
+  color: #8ea1b4;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.chartCard h3 {
+  margin: 0;
+}
+
+.comparisonChart {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.comparisonRow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.45fr) minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.comparisonRow span,
+.comparisonRow strong {
+  color: #dae2f8;
+  font-size: 0.92rem;
+}
+
+.comparisonTrack {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.comparisonFillStrong,
+.comparisonFillMid,
+.comparisonFillAccent {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.comparisonFillStrong {
+  background: linear-gradient(135deg, #4fdebb 0%, #00a2e6 100%);
+}
+
+.comparisonFillMid {
+  background: linear-gradient(135deg, #25c2a0 0%, #4fdebb 100%);
+}
+
+.comparisonFillAccent {
+  background: linear-gradient(135deg, #f7c948 0%, #4fdebb 100%);
+}
+
+.clusterChart {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.7rem;
+  align-items: end;
+  min-height: 220px;
+}
+
+.clusterColumn {
+  display: grid;
+  gap: 0.55rem;
+  justify-items: center;
+}
+
+.clusterValue {
+  color: #4fdebb;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.clusterBar {
+  width: 100%;
+  max-width: 44px;
+  min-height: 72px;
+  border-radius: 16px 16px 8px 8px;
+  background: linear-gradient(180deg, #4fdebb 0%, #00a2e6 100%);
+  box-shadow: 0 14px 34px rgba(0, 162, 230, 0.18);
+}
+
+.clusterColumn small {
+  color: #9eb2c8;
+  text-align: center;
+  line-height: 1.35;
+}
+
 .deckRow {
   display: grid;
   grid-template-columns: minmax(0, 0.3fr) minmax(0, 1fr);
@@ -460,6 +570,58 @@
   color: #ffffff;
 }
 
+.timelineGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.timelineCard {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem;
+  border-radius: 22px;
+  background: rgba(5, 14, 29, 0.46);
+  border: 1px solid rgba(137, 206, 255, 0.08);
+}
+
+.timelineYear {
+  color: #4fdebb;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.timelineCard h3 {
+  margin: 0;
+}
+
+.metricList {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.metricRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.metricRow span {
+  color: #dae2f8;
+}
+
+.metricRow strong {
+  color: #4fdebb;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .articleTableWrap {
   overflow-x: auto;
 }
@@ -482,6 +644,31 @@
   color: #8ea1b4;
   font-size: 0.78rem;
   letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.mobileSourceCards {
+  display: none;
+}
+
+.mobileSourceCard {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background: rgba(5, 14, 29, 0.46);
+  border: 1px solid rgba(137, 206, 255, 0.08);
+}
+
+.mobileSourceCard strong {
+  color: #ffffff;
+}
+
+.mobileSourceCard span {
+  color: #4fdebb;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -548,7 +735,9 @@
   .overviewGrid,
   .featuredGrid,
   .articleGrid,
-  .cardsGrid {
+  .cardsGrid,
+  .chartGrid,
+  .timelineGrid {
     grid-template-columns: 1fr;
   }
 
@@ -608,7 +797,27 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .comparisonRow {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .clusterChart {
+    grid-template-columns: repeat(5, minmax(44px, 1fr));
+    min-height: 180px;
+  }
+
   .deckRow {
     grid-template-columns: 1fr;
+  }
+
+  .articleTableWrap {
+    display: none;
+  }
+
+  .mobileSourceCards {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1rem;
   }
 }
