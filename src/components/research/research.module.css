@@ -33,6 +33,11 @@
   gap: 1rem;
 }
 
+.heroVisual {
+  display: grid;
+  gap: 1rem;
+}
+
 .backLink {
   color: #8cd9c8;
   text-decoration: none;
@@ -146,6 +151,14 @@
 
 .heroVideoFrame {
   aspect-ratio: 16 / 9;
+}
+
+.heroVideoMobile {
+  display: none;
+}
+
+.heroVideoDesktop {
+  display: block;
 }
 
 .heroImageFrame img,
@@ -811,6 +824,14 @@
 
   .heroActions {
     flex-direction: column;
+  }
+
+  .heroVideoMobile {
+    display: block;
+  }
+
+  .heroVideoDesktop {
+    display: none;
   }
 
   .primaryCta,

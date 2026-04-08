@@ -55,6 +55,13 @@ export default function ResearchPage(): React.JSX.Element {
             <Heading as="h1" className={styles.heroTitle}>
               Building the epigenetics map in public.
             </Heading>
+            <HeroPromoVideo
+              src="/video/autonateai-research-promo.mp4"
+              poster="/img/og-research.png"
+              className={styles.heroVideoMobile}
+              soundLabel="Tap For Sound"
+              fullscreenLabel="Full Screen Research Promo"
+            />
             <p className={styles.heroShift}>Calm hands. Sharp sources. Smooth pressure on the ideas until they confess.</p>
             <p className={styles.heroBody}>
               This tab is where I track the research nodes, clean them up for publishing, and connect them to the
@@ -71,14 +78,16 @@ export default function ResearchPage(): React.JSX.Element {
               </a>
             </div>
           </div>
-          <div className={`${styles.heroImageFrame} ${styles.heroVideoFrame}`}>
-            <HeroPromoVideo
-              src="/video/autonateai-research-promo.mp4"
-              poster="/img/og-research.png"
-              className={styles.heroPromoVideo}
-              soundLabel="Tap For Sound"
-              fullscreenLabel="Full Screen Research Promo"
-            />
+          <div className={`${styles.heroVisual} ${styles.heroVideoDesktop}`}>
+            <div className={`${styles.heroImageFrame} ${styles.heroVideoFrame}`}>
+              <HeroPromoVideo
+                src="/video/autonateai-research-promo.mp4"
+                poster="/img/og-research.png"
+                className={styles.heroPromoVideo}
+                soundLabel="Tap For Sound"
+                fullscreenLabel="Full Screen Research Promo"
+              />
+            </div>
           </div>
         </section>
 
