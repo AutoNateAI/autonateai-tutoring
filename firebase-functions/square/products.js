@@ -8,6 +8,18 @@ export const COURSE_PRODUCTS = {
     grantsPortalAccess: true,
     fulfillmentType: 'portal-access',
   },
+  'agentic-ai-workshop-apr-11-2026': {
+    id: 'agentic-ai-workshop-apr-11-2026',
+    title: 'Agentic AI Live Workshop',
+    amountCents: 15900,
+    currency: 'USD',
+    portalUrl: 'https://portal.autonateai.com/#/tracks/student',
+    grantsPortalAccess: true,
+    fulfillmentType: 'portal-access',
+    maxSuccessfulPayments: 50,
+    eventDateLabel: 'Saturday, April 11, 2026',
+    eventTimeLabel: '10:00 AM - 12:30 PM',
+  },
   'ai-first-researcher': {
     id: 'ai-first-researcher',
     title: 'AI-First Researcher',

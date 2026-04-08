@@ -163,6 +163,18 @@ export async function markPasswordSetupRequired({uid, email, displayName}) {
   );
 }
 
+export async function countCompletedPurchasesForProduct(productId) {
+  const db = getFirestore();
+  const snapshot = await db
+    .collection('purchases')
+    .where('productId', '==', productId)
+    .where('status', '==', 'completed')
+    .count()
+    .get();
+
+  return snapshot.data().count ?? 0;
+}
+
 export async function claimEmailAccessForUser({uid, email, displayName}) {
   const db = getFirestore();
   const normalizedEmail = normalizeEmail(email);

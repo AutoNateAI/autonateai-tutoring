@@ -127,6 +127,8 @@ export default function SquareCheckoutCard({
   const [email, setEmail] = useState('');
   const [temporaryPassword, setTemporaryPassword] = useState('');
   const [successUrl, setSuccessUrl] = useState('');
+  const [remainingSeats, setRemainingSeats] = useState<number | null>(null);
+  const [soldOut, setSoldOut] = useState(false);
   const cardRef = useRef<any>(null);
   const mountedRef = useRef(false);
 
@@ -191,8 +193,48 @@ export default function SquareCheckoutCard({
     };
   }, [applicationId, environment, locationId]);
 
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadAvailability() {
+      if (!selectedProduct.maxSuccessfulPayments) {
+        setRemainingSeats(null);
+        setSoldOut(false);
+        return;
+      }
+
+      try {
+        const response = await fetch(`${checkoutUrl}?productId=${encodeURIComponent(selectedProduct.id)}`);
+        const payload = await response.json();
+        if (!response.ok) {
+          throw new Error(payload.error ?? 'Could not load workshop availability.');
+        }
+
+        if (!cancelled) {
+          setRemainingSeats(typeof payload.remainingSeats === 'number' ? payload.remainingSeats : null);
+          setSoldOut(Boolean(payload.soldOut));
+        }
+      } catch (error) {
+        if (!cancelled) {
+          setMessage(error instanceof Error ? error.message : 'Could not load workshop availability.');
+        }
+      }
+    }
+
+    void loadAvailability();
+    return () => {
+      cancelled = true;
+    };
+  }, [checkoutUrl, selectedProduct.id, selectedProduct.maxSuccessfulPayments]);
+
   async function handleCheckout(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (soldOut) {
+      setStatus('error');
+      setMessage('This workshop is sold out. No more seats are available.');
+      return;
+    }
+
     if (!cardRef.current) {
       setStatus('error');
       setMessage('Payment form is not ready yet.');
@@ -267,6 +309,12 @@ export default function SquareCheckoutCard({
           'Lifetime student portal access after payment',
           'Weekly portal updates and new workflow improvements',
         ]
+      : selectedProduct.id === 'agentic-ai-workshop-apr-11-2026'
+        ? [
+            'Live workshop on Saturday, April 11, 2026',
+            'Laptop setup with Codex, Gemini, or Claude',
+            'Lifetime portal access with narrated slides and prompt packs',
+          ]
       : [
           'Lifetime core portal updates',
           'Thinking Systems for daily execution',
@@ -299,7 +347,7 @@ export default function SquareCheckoutCard({
           </div>
         </div>
 
-        <div className={`${styles.checkoutBlock} ${styles.productAccessBlock}`}>
+          <div className={`${styles.checkoutBlock} ${styles.productAccessBlock}`}>
           <div className={styles.checkoutBlockLabel}>Portal Access</div>
           <div className={styles.productChoiceStack}>
             <label className={styles.productChoiceActive}>
@@ -314,6 +362,22 @@ export default function SquareCheckoutCard({
             </label>
           </div>
         </div>
+
+        {selectedProduct.id === 'agentic-ai-workshop-apr-11-2026' ? (
+          <div className={styles.checkoutSuccessCard}>
+            <div className={styles.checkoutSuccessTitle}>Workshop seat status</div>
+            <div className={styles.checkoutSuccessRow}>
+              <span>{selectedProduct.eventDateLabel}</span>
+              <strong>
+                {soldOut
+                  ? 'Sold out'
+                  : remainingSeats == null
+                    ? 'Checking seats...'
+                    : `${remainingSeats} of ${selectedProduct.maxSuccessfulPayments} seats left`}
+              </strong>
+            </div>
+          </div>
+        ) : null}
 
         <div className={styles.checkoutBlock}>
           <div className={styles.checkoutBlockLabel}>Billing Information</div>
@@ -369,10 +433,18 @@ export default function SquareCheckoutCard({
           <div className={styles.summaryHeader}>
             <div>
               <h3 className={styles.summaryTitle}>
-                {selectedProduct.id === 'ai-first-student' ? 'Book Coaching' : 'Initialize System'}
+                {selectedProduct.id === 'ai-first-student'
+                  ? 'Book Coaching'
+                  : selectedProduct.id === 'agentic-ai-workshop-apr-11-2026'
+                    ? 'Reserve Workshop Seat'
+                    : 'Initialize System'}
               </h3>
               <p className={styles.summarySubtitle}>
-                {selectedProduct.id === 'ai-first-student' ? '2-Hour Student Systems Coaching' : 'Student Transformation Portal'}
+                {selectedProduct.id === 'ai-first-student'
+                  ? '2-Hour Student Systems Coaching'
+                  : selectedProduct.id === 'agentic-ai-workshop-apr-11-2026'
+                    ? `${selectedProduct.eventDateLabel} · ${selectedProduct.eventTimeLabel}`
+                    : 'Student Transformation Portal'}
               </p>
             </div>
             <span className={styles.summaryPrice}>{selectedProduct.priceLabel}</span>
@@ -407,8 +479,12 @@ export default function SquareCheckoutCard({
               type="submit"
               form="secure-checkout-form"
               className={styles.checkoutSubmit}
-              disabled={status === 'loading' || status === 'processing' || status === 'idle'}>
-              {status === 'processing' ? `Complete Purchase ${selectedProduct.priceLabel}...` : 'Complete Purchase'}
+              disabled={status === 'loading' || status === 'processing' || status === 'idle' || soldOut}>
+              {soldOut
+                ? 'Workshop Sold Out'
+                : status === 'processing'
+                  ? `Complete Purchase ${selectedProduct.priceLabel}...`
+                  : 'Complete Purchase'}
             </button>
             {status === 'success' && successUrl ? (
               <a className={styles.openPortalButton} href={successUrl}>
@@ -420,6 +496,12 @@ export default function SquareCheckoutCard({
               <div className={styles.summarySecurityNote}>
                 After payment, portal access is created automatically and Nate follows up by email with calendar availability
                 for your live 2-hour coaching session.
+              </div>
+            ) : null}
+            {selectedProduct.id === 'agentic-ai-workshop-apr-11-2026' ? (
+              <div className={styles.summarySecurityNote}>
+                Seats close automatically after 50 successful payments. Once you pay, your portal access is created and your
+                workshop seat is locked.
               </div>
             ) : null}
           </div>

@@ -77,6 +77,11 @@ const config: Config = {
           position: 'right',
         },
         {
+          to: '/workshop',
+          label: 'Workshop',
+          position: 'right',
+        },
+        {
           to: '/research',
           label: 'Research',
           position: 'right',
@@ -106,6 +111,10 @@ const config: Config = {
             {
               label: 'Programs',
               to: '/programs',
+            },
+            {
+              label: 'Workshop',
+              to: '/workshop',
             },
             {
               label: 'Research',

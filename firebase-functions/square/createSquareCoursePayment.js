@@ -2,6 +2,7 @@ import crypto from 'node:crypto';
 import {onRequest} from 'firebase-functions/v2/https';
 import {logger} from 'firebase-functions/v2';
 import {
+  countCompletedPurchasesForProduct,
   ensurePortalUser,
   generateTemporaryPassword,
   grantCourseAccess,
@@ -15,7 +16,7 @@ import {getCourseProduct} from './products.js';
 function cors(res) {
   res.set('Access-Control-Allow-Origin', '*');
   res.set('Access-Control-Allow-Headers', 'Content-Type');
-  res.set('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
 }
 
 async function squareRequest(path, body) {
@@ -61,6 +62,51 @@ export const createSquareCoursePayment = onRequest(
       return;
     }
 
+    if (req.method === 'GET') {
+      try {
+        const productId = String(req.query?.productId ?? '');
+        if (!productId) {
+          res.status(400).json({error: 'productId is required.'});
+          return;
+        }
+
+        const product = getCourseProduct(productId);
+        if (!product) {
+          res.status(404).json({error: 'Unknown product.'});
+          return;
+        }
+
+        if (!product.maxSuccessfulPayments) {
+          res.status(200).json({
+            ok: true,
+            productId: product.id,
+            availabilityTracked: false,
+          });
+          return;
+        }
+
+        const successfulPayments = await countCompletedPurchasesForProduct(product.id);
+        const remainingSeats = Math.max(0, product.maxSuccessfulPayments - successfulPayments);
+
+        res.status(200).json({
+          ok: true,
+          productId: product.id,
+          availabilityTracked: true,
+          successfulPayments,
+          remainingSeats,
+          maxSuccessfulPayments: product.maxSuccessfulPayments,
+          soldOut: remainingSeats <= 0,
+        });
+        return;
+      } catch (error) {
+        logger.error('createSquareCoursePayment availability failed', error);
+        res.status(500).json({
+          error: error instanceof Error ? error.message : 'Availability check failed.',
+        });
+        return;
+      }
+    }
+
     if (req.method !== 'POST') {
       res.status(405).json({error: 'Method Not Allowed'});
       return;
@@ -78,6 +124,19 @@ export const createSquareCoursePayment = onRequest(
       if (!product) {
         res.status(400).json({error: 'Unknown product.'});
         return;
+      }
+
+      if (product.maxSuccessfulPayments) {
+        const successfulPayments = await countCompletedPurchasesForProduct(product.id);
+        if (successfulPayments >= product.maxSuccessfulPayments) {
+          res.status(409).json({
+            error: `This workshop is sold out. All ${product.maxSuccessfulPayments} seats have already been claimed.`,
+            soldOut: true,
+            successfulPayments,
+            maxSuccessfulPayments: product.maxSuccessfulPayments,
+          });
+          return;
+        }
       }
 
       const normalizedEmail = normalizeEmail(email);
@@ -150,7 +209,9 @@ export const createSquareCoursePayment = onRequest(
       }
 
       const successMessage =
-        product.fulfillmentType === 'organization-program'
+        product.id === 'agentic-ai-workshop-apr-11-2026'
+          ? `Payment complete. Your seat is confirmed for the live workshop on ${product.eventDateLabel} from ${product.eventTimeLabel}. Your portal account is ready now, and Nate will follow up by email with the final workshop details, what to bring, and how to show up ready for laptop setup.${emailSent ? ' A confirmation email was also sent.' : ''}`
+          : product.fulfillmentType === 'organization-program'
           ? `Payment complete. ${organizationName || customerName} is confirmed for the workshop program. Nate will follow up by email with scheduling options and next installation steps.${emailSent ? ' A confirmation email was also sent.' : ''}`
           : temporaryPassword
             ? `Payment complete. Your portal account is ready. Use ${normalizedEmail} and the temporary password below, then update it when you first sign in. Nate will also follow up by email with his calendar availability for your live 2-hour coaching session.${emailSent ? ' A copy was also emailed to you.' : ''}`
