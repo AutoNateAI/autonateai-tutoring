@@ -63,7 +63,7 @@ export default function WorkshopPage(): React.JSX.Element {
   const title = 'Agentic AI Live Workshop | AutoNateAI';
   const description =
     'Reserve a seat for the live Agentic AI workshop on Saturday, April 11, 2026 from 10:00 AM to 12:30 PM. Get your laptop set up, portal access unlocked, and practical workflow systems installed live.';
-  const socialImage = '/img/og-workshop.jpg';
+  const socialImage = '/img/workshop-flyer-qr-v2.png';
 
   return (
     <Layout title={title} description={description} wrapperClassName={styles.layout}>
