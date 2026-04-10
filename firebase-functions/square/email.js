@@ -27,6 +27,7 @@ export async function sendPortalPurchaseEmail({
 
   const fromEmail = process.env.GMAIL_SMTP_USER;
   const portalUrl = product.portalUrl;
+  const workshopMeetUrl = 'https://meet.google.com/pwb-pxjh-yvj';
 
   if (product.fulfillmentType === 'organization-program') {
     await transport.sendMail({
@@ -79,6 +80,10 @@ export async function sendPortalPurchaseEmail({
       '',
       'If this is your first login, sign in with the temporary password and you will be asked to change it immediately.',
       'You can also use Google sign-in later if it matches the same paid email.',
+      product.id === 'agentic-ai-workshop-apr-11-2026' ? 'Agentic AI Workshop' : '',
+      product.id === 'agentic-ai-workshop-apr-11-2026' ? 'Saturday, Apr 11 · 10:00 AM–12:30 PM' : '',
+      product.id === 'agentic-ai-workshop-apr-11-2026' ? `Google Meet joining info` : '',
+      product.id === 'agentic-ai-workshop-apr-11-2026' ? `Video call link: ${workshopMeetUrl}` : '',
       product.id === 'ai-first-student'
         ? 'I will also personally email you my calendar availability so you can choose your live 2-hour coaching session.'
         : '',
@@ -103,6 +108,11 @@ export async function sendPortalPurchaseEmail({
         }
         <p>If this is your first login, sign in with the temporary password and you will be asked to change it immediately.</p>
         <p>You can also use Google sign-in later if it matches the same paid email.</p>
+        ${
+          product.id === 'agentic-ai-workshop-apr-11-2026'
+            ? `<p><strong>Agentic AI Workshop</strong><br />Saturday, Apr 11 · 10:00 AM-12:30 PM<br /><strong>Google Meet joining info</strong><br /><a href="${workshopMeetUrl}">${workshopMeetUrl}</a></p>`
+            : ''
+        }
         ${
           product.id === 'ai-first-student'
             ? '<p>I will also personally email you my calendar availability so you can choose your live 2-hour coaching session.</p>'

@@ -35,7 +35,7 @@ jobs:
         env:
           SQUARE_APP_ID: ${{ secrets.SQUARE_APP_ID }}
           SQUARE_LOCATION_ID: ${{ secrets.SQUARE_LOCATION_ID }}
-          SQUARE_ENVIRONMENT: production
+          SQUARE_ENVIRONMENT: ${{ secrets.SQUARE_ENVIRONMENT }}
           CHECKOUT_API_BASE_URL: ${{ secrets.CHECKOUT_API_BASE_URL }}
           PORTAL_BASE_URL: https://portal.autonateai.com
         run: npm run build
