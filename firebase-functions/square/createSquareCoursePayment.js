@@ -19,6 +19,12 @@ function cors(res) {
   res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
 }
 
+function buildSquareReferenceId(productId, email) {
+  const normalizedEmail = normalizeEmail(email);
+  const digest = crypto.createHash('sha256').update(normalizedEmail).digest('hex').slice(0, 8);
+  return `${productId}:${digest}`.slice(0, 40);
+}
+
 async function squareRequest(path, body) {
   const accessToken = process.env.SQUARE_ACCESS_TOKEN;
   if (!accessToken) {
@@ -155,7 +161,7 @@ export const createSquareCoursePayment = onRequest(
             ? `${product.title} for ${organizationName || customerName} (${normalizedEmail})`
             : `${product.title} purchase for ${normalizedEmail}`,
         buyer_email_address: normalizedEmail,
-        reference_id: `${product.id}:${normalizedEmail}`,
+        reference_id: buildSquareReferenceId(product.id, normalizedEmail),
       };
 
       const squareResponse = await squareRequest('/v2/payments', paymentPayload);
