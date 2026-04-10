@@ -32,6 +32,12 @@ jobs:
         run: npm install
 
       - name: Build website
+        env:
+          SQUARE_APP_ID: ${{ secrets.SQUARE_APP_ID }}
+          SQUARE_LOCATION_ID: ${{ secrets.SQUARE_LOCATION_ID }}
+          SQUARE_ENVIRONMENT: production
+          CHECKOUT_API_BASE_URL: ${{ secrets.CHECKOUT_API_BASE_URL }}
+          PORTAL_BASE_URL: https://portal.autonateai.com
         run: npm run build
 
       # Popular action to deploy to GitHub Pages:
