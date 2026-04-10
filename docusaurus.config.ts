@@ -19,9 +19,9 @@ const config: Config = {
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
   customFields: {
-    squareAppId: process.env.SQUARE_APP_ID ?? 'sandbox-sq0idb-B5DpjemGsulORCrDXW80lQ',
-    squareLocationId: process.env.SQUARE_LOCATION_ID ?? 'L24Y6AS4SSFG2',
-    squareEnvironment: process.env.SQUARE_ENVIRONMENT ?? 'sandbox',
+    squareAppId: process.env.SQUARE_APP_ID ?? 'sq0idp-8YnJcv21akd2ZQdBUoFlCA',
+    squareLocationId: process.env.SQUARE_LOCATION_ID ?? 'L8XW7N5BD0HSH',
+    squareEnvironment: process.env.SQUARE_ENVIRONMENT ?? 'production',
     checkoutApiBaseUrl:
       process.env.CHECKOUT_API_BASE_URL ??
       'https://createsquarecoursepayment-4qinfaeidq-uc.a.run.app',
