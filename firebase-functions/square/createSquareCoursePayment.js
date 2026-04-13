@@ -215,7 +215,7 @@ export const createSquareCoursePayment = onRequest(
       }
 
       const successMessage =
-        product.id === 'agentic-ai-workshop-apr-11-2026'
+        product.id === 'agentic-ai-workshop-apr-18-2026'
           ? `Payment complete. Your seat is confirmed for the live workshop on ${product.eventDateLabel} from ${product.eventTimeLabel}. Your portal account is ready now, and Nate will follow up by email with the final workshop details, what to bring, and how to show up ready for laptop setup.${emailSent ? ' A confirmation email was also sent.' : ''}`
           : product.fulfillmentType === 'organization-program'
           ? `Payment complete. ${organizationName || customerName} is confirmed for the workshop program. Nate will follow up by email with scheduling options and next installation steps.${emailSent ? ' A confirmation email was also sent.' : ''}`

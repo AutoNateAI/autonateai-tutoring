@@ -8,8 +8,8 @@ export const COURSE_PRODUCTS = {
     grantsPortalAccess: true,
     fulfillmentType: 'portal-access',
   },
-  'agentic-ai-workshop-apr-11-2026': {
-    id: 'agentic-ai-workshop-apr-11-2026',
+  'agentic-ai-workshop-apr-18-2026': {
+    id: 'agentic-ai-workshop-apr-18-2026',
     title: 'Agentic AI Live Workshop',
     amountCents: 15900,
     currency: 'USD',
@@ -17,7 +17,7 @@ export const COURSE_PRODUCTS = {
     grantsPortalAccess: true,
     fulfillmentType: 'portal-access',
     maxSuccessfulPayments: 50,
-    eventDateLabel: 'Saturday, April 11, 2026',
+    eventDateLabel: 'Saturday, April 18, 2026',
     eventTimeLabel: '10:00 AM - 12:30 PM',
   },
   'ai-first-researcher': {

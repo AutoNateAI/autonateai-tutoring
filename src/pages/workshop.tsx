@@ -9,7 +9,7 @@ import HeroPromoVideo from '@site/src/components/HeroPromoVideo';
 
 import styles from './studentPortal.module.css';
 
-const workshopDate = 'Saturday, April 11, 2026';
+const workshopDate = 'Saturday, April 18, 2026';
 const workshopTime = '10:00 AM - 12:30 PM';
 
 const galleryCards = [
@@ -62,8 +62,8 @@ const audienceNotes = [
 export default function WorkshopPage(): React.JSX.Element {
   const title = 'Agentic AI Live Workshop | AutoNateAI';
   const description =
-    'Reserve a seat for the live Agentic AI workshop on Saturday, April 11, 2026 from 10:00 AM to 12:30 PM. Get your laptop set up, portal access unlocked, and practical workflow systems installed live.';
-  const socialImage = '/img/workshop-flyer-qr-v2.png';
+    'Reserve a seat for the live Agentic AI workshop on Saturday, April 18, 2026 from 10:00 AM to 12:30 PM. Get your laptop set up, portal access unlocked, and practical workflow systems installed live.';
+  const socialImage = '/img/workshop-flyer-apr-18-2026.jpg';
 
   return (
     <Layout title={title} description={description} wrapperClassName={styles.layout}>
@@ -103,7 +103,7 @@ export default function WorkshopPage(): React.JSX.Element {
                 View Programs
               </Link>
             </div>
-            <p className={styles.meta}>$159 per student. Payments close automatically after 50 confirmed seats.</p>
+            <p className={styles.meta}>$159 per student. Seat count reset for the new Saturday session.</p>
           </div>
           <div className={`${styles.heroVisual} ${styles.programsHeroVisual}`}>
             <div className={`${styles.heroFrame} ${styles.programHeroFrame}`}>
@@ -229,7 +229,7 @@ export default function WorkshopPage(): React.JSX.Element {
           </div>
           <section className={styles.checkoutSection}>
             <BrowserOnly fallback={<div className={styles.loadingCard}>Loading secure checkout…</div>}>
-              {() => <SquareCheckoutCard initialProductId="agentic-ai-workshop-apr-11-2026" />}
+              {() => <SquareCheckoutCard initialProductId="agentic-ai-workshop-apr-18-2026" />}
             </BrowserOnly>
           </section>
         </section>

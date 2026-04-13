@@ -1,6 +1,6 @@
 export type ProductId =
   | 'ai-first-student'
-  | 'agentic-ai-workshop-apr-11-2026'
+  | 'agentic-ai-workshop-apr-18-2026'
   | 'ai-first-researcher'
   | 'student-systems-program-25-2h'
   | 'student-systems-program-25-3h'
@@ -42,18 +42,18 @@ export const products: ProductDefinition[] = [
     fulfillmentType: 'portal-access',
   },
   {
-    id: 'agentic-ai-workshop-apr-11-2026',
+    id: 'agentic-ai-workshop-apr-18-2026',
     title: 'Agentic AI Live Workshop',
     priceCents: 15900,
     priceLabel: '$159',
     description:
-      'Saturday, April 11, 2026 from 10:00 AM to 12:30 PM. Live workshop access, laptop setup with your AI agent of choice, and lifetime portal access.',
+      'Saturday, April 18, 2026 from 10:00 AM to 12:30 PM. Live workshop access, laptop setup with your AI agent of choice, and lifetime portal access.',
     audience:
       'Students who want the live Saturday workshop, their AI stack set up properly, and direct exposure to the deeper agentic AI coaching ideas inside the portal.',
     portalPath: '/#/tracks/student',
     fulfillmentType: 'portal-access',
     maxSuccessfulPayments: 50,
-    eventDateLabel: 'Saturday, April 11, 2026',
+    eventDateLabel: 'Saturday, April 18, 2026',
     eventTimeLabel: '10:00 AM - 12:30 PM',
   },
   {

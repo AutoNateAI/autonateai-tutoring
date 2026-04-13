@@ -309,9 +309,9 @@ export default function SquareCheckoutCard({
           'Lifetime student portal access after payment',
           'Weekly portal updates and new workflow improvements',
         ]
-      : selectedProduct.id === 'agentic-ai-workshop-apr-11-2026'
+      : selectedProduct.id === 'agentic-ai-workshop-apr-18-2026'
         ? [
-            'Live workshop on Saturday, April 11, 2026',
+            'Live workshop on Saturday, April 18, 2026',
             'Laptop setup with Codex, Gemini, or Claude',
             'Lifetime portal access with narrated slides and prompt packs',
           ]
@@ -363,7 +363,7 @@ export default function SquareCheckoutCard({
           </div>
         </div>
 
-        {selectedProduct.id === 'agentic-ai-workshop-apr-11-2026' ? (
+        {selectedProduct.id === 'agentic-ai-workshop-apr-18-2026' ? (
           <div className={styles.checkoutSuccessCard}>
             <div className={styles.checkoutSuccessTitle}>Workshop seat status</div>
             <div className={styles.checkoutSuccessRow}>
@@ -435,14 +435,14 @@ export default function SquareCheckoutCard({
               <h3 className={styles.summaryTitle}>
                 {selectedProduct.id === 'ai-first-student'
                   ? 'Book Coaching'
-                  : selectedProduct.id === 'agentic-ai-workshop-apr-11-2026'
+                  : selectedProduct.id === 'agentic-ai-workshop-apr-18-2026'
                     ? 'Reserve Workshop Seat'
                     : 'Initialize System'}
               </h3>
               <p className={styles.summarySubtitle}>
                 {selectedProduct.id === 'ai-first-student'
                   ? '2-Hour Student Systems Coaching'
-                  : selectedProduct.id === 'agentic-ai-workshop-apr-11-2026'
+                  : selectedProduct.id === 'agentic-ai-workshop-apr-18-2026'
                     ? `${selectedProduct.eventDateLabel} · ${selectedProduct.eventTimeLabel}`
                     : 'Student Transformation Portal'}
               </p>
@@ -498,7 +498,7 @@ export default function SquareCheckoutCard({
                 for your live 2-hour coaching session.
               </div>
             ) : null}
-            {selectedProduct.id === 'agentic-ai-workshop-apr-11-2026' ? (
+            {selectedProduct.id === 'agentic-ai-workshop-apr-18-2026' ? (
               <div className={styles.summarySecurityNote}>
                 Seats close automatically after 50 successful payments. Once you pay, your portal access is created and your
                 workshop seat is locked.
