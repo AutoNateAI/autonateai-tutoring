@@ -44,18 +44,18 @@ const services: ServiceCardProps[] = [
     ctaLabel: 'View Programs',
   },
   {
-    title: 'AI-First Researcher',
+    title: 'AutoNateAI Reports Setup',
     price: '$189',
-    schedule: 'One-time purchase, instant access',
-    audience: 'Researchers who need stronger synthesis systems, better note infrastructure, and cleaner AI-assisted research workflows.',
+    schedule: 'Initial setup for paid or free report delivery',
+    audience: 'Organizations and operators that need regional intelligence, funding monitoring, and opportunity discovery.',
     description: (
       <p>
-        A premium async course with narrated lectures, 6 research workflow kits, prompt packs, and structured sheets
-        designed for intake, synthesis, comparison, and insight generation.
+        Set up scoped reports around regional intelligence, public funding movement, procurement visibility,
+        subcontractor openings, hiring pressure, and practical next moves.
       </p>
     ),
     href: '/services/ai-first-researcher',
-    ctaLabel: 'View Research Course',
+    ctaLabel: 'View Reports Setup',
   },
   {
     title: 'DevBox Setup',
@@ -104,7 +104,7 @@ function ServiceCard({title, price, schedule, audience, description, href, ctaLa
 export default function BookingPage(): React.JSX.Element {
   const title = 'Choose Your AI Path | Coaching, Programs, and Systems';
   const description =
-    'Pick the fastest path into usable AI: live student coaching, student workshop programs, research systems, or a higher-touch DevBox setup.';
+    'Pick the fastest path into usable AI: live student coaching, student workshop programs, reports, or a higher-touch DevBox setup.';
 
   return (
     <Layout title={title} description={description}>

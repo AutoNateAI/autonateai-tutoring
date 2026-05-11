@@ -58,13 +58,13 @@ export const products: ProductDefinition[] = [
   },
   {
     id: 'ai-first-researcher',
-    title: 'AI-First Researcher',
+    title: 'AutoNateAI Reports Setup',
     priceCents: 18900,
     priceLabel: '$189',
     description:
-      'Narrated lectures, 6 research workflow kits, prompt packs, and structured sheets for intake, synthesis, and insight generation.',
+      'Initial paid reports setup for organizations that need regional intelligence, funding monitoring, procurement visibility, and opportunity discovery.',
     audience:
-      'Researchers who need stronger synthesis systems, better note infrastructure, and cleaner AI-assisted research workflows.',
+      'Organizations and operators that need scoped intelligence reports, public-data monitoring, and practical next-move visibility.',
     portalPath: '/#/tracks/researcher',
     fulfillmentType: 'portal-access',
   },

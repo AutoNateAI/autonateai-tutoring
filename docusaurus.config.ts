@@ -83,7 +83,7 @@ const config: Config = {
         },
         {
           to: '/research',
-          label: 'Research',
+          label: 'Reports',
           position: 'right',
         },
         {
@@ -117,7 +117,7 @@ const config: Config = {
               to: '/workshop',
             },
             {
-              label: 'Research',
+              label: 'Reports',
               to: '/research',
             },
           ],

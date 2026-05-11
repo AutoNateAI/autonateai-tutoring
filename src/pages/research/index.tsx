@@ -1,80 +1,99 @@
-import React, {useMemo, useState} from 'react';
+import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
 import HeroPromoVideo from '@site/src/components/HeroPromoVideo';
-import {featuredResearchArticle, researchArticles} from '@site/src/data/researchArticles';
+import {featuredResearchArticle} from '@site/src/data/researchArticles';
 import styles from '@site/src/components/research/research.module.css';
 
-const pageSize = 9;
-
-const overviewSignals = [
-  'Epigenetics is the study of how the same genome gets performed differently across contexts, cell types, and pressures.',
-  'Van Andel Institute is one of the clearest institutional signals in this lane because it treats epigenetics as both a basic-science and translational problem.',
-  'This hub is where I build my nodes in public, tighten the reasoning, and connect the research directly back to human reconstruction and deliberate reprogramming.',
+const operatorSignals = [
+  'Regional intelligence for where funding, partners, and operating pressure are moving',
+  'Funding monitoring across public grants, awards, agencies, and local opportunity signals',
+  'Operational opportunity discovery for programs, vendors, nonprofits, and civic operators',
+  'Procurement and subcontractor visibility so organizations can see who is getting paid',
+  'Hiring pressure detection and reporting automation for teams that need faster decisions',
 ];
 
-const stats = [
+const reportCards = [
   {
-    value: '104k',
-    label: 'single nuclei',
-    note: 'Profiled in a 2025 Nature Genetics immune-cell epigenome study.',
+    title: 'Regional Opportunity Scan',
+    access: 'Free',
+    price: '$0',
+    description:
+      'A public-facing scan that shows what kinds of funding, organizations, and opportunity patterns are active in a region.',
+    cta: 'Read Sample',
+    to: `/research/${featuredResearchArticle.slug}`,
   },
   {
-    value: '5–19%',
-    label: 'methylation heritability',
-    note: 'Estimated in prior bulk-tissue work cited by that same 2025 study.',
+    title: 'Funding Monitoring Report',
+    access: 'Paid',
+    price: 'Priced per scope',
+    description:
+      'A deeper report for organizations that need recurring visibility into grants, awards, agencies, recipients, and movement in their lane.',
+    cta: 'Request Report',
+    to: '/services/ai-first-researcher',
   },
   {
-    value: '2014',
-    label: 'Dream Team reset',
-    note: 'Year VAI’s current SU2C Epigenetics Dream Team was established.',
+    title: 'Procurement & Subcontractor Visibility Brief',
+    access: 'Paid',
+    price: 'Priced per scope',
+    description:
+      'A decision brief that maps prime awards, subcontractor patterns, vendors, local recipients, and possible partnership openings.',
+    cta: 'Request Report',
+    to: '/services/ai-first-researcher',
+  },
+  {
+    title: 'Hiring Pressure & Workforce Signal Report',
+    access: 'Paid',
+    price: 'Priced per scope',
+    description:
+      'A report for operators who want to connect labor demand, funding movement, program needs, and training opportunities.',
+    cta: 'Request Report',
+    to: '/services/ai-first-researcher',
   },
 ];
 
-export default function ResearchPage(): React.JSX.Element {
-  const [page, setPage] = useState(1);
-  const pageCount = Math.max(1, Math.ceil(researchArticles.length / pageSize));
-  const pageItems = useMemo(() => researchArticles.slice((page - 1) * pageSize, page * pageSize), [page]);
+const valueProps = [
+  'Immediate ROI because the report points at money, organizations, gaps, and next moves',
+  'Institutional pain relief for teams that do not have time to manually track every signal',
+  'High-value B2B intelligence that can become recurring monitoring over time',
+];
+
+export default function ReportsPage(): React.JSX.Element {
+  const title = 'Reports | AutoNateAI';
+  const description =
+    'AutoNateAI reports provide regional intelligence, funding monitoring, procurement visibility, subcontractor visibility, hiring pressure detection, and reporting automation for organizations and operators.';
 
   return (
-    <Layout
-      title="Research | AutoNateAI"
-      description="A public research hub for epigenetics, reconstruction, and multidisciplinary inquiry built in the same visual language as AutoNateAI.">
-      <PageSocialMeta
-        title="Research | AutoNateAI"
-        description="A public research hub for epigenetics, reconstruction, and multidisciplinary inquiry."
-        image="/img/og-research.png"
-        path="/research"
-      />
+    <Layout title={title} description={description} wrapperClassName={styles.layout}>
+      <PageSocialMeta title={title} description={description} image="/img/og-research.png" path="/research" />
       <main className={styles.shell}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
-            <span className={styles.kicker}>Research</span>
+            <span className={styles.kicker}>Reports</span>
             <Heading as="h1" className={styles.heroTitle}>
-              Building the epigenetics map in public.
+              Intelligence reports for organizations and operators.
             </Heading>
             <HeroPromoVideo
               src="/video/autonateai-research-promo.mp4"
               poster="/img/og-research.png"
               className={styles.heroVideoMobile}
               soundLabel="Tap For Sound"
-              fullscreenLabel="Full Screen Research Promo"
+              fullscreenLabel="Full Screen Reports Promo"
             />
-            <p className={styles.heroShift}>Calm hands. Sharp sources. Smooth pressure on the ideas until they confess.</p>
+            <p className={styles.heroShift}>Regional intelligence. Funding monitoring. Operational opportunity discovery.</p>
             <p className={styles.heroBody}>
-              This tab is where I track the research nodes, clean them up for publishing, and connect them to the
-              publications shaping how I think about reconstruction, regulation, and deliberate reprogramming. Van Andel
-              Institute is a major signal in this lane, especially where epigenetics moves from abstraction into systems
-              that can actually change outcomes.
+              This section holds AutoNateAI reports: some free, some paid. Reports turn public data and AI-assisted
+              analysis into practical visibility for organizations that need to see funding movement, procurement
+              patterns, subcontractor openings, hiring pressure, and regional opportunities.
             </p>
             <div className={styles.heroActions}>
-              <a className={styles.primaryCta} href="#featured-article">
-                Read Featured Node
+              <a className={styles.primaryCta} href="#reports">
+                Browse Reports
               </a>
-              <a className={styles.secondaryCta} href="#article-grid">
-                Browse Research Nodes
+              <a className={styles.secondaryCta} href="#operator-intelligence">
+                What Reports Cover
               </a>
             </div>
           </div>
@@ -85,29 +104,29 @@ export default function ResearchPage(): React.JSX.Element {
                 poster="/img/og-research.png"
                 className={styles.heroPromoVideo}
                 soundLabel="Tap For Sound"
-                fullscreenLabel="Full Screen Research Promo"
+                fullscreenLabel="Full Screen Reports Promo"
               />
             </div>
           </div>
         </section>
 
-        <section className={styles.section}>
+        <section id="operator-intelligence" className={styles.section}>
           <div className={styles.sectionHead}>
             <div>
-              <span className={styles.kicker}>Overview</span>
+              <span className={styles.kicker}>Operator Intelligence</span>
               <Heading as="h2" className={styles.sectionTitle}>
-                What this tab is really for
+                Reports that find pressure, money, and openings.
               </Heading>
             </div>
             <p className={styles.sectionCopy}>
-              Not a random article dump. A living graph of thought, sources, and nodes that can later connect into the
-              larger AutoNateAI thesis.
+              Built for operators, directors, founders, nonprofits, vendors, and workforce-development teams that need
+              fast visibility without building the whole research engine themselves.
             </p>
           </div>
           <div className={styles.overviewPanel}>
             <div className={styles.overviewGrid}>
               <ul className={styles.signalList}>
-                {overviewSignals.map((item) => (
+                {operatorSignals.map((item) => (
                   <li key={item}>
                     <span className={styles.check}>✓</span>
                     <span>{item}</span>
@@ -115,100 +134,77 @@ export default function ResearchPage(): React.JSX.Element {
                 ))}
               </ul>
               <div className={styles.statsGrid}>
-                {stats.map((stat) => (
-                  <article key={stat.label} className={styles.statCard}>
-                    <div className={styles.statValue}>{stat.value}</div>
-                    <span className={styles.statLabel}>{stat.label}</span>
-                    <p className={styles.statNote}>{stat.note}</p>
-                  </article>
-                ))}
+                <article className={styles.statCard}>
+                  <div className={styles.statValue}>B2B</div>
+                  <span className={styles.statLabel}>Operator Market</span>
+                  <p className={styles.statNote}>Reports are built for organizations that need immediate decision support.</p>
+                </article>
+                <article className={styles.statCard}>
+                  <div className={styles.statValue}>ROI</div>
+                  <span className={styles.statLabel}>Action-Oriented</span>
+                  <p className={styles.statNote}>Each report is framed around next moves, not research theater.</p>
+                </article>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="featured-article" className={styles.section}>
+        <section id="reports" className={styles.section}>
           <div className={styles.sectionHead}>
             <div>
-              <span className={styles.kicker}>Featured Article</span>
+              <span className={styles.kicker}>Report Catalog</span>
               <Heading as="h2" className={styles.sectionTitle}>
-                The lead node right now
+                Free samples and paid intelligence reports.
               </Heading>
             </div>
             <p className={styles.sectionCopy}>
-              This is the first full expression of the research brand: sources, narrative, data, and a clean argument.
+              The catalog can hold public reports, premium reports, and scoped custom monitoring. Free reports build
+              trust; paid reports solve operator pain.
             </p>
           </div>
+          <div className={styles.paginationPanel}>
+            <div className={styles.cardsGrid}>
+              {reportCards.map((report) => (
+                <article key={report.title} className={styles.articleCard}>
+                  <div className={styles.cardMeta}>
+                    <span>{report.access}</span>
+                    <span>{report.price}</span>
+                  </div>
+                  <h3 className={styles.cardTitle}>{report.title}</h3>
+                  <p className={styles.cardCopy}>{report.description}</p>
+                  <Link className={styles.primaryCta} to={report.to}>
+                    {report.cta}
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.section}>
           <div className={styles.featuredPanel}>
             <div className={styles.featuredGrid}>
               <div className={styles.heroCopy}>
-                <div className={styles.featuredMeta}>
-                  <span>{featuredResearchArticle.category}</span>
-                  <span>{featuredResearchArticle.dateLabel}</span>
-                  <span>{featuredResearchArticle.readTime}</span>
-                </div>
-                <h2 className={styles.featuredTitle}>{featuredResearchArticle.title}</h2>
-                <p className={styles.heroBody}>{featuredResearchArticle.description}</p>
+                <span className={styles.kicker}>Why This Works</span>
+                <Heading as="h2" className={styles.sectionTitle}>
+                  This market already exists.
+                </Heading>
+                <ul className={styles.signalList}>
+                  {valueProps.map((item) => (
+                    <li key={item}>
+                      <span className={styles.check}>✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
                 <div className={styles.heroActions}>
-                  <Link className={styles.primaryCta} to={`/research/${featuredResearchArticle.slug}`}>
-                    Open Article
+                  <Link className={styles.primaryCta} to="/services/ai-first-researcher">
+                    Set Up Paid Reports
                   </Link>
                 </div>
               </div>
               <div className={styles.featuredImageFrame}>
                 <img src={featuredResearchArticle.image} alt={featuredResearchArticle.imageAlt} />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="article-grid" className={styles.section}>
-          <div className={styles.sectionHead}>
-            <div>
-              <span className={styles.kicker}>Research Nodes</span>
-              <Heading as="h2" className={styles.sectionTitle}>
-                9 articles per page, clean enough to scale
-              </Heading>
-            </div>
-            <p className={styles.sectionCopy}>
-              Each article is a node in the graph: cleaned up enough to publish, heavy on evidence, and ready to
-              interlink with stronger sources over time.
-            </p>
-          </div>
-          <div className={styles.paginationPanel}>
-            <div className={styles.cardsGrid}>
-              {pageItems.map((article) => (
-                <article key={article.slug} className={styles.articleCard}>
-                  <div className={styles.cardImageFrame}>
-                    <img src={article.image} alt={article.imageAlt} />
-                  </div>
-                  <div className={styles.cardMeta}>
-                    <span>{article.category}</span>
-                    <span>{article.readTime}</span>
-                    <span>{article.status}</span>
-                  </div>
-                  <h3 className={styles.cardTitle}>{article.title}</h3>
-                  <p className={styles.cardCopy}>{article.description}</p>
-                  <Link className={styles.primaryCta} to={`/research/${article.slug}`}>
-                    Read Node
-                  </Link>
-                </article>
-              ))}
-            </div>
-            <div className={styles.paginationRow}>
-              <div className={styles.pageIndicator}>
-                Page {page} of {pageCount}
-              </div>
-              <div className={styles.paginationControls}>
-                <button className={styles.pagerButton} disabled={page === 1} onClick={() => setPage((value) => value - 1)}>
-                  Prev
-                </button>
-                <button
-                  className={styles.pagerButton}
-                  disabled={page === pageCount}
-                  onClick={() => setPage((value) => value + 1)}>
-                  Next
-                </button>
               </div>
             </div>
           </div>
