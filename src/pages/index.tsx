@@ -72,7 +72,7 @@ export default function Home(): React.JSX.Element {
               nonprofits, vendors, economic development organizations, staffing teams, and local businesses.
             </p>
             <div className={styles.heroActions}>
-              <Link className={styles.primaryCta} to="/research">
+              <Link className={styles.primaryCta} to="/research#regional">
                 Explore Briefs
               </Link>
               <Link className={styles.secondaryCta} to="/services/ai-first-researcher">
@@ -132,7 +132,7 @@ export default function Home(): React.JSX.Element {
                 <span className={styles.offerMeta}>{card.meta}</span>
                 <h3 className={styles.cardTitle}>{card.title}</h3>
                 <p className={styles.cardCopy}>{card.copy}</p>
-                <Link className={styles.secondaryCta} to="/research">
+                <Link className={styles.secondaryCta} to={card.title === 'Regional Opportunity Brief' ? '/research#regional' : '/research#buyers'}>
                   View Catalog
                 </Link>
               </article>
@@ -158,7 +158,7 @@ export default function Home(): React.JSX.Element {
               <Link className={styles.primaryCta} to="/services/ai-first-researcher">
                 Purchase A Brief
               </Link>
-              <Link className={styles.secondaryCta} to="/research">
+              <Link className={styles.secondaryCta} to="/research#catalog">
                 Browse Catalog
               </Link>
             </div>
@@ -170,7 +170,7 @@ export default function Home(): React.JSX.Element {
           <strong>Opportunity briefs are live.</strong>
           <span>Browse the catalog or purchase setup.</span>
         </div>
-        <Link className={styles.mobileStickyButton} to="/research">
+        <Link className={styles.mobileStickyButton} to="/research#catalog">
           Briefs
         </Link>
       </div>
