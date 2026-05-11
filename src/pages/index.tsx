@@ -7,52 +7,50 @@ import HeroPromoVideo from '@site/src/components/HeroPromoVideo';
 
 import styles from './studentPortal.module.css';
 
-const pillars = [
+const signalCards = [
   {
-    title: 'Real Federal Data',
-    copy: 'Students work with Grants.gov and USAspending.gov signals to trace where money is moving, who receives it, and which organizations need help.',
+    title: 'Funding Movement',
+    copy: 'Track grants, awards, agencies, recipients, and public-dollar movement before the opportunity is obvious.',
   },
   {
-    title: 'AI Copilot Research',
-    copy: 'The AutoNateAI portal helps students filter agencies, awards, subrecipients, regions, and opportunity patterns with AI-supported analysis.',
+    title: 'Active Grants',
+    copy: 'Surface near-term funding windows, open programs, agency priorities, and the organizations most likely to move.',
   },
   {
-    title: 'Project-Based Learning',
-    copy: 'Every experience pushes students toward real tools, dashboards, outreach assets, and portfolio-ready proof of work.',
+    title: 'Subcontracting Signals',
+    copy: 'Map prime awards, likely downstream activity, vendor movement, and partnership openings in a region or sector.',
   },
   {
-    title: 'Visibility & Outreach',
-    copy: 'Students learn how to package their work, connect with organizations, and turn research into career-facing opportunity.',
+    title: 'Hiring Pressure',
+    copy: 'Connect funding, organizational movement, and workforce demand so staffing and training operators can act faster.',
   },
 ];
 
-const programCards = [
+const briefCards = [
   {
-    title: '2-Day Weekend Career Accelerator',
-    meta: '8 hours · $299 per student · max 15 students',
-    copy: 'A focused weekend sprint where students discover funding flows, map live opportunities, build three AI-assisted tools, and leave with portfolio-ready assets.',
-    to: '/workshop',
+    title: 'Regional Opportunity Brief',
+    meta: 'Weekly report',
+    copy: 'A concise brief covering regional funding movement, active grants, likely subcontracting, hiring pressure, and organizational movement.',
   },
   {
-    title: '7-Day Career Readiness Accelerator',
-    meta: 'Structured week · cohort and partner delivery',
-    copy: 'A deeper workforce-development program covering portal setup, advanced search, regional opportunity research, AI-assisted builds, outreach, content, and final showcase.',
-    to: '/programs',
+    title: 'Buyer-Specific Brief',
+    meta: 'Consultants · nonprofits · vendors · staffing · local business',
+    copy: 'A scoped brief built around the buyer you care about, with practical next moves and outreach angles.',
   },
 ];
 
 const outcomes = [
-  'Real opportunity research skills',
-  'Portfolio-ready projects and code',
-  'Professional visibility and outreach practice',
-  'Stronger confidence using AI for real problems',
-  'Career-ready mindset and execution habits',
+  'Weekly opportunity reports that are readable and decision-oriented',
+  'Funding movement summaries tied to real agencies, awards, and recipients',
+  'Active grants, likely subcontracting activity, and organizational movement',
+  'Regional hiring pressure and workforce signals for operators',
+  'A faster way to know where opportunity is moving before everyone else sees it',
 ];
 
 export default function Home(): React.JSX.Element {
-  const title = 'AutoNateAI | Workforce Development Programs';
+  const title = 'AutoNateAI | Opportunity Briefs';
   const description =
-    'AutoNateAI runs AI-powered workforce development programs where students use real federal spending data to discover opportunities, build useful tools, and grow career visibility.';
+    'AutoNateAI sells opportunity briefs for consultants, nonprofits, vendors, economic development organizations, staffing teams, and local businesses that need regional funding and operating intelligence.';
 
   return (
     <Layout title={title} description={description} wrapperClassName={styles.layout}>
@@ -60,34 +58,34 @@ export default function Home(): React.JSX.Element {
       <main className={styles.shell}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
-            <span className={styles.kicker}>Workforce Development Programs</span>
+            <span className={styles.kicker}>Opportunity Briefs</span>
             <Heading as="h1" className={styles.heroTitle}>
-              Real data. Real opportunities. Real career leverage.
+              Know where regional opportunity is moving.
             </Heading>
             <HeroPromoVideo className={styles.heroVideoMobile} />
             <p className={styles.heroShift}>
-              AutoNateAI helps students use AI and federal spending data to build solutions that matter.
+              Weekly briefs for funding movement, active grants, subcontracting signals, hiring pressure, and
+              organizational movement.
             </p>
             <p className={styles.heroBody}>
-              We run hands-on career readiness experiences where students research live funding opportunities, identify
-              active organizations, build AI-assisted tools, and package their work into a portfolio they can use for
-              internships, jobs, scholarships, and collaborations.
+              AutoNateAI turns public data and AI-assisted research into purchasable opportunity briefs for consultants,
+              nonprofits, vendors, economic development organizations, staffing teams, and local businesses.
             </p>
             <div className={styles.heroActions}>
-              <Link className={styles.primaryCta} to="/workshop">
-                Weekend Workshop
+              <Link className={styles.primaryCta} to="/research">
+                Explore Briefs
               </Link>
-              <Link className={styles.secondaryCta} to="/programs">
-                7-Day Program
+              <Link className={styles.secondaryCta} to="/services/ai-first-researcher">
+                Purchase Setup
               </Link>
             </div>
-            <p className={styles.meta}>Built on real government data, guided AI workflows, and project-based execution.</p>
+            <p className={styles.meta}>Built for people who need opportunity before it becomes obvious.</p>
           </div>
           <div className={styles.heroVisual}>
             <HeroPromoVideo className={styles.heroVideoDesktop} />
             <div className={styles.heroNote}>
-              Students do not just learn about AI. They use it to follow money, find organizations, build solutions, and
-              open doors.
+              The work is simple: monitor the signals, compress the noise, and deliver a brief that helps operators make
+              the next move.
             </div>
           </div>
         </section>
@@ -95,21 +93,21 @@ export default function Home(): React.JSX.Element {
         <section className={styles.section}>
           <div className={styles.sectionHead}>
             <div>
-              <span className={styles.kicker}>What We Do</span>
+              <span className={styles.kicker}>What Briefs Track</span>
               <Heading as="h2" className={styles.sectionTitle}>
-                Workforce development built around live opportunity.
+                Public data turned into operator intelligence.
               </Heading>
             </div>
             <p className={styles.sectionCopy}>
-              The portal gives students a practical system for research, filtering, project building, and outreach. The
-              programs turn that system into guided reps.
+              Each brief is built around the signals that show where money, organizations, vendors, and workforce demand
+              are moving.
             </p>
           </div>
           <div className={styles.pillarGrid}>
-            {pillars.map((pillar) => (
-              <article key={pillar.title} className={styles.pillarCard}>
-                <h3 className={styles.cardTitle}>{pillar.title}</h3>
-                <p className={styles.cardCopy}>{pillar.copy}</p>
+            {signalCards.map((card) => (
+              <article key={card.title} className={styles.pillarCard}>
+                <h3 className={styles.cardTitle}>{card.title}</h3>
+                <p className={styles.cardCopy}>{card.copy}</p>
               </article>
             ))}
           </div>
@@ -118,23 +116,24 @@ export default function Home(): React.JSX.Element {
         <section className={styles.section}>
           <div className={styles.sectionHead}>
             <div>
-              <span className={styles.kicker}>Program Paths</span>
+              <span className={styles.kicker}>Catalog</span>
               <Heading as="h2" className={styles.sectionTitle}>
-                Two ways to launch opportunity.
+                Start with a regional brief or scope a buyer-specific one.
               </Heading>
             </div>
             <p className={styles.sectionCopy}>
-              Start with a focused weekend sprint or bring the full 7-day accelerator to a cohort.
+              The catalog is designed to scale from a simple weekly regional report into paid, scoped intelligence for a
+              specific buyer or market.
             </p>
           </div>
           <div className={styles.offerGrid}>
-            {programCards.map((card) => (
+            {briefCards.map((card) => (
               <article key={card.title} className={styles.offerCard}>
                 <span className={styles.offerMeta}>{card.meta}</span>
                 <h3 className={styles.cardTitle}>{card.title}</h3>
                 <p className={styles.cardCopy}>{card.copy}</p>
-                <Link className={styles.secondaryCta} to={card.to}>
-                  View Details
+                <Link className={styles.secondaryCta} to="/research">
+                  View Catalog
                 </Link>
               </article>
             ))}
@@ -143,9 +142,9 @@ export default function Home(): React.JSX.Element {
 
         <section className={styles.midCta}>
           <div className={styles.midCtaPanel}>
-            <span className={styles.kicker}>Student Outcomes</span>
+            <span className={styles.kicker}>Why Buy</span>
             <Heading as="h2" className={styles.sectionTitle}>
-              Students leave with more than notes.
+              Faster opportunity awareness without building the research engine.
             </Heading>
             <ul className={styles.priceList}>
               {outcomes.map((item) => (
@@ -156,11 +155,11 @@ export default function Home(): React.JSX.Element {
               ))}
             </ul>
             <div className={styles.heroActions}>
-              <Link className={styles.primaryCta} to="/programs">
-                Build A Cohort
+              <Link className={styles.primaryCta} to="/services/ai-first-researcher">
+                Purchase A Brief
               </Link>
-              <Link className={styles.secondaryCta} to="/workshop">
-                Run A Weekend Sprint
+              <Link className={styles.secondaryCta} to="/research">
+                Browse Catalog
               </Link>
             </div>
           </div>
@@ -168,11 +167,11 @@ export default function Home(): React.JSX.Element {
       </main>
       <div className={styles.mobileStickyCta}>
         <div className={styles.mobileStickyCopy}>
-          <strong>Workforce programs are live.</strong>
-          <span>Choose the weekend workshop or full accelerator.</span>
+          <strong>Opportunity briefs are live.</strong>
+          <span>Browse the catalog or purchase setup.</span>
         </div>
-        <Link className={styles.mobileStickyButton} to="/programs">
-          Programs
+        <Link className={styles.mobileStickyButton} to="/research">
+          Briefs
         </Link>
       </div>
     </Layout>
