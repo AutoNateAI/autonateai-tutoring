@@ -43,18 +43,18 @@ export const products: ProductDefinition[] = [
   },
   {
     id: 'agentic-ai-workshop-apr-18-2026',
-    title: 'Agentic AI Live Workshop',
-    priceCents: 15900,
-    priceLabel: '$159',
+    title: 'AI-Powered Weekend Career Accelerator',
+    priceCents: 29900,
+    priceLabel: '$299',
     description:
-      'Saturday, April 18, 2026 from 10:00 AM to 12:30 PM. Live workshop access, laptop setup with your AI agent of choice, and lifetime portal access.',
+      '2-day weekend accelerator with AI-assisted opportunity research, tool building, outreach assets, and 30 days of portal access.',
     audience:
-      'Students who want the live Saturday workshop, their AI stack set up properly, and direct exposure to the deeper agentic AI coaching ideas inside the portal.',
+      'Students who want to use real federal spending data, build portfolio-ready tools, and create career-facing visibility in one focused weekend.',
     portalPath: '/#/tracks/student',
     fulfillmentType: 'portal-access',
-    maxSuccessfulPayments: 50,
-    eventDateLabel: 'Saturday, April 18, 2026',
-    eventTimeLabel: '10:00 AM - 12:30 PM',
+    maxSuccessfulPayments: 15,
+    eventDateLabel: '2-Day Weekend Experience',
+    eventTimeLabel: '8 hours total',
   },
   {
     id: 'ai-first-researcher',

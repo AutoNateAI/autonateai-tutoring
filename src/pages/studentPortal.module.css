@@ -298,6 +298,72 @@
   gap: 1rem;
 }
 
+.pillarGrid,
+.offerGrid,
+.scheduleGrid,
+.timelineGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.pillarGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.offerGrid,
+.scheduleGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.timelineGrid {
+  grid-template-columns: repeat(7, minmax(220px, 1fr));
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 0.35rem;
+}
+
+.timelineGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.pillarCard,
+.offerCard,
+.scheduleCard,
+.timelineCard {
+  border-radius: 24px;
+  border: 1px solid rgba(137, 206, 255, 0.12);
+  background: rgba(19, 28, 43, 0.72);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+}
+
+.pillarCard,
+.offerCard,
+.scheduleCard,
+.timelineCard {
+  padding: 1.25rem;
+}
+
+.offerCard {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.timelineCard {
+  scroll-snap-align: start;
+}
+
+.offerMeta {
+  display: inline-block;
+  color: #94e542;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
 .workflowCard {
   overflow: hidden;
   display: grid;
@@ -1012,8 +1078,17 @@
   .checkoutHero,
   .workflowGrid,
   .programGallery,
+  .pillarGrid,
+  .offerGrid,
+  .scheduleGrid,
   .checkoutGrid {
     grid-template-columns: 1fr;
+  }
+
+  .timelineGrid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(280px, 70vw);
   }
 
   .sectionHead {
@@ -1120,6 +1195,10 @@
   .midCtaPanel,
   .infoPanel,
   .programTierCard,
+  .pillarCard,
+  .offerCard,
+  .scheduleCard,
+  .timelineCard,
   .workflowCopy,
   .checkoutFormPanel,
   .checkoutSummarySticky {

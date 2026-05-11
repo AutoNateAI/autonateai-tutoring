@@ -9,93 +9,61 @@ import HeroPromoVideo from '@site/src/components/HeroPromoVideo';
 
 import styles from './studentPortal.module.css';
 
-const galleryCards = [
-  {
-    title: 'Narrated mindset shift',
-    copy:
-      'Students move from overload to structure through the story deck before they touch the deeper workflows.',
-    type: 'video',
-    src: '/video/portal-demos/student-lecture-desktop.mp4',
-    poster: '/img/programs/student-lecture-desktop.png',
-  },
-  {
-    title: 'Workflow installation',
-    copy: 'The live workshop shows students how to use the systems, not just admire them.',
-    type: 'video',
-    src: '/video/portal-demos/student-setup-desktop.mp4',
-    poster: '/img/programs/student-track-desktop.png',
-  },
-  {
-    title: 'Prompt packs with real structure',
-    copy: 'Students see the workflow prompts, fill them in fast, and copy structured instructions directly into action.',
-    type: 'video',
-    src: '/video/portal-demos/assignment-sprint-desktop.mp4',
-    poster: '/img/programs/student-workflow-filled-desktop.png',
-  },
-  {
-    title: 'Connected Google Sheet logic layer',
-    copy: 'The Google Sheet makes the system visible so student work becomes retrievable, analyzable, and easier to sustain.',
-    type: 'image',
-    src: '/img/programs/student-day-grid-sheet-desktop.png',
-  },
-] as const;
-
-const outcomeItems = [
-  'Workforce-development language and delivery that centers practical AI fluency, organization, and follow-through',
-  'College-prep framing that helps students manage applications, assignments, research, and competing life pressure',
-  'Live 2 to 4 hour workshop options with lifetime portal access for every participating student',
-  'A living portal that continues improving weekly with student feedback and new workflow features',
+const days = [
+  ['Day 1', 'Foundations & portal setup', 'Portal review, AI copilot, GitHub, Firebase, Grants.gov, and USAspending.gov fundamentals.'],
+  ['Day 2', 'Advanced search & systems thinking', 'Advanced filtering, opportunity mapping, money-flow tracing, and project continuation.'],
+  ['Day 3', 'Regional opportunity challenge', 'Students own a region, find six high-potential opportunities, and validate organizations.'],
+  ['Day 4', 'Build & solve', 'Design, code, prototype, test, and prepare an AI-assisted solution for showcase.'],
+  ['Day 5', 'Visibility & outreach strategy', 'LinkedIn, Reddit, email outreach, personal brand foundation, and messaging practice.'],
+  ['Day 6', 'Content creation & acceleration', 'Create AI-assisted content, build a work library, and begin posting or outreach.'],
+  ['Day 7', 'Showcase & next steps', 'Present final projects, opportunity lists, reflections, and career pipeline next steps.'],
 ];
 
-const roadmapItems = [
-  'Director analytics dashboard in progress for prompt-pack usage and engagement visibility',
-  'Monitoring signals that help programs show where funding is creating actual student leverage',
-  'Ongoing portal innovation so the system gets stronger after the workshop instead of freezing in time',
+const impact = [
+  'Trace federal spending to active organizations and vendors',
+  'Discover opportunities matched to student goals and skills',
+  'Build real solutions that solve real problems',
+  'Create visibility that gets students noticed',
+  'Open doors to internships, jobs, and collaborations',
 ];
 
 export default function ProgramsPage(): React.JSX.Element {
-  const title = 'Student Systems Workshop Programs | AutoNateAI';
+  const title = 'AI-Powered Career Readiness Accelerator | AutoNateAI';
   const description =
-    'Book a live 2 to 4 hour student systems workshop for your cohort and give every student lifetime portal access, practical AI workflows, and a real operating upgrade.';
+    'A 7-day AutoNateAI program where students use AI, federal data, and project-based learning to research opportunities, build tools, and launch career visibility.';
 
   return (
     <Layout title={title} description={description} wrapperClassName={styles.layout}>
-      <PageSocialMeta
-        title={title}
-        description={description}
-        image="/img/og-programs.png"
-        path="/programs"
-      />
+      <PageSocialMeta title={title} description={description} image="/img/og-programs.png" path="/programs" />
       <main className={styles.shell}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
             <Link className={styles.backLink} to="/">
-              ← Back to student coaching
+              ← Back to overview
             </Link>
-            <span className={styles.kicker}>Programs</span>
+            <span className={styles.kicker}>7-Day Program Experience</span>
             <Heading as="h1" className={styles.heroTitle}>
-              Install student systems across the whole cohort.
+              AI-powered career readiness accelerator.
             </Heading>
             <HeroPromoVideo
               className={styles.heroVideoMobile}
               src="/video/programs-hero-promo.mp4"
               poster="/img/og-programs.png"
               soundLabel="Tap For Narration"
-              fullscreenLabel="Full Screen Overview"
+              fullscreenLabel="Full Screen Program Overview"
               objectFit="contain"
             />
-            <p className={styles.heroShift}>2 to 4 live hours. Lifetime portal access. Practical workflows that stick.</p>
+            <p className={styles.heroShift}>Real data. Real opportunities. Real impact.</p>
             <p className={styles.heroBody}>
-              This offer is built for schools, directors, workforce-development programs, and college-prep organizations
-              that want students to become more organized, more strategic, and more capable of using AI with real
-              structure. We teach the mindset shift, install the tools, and coach students through the workflows live.
+              A 7-day, hands-on program where students use AI and federal spending data to discover opportunities,
+              build real solutions, grow visibility, and launch their careers with confidence.
             </p>
             <div className={styles.heroActions}>
               <a className={styles.primaryCta} href="#program-checkout">
-                Purchase Program
+                Launch A Cohort
               </a>
-              <Link className={styles.secondaryCta} to="/">
-                View 1:1 Coaching
+              <Link className={styles.secondaryCta} to="/workshop">
+                Weekend Version
               </Link>
             </div>
           </div>
@@ -105,24 +73,12 @@ export default function ProgramsPage(): React.JSX.Element {
                 src="/video/programs-hero-promo.mp4"
                 poster="/img/og-programs.png"
                 soundLabel="Tap For Narration"
-                fullscreenLabel="Full Screen Overview"
+                fullscreenLabel="Full Screen Program Overview"
                 objectFit="contain"
               />
             </div>
             <div className={styles.heroNote}>
-              Once the organization pays to install the program, students receive the portal upgrade that keeps working
-              after the workshop ends.
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.inlineCtaSection}>
-          <div className={styles.inlineCtaPanel}>
-            <p className={styles.inlineCtaCopy}>Ready to lock the cohort package in now?</p>
-            <div className={styles.heroActions}>
-              <a className={styles.primaryCta} href="#program-checkout">
-                Choose Payment Option
-              </a>
+              This is a repeatable workforce-development system: research, build, outreach, showcase, and next steps.
             </div>
           </div>
         </section>
@@ -130,94 +86,39 @@ export default function ProgramsPage(): React.JSX.Element {
         <section className={styles.section}>
           <div className={styles.sectionHead}>
             <div>
-              <span className={styles.kicker}>Why Programs Buy</span>
+              <span className={styles.kicker}>Program Flow</span>
               <Heading as="h2" className={styles.sectionTitle}>
-                Built for the outcomes directors have to defend
+                A structured week of discovery, building, and visibility.
               </Heading>
             </div>
             <p className={styles.sectionCopy}>
-              This is not generic edtech. It is a live installation of student operating structure that can support
-              workforce readiness, college preparation, organization, and real AI adoption in one system.
+              Each day adds a concrete layer: portal fluency, search strategy, regional research, AI-assisted building,
+              outreach, content, and final showcase.
             </p>
           </div>
-          <div className={styles.infoPanel}>
-            <ul className={styles.priceList}>
-              {outcomeItems.map((item) => (
-                <li key={item}>
-                  <span className={styles.check}>✓</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className={styles.sectionCtaRow}>
-            <a className={styles.primaryCta} href="#program-checkout">
-              Pick Cohort Pricing
-            </a>
-          </div>
-        </section>
-
-        <section className={styles.section}>
-          <div className={styles.sectionHead}>
-            <div>
-              <span className={styles.kicker}>Portal Upgrade</span>
-              <Heading as="h2" className={styles.sectionTitle}>
-                What students get after the live workshop
-              </Heading>
-            </div>
-            <p className={styles.sectionCopy}>
-              The workshop introduces the thinking model live, then the portal keeps the experience alive with narrated
-              slides, prompt packs, workbook systems, and practical workflow tools students can keep using.
-            </p>
-          </div>
-          <div className={styles.programGallery}>
-            {galleryCards.map((card) => (
-              <article key={card.title} className={styles.workflowCard}>
-                <div className={styles.workflowCopy}>
-                  <h3 className={styles.cardTitle}>{card.title}</h3>
-                  <p className={styles.cardCopy}>{card.copy}</p>
-                </div>
-                <div className={styles.workflowFrame}>
-                  {card.type === 'video' ? (
-                    <video
-                      src={card.src}
-                      poster={card.poster}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                    />
-                  ) : (
-                    <img src={card.src} alt={card.title} loading="lazy" />
-                  )}
-                </div>
+          <div className={styles.timelineGrid}>
+            {days.map(([day, titleText, copy]) => (
+              <article key={day} className={styles.timelineCard}>
+                <span className={styles.offerMeta}>{day}</span>
+                <h3 className={styles.cardTitle}>{titleText}</h3>
+                <p className={styles.cardCopy}>{copy}</p>
               </article>
             ))}
           </div>
-          <div className={styles.sectionCtaRow}>
-            <a className={styles.primaryCta} href="#program-checkout">
-              Get Students Into The Portal
-            </a>
-          </div>
         </section>
 
         <section className={styles.section}>
           <div className={styles.sectionHead}>
             <div>
-              <span className={styles.kicker}>Director Roadmap</span>
+              <span className={styles.kicker}>Real Impact</span>
               <Heading as="h2" className={styles.sectionTitle}>
-                Visibility keeps improving after the rollout
+                Students leave with practical proof of readiness.
               </Heading>
             </div>
-            <p className={styles.sectionCopy}>
-              We know directors need more than inspiration. They need a way to show where the work is landing and how
-              student usage evolves over time.
-            </p>
           </div>
           <div className={styles.infoPanel}>
             <ul className={styles.priceList}>
-              {roadmapItems.map((item) => (
+              {impact.map((item) => (
                 <li key={item}>
                   <span className={styles.check}>✓</span>
                   <span>{item}</span>
@@ -225,10 +126,23 @@ export default function ProgramsPage(): React.JSX.Element {
               ))}
             </ul>
           </div>
-          <div className={styles.sectionCtaRow}>
-            <a className={styles.primaryCta} href="#program-checkout">
-              Move To Checkout
-            </a>
+        </section>
+
+        <section className={styles.midCta}>
+          <div className={styles.midCtaPanel}>
+            <span className={styles.kicker}>Built On A Repeatable System</span>
+            <Heading as="h2" className={styles.sectionTitle}>
+              Powered by AI. Driven by impact.
+            </Heading>
+            <p className={styles.heroBody}>
+              Give students the tools, show them the path, and help them build what is next. The pilot cohort creates a
+              stronger workforce-development engine for tomorrow.
+            </p>
+            <div className={styles.heroActions}>
+              <a className={styles.primaryCta} href="#program-checkout">
+                Choose Program Option
+              </a>
+            </div>
           </div>
         </section>
 
@@ -236,17 +150,17 @@ export default function ProgramsPage(): React.JSX.Element {
           <div className={styles.centerHead}>
             <span className={styles.kicker}>Program Pricing</span>
             <Heading as="h2" className={styles.sectionTitle}>
-              Choose the cohort size and workshop length
+              Bring the accelerator to your cohort.
             </Heading>
           </div>
           <div className={styles.infoPanel}>
             <p className={styles.heroBody}>
-              Base pricing covers the first 2 hours. Every additional workshop hour adds $25 per student, with a maximum
-              of 4 total hours for the full integration block.
+              Use the cohort checkout to choose the package that fits your organization. We can align delivery around
+              workforce readiness, college preparation, research, or regional opportunity discovery.
             </p>
           </div>
           <section className={styles.checkoutSection}>
-            <BrowserOnly fallback={<div className={styles.loadingCard}>Loading secure checkout…</div>}>
+            <BrowserOnly fallback={<div className={styles.loadingCard}>Loading secure checkout...</div>}>
               {() => <ProgramsCheckoutCard />}
             </BrowserOnly>
           </section>
@@ -254,11 +168,11 @@ export default function ProgramsPage(): React.JSX.Element {
       </main>
       <div className={styles.mobileStickyCta}>
         <div className={styles.mobileStickyCopy}>
-          <strong>Ready to buy for your cohort?</strong>
-          <span>Jump straight to the payment options.</span>
+          <strong>Launch a 7-day accelerator.</strong>
+          <span>Choose a cohort option and start the program conversation.</span>
         </div>
         <a className={styles.mobileStickyButton} href="#program-checkout">
-          Choose Payment
+          Cohort
         </a>
       </div>
     </Layout>
