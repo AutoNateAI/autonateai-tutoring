@@ -11,9 +11,9 @@ import SquareCheckoutCard from '@site/src/components/SquareCheckoutCard';
 const portalBase = 'https://portal.autonateai.com/#';
 
 export default function AiFirstResearcherPage(): React.JSX.Element {
-  const title = 'AutoNateAI Reports Setup | Operator Intelligence';
+  const title = 'AutoNateAI Opportunity Brief Setup | Operator Intelligence';
   const description =
-    'Set up AutoNateAI reports for regional intelligence, funding monitoring, procurement visibility, subcontractor visibility, hiring pressure detection, and reporting automation.';
+    'Purchase an AutoNateAI opportunity brief setup for regional intelligence, funding movement summaries, active grants, likely subcontracting activity, regional hiring pressure, and organizational movement.';
 
   return (
     <Layout title={title} description={description}>
@@ -29,33 +29,32 @@ export default function AiFirstResearcherPage(): React.JSX.Element {
         </div>
         <section className="card shadow--md" style={{background: '#0d1526', border: '1px solid rgba(37, 194, 160, 0.28)'}}>
           <div className="card__body" style={{padding: '2rem'}}>
-            <Heading as="h1" style={{color: '#ffffff'}}>AutoNateAI Reports Setup</Heading>
+            <Heading as="h1" style={{color: '#ffffff'}}>AutoNateAI Opportunity Brief Setup</Heading>
             <p style={{color: '#d0dae9', fontSize: '1.1rem', lineHeight: '1.7'}}>
-              A paid setup path for organizations and operators that need practical intelligence reports. We scope the
-              first report around your region, market, funding lane, procurement question, workforce signal, or
-              operating opportunity.
+              Purchase the setup for a paid opportunity brief. We scope the first brief around your region, market,
+              funding lane, procurement question, workforce signal, or operating opportunity.
             </p>
             <div style={{display: 'grid', gap: '0.65rem', margin: '1.5rem 0', color: '#ffffff'}}>
-              <div><strong>Format:</strong> Initial paid reports setup</div>
+              <div><strong>Format:</strong> Initial paid opportunity brief setup</div>
               <div><strong>Starting Price:</strong> $189</div>
-              <div><strong>Inside:</strong> Scope intake, report structure, signal categories, and delivery plan</div>
+              <div><strong>Inside:</strong> Scope intake, brief structure, signal categories, and delivery plan</div>
             </div>
-            <Heading as="h2" style={{color: '#ffffff', fontSize: '1.4rem'}}>Report Lanes</Heading>
+            <Heading as="h2" style={{color: '#ffffff', fontSize: '1.4rem'}}>Brief Lanes</Heading>
             <ul style={{color: '#cbd5e0', lineHeight: '1.8'}}>
-              <li>Regional intelligence and opportunity scans</li>
-              <li>Funding monitoring across grants, awards, agencies, and recipients</li>
-              <li>Procurement and subcontractor visibility briefs</li>
-              <li>Hiring pressure detection and workforce signal reporting</li>
-              <li>Reporting automation plans for recurring operator intelligence</li>
+              <li>Weekly opportunity reports</li>
+              <li>Funding movement summaries and active grant watchlists</li>
+              <li>Likely subcontracting activity and procurement visibility</li>
+              <li>Regional hiring pressure and workforce signal reporting</li>
+              <li>Organizational movement and practical next-move recommendations</li>
             </ul>
             <Heading as="h2" style={{color: '#ffffff', fontSize: '1.4rem'}}>How It Connects To Practice</Heading>
             <p style={{color: '#cbd5e0', lineHeight: '1.7'}}>
-              Free reports can build trust and show the research style. Paid reports go deeper: they identify money
-              movement, organizations, pressure, and possible next moves for a specific operator or market.
+              Free briefs can build trust and show the research style. Paid briefs go deeper: they identify money
+              movement, organizations, pressure, and possible next moves for a specific buyer or market.
             </p>
             <div style={{display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem'}}>
               <Link className="button button--secondary button--lg" to="/research">
-                Browse Reports
+                Browse Opportunity Briefs
               </Link>
             </div>
           </div>
@@ -64,8 +63,8 @@ export default function AiFirstResearcherPage(): React.JSX.Element {
           {() => <SquareCheckoutCard initialProductId="ai-first-researcher" />}
         </BrowserOnly>
         <PortalPreviewEmbed
-          title="See the report workspace before you buy"
-          description="This is the working surface for report production: research intake, source organization, synthesis, and structured delivery."
+          title="See the brief workspace before you buy"
+          description="This is the working surface for opportunity brief production: research intake, source organization, synthesis, and structured delivery."
           dashboardUrl={`${portalBase}/preview/researcher`}
           workflowUrl={`${portalBase}/preview/workflows/source-intake-sheet`}
           openUrl={`${portalBase}/preview/researcher`}

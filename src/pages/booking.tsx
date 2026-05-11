@@ -44,18 +44,18 @@ const services: ServiceCardProps[] = [
     ctaLabel: 'View Programs',
   },
   {
-    title: 'AutoNateAI Reports Setup',
+    title: 'AutoNateAI Opportunity Brief Setup',
     price: '$189',
-    schedule: 'Initial setup for paid or free report delivery',
-    audience: 'Organizations and operators that need regional intelligence, funding monitoring, and opportunity discovery.',
+    schedule: 'Initial setup for paid opportunity brief delivery',
+    audience: 'Consultants, nonprofits, vendors, economic development orgs, staffing teams, and local businesses.',
     description: (
       <p>
-        Set up scoped reports around regional intelligence, public funding movement, procurement visibility,
-        subcontractor openings, hiring pressure, and practical next moves.
+        Purchase a scoped brief around regional intelligence, funding movement, active grants, likely subcontracting,
+        hiring pressure, organizational movement, and practical next moves.
       </p>
     ),
     href: '/services/ai-first-researcher',
-    ctaLabel: 'View Reports Setup',
+    ctaLabel: 'Purchase Brief Setup',
   },
   {
     title: 'DevBox Setup',
@@ -104,7 +104,7 @@ function ServiceCard({title, price, schedule, audience, description, href, ctaLa
 export default function BookingPage(): React.JSX.Element {
   const title = 'Choose Your AI Path | Coaching, Programs, and Systems';
   const description =
-    'Pick the fastest path into usable AI: live student coaching, student workshop programs, reports, or a higher-touch DevBox setup.';
+    'Pick the fastest path into usable AI: live student coaching, student workshop programs, opportunity briefs, or a higher-touch DevBox setup.';
 
   return (
     <Layout title={title} description={description}>

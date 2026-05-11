@@ -58,13 +58,13 @@ export const products: ProductDefinition[] = [
   },
   {
     id: 'ai-first-researcher',
-    title: 'AutoNateAI Reports Setup',
+    title: 'AutoNateAI Opportunity Brief Setup',
     priceCents: 18900,
     priceLabel: '$189',
     description:
-      'Initial paid reports setup for organizations that need regional intelligence, funding monitoring, procurement visibility, and opportunity discovery.',
+      'Initial paid opportunity brief setup for organizations that need regional intelligence, funding movement summaries, active grants, subcontracting signals, hiring pressure, and organizational movement.',
     audience:
-      'Organizations and operators that need scoped intelligence reports, public-data monitoring, and practical next-move visibility.',
+      'Consultants, nonprofits, vendors, economic development organizations, staffing teams, and local businesses buying scoped opportunity intelligence.',
     portalPath: '/#/tracks/researcher',
     fulfillmentType: 'portal-access',
   },

@@ -72,18 +72,8 @@ const config: Config = {
       title: 'AutoNateAI',
       items: [
         {
-          to: '/programs',
-          label: 'Programs',
-          position: 'right',
-        },
-        {
-          to: '/workshop',
-          label: 'Workshop',
-          position: 'right',
-        },
-        {
           to: '/research',
-          label: 'Reports',
+          label: 'Opportunity Briefs',
           position: 'right',
         },
         {
@@ -109,15 +99,7 @@ const config: Config = {
               to: '/services/ai-first-student',
             },
             {
-              label: 'Programs',
-              to: '/programs',
-            },
-            {
-              label: 'Workshop',
-              to: '/workshop',
-            },
-            {
-              label: 'Reports',
+              label: 'Opportunity Briefs',
               to: '/research',
             },
           ],

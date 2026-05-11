@@ -4,66 +4,73 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import PageSocialMeta from '@site/src/components/PageSocialMeta';
 import HeroPromoVideo from '@site/src/components/HeroPromoVideo';
-import {featuredResearchArticle} from '@site/src/data/researchArticles';
 import styles from '@site/src/components/research/research.module.css';
 
-const operatorSignals = [
-  'Regional intelligence for where funding, partners, and operating pressure are moving',
-  'Funding monitoring across public grants, awards, agencies, and local opportunity signals',
-  'Operational opportunity discovery for programs, vendors, nonprofits, and civic operators',
-  'Procurement and subcontractor visibility so organizations can see who is getting paid',
-  'Hiring pressure detection and reporting automation for teams that need faster decisions',
+const briefSignals = [
+  'Weekly opportunity reports for a region, sector, or operating lane',
+  'Funding movement summaries across grants, awards, agencies, and recipients',
+  'Active grants and near-term funding windows worth watching',
+  'Likely subcontracting activity and prime-recipient movement',
+  'Regional hiring pressure, organizational movement, and partnership openings',
 ];
 
-const reportCards = [
+const audiences = ['Consultants', 'Nonprofits', 'Vendors', 'Economic development orgs', 'Staffing teams', 'Local businesses'];
+
+const briefCards = [
   {
-    title: 'Regional Opportunity Scan',
-    access: 'Free',
-    price: '$0',
+    title: 'Regional Opportunity Brief',
+    cadence: 'Weekly',
+    price: '$189 setup',
     description:
-      'A public-facing scan that shows what kinds of funding, organizations, and opportunity patterns are active in a region.',
-    cta: 'Read Sample',
-    to: `/research/${featuredResearchArticle.slug}`,
+      'The fastest starting point: a concise regional brief covering funding movement, active grants, likely subcontracting, hiring pressure, and organizational movement.',
+    includes: ['Funding movement summary', 'Active grant watchlist', 'Organization movement signals'],
   },
   {
-    title: 'Funding Monitoring Report',
-    access: 'Paid',
-    price: 'Priced per scope',
+    title: 'Consultant Opportunity Brief',
+    cadence: 'Weekly or monthly',
+    price: '$189 setup',
     description:
-      'A deeper report for organizations that need recurring visibility into grants, awards, agencies, recipients, and movement in their lane.',
-    cta: 'Request Report',
-    to: '/services/ai-first-researcher',
+      'A brief for consultants who need to see where public money, local operators, procurement activity, and partner demand are creating reachable opportunities.',
+    includes: ['Prospect signals', 'Procurement and partner leads', 'Recommended outreach angles'],
   },
   {
-    title: 'Procurement & Subcontractor Visibility Brief',
-    access: 'Paid',
-    price: 'Priced per scope',
+    title: 'Nonprofit Funding Brief',
+    cadence: 'Weekly',
+    price: '$189 setup',
     description:
-      'A decision brief that maps prime awards, subcontractor patterns, vendors, local recipients, and possible partnership openings.',
-    cta: 'Request Report',
-    to: '/services/ai-first-researcher',
+      'A funding and program brief for nonprofits tracking grants, agency priorities, local recipients, partnership chances, and service-demand pressure.',
+    includes: ['Active grants', 'Agency priority shifts', 'Partner and recipient map'],
   },
   {
-    title: 'Hiring Pressure & Workforce Signal Report',
-    access: 'Paid',
-    price: 'Priced per scope',
+    title: 'Vendor & Subcontractor Brief',
+    cadence: 'Weekly or monthly',
+    price: '$189 setup',
     description:
-      'A report for operators who want to connect labor demand, funding movement, program needs, and training opportunities.',
-    cta: 'Request Report',
-    to: '/services/ai-first-researcher',
+      'A brief for vendors that need visibility into prime awards, likely subcontracting activity, buyer movement, and regional demand signals.',
+    includes: ['Prime award movement', 'Subcontracting indicators', 'Buyer and vendor map'],
+  },
+  {
+    title: 'Hiring Pressure Brief',
+    cadence: 'Monthly',
+    price: '$189 setup',
+    description:
+      'A workforce signal brief for staffing teams, training programs, and economic development operators tracking where demand is building.',
+    includes: ['Hiring pressure indicators', 'Funding-backed workforce demand', 'Training opportunity signals'],
+  },
+  {
+    title: 'Custom Opportunity Brief',
+    cadence: 'Scoped',
+    price: '$189 setup',
+    description:
+      'A custom brief for a specific city, region, industry, agency, funding lane, organization type, or strategic question.',
+    includes: ['Custom scope', 'Signal categories', 'Decision-ready summary'],
   },
 ];
 
-const valueProps = [
-  'Immediate ROI because the report points at money, organizations, gaps, and next moves',
-  'Institutional pain relief for teams that do not have time to manually track every signal',
-  'High-value B2B intelligence that can become recurring monitoring over time',
-];
-
-export default function ReportsPage(): React.JSX.Element {
-  const title = 'Reports | AutoNateAI';
+export default function OpportunityBriefsPage(): React.JSX.Element {
+  const title = 'Opportunity Briefs | AutoNateAI';
   const description =
-    'AutoNateAI reports provide regional intelligence, funding monitoring, procurement visibility, subcontractor visibility, hiring pressure detection, and reporting automation for organizations and operators.';
+    'AutoNateAI opportunity briefs help consultants, nonprofits, vendors, economic development organizations, staffing teams, and local businesses track regional funding movement, active grants, subcontracting activity, hiring pressure, and organizational movement.';
 
   return (
     <Layout title={title} description={description} wrapperClassName={styles.layout}>
@@ -71,29 +78,29 @@ export default function ReportsPage(): React.JSX.Element {
       <main className={styles.shell}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
-            <span className={styles.kicker}>Reports</span>
+            <span className={styles.kicker}>Opportunity Briefs</span>
             <Heading as="h1" className={styles.heroTitle}>
-              Intelligence reports for organizations and operators.
+              Buy regional opportunity intelligence without building the research engine.
             </Heading>
             <HeroPromoVideo
               src="/video/autonateai-research-promo.mp4"
               poster="/img/og-research.png"
               className={styles.heroVideoMobile}
               soundLabel="Tap For Sound"
-              fullscreenLabel="Full Screen Reports Promo"
+              fullscreenLabel="Full Screen Opportunity Briefs Promo"
             />
-            <p className={styles.heroShift}>Regional intelligence. Funding monitoring. Operational opportunity discovery.</p>
+            <p className={styles.heroShift}>Weekly opportunity reports. Funding movement. Active grants. Local operating signals.</p>
             <p className={styles.heroBody}>
-              This section holds AutoNateAI reports: some free, some paid. Reports turn public data and AI-assisted
-              analysis into practical visibility for organizations that need to see funding movement, procurement
-              patterns, subcontractor openings, hiring pressure, and regional opportunities.
+              AutoNateAI Opportunity Briefs are purchasable reports for people who need to know where opportunity is
+              moving: consultants, nonprofits, vendors, economic development teams, staffing operators, and local
+              businesses.
             </p>
             <div className={styles.heroActions}>
-              <a className={styles.primaryCta} href="#reports">
-                Browse Reports
+              <a className={styles.primaryCta} href="#catalog">
+                Explore Catalog
               </a>
-              <a className={styles.secondaryCta} href="#operator-intelligence">
-                What Reports Cover
+              <a className={styles.secondaryCta} href="#coverage">
+                What You Get
               </a>
             </div>
           </div>
@@ -104,29 +111,29 @@ export default function ReportsPage(): React.JSX.Element {
                 poster="/img/og-research.png"
                 className={styles.heroPromoVideo}
                 soundLabel="Tap For Sound"
-                fullscreenLabel="Full Screen Reports Promo"
+                fullscreenLabel="Full Screen Opportunity Briefs Promo"
               />
             </div>
           </div>
         </section>
 
-        <section id="operator-intelligence" className={styles.section}>
+        <section id="coverage" className={styles.section}>
           <div className={styles.sectionHead}>
             <div>
-              <span className={styles.kicker}>Operator Intelligence</span>
+              <span className={styles.kicker}>Coverage</span>
               <Heading as="h2" className={styles.sectionTitle}>
-                Reports that find pressure, money, and openings.
+                Fastest path to regional opportunity visibility.
               </Heading>
             </div>
             <p className={styles.sectionCopy}>
-              Built for operators, directors, founders, nonprofits, vendors, and workforce-development teams that need
-              fast visibility without building the whole research engine themselves.
+              Each brief compresses public-data monitoring and AI-assisted research into a readable report with
+              immediate next-move value.
             </p>
           </div>
           <div className={styles.overviewPanel}>
             <div className={styles.overviewGrid}>
               <ul className={styles.signalList}>
-                {operatorSignals.map((item) => (
+                {briefSignals.map((item) => (
                   <li key={item}>
                     <span className={styles.check}>✓</span>
                     <span>{item}</span>
@@ -135,45 +142,53 @@ export default function ReportsPage(): React.JSX.Element {
               </ul>
               <div className={styles.statsGrid}>
                 <article className={styles.statCard}>
-                  <div className={styles.statValue}>B2B</div>
-                  <span className={styles.statLabel}>Operator Market</span>
-                  <p className={styles.statNote}>Reports are built for organizations that need immediate decision support.</p>
+                  <div className={styles.statValue}>6</div>
+                  <span className={styles.statLabel}>Buyer Types</span>
+                  <p className={styles.statNote}>{audiences.join(', ')}.</p>
                 </article>
                 <article className={styles.statCard}>
-                  <div className={styles.statValue}>ROI</div>
-                  <span className={styles.statLabel}>Action-Oriented</span>
-                  <p className={styles.statNote}>Each report is framed around next moves, not research theater.</p>
+                  <div className={styles.statValue}>Fast</div>
+                  <span className={styles.statLabel}>Brief Format</span>
+                  <p className={styles.statNote}>Readable, decision-oriented, and designed for recurring delivery.</p>
                 </article>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="reports" className={styles.section}>
+        <section id="catalog" className={styles.section}>
           <div className={styles.sectionHead}>
             <div>
-              <span className={styles.kicker}>Report Catalog</span>
+              <span className={styles.kicker}>Catalog Explorer</span>
               <Heading as="h2" className={styles.sectionTitle}>
-                Free samples and paid intelligence reports.
+                Choose the opportunity brief you want to purchase.
               </Heading>
             </div>
             <p className={styles.sectionCopy}>
-              The catalog can hold public reports, premium reports, and scoped custom monitoring. Free reports build
-              trust; paid reports solve operator pain.
+              Start with a standard brief or scope a custom one around your region, funding lane, sector, or target
+              audience.
             </p>
           </div>
           <div className={styles.paginationPanel}>
             <div className={styles.cardsGrid}>
-              {reportCards.map((report) => (
-                <article key={report.title} className={styles.articleCard}>
+              {briefCards.map((brief) => (
+                <article key={brief.title} className={styles.articleCard}>
                   <div className={styles.cardMeta}>
-                    <span>{report.access}</span>
-                    <span>{report.price}</span>
+                    <span>{brief.cadence}</span>
+                    <span>{brief.price}</span>
                   </div>
-                  <h3 className={styles.cardTitle}>{report.title}</h3>
-                  <p className={styles.cardCopy}>{report.description}</p>
-                  <Link className={styles.primaryCta} to={report.to}>
-                    {report.cta}
+                  <h3 className={styles.cardTitle}>{brief.title}</h3>
+                  <p className={styles.cardCopy}>{brief.description}</p>
+                  <ul className={styles.signalList}>
+                    {brief.includes.map((item) => (
+                      <li key={item}>
+                        <span className={styles.check}>✓</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link className={styles.primaryCta} to="/services/ai-first-researcher">
+                    Purchase Brief
                   </Link>
                 </article>
               ))}
@@ -183,28 +198,22 @@ export default function ReportsPage(): React.JSX.Element {
 
         <section className={styles.section}>
           <div className={styles.featuredPanel}>
-            <div className={styles.featuredGrid}>
-              <div className={styles.heroCopy}>
-                <span className={styles.kicker}>Why This Works</span>
-                <Heading as="h2" className={styles.sectionTitle}>
-                  This market already exists.
-                </Heading>
-                <ul className={styles.signalList}>
-                  {valueProps.map((item) => (
-                    <li key={item}>
-                      <span className={styles.check}>✓</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className={styles.heroActions}>
-                  <Link className={styles.primaryCta} to="/services/ai-first-researcher">
-                    Set Up Paid Reports
-                  </Link>
-                </div>
+            <div className={styles.heroCopy}>
+              <span className={styles.kicker}>Who Buys</span>
+              <Heading as="h2" className={styles.sectionTitle}>
+                Built for people who need opportunity before it becomes obvious.
+              </Heading>
+              <div className={styles.cardsGrid}>
+                {audiences.map((audience) => (
+                  <article key={audience} className={styles.articleCard}>
+                    <h3 className={styles.cardTitle}>{audience}</h3>
+                  </article>
+                ))}
               </div>
-              <div className={styles.featuredImageFrame}>
-                <img src={featuredResearchArticle.image} alt={featuredResearchArticle.imageAlt} />
+              <div className={styles.heroActions}>
+                <Link className={styles.primaryCta} to="/services/ai-first-researcher">
+                  Purchase A Brief
+                </Link>
               </div>
             </div>
           </div>
