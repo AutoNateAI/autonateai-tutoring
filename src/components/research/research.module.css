@@ -341,11 +341,15 @@
 
 .catalogSection {
   scroll-margin-top: 6rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 1.2rem;
   border-radius: 28px;
   border: 1px solid rgba(137, 206, 255, 0.12);
   background: rgba(19, 28, 43, 0.72);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
 }
 
 .catalogSectionHead {
@@ -365,9 +369,10 @@
 }
 
 .catalogRow {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(280px, 360px);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: flex;
   gap: 1rem;
   overflow-x: auto;
   overscroll-behavior-x: contain;
@@ -381,6 +386,8 @@
 }
 
 .catalogCard {
+  flex: 0 0 min(360px, 88vw);
+  min-width: 0;
   display: grid;
   gap: 0.85rem;
   align-content: start;
@@ -945,8 +952,8 @@
     scroll-margin-top: 5rem;
   }
 
-  .catalogRow {
-    grid-auto-columns: 86%;
+  .catalogCard {
+    flex-basis: calc(100vw - 3.4rem);
   }
 
   .overviewPanel,
